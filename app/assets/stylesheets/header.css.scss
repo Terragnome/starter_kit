@@ -1,0 +1,73 @@
+@import '_animation';
+@import '_colors';
+@import '_constants';
+
+#header{
+	background-color: black;
+	height: #{$header_height};
+	min-width: #{$header_width};
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+
+	.logo{
+		overflow: hidden;
+		img{
+			cursor: pointer;
+			height: #{$logo_img_height};
+			margin: #{$header_height - $logo_img_height} 0px 0px 10px;
+			position: absolute;
+			z-index: 3;
+		}
+		.title{
+			color: white;
+			font-family: 'LeagueGothic';
+			font-size: 120px;
+			margin: #{$header_height - 115} 0px 0px #{$logo_img_width+15};
+			text-transform: uppercase;
+		}
+	}
+}
+
+#header_bar{
+	display: none;
+	background-color: black;
+	height: #{$header_bar_height};
+	left: 0px;
+	margin: -#{$header_bar_height+2*$header_bar_padding_v} 0 0 0;
+	overflow: hidden;
+	padding: #{$header_bar_padding_v} 50px #{$header_bar_padding_v} 50px;
+	position: fixed;
+	text-align: left;
+	text-transform: uppercase;
+	top: 0px;
+	width: 100%;
+	z-index: 10;
+
+	.title{
+		margin: 0 15px 0 0;
+	}
+
+	span{
+		color: white;
+		font-family: 'Oswald';
+		font-size: 16px;
+		font-weight: normal;
+	}
+
+	a{
+		color: white;
+		display: inline-block;
+		font-family: 'Oswald';
+		font-size: 16px;
+		font-weight: normal;
+		margin: 0 7px 0 7px;
+		&:hover{
+			color: #{$highlight_color_dark};
+		}
+	}
+
+	.highlight{
+		color: #{$highlight_color};
+	}
+}

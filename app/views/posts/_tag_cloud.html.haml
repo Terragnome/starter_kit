@@ -1,0 +1,5 @@
+.posts
+  -tag_cloud(tag_cloud.order(:name), %w(css1)) do |tag, css_class|
+    =link_to tag_archive_path(tag.name), 'data-push'=>true do
+      .entry.black{:class=>css_class}
+        ="##{tag.name} ( #{tag.taggings_count} )"

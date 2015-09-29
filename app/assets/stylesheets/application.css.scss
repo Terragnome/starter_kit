@@ -1,0 +1,239 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import '_animation';
+@import '_colors';
+@import '_constants';
+@import '_fonts';
+
+a{
+	color: #{$highlight_color};
+	cursor: pointer;
+	font-family: 'Oswald';
+	text-decoration: none;
+	&:hover{
+		color: #{$highlight_color_dark};
+	}		
+}
+
+div{
+	border: 0px;
+	cursor: default;
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body{
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 0px;
+	height: 100%;
+	margin: 0px;
+	min-width: #{$header_width};
+	padding: 0px;
+	width: 100%;
+	
+	::selection{
+		background-color: #{$highlight_color};
+		color: white;
+	}
+	::-moz-selection{
+		background-color: #{$highlight_color};
+		color: white;
+	}
+}
+
+h1{
+	border: 0px;
+	font-family: 'Oswald';
+	font-size: 32px;
+	margin: 0px;
+	padding: 0px;
+}
+
+h2{
+	border: 0px;
+	font-family: 'Oswald';
+	font-size: 40px;
+	margin: 0px;
+	padding: 0px;
+}
+
+img{
+	border: 0px;
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+
+label{
+	font-family: 'Lato';
+}
+
+p{
+	border: 0px;
+	font-family: 'Lato';
+	font-size: 16px;
+	margin: 0px;
+	padding: 0px;
+}
+
+span{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+table{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	td{
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+	th{
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+	tr{
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+.black{ background-color: black; }
+.white{ background-color: white; }
+.red{ background-color: #ff0000; }
+.blue{ background-color: #0000ff; }
+.green{ background-color: #00ff00; }
+
+.left{ float: left; }
+.right{ float: right }
+.bold{ font-weight: bold; }
+.inline{ display: inline-block; }
+
+.clearfix{ display: inline-block; }
+.clearfix:after{
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.fb-comments, .fb-comments * {
+    width:100% !important;
+}
+
+.small_icon{
+	height: 20px;
+	width: 20px;
+}
+
+.medium_icon{
+	height: 28px;
+	width: 28px;
+}
+
+.spacer{
+	border-bottom: 1px solid #{$subtle_gray};
+}
+
+.title{
+	font-family: 'Oswald';
+}
+
+.date{
+	font-family: 'Lato';
+}
+
+.navigation{
+	a{
+		font-size: 24px;
+		font-weight: bold;
+	}
+}
+
+#popups{
+	position: absolute;
+	z-index: 100;
+}
+
+#blocker{
+	background-color: black;
+	display: none;
+	height: 100%;
+	opacity: 0.75;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
+
+#footer{
+	bottom: 0px;
+	height: #{$footer_height};
+	position: absolute;
+	width: 100%;
+	a{
+		color: #{$subtle_gray_dark};
+		font-size: 13px;
+		margin: 0px 10px 0px 10px;
+	}
+}
+
+#scene{
+	background-color: white;
+	color: black;
+	min-height: calc(100% -#{$header_height});
+	min-height: -moz-calc(100% - #{$header_height});
+	min-height: -webkit-calc(100% - #{$header_height});
+	position: relative;
+	text-align: center;
+	top: #{$header_height};
+	width: 100%;
+	z-index: 5;
+
+	#scene_body{
+		display: inline-block;
+		margin: 30px 0px 110px 0px;
+		min-height: calc(100% -#{$header_height});
+		min-height: -moz-calc(100% - #{$header_height});
+		min-height: -webkit-calc(100% - #{$header_height});
+		max-width: 960px;
+		overflow: visible;
+		width: calc(100% - #{$scene_body_margin_x});
+		width: -moz-calc(100% - #{$scene_body_margin_x});
+		width: -webkit-calc(100% - #{$scene_body_margin_x});
+		text-align: left;
+		
+	}
+}
+
+#subscribe{
+	bottom: 0px;
+	right: 0px;
+	margin: 0px 10px 0px 10px;
+	position: fixed;
+	z-index: 10;
+	img{
+		height: 20px;
+		width: 20px;
+	}
+}

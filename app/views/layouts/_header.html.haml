@@ -1,0 +1,9 @@
+#header
+  .logo
+    =link_to(root_path, 'data-push'=>true) do
+      =image_tag("#{@asset_root}/avatars/mikey.png", :id=>'header_logo')
+    #header_title.title
+      -title=""
+      -header.count.times do |i|
+        -title << (i%2 == 0 ? "<span style='color:#0099cc;'>#{header[i]}</span>" : header[i])
+      =title.html_safe

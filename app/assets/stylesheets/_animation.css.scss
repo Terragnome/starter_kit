@@ -1,0 +1,20 @@
+@keyframes AnimRollDown {
+    to  { margin-top: 0px; }
+}
+
+@keyframes AnimRollUp {
+    from  { margin-top: 0px; }
+    to { display: none; }
+}
+
+.anim_roll_down{
+	animation-name: AnimRollDown;
+    animation-duration: 0.4s;
+	animation-fill-mode: forwards;
+}
+
+.anim_roll_up{
+	animation-name: AnimRollUp;
+    animation-duration: 0.4s;
+	animation-fill-mode: forwards;
+}
