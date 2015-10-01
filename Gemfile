@@ -30,6 +30,9 @@ gem 'jquery-turbolinks'
 # Ajax links
 gem 'wiselinks'
 
+# Pagination
+gem 'will_paginate'
+
 gem 'newrelic_rpm'
 
 #For heroku

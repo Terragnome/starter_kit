@@ -1,6 +1,8 @@
 var Post = Post || {};
 
 Post.Init = function(){
+	$('html,body').scrollTop(0);
+	
 	$('.comment_button').each(function(){ $(this).click(Post.OnComment); });
 	$('.share_button').each(function(){ $(this).click(Post.OnShare); });
 	$('.share_close').each(function(){ $(this).click(Post.OnShareClose); });

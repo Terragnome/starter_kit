@@ -1,12 +1,12 @@
-.index
+#post_index
   -if @tags.count>0
     =render :partial=>'tag_cloud', :object=>@tags
     .spacer
   .posts
-    -@posts.reverse.each do |p|
+    -@posts.each do |p|
       =link_to post_path(p.id, :display_slug=>p.display_slug), 'data-push'=>true do
-        .entry{:class=>"#{(p.id%10==0 ? 'black' : p.id%2==0 ? 'gray' : 'white')}"}
+        .entry{:class=>"#{(p.id%10==0 ? 'tenth' : p.id%2==0 ? 'even' : 'odd')}"}
           .title
             =p.title.upcase
           .date
-            ="##{p.id} - #{p.date}"
+            =p.date

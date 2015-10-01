@@ -1,9 +1,5 @@
 class RemovePostSubtitles < ActiveRecord::Migration
-  def up
+  def change
     remove_column :posts, :subtitle
-  end
-  
-  def down
-    add_column :posts, :subtitle
   end
 end

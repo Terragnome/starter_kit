@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928224907) do
+ActiveRecord::Schema.define(version: 20151001041105) do
 
   create_table "posts", force: true do |t|
-    t.integer  "user_id",                    null: false
-    t.string   "title",                      null: false
-    t.text     "body",                       null: false
-    t.boolean  "active",     default: false, null: false
+    t.integer  "user_id",                        null: false
+    t.string   "title",                          null: false
+    t.text     "body",                           null: false
+    t.boolean  "active",         default: false, null: false
     t.datetime "created_at"
     t.datetime "posted_at"
+    t.float    "cost",           default: 0.0
+    t.string   "call_to_action", default: "Buy"
+    t.string   "url"
   end
 
   add_index "posts", ["active"], name: "index_posts_on_active", using: :btree

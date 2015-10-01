@@ -1,5 +1,5 @@
 class CreatePosts < ActiveRecord::Migration
-  def up
+  def change
     create_table :posts do |t|
       t.integer  :user_id, :null=>false
       t.string   :title, :null=>false
@@ -12,9 +12,5 @@ class CreatePosts < ActiveRecord::Migration
     add_index :posts, :user_id
     add_index :posts, :title
     add_index :posts, [:created_at, :active]
-  end
-  
-  def down
-    drop_table :posts
   end
 end

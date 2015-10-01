@@ -1,6 +1,7 @@
+.spacer
 #footer
-  .spacer
   =link_to('ABOUT', about_path, 'data-push'=>true)
-  =mail_to(@primary_user.email, 'CONTACT')
+  -if @primary_user
+    =mail_to(@primary_user.email, 'CONTACT')
   =link_to('PRIVACY', privacy_path, 'data-push'=>true)
   =link_to('TERMS', terms_path, 'data-push'=>true)

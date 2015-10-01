@@ -1,0 +1,6 @@
+-feed_list.each do |post|
+  =render :partial=>'feed_post', :object=>post
+
+-if @page != nil and feed_list.length>0
+  :javascript
+    PostFeed.Init("#{feed_url(:tag=>@tag, :page=>@page+1, :format=>:js)}");

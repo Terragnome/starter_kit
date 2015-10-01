@@ -19,34 +19,37 @@
 			position: absolute;
 			z-index: 3;
 		}
-		.title{
-			color: white;
-			font-family: 'LeagueGothic';
-			font-size: 120px;
-			margin: #{$header_height - 115} 0px 0px #{$logo_img_width+15};
-			text-transform: uppercase;
-		}
+	}
+	.title{
+		color: white;
+		font-family: 'LeagueGothic';
+		font-size: 120px;
+		margin: #{$header_height - 115} 0px 0px #{$logo_img_width+15};
+		text-transform: uppercase;
+	}
+
+	.highlight{
+		color: #{$highlight_color};
 	}
 }
 
 #header_bar{
+	/*
 	display: none;
+	margin: -#{$header_bar_height + $header_bar_padding_top + $header_bar_padding_bottom} 0 0 0;
+	box-shadow: 0px 0px 3px #{$dark_gray};
+	*/
+
 	background-color: black;
-	height: #{$header_bar_height};
 	left: 0px;
-	margin: -#{$header_bar_height+2*$header_bar_padding_v} 0 0 0;
+	margin: 0px;
 	overflow: hidden;
-	padding: #{$header_bar_padding_v} 50px #{$header_bar_padding_v} 50px;
 	position: fixed;
-	text-align: left;
+	text-align: center;
 	text-transform: uppercase;
 	top: 0px;
 	width: 100%;
 	z-index: 10;
-
-	.title{
-		margin: 0 15px 0 0;
-	}
 
 	span{
 		color: white;
@@ -61,13 +64,107 @@
 		font-family: 'Oswald';
 		font-size: 16px;
 		font-weight: normal;
-		margin: 0 7px 0 7px;
+		margin: 0 16px 0 16px;
+
 		&:hover{
-			color: #{$highlight_color_dark};
+			color: #{$highlight_color};
 		}
+	}
+
+	.header_bar_inner{
+		height: #{$header_bar_height - $header_bar_decoration_1_height - $header_bar_decoration_2_height - $header_bar_decoration_3_height - $header_bar_decoration_4_height};
+	}
+
+	.header_bar_decoration_1{
+		bottom: 0px;
+		border-bottom: white #{$header_bar_decoration_1_height} solid;
+		width: 100%
+	}
+
+	.header_bar_decoration_2{
+		bottom: 0px;
+		border-bottom: black #{$header_bar_decoration_2_height} solid;
+		width: 100%;
+	}
+
+	.header_bar_decoration_3{
+		bottom: 0px;
+		border-bottom: white #{$header_bar_decoration_3_height} solid;
+		width: 100%
+	}
+
+	.header_bar_decoration_4{
+		bottom: 0px;
+		border-bottom: black #{$header_bar_decoration_4_height} solid;
+		width: 100%;
+	}
+
+	.title{
+		float: left;
+		font-size: 20px;
+		margin: -3px 15px 0 0;
+	}
+
+	.search_icon{
+		background: "/icon/magnifying_glass.svg";
+		color: white;
+		font-size: 46px;
+		margin: -30px 0 0 0;
+	}
+
+	.search_field{
+		border: white 1px solid;
+		width: 180px;
+		height: 29px;
+		margin: -3px 20px 0 0;
 	}
 
 	.highlight{
 		color: #{$highlight_color};
+		font-size: 20px;
+	}
+
+	.links{
+		font-size: 5px;
+		margin: #{$header_bar_padding_top} #{$header_bar_padding_h} #{$header_bar_padding_bottom} #{$header_bar_padding_h};
+	}
+
+	.menu{
+		color: white;
+		display: none;
+		font-size: 24px;
+		margin: -6px 0 0 0;
+	}
+}
+
+@media screen and (max-width: 844px){
+	#header{
+		.title{
+			display: none;
+		}
+		.logo{
+		}
+	}
+}
+
+@media screen and (max-width: 720px){
+	#header_bar{
+		a{
+			margin: 0 7px 0 7px;
+		}
+
+		.title{
+			display: none;
+		}
+
+		.header_bar_inner{
+			a{
+				display: none;
+			}
+		}
+
+		.menu{
+			display: block;
+		}
 	}
 }

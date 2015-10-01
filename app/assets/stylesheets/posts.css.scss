@@ -3,47 +3,142 @@
 @import '_constants';
 @import '_fonts';
 
-.share{
-	background-color: white;
-	box-shadow: 0px 0px 10px white;
-	padding: 15px 15px 25px 15px;
-	position: fixed;
-	width: 280px;
-	a{
-		margin: 0px 10px 0px 0px;
+#post_feed{
+	margin: 10px 0px 25px 0px;
+
+	.instructions{
+		color: #{$subtle_gray};
+		font-family: 'Oswald';
+		font-size: 18px;
+		font-weight: normal;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 30px 0 60px 0;
 	}
-	.share_close{
-		background-color: black;
-		color: white;
-		float: right;
-		font-size: 20px;
-		font-weight: 'Oswald';
-		margin: -10px;
-		padding: 5px;
-	}
-	.spacer{
-		margin: 10px 0px 10px 0px;
-	}
-	.title{
-		color: black;
-		display: inline-block;
-		margin: 0px 10px 0px 0px;
-	}
-	.text{
-		display: inline-block;
-		font-family: 'Lato';
-		font-size: 15px;
+
+	.feed_post{
+		margin: 30px 0px 30px 0px;
+		.header{
+			.icon{
+				float: left;
+				height: 64px;
+				margin: 6px 12px 6px 0px;
+			}
+			.info_section{
+				margin: 10px 0px 0px 0px;
+
+				.link{
+					cursor: pointer;
+				}
+
+				.info{
+					color: #{$subtle_gray_dark};
+					display: inline-block;
+					min-width: 150px;
+					img{
+						float: left;
+						height: 20px;
+						width: 20px;
+						margin: 0px 3px 0px 0px;
+
+					}
+					.text{
+						cursor: inherit;
+						float: left;
+						font-family: 'Lato';
+						font-size: 15px;
+						margin: 1px 0px 0px 0px;
+					}
+				}
+			}
+			.subtitle{
+				color: #{$light_gray};
+				font-size: 14px;
+			}
+		}
+		.body{
+			margin: 20px 0px 40px 0px;
+
+			p{
+				margin: 0 0 20px 0;
+			}
+		}
+		.actions{
+			font-size: 14px;
+			margin: 10px 0px 30px 0px;
+			min-height: 20px;
+			text-align: right;
+			a{
+				display: inline-block;
+				float: right;
+				margin: 0px 2px 0px 10px;
+			}
+		}
+		.comment_count{
+			color: black;
+		}
+		.fb_comments_count_zero{
+			display: none;
+		}
+		.share_container{
+			display: none;
+		}
+		.tags{
+			display: inline-block;
+			font-family: 'Oswald';
+			font-size: 14px;
+			font-weight: normal;
+			text-align: center;
+			text-transform: uppercase;
+
+			.tags_title{
+				display: inline;
+				margin: 0 10px 0 0;		
+			}
+
+			a{
+				display: inline-block;
+				color: #{$highlight_color};
+				float: none;
+				font-size: 13px;
+				font-weight: normal;
+				margin: 0px 5px 0px 5px;
+			}
+		}
 	}
 }
 
-.index{
-	.posts{
-		margin: 10px 0px 25px 0px;
+#post_index{
+	.tag_cloud{
+		margin: 30px 0 30px 0;
+		text-align: center;
 
-		.entry{
+		.tag{
+			background-color: black;
+			color: white;
 			cursor: pointer;
 			display: inline-block;
-			margin: px;
+			font-size: 14px;
+			margin: 1px;
+			padding: 3px 10px 5px 10px;
+			text-transform: uppercase;
+			&:hover{
+				background-color: #{$highlight_color};
+				color: white;
+			}
+		}
+	}
+
+	.posts{
+		margin: 30px 0px 60px 0px;
+		text-align: center;
+
+		.entry{
+			border: 0px;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 14px;
+			margin: 0px;
 			padding: 3px 10px 5px 10px;
 			text-transform: uppercase;
 			&:hover{
@@ -57,15 +152,15 @@
 				color: white;
 			}
 		}
-		.white{
+		.even{
 			background-color: white;
 			color: black;
 		}
-		.black{
+		.tenth{
 			background-color: black;
 			color: white;
 		}
-		.gray{
+		.odd{
 			background-color: #{$light_gray};
 			color: black;
 		}
@@ -78,11 +173,10 @@
 			cursor: inherit;
 			font-size: 14px;
 		}
-		.css1 { font-size: 14px; }
 	}
 }
 
-.show{
+#post_show{
 	.placeholder{
 		font-family: 'Lato';
 		text-align: center;
@@ -92,7 +186,7 @@
 }
 
 .post{
-	margin: 0px 0px 10px 0px;
+	margin: 30px 0px 100px 0px;
 	.header{
 		.icon{
 			float: left;
@@ -100,11 +194,12 @@
 			margin: 6px 12px 6px 0px;
 		}
 		.info_section{
+			margin: 10px 0px 0px 0px;
+
 			.link{
 				cursor: pointer;
 			}
-			
-			margin: 2px 0px 0px 0px;
+
 			.info{
 				color: #{$subtle_gray_dark};
 				display: inline-block;
@@ -139,13 +234,13 @@
 	}
 	.actions{
 		font-size: 14px;
-		margin: 3px 0px 5px 0px;
+		margin: 10px 0px 30px 0px;
 		min-height: 20px;
 		text-align: right;
 		a{
 			display: inline-block;
-			float: left;
-			margin: 0px 10px 0px 0px;
+			float: right;
+			margin: 0px 2px 0px 10px;
 		}
 	}
 	.comment_count{
@@ -182,7 +277,43 @@
 }
 
 .navigation{
+	margin: 20px 0 0 0;
 	a{
 		margin: 0px 25px 0px 0px;
+	}
+}
+
+
+.share{
+	background-color: white;
+	box-shadow: 0px 0px 3px white;
+	min-width: 280px;
+	padding: 15px 15px 25px 15px;
+	position: fixed;
+	width: 50%;
+	a{
+		margin: 0px 10px 0px 0px;
+	}
+	.share_close{
+		background-color: black;
+		color: white;
+		float: right;
+		font-size: 20px;
+		font-weight: 'Oswald';
+		margin: -10px;
+		padding: 5px;
+	}
+	.spacer{
+		margin: 10px 0px 10px 0px;
+	}
+	.title{
+		color: black;
+		display: inline-block;
+		margin: 0px 10px 0px 0px;
+	}
+	.text{
+		display: inline-block;
+		font-family: 'Lato';
+		font-size: 15px;
 	}
 }

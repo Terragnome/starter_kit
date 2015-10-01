@@ -1,10 +1,31 @@
-class PostsController < ApplicationController  
+class PostsController < ApplicationController 
+  @@feed_length = 3
+
   def latest
-    @post=Post.active.last
-    
+    @tag=:all
+    @page=1
+
+    @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
+
     respond_to do |format|
-      format.html{render action: 'show'}
-      format.js{render action: 'show'}
+      format.html{render action: 'feed'}
+      format.js{render action: 'feed'}
+    end
+  end
+
+  def feed
+    @tag = params.has_key?(:tag) ? params[:tag].to_sym : :all
+    @page = params.has_key?(:page) ? params[:page].to_i : 1
+
+    if @tag == :all
+      @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
+    else
+      @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
@@ -52,4 +73,5 @@ class PostsController < ApplicationController
       format.js
     end
   end
+
 end

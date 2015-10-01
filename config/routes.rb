@@ -1,21 +1,22 @@
 StarterKit::Application.routes.draw do
-  devise_for :users
   mount RailsAdmin::Engine => '/comu', :as => 'rails_admin'
-  get 'feed' => 'subscribe#feed'
-
+  
+  devise_for :users
+  resources :users
+  
   get 'about' => 'info#about'
   get 'contact' => 'info#contact'
   get 'privacy' => 'info#privacy'
   get 'terms' => 'info#terms'
 
   get 'latest' => 'posts#latest'
+  get 'collection/:tag(/:page)' => 'posts#feed', :as=>'feed'
+
   get 'archive' => 'posts#index'
-  get 'archive/user/:nickname' => 'posts#index_by_user', :as=>'user_archive'
-  get 'tags/:tag' => 'posts#index_by_tag', :as=>'tag_archive'
+  get 'archive/:tag' => 'posts#index_by_tag', :as=>'tag_archive'
 
+  get ':id', to: 'posts#show'
   get ':id/:display_slug', to: 'posts#show', :as=>'post'
-
-  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

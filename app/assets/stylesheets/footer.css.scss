@@ -1,0 +1,16 @@
+@import '_animation';
+@import '_colors';
+@import '_constants';
+
+#footer{
+	bottom: 0px;
+	font-weight: normal;
+	height: #{$footer_height};
+	padding: 5px 0 0 0;
+	width: 100%;
+	a{
+		color: #{$subtle_gray};
+		font-size: 13px;
+		margin: 0px 10px 0px 10px;
+	}
+}

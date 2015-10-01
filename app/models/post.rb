@@ -3,9 +3,20 @@ class Post < ActiveRecord::Base
 
   before_validation :set_posted_at
 
-  scope :active, -> {where(active:true)}
+  scope :active, -> { where(active:true).order(:posted_at=>:desc, :id=>:desc) }
   
   acts_as_taggable
+
+  def summary
+    summary_len = 280
+
+    s = body
+    if s.length > summary_len
+      s="#{s[0..summary_len]}..."
+    end
+
+    return s
+  end
 
   def previous
     @previous ||= Post.active.where(['id<?', id]).last
@@ -22,7 +33,7 @@ class Post < ActiveRecord::Base
   def ago
     days_ago = Time.now.to_date.mjd - posted_at.to_date.mjd
 
-    return "today" if days_ago == 0
+    return "today" if days_ago < 1
     return "yesterday" if days_ago == 1
 
     if days_ago < 7
@@ -53,6 +64,14 @@ class Post < ActiveRecord::Base
     s
   end
   
+  def display_call_to_action
+    results = call_to_action
+    if cost > 0
+      results = "#{call_to_action} $#{cost}"
+    end
+    return results
+  end
+
   private
 
   def set_posted_at

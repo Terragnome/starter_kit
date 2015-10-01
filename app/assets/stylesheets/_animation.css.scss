@@ -11,10 +11,12 @@
 	animation-name: AnimRollDown;
     animation-duration: 0.4s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 }
 
 .anim_roll_up{
 	animation-name: AnimRollUp;
     animation-duration: 0.4s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 }

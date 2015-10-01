@@ -1,7 +1,19 @@
 $highlight_color: #0099cc;
 $highlight_color_dark: #006699;
 
-$subtle_gray: #c0c0c0;
-$subtle_gray_dark: #808080;
+$subtle_gray: #b0b0b0;
+$subtle_gray_dark: #909090;
+
+$spacer_gray: #d0d0d0;
 
 $light_gray: #f0f0f0;
+$dark_gray: #303030;
+
+.black{ background-color: black; }
+.white{ background-color: white; }
+.red{ background-color: #ff0000; }
+.blue{ background-color: #0000ff; }
+.green{ background-color: #00ff00; }
+
+.highlight_bg{ background-color: #{$highlight_color}; }
+.highlight{ color: #{$highlight_color}; }

@@ -42,22 +42,11 @@ Application.SetBlockerDisplay = function(isOn){
 	}
 }
 
-Application.UpdateHeaderBar = function(cutoff){
-	var scrollPosition = $("body").scrollTop();
-	if(scrollPosition > cutoff){
-		var headerBar = $("#header_bar");
-		headerBar.show();
-		headerBar.addClass("anim_roll_down");
-		headerBar.removeClass("anim_roll_up");
-	}else{
-		var headerBar = $("#header_bar");
-		headerBar.addClass("anim_roll_up");
-		headerBar.removeClass("anim_roll_down");
-	}
-}
-
 Application.OnReady = function(){
 	window.wiselinks = new Wiselinks($('#scene_body'));
+	// $(document).ajaxStart(Application.OnAjaxStart);
+	// $(document).ajaxComplete(Application.OnAjaxComplete);
+	Application.InitScroll(100);
 }
 
 Application.OnAjaxStart = function(){
@@ -75,7 +64,38 @@ Application.OnAjaxComplete = function(){
 	FB.XFBML.parse();
 }
 
+var scrollTimeout;
+Application.InitScroll = function(scrollTimeoutInterval){
+	$(document).scroll(function () {
+	    if(scrollTimeout){
+	        clearTimeout(scrollTimeout);
+	        scrollTimeout = null;
+	    }
+	    scrollTimeout = setTimeout(Application.OnScroll, scrollTimeoutInterval);
+	});
+
+}
+
+Application.OnScroll = function () {
+	// Application.UpdateHeaderBar(230);
+	PostFeed.OnScroll();
+}
+
+Application.UpdateHeaderBar = function(scrollCutoff){
+	var scrollPosition = $("body").scrollTop();
+	var headerBar = $("#header_bar");
+	if(scrollPosition >= scrollCutoff){
+		if( !headerBar.hasClass("anim_roll_down") ){
+			headerBar.show();
+			headerBar.addClass("anim_roll_down");
+			headerBar.removeClass("anim_roll_up");
+		}
+	}else{
+		if( !headerBar.hasClass("anim_roll_up") ){
+			headerBar.addClass("anim_roll_up");
+			headerBar.removeClass("anim_roll_down");
+		}
+	}
+}
+
 $(Application.OnReady);
-$(document)
-$(document).ajaxStart(Application.OnAjaxStart);
-$(document).ajaxComplete(Application.OnAjaxComplete);

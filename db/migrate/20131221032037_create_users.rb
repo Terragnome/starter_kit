@@ -1,5 +1,5 @@
 class CreateUsers < ActiveRecord::Migration
-  def up
+  def change
     create_table :users do |t|
       t.string :name, :null=>false
       t.string :email, :null=>false
@@ -11,9 +11,5 @@ class CreateUsers < ActiveRecord::Migration
     add_index :users, :name
     add_index :users, :email
     add_index :users, :alias
-  end
-  
-  def down
-    drop_table :users
   end
 end

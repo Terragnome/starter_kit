@@ -22,6 +22,7 @@ a{
 	cursor: pointer;
 	font-family: 'Oswald';
 	text-decoration: none;
+	text-transform: uppercase;
 	&:hover{
 		color: #{$highlight_color_dark};
 	}		
@@ -41,7 +42,7 @@ html, body{
 	border: 0px;
 	height: 100%;
 	margin: 0px;
-	min-width: #{$header_width};
+	min-width: #{$body_min_width};
 	padding: 0px;
 	width: 100%;
 	
@@ -117,12 +118,6 @@ table{
 	}
 }
 
-.black{ background-color: black; }
-.white{ background-color: white; }
-.red{ background-color: #ff0000; }
-.blue{ background-color: #0000ff; }
-.green{ background-color: #00ff00; }
-
 .left{ float: left; }
 .right{ float: right }
 .bold{ font-weight: bold; }
@@ -136,6 +131,24 @@ table{
     font-size: 0;
     height: 0;
     visibility: hidden;
+}
+
+.button{
+	border: #{$highlight_color} 1px solid;
+	color: #{$highlight_color};
+	padding: 5px 10px 5px 10px;
+
+	&:hover{
+		background-color: #{$highlight_color};
+		border-color: white;
+		color: white;
+	}
+}
+
+.buy_button{
+	background-color: black;
+	border-color: black;
+	color: white;
 }
 
 .fb-comments, .fb-comments * {
@@ -153,7 +166,7 @@ table{
 }
 
 .spacer{
-	border-bottom: 1px solid #{$subtle_gray};
+	border-bottom: 1px solid #{$spacer_gray};
 }
 
 .title{
@@ -171,6 +184,31 @@ table{
 	}
 }
 
+.navigation_bar{
+	border-bottom: black 3px solid;
+	height: #{$header_bar_height};
+	margin: 10px 0 0 0;
+
+	a{
+		color: black;
+		font-size: 28px;
+		font-weight: bold;
+		margin: 0 7px 0 7px;
+	}
+}
+
+.navigation_bar_decoration_1{
+	bottom: 0px;
+	border-bottom: white 1px solid;
+	width: 100%
+}
+
+.navigation_bar_decoration_2{
+	bottom: 0px;
+	border-bottom: black 5px solid;
+	width: 100%;
+}
+
 #popups{
 	position: absolute;
 	z-index: 100;
@@ -184,18 +222,6 @@ table{
 	position: fixed;
 	width: 100%;
 	z-index: 99;
-}
-
-#footer{
-	bottom: 0px;
-	height: #{$footer_height};
-	position: absolute;
-	width: 100%;
-	a{
-		color: #{$subtle_gray_dark};
-		font-size: 13px;
-		margin: 0px 10px 0px 10px;
-	}
 }
 
 #scene{
@@ -212,7 +238,7 @@ table{
 
 	#scene_body{
 		display: inline-block;
-		margin: 30px 0px 110px 0px;
+		margin: 0px;
 		min-height: calc(100% -#{$header_height});
 		min-height: -moz-calc(100% - #{$header_height});
 		min-height: -webkit-calc(100% - #{$header_height});

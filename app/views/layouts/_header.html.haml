@@ -4,6 +4,6 @@
       =image_tag("#{@asset_root}/avatars/mikey.png", :id=>'header_logo')
     #header_title.title
       -title=""
-      -header.count.times do |i|
-        -title << (i%2 == 0 ? "<span style='color:#0099cc;'>#{header[i]}</span>" : header[i])
+      -header.each_with_index do |comp, i|
+        -title << (i%2 == 0 ? "<span class='highlight'>#{comp}</span>" : comp)
       =title.html_safe

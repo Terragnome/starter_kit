@@ -1,0 +1,6 @@
+-if navigation.previous || navigation.next
+  .navigation
+    -if navigation.previous
+      =link_to("PREVIOUS", post_url(navigation.previous.id, :display_slug=>navigation.previous.display_slug), 'data-push'=>true, :id=>'previous_post')
+    -if navigation.next
+      =link_to("NEXT", post_url(navigation.next.id, :display_slug=>navigation.next.display_slug), 'data-push'=>true, :id=>'next_post')

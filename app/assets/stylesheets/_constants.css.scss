@@ -1,14 +1,22 @@
-$header_bar_height: 30px;
-$header_bar_padding_v: 5px;
+$body_min_width: 320px;
+
+$header_bar_height: 42px;
+$header_bar_padding_h: 20px;
+$header_bar_padding_top: 10px;
+$header_bar_padding_bottom: 5px;
+$header_bar_decoration_1_height: 1px;
+$header_bar_decoration_2_height: 3px;
+$header_bar_decoration_3_height: 0px;
+$header_bar_decoration_4_height: 0px;
 
 $header_width: 300px;
-$header_height: 225px;
+$header_height: 350px;
 
 $logo_img_width: 300px;
 $logo_img_height: 150px;
 
 $footer_width: $header_height;
-$footer_height: 46px;
+$footer_height: 150px;
 
 $scene_body_margin_x: 20px;
 $scene_body_margin_y: 64px+$footer_height;
