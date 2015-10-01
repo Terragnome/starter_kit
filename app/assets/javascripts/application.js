@@ -19,6 +19,14 @@
 
 var Application = Application || {};
 
+Application.Init = function(){
+	window.wiselinks = new Wiselinks($('#scene_body'));
+	// $(document).ajaxStart(Application.OnAjaxStart);
+	// $(document).ajaxComplete(Application.OnAjaxComplete);
+	Application.InitScroll(100);
+	Header.Init();
+}
+
 Application.ToggleObjDisplay = function(obj){ Application.SetObjDisplay(obj, (obj.css('display')=='none')); }
 Application.SetObjDisplay = function(obj, isOn){
 	if(obj != null){
@@ -40,13 +48,6 @@ Application.SetBlockerDisplay = function(isOn){
 	}else{
 		blocker.fadeOut('fast', function(){ Application.SetObjDisplay(blocker, false); });
 	}
-}
-
-Application.OnReady = function(){
-	window.wiselinks = new Wiselinks($('#scene_body'));
-	// $(document).ajaxStart(Application.OnAjaxStart);
-	// $(document).ajaxComplete(Application.OnAjaxComplete);
-	Application.InitScroll(100);
 }
 
 Application.OnAjaxStart = function(){
@@ -98,4 +99,4 @@ Application.UpdateHeaderBar = function(scrollCutoff){
 	}
 }
 
-$(Application.OnReady);
+$(Application.Init);

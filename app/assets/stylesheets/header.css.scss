@@ -129,11 +129,27 @@
 		margin: #{$header_bar_padding_top} #{$header_bar_padding_h} #{$header_bar_padding_bottom} #{$header_bar_padding_h};
 	}
 
-	.menu{
+	.nav_menu_button{
+		cursor: pointer;
 		color: white;
 		display: none;
 		font-size: 24px;
 		margin: -6px 0 0 0;
+	}
+
+	.nav_menu{
+		display: none;
+		margin: 10px 0 30px 0;
+		text-align: center;
+		top: #{$header_bar_height};
+		width: 100%;
+		z-index: 9;
+
+		a{
+			width: 100%;
+			height: 20px;
+			margin: 20px 20px 20px 20px;
+		}
 	}
 }
 
@@ -163,7 +179,11 @@
 			}
 		}
 
-		.menu{
+		.nav_menu_button{
+			display: block;
+		}
+
+		.nav_menu{
 			display: block;
 		}
 	}

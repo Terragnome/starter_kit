@@ -1,20 +1,17 @@
 #header_bar
   .header_bar_inner
     .links
+      .nav_menu_button.left
+        ="☰"
       %span.title
         -title=""
         -@app_title_components.each_with_index do |comp, i|
           -title << (i%2 == 0 ? "<span class='highlight'>#{comp[0]}</span>" : comp[0])
         =title.html_safe
-
-      =link_to('features', root_path, 'data-push'=>true)
-      =link_to('gear', feed_path(:tag=>'gear'), 'data-push'=>true)
-      =link_to('tech', feed_path(:tag=>'tech'), 'data-push'=>true)
-      =link_to('gifts', feed_path(:tag=>'gifts'), 'data-push'=>true)
-      =link_to('archive', archive_path, 'data-push'=>true)
-      .menu.left
-        ="☰"
+      =render :partial=>'layouts/nav_links'
   .header_bar_decoration_1
   .header_bar_decoration_2
   .header_bar_decoration_3
   .header_bar_decoration_4
+  .nav_menu
+    =render :partial=>'layouts/nav_links'
