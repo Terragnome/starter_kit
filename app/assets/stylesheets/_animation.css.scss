@@ -1,22 +1,33 @@
 @keyframes AnimRollDown {
-    to  { margin-top: 0px; }
+	from{
+		transform: translateY(-100%);
+	}
+    to{
+    	transform: translateY(0%);
+    }
 }
 
 @keyframes AnimRollUp {
-    from  { margin-top: 0px; }
-    to { display: none; }
+   	from{
+    	transform: translateY(0%);
+    }
+    to{
+    	transform: translateY(-100%);
+    }
 }
 
 .anim_roll_down{
+	-webkit-animation: AnimRollDown 1s;
 	animation-name: AnimRollDown;
-    animation-duration: 0.4s;
+    animation-duration: 0.3s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
 
 .anim_roll_up{
+	-webkit-animation: AnimRollUp 1s;
 	animation-name: AnimRollUp;
-    animation-duration: 0.4s;
+    animation-duration: 0.25s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }

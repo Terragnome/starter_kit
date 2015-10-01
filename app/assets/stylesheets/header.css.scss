@@ -35,12 +35,9 @@
 
 #header_bar{
 	/*
-	display: none;
-	margin: -#{$header_bar_height + $header_bar_padding_top + $header_bar_padding_bottom} 0 0 0;
 	box-shadow: 0px 0px 3px #{$dark_gray};
 	*/
 
-	background-color: black;
 	left: 0px;
 	margin: 0px;
 	overflow: hidden;
@@ -64,7 +61,7 @@
 		font-family: 'Oswald';
 		font-size: 16px;
 		font-weight: normal;
-		margin: 0 16px 0 16px;
+		padding: 0 16px 0 16px;
 
 		&:hover{
 			color: #{$highlight_color};
@@ -72,31 +69,27 @@
 	}
 
 	.header_bar_inner{
-		height: #{$header_bar_height - $header_bar_decoration_1_height - $header_bar_decoration_2_height - $header_bar_decoration_3_height - $header_bar_decoration_4_height};
+		background-color: black;
+		position: relative;
+		height: #{$header_bar_height - $header_bar_decoration_1_height - $header_bar_decoration_2_height};
+		width: 100%;
+		z-index: 12;
 	}
 
 	.header_bar_decoration_1{
+		position: relative;
 		bottom: 0px;
 		border-bottom: white #{$header_bar_decoration_1_height} solid;
-		width: 100%
+		width: 100%;
+		z-index: 12;
 	}
 
 	.header_bar_decoration_2{
+		position: relative;
 		bottom: 0px;
 		border-bottom: black #{$header_bar_decoration_2_height} solid;
 		width: 100%;
-	}
-
-	.header_bar_decoration_3{
-		bottom: 0px;
-		border-bottom: white #{$header_bar_decoration_3_height} solid;
-		width: 100%
-	}
-
-	.header_bar_decoration_4{
-		bottom: 0px;
-		border-bottom: black #{$header_bar_decoration_4_height} solid;
-		width: 100%;
+		z-index: 12;
 	}
 
 	.title{
@@ -126,7 +119,7 @@
 
 	.links{
 		font-size: 5px;
-		margin: #{$header_bar_padding_top} #{$header_bar_padding_h} #{$header_bar_padding_bottom} #{$header_bar_padding_h};
+		padding: #{$header_bar_padding_top} #{$header_bar_padding_h} #{$header_bar_padding_bottom} #{$header_bar_padding_h};
 	}
 
 	.nav_menu_button{
@@ -138,17 +131,21 @@
 	}
 
 	.nav_menu{
+		background: black;
 		display: none;
-		margin: 10px 0 30px 0;
-		text-align: center;
 		top: #{$header_bar_height};
-		width: 100%;
-		z-index: 9;
+		z-index: 11;
 
 		a{
 			width: 100%;
 			height: 20px;
-			margin: 20px 20px 20px 20px;
+			padding: 20px 20px 20px 20px;
+		}
+
+		.nav_menu_inner{
+			margin: 0 0 30px 0;
+			width: 100%;
+			text-align: center;
 		}
 	}
 }
@@ -180,10 +177,6 @@
 		}
 
 		.nav_menu_button{
-			display: block;
-		}
-
-		.nav_menu{
 			display: block;
 		}
 	}

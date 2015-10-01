@@ -1,5 +1,5 @@
 =link_to('features', root_path, 'data-push'=>true)
-=link_to('gear', root_path, 'data-push'=>true)
-=link_to('tech', root_path, 'data-push'=>true)
-=link_to('gifts', root_path, 'data-push'=>true)
+=link_to('gear', feed_path(:tag=>'gear'), 'data-push'=>true)
+=link_to('tech', feed_path(:tag=>'tech'), 'data-push'=>true)
+=link_to('gifts', feed_path(:tag=>'gifts'), 'data-push'=>true)
 =link_to('archive', archive_path, 'data-push'=>true)
