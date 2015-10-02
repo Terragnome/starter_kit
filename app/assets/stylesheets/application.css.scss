@@ -36,7 +36,11 @@ div{
 }
 
 html, body{
-	background-color: black;
+    background-color: black;
+    /*
+    background-image: -webkit-linear-gradient(top, black 49%, white 49%);
+    background-image: linear-gradient(top, black 49%, white 49%);
+    */
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: 0px;
@@ -77,6 +81,11 @@ img{
 	display: inline-block;
 	margin: 0px;
 	padding: 0px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 label{

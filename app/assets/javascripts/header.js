@@ -3,8 +3,7 @@ var Header = Header || {};
 Header.Init = function(url){
 	$(".nav_menu_button").click(Header.ToggleMenu);
 	Header.isMenuOpen = false;
-
-	$(".nav_menu").find("a").click(Header.CloseMenu);
+	$("#header_bar").find(".nav_button").click(Header.CloseMenu);
 }
 
 Header.ToggleMenu = function(){
@@ -14,17 +13,14 @@ Header.ToggleMenu = function(){
 Header.OpenMenu = function(){
 	var navMenu = $(".nav_menu");
 	if( !navMenu.hasClass("anim_roll_down") ){
-		navMenu.show();
 		navMenu.addClass("anim_roll_down");
-		navMenu.removeClass("anim_roll_up");
 	}
+	navMenu.show();
 }
 Header.CloseMenu = function(){
 	var navMenu = $(".nav_menu");
-	if( !navMenu.hasClass("anim_roll_up") ){
+	if( navMenu.hasClass("anim_roll_down") ){
 		navMenu.removeClass("anim_roll_down");
-		navMenu.addClass("anim_roll_up");
-		navMenu.hide();
-		// navMenu.one("transitionend", navMenu.hide);
 	}
+	navMenu.hide();
 }

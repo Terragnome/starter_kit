@@ -1,6 +1,14 @@
 -feed_list.each do |post|
   =render :partial=>'feed_post', :object=>post
 
--if @page != nil and feed_list.length>0
-  :javascript
-    PostFeed.Init("#{feed_url(:tag=>@tag, :page=>@page+1, :format=>:js)}");
+-if feed_list.length>0
+  -if @posts.next_page
+    -next_url = feed_url(:tag=>@tag, :page=>@posts.next_page)
+    -next_url_ajax = feed_url(:tag=>@tag, :page=>@posts.next_page, :format=>:js)
+
+    -if next_url
+      .post_feed_instructions
+        =link_to('most posts', next_url, :class=>'button')
+    -if next_url_ajax
+      :javascript
+        PostFeed.Init("#{next_url_ajax}");

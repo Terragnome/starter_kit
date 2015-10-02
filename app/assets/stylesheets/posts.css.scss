@@ -5,19 +5,23 @@
 
 #post_feed{
 	margin: 10px 0px 25px 0px;
+	text-align: center;
 
-	.instructions{
-		color: #{$subtle_gray};
-		font-family: 'Oswald';
+	.post_feed_instructions{
 		font-size: 18px;
-		font-weight: normal;
-		text-align: center;
-		text-transform: uppercase;
 		margin: 30px 0 60px 0;
+
+		.button{
+			color: white;
+			background-color: black;
+			border-color: black;
+		}
 	}
 
 	.feed_post{
 		margin: 30px 0px 30px 0px;
+		text-align: left;
+
 		.header{
 			.icon{
 				float: left;

@@ -123,11 +123,16 @@
 	}
 
 	.nav_menu_button{
-		cursor: pointer;
 		color: white;
+		cursor: pointer;
 		display: none;
 		font-size: 24px;
-		margin: -6px 0 0 0;
+		margin: -12px 0 0 -6px;
+		padding: 6px;
+
+		&:before{
+			content: "☰";
+		}
 	}
 
 	.nav_menu{
