@@ -1,15 +1,16 @@
--feed_list.each do |post|
-  =render :partial=>'feed_post', :object=>post
+.feed_list
+  -feed_list.each do |post|
+    =render :partial=>'feed_post', :object=>post
 
--if @posts.previous_page
-  -prev_url = feed_url(:tag=>@tag, :page=>@posts.previous_page)
-  -prev_ajax = feed_url(:tag=>@tag, :page=>@posts.previous_page, :format=>:js)
+  -if @posts.previous_page
+    -prev_url = feed_url(:tag=>@tag, :page=>@posts.previous_page)
+    -prev_ajax = feed_url(:tag=>@tag, :page=>@posts.previous_page, :format=>:js)
 
--if @posts.next_page
-  -next_url = feed_url(:tag=>@tag, :page=>@posts.next_page)
-  -next_ajax = feed_url(:tag=>@tag, :page=>@posts.next_page, :format=>:js)
+  -if @posts.next_page
+    -next_url = feed_url(:tag=>@tag, :page=>@posts.next_page)
+    -next_ajax = feed_url(:tag=>@tag, :page=>@posts.next_page, :format=>:js)
 
--if next_url
-  =link_to('read more', next_url, :class=>['more_posts', 'button'])
+  -if next_url
+    =link_to('read more', next_url, :class=>['more_posts', 'button'])
 
-.feed_list_urls.none{:prev_url=>prev_url, :prev_ajax=>prev_ajax, :next_url=>next_url, :next_ajax=>next_ajax}
+  .feed_list_urls.none{:prev_url=>prev_url, :prev_ajax=>prev_ajax, :next_url=>next_url, :next_ajax=>next_ajax}

@@ -58,11 +58,13 @@ PostFeed.LoadMore = function(nextUrl, nextUrlAjax){
         .done(function(data) {
         	history.pushState({id: nextUrl}, '', nextUrl);
 
-	  	    var elems = $(".more_posts");
-	  	    var lastElem = $(".more_posts").last();
+	  	    var elems = $(".feed_list");
+	  	    var lastElem = $(".feed_list").last();
 
-            elems.each(function(index, elem){
-            	if( $(elem)[0] != lastElem[0] ) elem.parentNode.removeChild(elem);
+            elems.each(function(i, elem){
+            	if( $(elem)[0] != lastElem[0] ){
+            		$(elem).find(".more_posts").remove();
+            	}
             });
 
             PostFeed.UpdateSpacers();
