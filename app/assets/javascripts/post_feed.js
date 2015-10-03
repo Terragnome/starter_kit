@@ -8,9 +8,9 @@ PostFeed.OnScroll = function(){
 	var scrollPos = $("body").scrollTop();
 	var scrollBottom = $(document).height()-$(window).outerHeight();
 
-	if(!PostFeed.isLoading){
-		var isPrev = scrollPos == 0;
-		var isNext = scrollPos >= scrollBottom ;
+	if(!PostFeed.isLoading && postFeed.length){
+		var isPrev = (scrollPos == 0);
+		var isNext = (scrollPos >= scrollBottom);
 
 		if(isPrev || isNext){
 			PostFeed.isLoading = true
@@ -18,16 +18,25 @@ PostFeed.OnScroll = function(){
 			var urls = $(".feed_list_urls")
 			if(isPrev){
 				urls = urls.first();
-				PostFeed.LoadMore(
-					urls.attr("prev_url"),
-					urls.attr("prev_ajax")
-				);
+				var prevUrl = urls.attr("prev_url");
+				var prevAjax = urls.attr("prev_ajax");
+				if(prevUrl){
+					PostFeed.LoadMore(
+						prevUrl,
+						prevAjax
+					);
+				}
 			}else{
 				urls = urls.last();
-				PostFeed.LoadMore(
-					urls.attr("next_url"),
-					urls.attr("next_ajax")
-				);
+				var nextUrl = urls.attr("next_url");
+				var nextAjax = urls.attr("next_ajax");
+				console.log(nextUrl);
+				if(nextUrl){
+					PostFeed.LoadMore(
+						nextUrl,
+						nextAjax
+					);
+				}
 			}
 	    }
 	}

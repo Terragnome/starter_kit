@@ -23,7 +23,6 @@
       %fb:comments-count.comment_count{:href=>post_url(post.id, :display_slug=>post.display_slug)}
     -if post.url
       =link_to(post.display_call_to_action, post.url, :class=>['button', 'buy_button'])
-  .spacer
     .fb-comments{'data-href'=>post_url(post.id, :display_slug=>post.display_slug), 'data-numposts'=>'5', 'data-colorscheme'=>'light', :style=>'display:none;'}
   .share_container
     =render :partial=>'share', :object=>post
