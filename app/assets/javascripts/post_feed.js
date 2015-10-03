@@ -10,7 +10,8 @@ PostFeed.Init = function(){
 	PostFeed.LoadMore(
 		prevUrl,
 		prevAjax,
-		"prev"
+		"prev",
+		false
 	);
 
 	var nextUrl = urls.attr("next_url");
@@ -19,7 +20,8 @@ PostFeed.Init = function(){
 		PostFeed.LoadMore(
 			nextUrl,
 			nextAjax,
-			"next"
+			"next",
+			false
 		);
 	}
 }
@@ -35,6 +37,11 @@ PostFeed.OnScroll = function(){
 
 	var scrollPos = $(window).scrollTop();
 	var scrollBottom = $(document).height()-$(window).outerHeight();
+
+	// console.log(scrollPos);
+	// var bbox = $("#post_feed_list").get(0).getBoundingClientRect();
+	// console.log( "TOP: "+bbox.top );
+	// console.log( "BOTTOM: "+bbox.bottom );
 
 	if(!PostFeed.isLoading && postFeed.length){
 		var isPrev = (scrollPos <= 0);
@@ -52,7 +59,8 @@ PostFeed.OnScroll = function(){
 					PostFeed.LoadMore(
 						prevUrl,
 						prevAjax,
-						"prev"
+						"prev",
+						true
 					);
 				}else{
 					PostFeed.isLoading = false;
@@ -65,7 +73,8 @@ PostFeed.OnScroll = function(){
 					PostFeed.LoadMore(
 						nextUrl,
 						nextAjax,
-						"next"
+						"next",
+						true
 					);
 				}else{
 					PostFeed.isLoading = false;
@@ -75,17 +84,15 @@ PostFeed.OnScroll = function(){
 	}
 }
 
-PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll){
+PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
 	var request = $.ajax({
 		type: "GET",
 		url: nextUrlAjax,
-		data: {
-			"scroll": scroll
-		},
+		data: { "scroll": scroll },
 		dataType: "script"
 	})
         .done(function(data) {
-        	history.pushState({id: nextUrl}, '', nextUrl);
+        	if(updateHistory) history.pushState({id: nextUrl}, '', nextUrl);
 
 	  	    var elems = $(".feed_list");
 	  	    var lastElem = $(".feed_list").last();
@@ -101,8 +108,6 @@ PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll){
 
             if(scroll == "prev"){
 	            var firstFeedList = $(".feed_list").first();
-	            console.log( $(firstFeedList).height() );
-
 	            $(window).scrollTop($(firstFeedList).height());
 	    	}
 	    })
