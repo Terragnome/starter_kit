@@ -1,1 +1,6 @@
-$('#post_feed_list').append("<%= escape_javascript(render :partial=>'feed_list', :object=>@posts ) %>");
+var data = "<%= escape_javascript(render :partial=>'feed_list', :object=>@posts ) %>";
+if("<%= escape_javascript(@scroll) %>" == "next"){
+	$('#post_feed_list').append(data);
+}else{
+	$('#post_feed_list').prepend(data);
+}

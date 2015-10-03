@@ -16,12 +16,15 @@ class PostsController < ApplicationController
   def feed
     @tag = params.has_key?(:tag) ? params[:tag].to_sym : :all
     @page = params.has_key?(:page) ? params[:page].to_i : 1
+    @scroll = params.has_key?(:scroll) ? params[:scroll] : :next
 
     if @tag == :all
       @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
     else
       @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
     end
+
+    @posts.reverse if @scroll == :prev
 
     respond_to do |format|
       format.html

@@ -31,8 +31,11 @@ PostFeed.OnScroll = function(){
 				if(prevUrl){
 					PostFeed.LoadMore(
 						prevUrl,
-						prevAjax
+						prevAjax,
+						"prev"
 					);
+				}else{
+					PostFeed.isLoading = false;
 				}
 			}else{
 				urls = urls.last();
@@ -41,18 +44,24 @@ PostFeed.OnScroll = function(){
 				if(nextUrl){
 					PostFeed.LoadMore(
 						nextUrl,
-						nextAjax
+						nextAjax,
+						"next"
 					);
+				}else{
+					PostFeed.isLoading = false;
 				}
 			}
 	    }
 	}
 }
 
-PostFeed.LoadMore = function(nextUrl, nextUrlAjax){
+PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll){
 	var request = $.ajax({
 		type: "GET",
 		url: nextUrlAjax,
+		data: {
+			"scroll": scroll
+		},
 		dataType: "script"
 	})
         .done(function(data) {
@@ -68,10 +77,9 @@ PostFeed.LoadMore = function(nextUrl, nextUrlAjax){
             });
 
             PostFeed.UpdateSpacers();
-
-            // $('html,body').scrollTop(scrollTo);
 	    })
-	    .fail(function(data) {})
+	    .fail(function(data) {
+	    })
 	    .always(function(data) {
             PostFeed.isLoading = false;
 	    });
