@@ -23,6 +23,7 @@ Application.Init = function(){
 	window.wiselinks = new Wiselinks($('#scene_body'));
 	// $(document).ajaxStart(Application.OnAjaxStart);
 	// $(document).ajaxComplete(Application.OnAjaxComplete);
+	Application.InitResize();
 	Application.InitScroll(100);
 	Header.Init();
 }
@@ -65,9 +66,15 @@ Application.OnAjaxComplete = function(){
 	FB.XFBML.parse();
 }
 
+Application.InitResize = function(){
+	$(window).resize(function (){
+		Header.OnResize();
+	});
+}
+
 var scrollTimeout;
 Application.InitScroll = function(scrollTimeoutInterval){
-	$(document).scroll(function () {
+	$(document).scroll(function (){
 	    if(scrollTimeout){
 	        clearTimeout(scrollTimeout);
 	        scrollTimeout = null;

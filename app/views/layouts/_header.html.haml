@@ -1,6 +1,6 @@
 #header
-  .logo
-    =link_to(root_path, 'data-push'=>true) do
+  =link_to(root_path, 'data-push'=>true) do
+    .logo
       =image_tag("#{@asset_root}/avatars/mikey.png", :id=>'header_logo')
     #header_title.title
       -title=""

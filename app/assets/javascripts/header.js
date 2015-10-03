@@ -12,15 +12,19 @@ Header.ToggleMenu = function(){
 }
 Header.OpenMenu = function(){
 	var navMenu = $(".nav_menu");
-	if( !navMenu.hasClass("anim_roll_down") ){
+	if( navMenu && !navMenu.hasClass("anim_roll_down") ){
 		navMenu.addClass("anim_roll_down");
 	}
 	navMenu.show();
 }
 Header.CloseMenu = function(){
 	var navMenu = $(".nav_menu");
-	if( navMenu.hasClass("anim_roll_down") ){
+	if( navMenu && navMenu.hasClass("anim_roll_down") ){
 		navMenu.removeClass("anim_roll_down");
 	}
 	navMenu.hide();
+}
+
+Header.OnResize = function(){
+	Header.CloseMenu();
 }

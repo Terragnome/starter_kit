@@ -1,6 +1,7 @@
 var PostFeed = PostFeed || {};
 
-PostFeed.Init = function(url){
+PostFeed.Init = function(ajaxUrl, url){
+	PostFeed.nextAjaxUrl = ajaxUrl;
 	PostFeed.nextUrl = url;
 }
 
@@ -10,21 +11,23 @@ PostFeed.OnScroll = function(){
 		var scrollPos = $("body").scrollTop();
 		var scrollBottom = $(document).height()-$(window).outerHeight();
 
-		if(PostFeed.nextUrl && !PostFeed.isLoading && scrollPos >= scrollBottom){
+		if(PostFeed.nextAjaxUrl && !PostFeed.isLoading && scrollPos >= scrollBottom){
 			PostFeed.isLoading = true
-			PostFeed.LoadMore(PostFeed.nextUrl);
+			PostFeed.LoadMore(PostFeed.nextAjaxUrl, PostFeed.nextUrl);
+            PostFeed.nextAjaxUrl = null;
             PostFeed.nextUrl = null;
 		}
 	}
 }
 
-PostFeed.LoadMore = function(nextUrl){
+PostFeed.LoadMore = function(nextAjaxUrl, nextUrl){
 	var request = $.ajax({
 		type: "GET",
-		url: nextUrl,
+		url: nextAjaxUrl,
 		dataType: "script"
 	})
         .done(function(data) {
+        	history.pushState({id: nextUrl}, '', nextUrl);
 	  	    var elems = $(".post_feed_instructions");
             var numElems = elems.length;
             elems.each(function(index, elem){

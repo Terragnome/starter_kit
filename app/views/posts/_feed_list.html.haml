@@ -11,4 +11,7 @@
         =link_to('most posts', next_url, :class=>'button')
     -if next_url_ajax
       :javascript
-        PostFeed.Init("#{next_url_ajax}");
+        PostFeed.Init(
+          "#{next_url_ajax}",
+          "#{next_url}"
+        );
