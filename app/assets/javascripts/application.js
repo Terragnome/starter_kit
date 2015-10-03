@@ -52,17 +52,13 @@ Application.SetBlockerDisplay = function(isOn){
 }
 
 Application.OnAjaxStart = function(){
-	$('#scene_content').animate({
-		opacity: 0.1
-    }, 100);
+	$('#scene_content').animate({opacity: 0.1}, 100);
 }
 Application.OnAjaxComplete = function(){
 	$('html,body').scrollTop(0);
 
 	$('#scene_content').css('opacity', 0.1);
-	$('#scene_content').animate({
-		opacity: 1
-    }, 100);
+	$('#scene_content').animate({opacity: 1}, 100);
 	FB.XFBML.parse();
 }
 
