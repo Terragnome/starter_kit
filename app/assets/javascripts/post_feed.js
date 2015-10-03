@@ -1,40 +1,54 @@
 var PostFeed = PostFeed || {};
 
-PostFeed.Init = function(ajaxUrl, url){
-	PostFeed.nextAjaxUrl = ajaxUrl;
-	PostFeed.nextUrl = url;
-}
+PostFeed.Init = function(){}
 
 PostFeed.OnScroll = function(){
 	var postFeed = $("#post_feed_list");
-	if(postFeed.length > 0){
-		var scrollPos = $("body").scrollTop();
-		var scrollBottom = $(document).height()-$(window).outerHeight();
 
-		if(PostFeed.nextAjaxUrl && !PostFeed.isLoading && scrollPos >= scrollBottom){
+	var scrollPos = $("body").scrollTop();
+	var scrollBottom = $(document).height()-$(window).outerHeight();
+
+	if(!PostFeed.isLoading){
+		var isPrev = scrollPos == 0;
+		var isNext = scrollPos >= scrollBottom ;
+
+		if(isPrev || isNext){
 			PostFeed.isLoading = true
-			PostFeed.LoadMore(PostFeed.nextAjaxUrl, PostFeed.nextUrl);
-            PostFeed.nextAjaxUrl = null;
-            PostFeed.nextUrl = null;
-		}
+
+			var urls = $(".feed_list_urls")
+			if(isPrev){
+				urls = urls.first();
+				PostFeed.LoadMore(
+					urls.attr("prev_url"),
+					urls.attr("prev_ajax")
+				);
+			}else{
+				urls = urls.last();
+				PostFeed.LoadMore(
+					urls.attr("next_url"),
+					urls.attr("next_ajax")
+				);
+			}
+	    }
 	}
 }
 
-PostFeed.LoadMore = function(nextAjaxUrl, nextUrl){
+PostFeed.LoadMore = function(nextUrl, nextUrlAjax){
 	var request = $.ajax({
 		type: "GET",
-		url: nextAjaxUrl,
+		url: nextUrlAjax,
 		dataType: "script"
 	})
         .done(function(data) {
         	history.pushState({id: nextUrl}, '', nextUrl);
-	  	    var elems = $(".post_feed_instructions");
-            var numElems = elems.length;
+	  	    var elems = $(".more_posts");
+	  	    var lastElem = $(".more_posts").last();
             elems.each(function(index, elem){
-                if(index+2 <= numElems){
-                    elem.parentNode.removeChild(elem);
-                }
+            	if( $(elem)[0] != lastElem[0] ) elem.parentNode.removeChild(elem);
             });
+            return data;
+
+            // $('html,body').scrollTop(scrollTo);
 	    })
 	    .fail(function(data) {})
 	    .always(function(data) {
