@@ -1,6 +1,14 @@
 var PostFeed = PostFeed || {};
 
-PostFeed.Init = function(){}
+PostFeed.Init = function(){
+	PostFeed.UpdateSpacers();
+}
+
+PostFeed.UpdateSpacers = function(){
+    var spacers = $("#post_feed_list").find(".spacer");
+    spacers.show();
+    spacers.last().hide();
+}
 
 PostFeed.OnScroll = function(){
 	var postFeed = $("#post_feed_list");
@@ -30,7 +38,6 @@ PostFeed.OnScroll = function(){
 				urls = urls.last();
 				var nextUrl = urls.attr("next_url");
 				var nextAjax = urls.attr("next_ajax");
-				console.log(nextUrl);
 				if(nextUrl){
 					PostFeed.LoadMore(
 						nextUrl,
@@ -50,12 +57,15 @@ PostFeed.LoadMore = function(nextUrl, nextUrlAjax){
 	})
         .done(function(data) {
         	history.pushState({id: nextUrl}, '', nextUrl);
+
 	  	    var elems = $(".more_posts");
 	  	    var lastElem = $(".more_posts").last();
+
             elems.each(function(index, elem){
             	if( $(elem)[0] != lastElem[0] ) elem.parentNode.removeChild(elem);
             });
-            return data;
+
+            PostFeed.UpdateSpacers();
 
             // $('html,body').scrollTop(scrollTo);
 	    })
