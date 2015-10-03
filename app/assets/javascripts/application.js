@@ -55,7 +55,7 @@ Application.OnAjaxStart = function(){
 	$('#scene_content').animate({opacity: 0.1}, 100);
 }
 Application.OnAjaxComplete = function(){
-	$('html,body').scrollTop(0);
+	$(window).scrollTop(0);
 
 	$('#scene_content').css('opacity', 0.1);
 	$('#scene_content').animate({opacity: 1}, 100);
@@ -86,7 +86,7 @@ Application.OnScroll = function () {
 }
 
 Application.UpdateHeaderBar = function(scrollCutoff){
-	var scrollPosition = $("body").scrollTop();
+	var scrollPosition = $(window).scrollTop();
 	var headerBar = $("#header_bar");
 	if(scrollPosition >= scrollCutoff){
 		if( !headerBar.hasClass("anim_roll_down") ){

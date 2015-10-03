@@ -33,7 +33,7 @@ PostFeed.UpdateSpacers = function(){
 PostFeed.OnScroll = function(){
 	var postFeed = $("#post_feed_list");
 
-	var scrollPos = $("body").scrollTop();
+	var scrollPos = $(window).scrollTop();
 	var scrollBottom = $(document).height()-$(window).outerHeight();
 
 	if(!PostFeed.isLoading && postFeed.length){
