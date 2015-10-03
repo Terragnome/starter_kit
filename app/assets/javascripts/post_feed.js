@@ -2,6 +2,26 @@ var PostFeed = PostFeed || {};
 
 PostFeed.Init = function(){
 	PostFeed.UpdateSpacers();
+
+	var urls = $(".feed_list_urls").first();
+
+	var prevUrl = urls.attr("prev_url");
+	var prevAjax = urls.attr("prev_ajax");
+	PostFeed.LoadMore(
+		prevUrl,
+		prevAjax,
+		"prev"
+	);
+
+	var nextUrl = urls.attr("next_url");
+	var nextAjax = urls.attr("next_ajax");
+	if(nextUrl){
+		PostFeed.LoadMore(
+			nextUrl,
+			nextAjax,
+			"next"
+		);
+	}
 }
 
 PostFeed.UpdateSpacers = function(){
@@ -17,7 +37,7 @@ PostFeed.OnScroll = function(){
 	var scrollBottom = $(document).height()-$(window).outerHeight();
 
 	if(!PostFeed.isLoading && postFeed.length){
-		var isPrev = (scrollPos == 0);
+		var isPrev = (scrollPos <= 0);
 		var isNext = (scrollPos >= scrollBottom);
 
 		if(isPrev || isNext){
@@ -76,7 +96,15 @@ PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll){
             	}
             });
 
+            // Only show spacers between entries
             PostFeed.UpdateSpacers();
+
+            if(scroll == "prev"){
+	            var firstFeedList = $(".feed_list").first();
+	            console.log( $(firstFeedList).height() );
+
+	            $(window).scrollTop($(firstFeedList).height());
+	    	}
 	    })
 	    .fail(function(data) {
 	    })

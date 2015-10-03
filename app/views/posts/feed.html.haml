@@ -1,10 +1,5 @@
 #post_feed
   #post_feed_list
     =render :partial=>'feed_list', :object=>@posts
-  / .instructions
-  /   -if @posts.count > 0
-  /     ="Scroll for more"
-  /   -else
-  /     ="No Posts"
 :javascript
   PostFeed.Init();
