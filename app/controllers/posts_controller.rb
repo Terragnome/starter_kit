@@ -1,5 +1,5 @@
 class PostsController < ApplicationController 
-  @@feed_length = 10
+  @@feed_length = 5
 
   def latest
     @tag=:all

@@ -21,8 +21,8 @@ var Application = Application || {};
 
 Application.Init = function(){
 	window.wiselinks = new Wiselinks($('#scene_body'));
-	// $(document).ajaxStart(Application.OnAjaxStart);
-	// $(document).ajaxComplete(Application.OnAjaxComplete);
+	$(document).ajaxStart(Application.OnAjaxStart);
+	$(document).ajaxComplete(Application.OnAjaxComplete);
 	Application.InitResize();
 	Application.InitScroll(100);
 	Header.Init();
@@ -52,14 +52,16 @@ Application.SetBlockerDisplay = function(isOn){
 }
 
 Application.OnAjaxStart = function(){
-	$('#scene_content').animate({opacity: 0.1}, 100);
+	// $('#scene_content').animate({opacity: 0.1}, 100);
 }
 Application.OnAjaxComplete = function(){
-	$(window).scrollTop(0);
+	$('html, body').animate({
+		scrollTop: 0
+	}, 125);
 
-	$('#scene_content').css('opacity', 0.1);
-	$('#scene_content').animate({opacity: 1}, 100);
-	FB.XFBML.parse();
+	// $('#scene_content').css('opacity', 0.1);
+	// $('#scene_content').animate({opacity: 1}, 100);
+	// FB.XFBML.parse();
 }
 
 Application.InitResize = function(){
@@ -82,24 +84,24 @@ Application.InitScroll = function(scrollTimeoutInterval){
 
 Application.OnScroll = function () {
 	// Application.UpdateHeaderBar(230);
-	PostFeed.OnScroll();
+	// PostFeed.OnScroll();
 }
 
-Application.UpdateHeaderBar = function(scrollCutoff){
-	var scrollPosition = $(window).scrollTop();
-	var headerBar = $("#header_bar");
-	if(scrollPosition >= scrollCutoff){
-		if( !headerBar.hasClass("anim_roll_down") ){
-			headerBar.show();
-			headerBar.addClass("anim_roll_down");
-			headerBar.removeClass("anim_roll_up");
-		}
-	}else{
-		if( !headerBar.hasClass("anim_roll_up") ){
-			headerBar.addClass("anim_roll_up");
-			headerBar.removeClass("anim_roll_down");
-		}
-	}
-}
+// Application.UpdateHeaderBar = function(scrollCutoff){
+// 	var scrollPosition = $(window).scrollTop();
+// 	var headerBar = $("#header_bar");
+// 	if(scrollPosition >= scrollCutoff){
+// 		if( !headerBar.hasClass("anim_roll_down") ){
+// 			headerBar.show();
+// 			headerBar.addClass("anim_roll_down");
+// 			headerBar.removeClass("anim_roll_up");
+// 		}
+// 	}else{
+// 		if( !headerBar.hasClass("anim_roll_up") ){
+// 			headerBar.addClass("anim_roll_up");
+// 			headerBar.removeClass("anim_roll_down");
+// 		}
+// 	}
+// }
 
 $(Application.Init);

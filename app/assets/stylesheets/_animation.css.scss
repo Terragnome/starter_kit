@@ -7,6 +7,15 @@
     }
 }
 
+@keyframes AnimFadeIn {
+	from{
+		opacity: 0;
+	}
+    to{
+    	opacity: 1;
+    }
+}
+
 @keyframes AnimRollUp {
    	from{
     	transform: translateY(0%);
@@ -17,17 +26,17 @@
 }
 
 .anim_roll_down{
-	-webkit-animation: AnimRollDown 1s;
+	-webkit-animation: AnimRollDown 0.3s;
 	animation-name: AnimRollDown;
     animation-duration: 0.3s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
 
-.anim_roll_up{
-	-webkit-animation: AnimRollUp 1s;
-	animation-name: AnimRollUp;
-    animation-duration: 0.25s;
+.anim_fade_in{
+	-webkit-animation: AnimFadeIn 0.5s;
+	animation-name: AnimFadeIn;
+    animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }

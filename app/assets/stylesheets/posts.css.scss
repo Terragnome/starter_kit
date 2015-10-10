@@ -8,17 +8,21 @@
 	text-align: center;
 
 	.more_posts{
-		font-size: 18px;
-		margin: 30px 0 60px 0;
-
 		color: white;
 		background-color: black;
 		border-color: black;
+		font-size: 18px;
+		margin: 30px 0 60px 0;
+		width: 100%;
 
 		&:hover{
 			background-color: #{$highlight_color};
 			border-color: #{$highlight_color};
 		}
+	}
+
+	.feed_list{
+		width: 100%;
 	}
 
 	.feed_post{

@@ -1,5 +1,5 @@
 #post_feed
   #post_feed_list
-    =render :partial=>'feed_list', :object=>@posts
+    =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tag=>@tag}
 :javascript
   PostFeed.Init();
