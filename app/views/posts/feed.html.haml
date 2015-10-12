@@ -1,3 +1,8 @@
+-if @tag == :all
+  -wiselinks_title(@app_title)
+-else
+  -wiselinks_title("#{@tag.capitalize} | #{@app_title}")
+
 #post_feed
   #post_feed_list
     =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tag=>@tag}

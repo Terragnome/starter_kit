@@ -21,12 +21,37 @@ var Application = Application || {};
 
 Application.Init = function(){
 	window.wiselinks = new Wiselinks($('#scene_body'));
-	$(document).ajaxStart(Application.OnAjaxStart);
-	$(document).ajaxComplete(Application.OnAjaxComplete);
+
+	$(document).off('page:loading').on('page:loading', Application.OnPageLoading);
+	$(document).off('page:redirected').on('page:redirected', Application.OnPageRedirected);
+	$(document).off('page:always').on('page:always', Application.OnPageAlways);
+	$(document).off('page:done').on('page:done', Application.OnPageDone);
+	$(document).off('page:fail').on('page:fail', Application.OnPageFail);
+
 	Application.InitResize();
 	Application.InitScroll(100);
 	Header.Init();
 }
+
+Application.OnPageLoading = function(e, target, render, url){}
+
+Application.OnPageRedirected = function(e, target, render, url){}
+
+var autoPageScroll = null;
+Application.OnPageAlways = function(e, target, render, url){
+	if(autoPageScroll) autoPageScroll.stop();
+
+	autoPageScroll = $('html, body').animate({
+		scrollTop: 0
+	}, 150);
+
+	// $('#scene_content').css('opacity', 0.1);
+	// $('#scene_content').animate({opacity: 1}, 100);
+	// FB.XFBML.parse();
+}
+
+Application.OnPageDone = function(e, target, render, url){}
+Application.OnPageFail = function(e, target, render, url){}
 
 Application.ToggleObjDisplay = function(obj){ Application.SetObjDisplay(obj, (obj.css('display')=='none')); }
 Application.SetObjDisplay = function(obj, isOn){
@@ -49,22 +74,6 @@ Application.SetBlockerDisplay = function(isOn){
 	}else{
 		blocker.fadeOut('fast', function(){ Application.SetObjDisplay(blocker, false); });
 	}
-}
-
-Application.OnAjaxStart = function(){
-	// $('#scene_content').animate({opacity: 0.1}, 100);
-}
-var autoPageScroll = null;
-Application.OnAjaxComplete = function(){
-	if(autoPageScroll) autoPageScroll.stop();
-
-	autoPageScroll = $('html, body').animate({
-		scrollTop: 0
-	}, 150);
-
-	// $('#scene_content').css('opacity', 0.1);
-	// $('#scene_content').animate({opacity: 1}, 100);
-	// FB.XFBML.parse();
 }
 
 Application.InitResize = function(){

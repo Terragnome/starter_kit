@@ -1,16 +1,17 @@
 .feed_post{:id=>"feed_post_#{feed_post.id}"}
   .header
     %h1
-      =link_to(feed_post.title, post_path(feed_post.id, :display_slug=>feed_post.display_slug))
+      =link_to(feed_post.title, post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true)
     .info_section
       .info
         .text
           =feed_post.ago.capitalize
   .body
     -if feed_post.cover_photo
-      =image_tag(feed_post.cover_photo.remote_url)
+      =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do      
+        =image_tag(feed_post.cover_photo.remote_url)
     %p
-      =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug)) do
+      =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do
         =feed_post.summary.gsub(/\n/, '<br/>').html_safe
       -if feed_post.tag_list.count>0
         .tags
