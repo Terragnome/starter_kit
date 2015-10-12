@@ -30,6 +30,8 @@ Application.Init = function(){
 
 	Application.InitResize();
 	Application.InitScroll(100);
+	Application.autoPageScroll = null;
+
 	Header.Init();
 }
 
@@ -37,11 +39,10 @@ Application.OnPageLoading = function(e, target, render, url){}
 
 Application.OnPageRedirected = function(e, target, render, url){}
 
-var autoPageScroll = null;
 Application.OnPageAlways = function(e, target, render, url){
-	if(autoPageScroll) autoPageScroll.stop();
+	if(Application.autoPageScroll) Application.autoPageScroll.stop();
 
-	autoPageScroll = $('html, body').animate({
+	Application.autoPageScroll = $('html, body').animate({
 		scrollTop: 0
 	}, 150);
 
@@ -95,7 +96,7 @@ Application.InitScroll = function(scrollTimeoutInterval){
 }
 
 Application.OnScroll = function () {
-	if(autoPageScroll) autoPageScroll.stop();
+	if(Application.autoPageScroll) Application.autoPageScroll.stop();
 	
 	// Application.UpdateHeaderBar(230);
 	// PostFeed.OnScroll();
