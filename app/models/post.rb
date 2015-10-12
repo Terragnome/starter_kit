@@ -1,6 +1,9 @@
 class Post < ActiveRecord::Base
   belongs_to :user
 
+  has_many :post_photos
+  has_many :photos, :through=>:post_photos
+
   before_validation :set_posted_at
 
   scope :active, -> { where(active:true).order(:posted_at=>:desc, :id=>:desc) }
@@ -53,23 +56,25 @@ class Post < ActiveRecord::Base
     return "over a year ago"
   end
 
+  def cover_photo
+    photos.first if photos
+  end
+
   def display_time
     date.strftime("%A, %m/%d/%y")
   end
 
   def display_slug
-    s = title
-    s.gsub!(/ +/, "-")
-    s.gsub!(/[^a-zA-Z0-9\-\_]/, "")
+    s = self.title
+    s = s.gsub(/ +/, "-")
+    s = s.gsub(/[^a-zA-Z0-9\-\_]/, "")
     s
   end
-  
+
   def display_call_to_action
-    results = call_to_action
-    if cost > 0
-      results = "#{call_to_action} $#{cost}"
-    end
-    return results
+    call_to_action = self.call_to_action || "Explore"
+    call_to_action = "#{call_to_action} $#{cost}" if cost>0
+    call_to_action
   end
 
   private

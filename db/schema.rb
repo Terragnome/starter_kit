@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001041105) do
+ActiveRecord::Schema.define(version: 20151012021454) do
+
+  create_table "photos", force: true do |t|
+    t.string "name",         null: false
+    t.string "remote_url",   null: false
+    t.string "internal_url"
+  end
+
+  add_index "photos", ["name"], name: "index_photos_on_name", using: :btree
+
+  create_table "post_photos", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "photo_id"
+    t.string   "caption"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "post_photos", ["photo_id"], name: "index_post_photos_on_photo_id", using: :btree
+  add_index "post_photos", ["post_id"], name: "index_post_photos_on_post_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.integer  "user_id",                        null: false
@@ -21,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151001041105) do
     t.datetime "created_at"
     t.datetime "posted_at"
     t.float    "cost",           default: 0.0
-    t.string   "call_to_action", default: "Buy"
+    t.string   "call_to_action"
     t.string   "url"
   end
 

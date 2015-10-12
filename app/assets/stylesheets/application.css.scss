@@ -79,6 +79,7 @@ h1{
 	font-size: 32px;
 	margin: 0px;
 	padding: 0px;
+	text-transform: uppercase;
 }
 
 h2{
@@ -146,6 +147,8 @@ table{
 .right{ float: right }
 .bold{ font-weight: bold; }
 .inline{ display: inline-block; }
+
+.pointer{ cursor: pointer; }
 
 .clearfix{ display: inline-block; }
 .clearfix:after{

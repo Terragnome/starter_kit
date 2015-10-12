@@ -15,8 +15,7 @@ StarterKit::Application.routes.draw do
   get 'archive' => 'posts#index'
   get 'archive/:tag' => 'posts#index_by_tag', :as=>'tag_archive'
 
-  get ':id', to: 'posts#show'
-  get ':id/:display_slug', to: 'posts#show', :as=>'post'
+  get ':id(/:display_slug)', to: 'posts#show', :as=>'post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

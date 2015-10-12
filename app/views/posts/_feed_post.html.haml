@@ -1,22 +1,22 @@
 .feed_post{:id=>"feed_post_#{feed_post.id}"}
   .header
     %h1
-      =feed_post.title.upcase
+      =link_to(feed_post.title, post_path(feed_post.id, :display_slug=>feed_post.display_slug))
     .info_section
       .info
         .text
           =feed_post.ago.capitalize
   .body
+    -if feed_post.cover_photo
+      =image_tag(feed_post.cover_photo.remote_url)
     %p
-      =feed_post.summary.gsub(/\n/, '<br/>').html_safe
-    -if feed_post.tag_list.count>0
-      .tags
-        .tags_title
-          TAGS
-        -feed_post.tag_list.each do |tag|
-          =link_to("##{tag}", tag_archive_path(tag), :class=>'tag', 'data-push'=>true)
-  .actions
-    =link_to("explore", post_path(feed_post.id, :display_slug=>feed_post.display_slug), :class=>'button', 'data-push'=>true)
-    -if feed_post.url
-      =link_to(feed_post.display_call_to_action, feed_post.url, :class=>['button', 'buy_button'])
+      =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug)) do
+        =feed_post.summary.gsub(/\n/, '<br/>').html_safe
+      -if feed_post.tag_list.count>0
+        .tags
+          .tags_title
+            TAGS
+          -feed_post.tag_list.each do |tag|
+            =link_to("##{tag}", tag_archive_path(tag), :class=>'tag', 'data-push'=>true)
+  =render :partial=>'post_actions', :object=>feed_post, :as=> :post
   .spacer

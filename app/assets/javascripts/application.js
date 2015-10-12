@@ -54,10 +54,13 @@ Application.SetBlockerDisplay = function(isOn){
 Application.OnAjaxStart = function(){
 	// $('#scene_content').animate({opacity: 0.1}, 100);
 }
+var autoPageScroll = null;
 Application.OnAjaxComplete = function(){
-	$('html, body').animate({
+	if(autoPageScroll) autoPageScroll.stop();
+
+	autoPageScroll = $('html, body').animate({
 		scrollTop: 0
-	}, 125);
+	}, 150);
 
 	// $('#scene_content').css('opacity', 0.1);
 	// $('#scene_content').animate({opacity: 1}, 100);
@@ -83,6 +86,8 @@ Application.InitScroll = function(scrollTimeoutInterval){
 }
 
 Application.OnScroll = function () {
+	if(autoPageScroll) autoPageScroll.stop();
+	
 	// Application.UpdateHeaderBar(230);
 	// PostFeed.OnScroll();
 }

@@ -66,12 +66,25 @@
 				color: #{$light_gray};
 				font-size: 14px;
 			}
+
+			h1{
+				a{
+					color: black;					
+				}
+			}
 		}
 		.body{
 			margin: 20px 0px 40px 0px;
 
 			p{
 				margin: 0 0 20px 0;
+				a{
+					cursor: pointer;
+					color: black;
+					font-family: 'Lato';
+					font-size: 16px;
+					text-transform: none;
+				}
 			}
 		}
 		.actions{
@@ -115,6 +128,10 @@
 				font-weight: normal;
 				margin: 0px 5px 0px 5px;
 			}
+		}
+
+		img{
+			width: 100%;
 		}
 	}
 }
@@ -284,6 +301,10 @@
 			font-weight: normal;
 			margin: 0px 5px 0px 5px;
 		}
+	}
+
+	img{
+		width: 100%;
 	}
 }
 
