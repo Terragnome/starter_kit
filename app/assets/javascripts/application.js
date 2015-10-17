@@ -42,13 +42,9 @@ Application.OnPageRedirected = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
 	if(Application.autoPageScroll) Application.autoPageScroll.stop();
 
-	Application.autoPageScroll = $('html, body').animate({
-		scrollTop: 0
-	}, 250);
-
-	// $('#scene_content').css('opacity', 0.1);
-	// $('#scene_content').animate({opacity: 1}, 100);
-	// FB.XFBML.parse();
+	// Application.autoPageScroll = $('html, body').animate({
+	// 	scrollTop: 0
+	// }, 250);
 }
 
 Application.OnPageDone = function(e, target, render, url){}

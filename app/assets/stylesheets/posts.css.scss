@@ -183,13 +183,13 @@ $feed_list_padding_h: 0px;
 		}
 	}
 
-	@media (max-width: #{$feed_post_min_width*3-$feed_list_padding_h*2}){
+	@media (max-width: #{$feed_post_min_width*3-$feed_list_padding_h*2+25}){
 	  .feed_post{
 	    width: 49.75%; 
 	  }
 	}
 
-	@media (max-width: #{$feed_post_min_width*2-$feed_list_padding_h*2}){
+	@media (max-width: #{$feed_post_min_width*2-$feed_list_padding_h*2+25}){
 		.feed_post{
 			width: 100%;
 		}

@@ -34,7 +34,7 @@ $anim_roll_down_duration: 0.3s;
 	animation-iteration-count: 1;
 }
 
-$anim_fade_in_duration: 0.5s;
+$anim_fade_in_duration: 0.75s;
 .anim_fade_in{
 	-webkit-animation: AnimFadeIn #{$anim_fade_in_duration};
 	animation-name: AnimFadeIn;
