@@ -11,9 +11,8 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   def summary
-    s = body
-    summary_len = 120
-    s = s.length > summary_len ? "#{s[0..summary_len]}..." : s
+    s = "#{body.split(".")[0]}..."
+    # s = s.length > summary_len ? "#{s[0..summary_len]}..." : s
     return s
   end
 
@@ -68,7 +67,7 @@ class Post < ActiveRecord::Base
   end
 
   def display_call_to_action
-    call_to_action = self.call_to_action != "" ? self.call_to_action : "Explore"
+    call_to_action = self.call_to_action != "" ? self.call_to_action : "Learn more"
     call_to_action = "#{call_to_action} $#{cost}" if cost>0
     call_to_action
   end

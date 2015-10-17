@@ -3,11 +3,12 @@
 @import '_constants';
 
 #header{
-	background-color: black;
-	height: #{$header_height};
-	min-width: #{$header_width};
-	position: fixed;
+	background-color: #{$base_color};
 	width: 100%;
+	height: #{$header_height};
+	min-width: #{$header_min_width};
+	min-height: #{$header_min_height};
+	position: fixed;
 	z-index: 2;
 
 	.logo{
@@ -15,7 +16,7 @@
 		img{
 			cursor: pointer;
 			height: #{$logo_img_height};
-			margin: #{$header_height - $logo_img_height} 0px 0px 10px;
+			margin: 0px 0px 0px 10px;
 			position: absolute;
 			z-index: 3;
 		}
@@ -69,7 +70,7 @@
 	}
 
 	.header_bar_inner{
-		background-color: black;
+		background-color: #{$base_color};
 		position: relative;
 		height: #{$header_bar_height - $header_bar_decoration_1_height - $header_bar_decoration_2_height};
 		width: 100%;
@@ -87,7 +88,7 @@
 	.header_bar_decoration_2{
 		position: relative;
 		bottom: 0px;
-		border-bottom: black #{$header_bar_decoration_2_height} solid;
+		border-bottom: #{$base_color} #{$header_bar_decoration_2_height} solid;
 		width: 100%;
 		z-index: 12;
 	}
@@ -123,7 +124,7 @@
 	}
 
 	.nav_menu{
-		background: black;
+		background: #{$base_color};
 		display: none;
 		opacity: 0;
 		padding: 30px 0 0 0;

@@ -4,6 +4,7 @@
 @import '_fonts';
 
 $feed_post_min_width: 280px;
+$feed_list_padding_h: 0px;
 
 #post_feed{
 	margin: 10px 0px 25px 0px;
@@ -11,10 +12,11 @@ $feed_post_min_width: 280px;
 
 	.more_posts{
 		color: white;
-		background-color: black;
-		border-color: black;
-		font-size: 18px;
+		background-color: #{$base_color};
+		border-color: #{$base_color};
+		font-size: 24px;
 		margin: 30px 0 60px 0;
+		padding: 30px 0 30px 0;
 		width: 100%;
 
 		&:hover{
@@ -28,14 +30,15 @@ $feed_post_min_width: 280px;
 		flex-wrap: wrap;
 		width: 100%;
   	justify-content: space-between;
+  	padding: 0 #{$feed_list_padding_h} 0 #{$feed_list_padding_h};
+  	box-sizing: border-box;
   }
 
 	.feed_post{
 		display: inline-block;
 		min-width: #{$feed_post_min_width};
-		max-width: 33.33%;
-		width: 100%;
-		padding: 30px 10px 30px 10px;
+		width: 33.33%;
+		padding: 30px 20px 30px 20px;
 
 		.header{
 			text-align: left;
@@ -79,7 +82,7 @@ $feed_post_min_width: 280px;
 
 			h1{
 				a{
-					color: black;					
+					color: #{$base_color};					
 				}
 			}
 		}
@@ -87,10 +90,16 @@ $feed_post_min_width: 280px;
 			text-align: center;
 			margin: 20px 0px 30px 0px;
 
-			img{
-				width: auto;
-				max-height: 250px;
+			.photo_gallery{
+				width: 100%;
 				margin: 25px 0 25px 0;
+
+				img{
+					height: auto;
+					width: auto;
+					max-width: 100%;
+					max-height: 500px;
+				}
 			}
 
 			.description{
@@ -103,7 +112,7 @@ $feed_post_min_width: 280px;
 
 				a{
 					cursor: pointer;
-					color: black;
+					color: #{$base_color};
 					font-family: 'Lato';
 					font-size: 16px;
 					text-transform: none;
@@ -112,17 +121,16 @@ $feed_post_min_width: 280px;
 		}
 		.actions{
 			font-size: 14px;
-			margin: 10px 0px 30px 0px;
+			margin: 10px 0px 40px 0px;
 			min-height: 20px;
-			text-align: right;
 			a{
 				display: inline-block;
-				float: right;
+				float: left;
 				margin: 0px 2px 0px 10px;
 			}
 		}
 		.comment_count{
-			color: black;
+			color: #{$base_color};
 		}
 		.fb_comments_count_zero{
 			display: none;
@@ -153,21 +161,17 @@ $feed_post_min_width: 280px;
 				margin: 0px 5px 0px 5px;
 			}
 		}
-
-		img{
-			width: 100%;
-		}
 	}
 
-	@media (max-width: #{$feed_post_min_width*3}){
+	@media (max-width: #{$feed_post_min_width*3-$feed_list_padding_h*2}){
 	  .feed_post{
-	    max-width: 50%; 
+	    width: 50%; 
 	  }
 	}
 
-	@media (max-width: #{$feed_post_min_width*2}){
+	@media (max-width: #{$feed_post_min_width*2-$feed_list_padding_h*2}){
 		.feed_post{
-			max-width: 100%;
+			width: 100%;
 		}
 	}
 }
@@ -178,7 +182,7 @@ $feed_post_min_width: 280px;
 		text-align: center;
 
 		.tag{
-			background-color: black;
+			background-color: #{$base_color};
 			color: white;
 			cursor: pointer;
 			display: inline-block;
@@ -218,15 +222,15 @@ $feed_post_min_width: 280px;
 		}
 		.even{
 			background-color: white;
-			color: black;
+			color: #{$base_color};
 		}
 		.tenth{
-			background-color: black;
+			background-color: #{$base_color};
 			color: white;
 		}
 		.odd{
 			background-color: #{$light_gray};
-			color: black;
+			color: #{$base_color};
 		}
 		.title{
 			color: #{$highlight_color};
@@ -249,7 +253,7 @@ $feed_post_min_width: 280px;
 	}
 
 	.post{
-		margin: 30px 0px 60px 0px;
+		padding: 30px 20px 60px 20px;
 
 		.header{
 			.icon{
@@ -315,17 +319,16 @@ $feed_post_min_width: 280px;
 		}
 		.actions{
 			font-size: 14px;
-			margin: 10px 0px 30px 0px;
+			margin: 10px 0px 40px 0px;
 			min-height: 20px;
-			text-align: right;
 			a{
 				display: inline-block;
-				float: right;
+				float: left;
 				margin: 0px 2px 0px 10px;
 			}
 		}
 		.comment_count{
-			color: black;
+			color: #{$base_color};
 		}
 		.fb_comments_count_zero{
 			display: none;
@@ -341,6 +344,7 @@ $feed_post_min_width: 280px;
 			width: 100%;
 			text-align: center;
 			text-transform: uppercase;
+			margin: 40px 0 0px 0;
 
 			.tags_title{
 				display: inline;
@@ -351,9 +355,9 @@ $feed_post_min_width: 280px;
 				display: inline-block;
 				color: #{$highlight_color};
 				float: none;
-				font-size: 13px;
+				font-size: 15px;
 				font-weight: normal;
-				margin: 0px 5px 0px 5px;
+				margin: 0px 13px 0px 13px;
 			}
 		}
 
@@ -383,7 +387,7 @@ $feed_post_min_width: 280px;
 		margin: 0px 10px 0px 0px;
 	}
 	.share_close{
-		background-color: black;
+		background-color: #{$base_color};
 		color: white;
 		float: right;
 		font-size: 20px;
@@ -395,7 +399,7 @@ $feed_post_min_width: 280px;
 		margin: 10px 0px 10px 0px;
 	}
 	.title{
-		color: black;
+		color: #{$base_color};
 		display: inline-block;
 		margin: 0px 10px 0px 0px;
 	}

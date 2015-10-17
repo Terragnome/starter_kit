@@ -7,9 +7,7 @@
         %span
       %span.title
         -title=""
-        -@app_title_components.each_with_index do |comp, i|
-          -title << (i%2 == 0 ? "<span class='highlight'>#{comp[0]}</span>" : comp[0])
-        =title.html_safe
+        =@app_title_components.collect{ |i| i[0] }.join("").html_safe
       =render :partial=>'layouts/nav_links'
   .header_bar_decoration_1
   .header_bar_decoration_2
