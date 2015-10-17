@@ -12,8 +12,8 @@ class Post < ActiveRecord::Base
 
   def summary
     s = body
-    # summary_len = 500
-    # s = s.length > summary_len ? "#{s[0..summary_len]}..." : s
+    summary_len = 120
+    s = s.length > summary_len ? "#{s[0..summary_len]}..." : s
     return s
   end
 
@@ -68,7 +68,7 @@ class Post < ActiveRecord::Base
   end
 
   def display_call_to_action
-    call_to_action = self.call_to_action || "Explore"
+    call_to_action = self.call_to_action != "" ? self.call_to_action : "Explore"
     call_to_action = "#{call_to_action} $#{cost}" if cost>0
     call_to_action
   end

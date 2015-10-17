@@ -3,6 +3,8 @@
 @import '_constants';
 @import '_fonts';
 
+$feed_post_min_width: 280px;
+
 #post_feed{
 	margin: 10px 0px 25px 0px;
 	text-align: center;
@@ -22,21 +24,26 @@
 	}
 
 	.feed_list{
+		display: flex;
+		flex-wrap: wrap;
 		width: 100%;
-	}
+  	justify-content: space-between;
+  }
 
 	.feed_post{
-		float: left;
 		display: inline-block;
-		width: 300px;
-		margin: 30px 10px 30px 10px;
-		text-align: left;
+		min-width: #{$feed_post_min_width};
+		max-width: 33.33%;
+		width: 100%;
+		padding: 30px 10px 30px 10px;
 
 		.header{
+			text-align: left;
+
 			.icon{
 				float: left;
 				height: 64px;
-				margin: 6px 12px 6px 0px;
+				padding: 6px 12px 6px 0px;
 			}
 			.info_section{
 				margin: 10px 0px 0px 0px;
@@ -77,20 +84,21 @@
 			}
 		}
 		.body{
-			overflow: hidden;
-			margin: 20px 0px 40px 0px;
+			text-align: center;
+			margin: 20px 0px 30px 0px;
 
-			.photo_container{
-				width: 100%;
-				img{
-					width: auto;
-					max-height: 300px;
-					margin: 25px 0 25px 0;
-				}
+			img{
+				width: auto;
+				max-height: 250px;
+				margin: 25px 0 25px 0;
+			}
+
+			.description{
+				overflow: hidden;
+				height: 60px;
 			}
 
 			p{
-				text-align: left;
 				margin: 0 0 20px 0;
 
 				a{
@@ -127,8 +135,9 @@
 			font-family: 'Oswald';
 			font-size: 14px;
 			font-weight: normal;
-			text-align: left;
+			text-align: center;
 			text-transform: uppercase;
+			width: 100%;
 
 			.tags_title{
 				display: inline;
@@ -147,6 +156,18 @@
 
 		img{
 			width: 100%;
+		}
+	}
+
+	@media (max-width: #{$feed_post_min_width*3}){
+	  .feed_post{
+	    max-width: 50%; 
+	  }
+	}
+
+	@media (max-width: #{$feed_post_min_width*2}){
+		.feed_post{
+			max-width: 100%;
 		}
 	}
 }
@@ -229,6 +250,7 @@
 
 	.post{
 		margin: 30px 0px 60px 0px;
+
 		.header{
 			.icon{
 				float: left;
@@ -268,6 +290,7 @@
 			}
 		}
 		.body{
+			text-align: center;
 			margin: 20px 0px 40px 0px;
 
 			p{
@@ -278,6 +301,15 @@
 					font-family: 'Lato';
 					font-size: 16px;
 					text-transform: none;
+				}
+			}
+
+			.photo_gallery{
+				margin: 25px 0 25px 0;
+
+				.photo{
+					width: auto;
+					max-height: 500px;
 				}
 			}
 		}
@@ -306,6 +338,7 @@
 			font-family: 'Oswald';
 			font-size: 14px;
 			font-weight: normal;
+			width: 100%;
 			text-align: center;
 			text-transform: uppercase;
 

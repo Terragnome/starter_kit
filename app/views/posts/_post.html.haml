@@ -7,14 +7,15 @@
         .text
           =post.ago.capitalize
   .body
-    -post.photos.each do |ph|
-      =image_tag(ph.remote_url)
-    %p
+    .photo_gallery
+      -post.photos.each do |ph|
+        =image_tag(ph.remote_url, :class=>'photo')
+    %p.description
       =post.body.gsub(/\n/, '<br/>').html_safe
     -if post.tag_list.count>0
       .tags
-        .tags_title
-          TAGS
+        / .tags_title
+        /   TAGS
         -post.tag_list.each do |tag|
           =link_to("##{tag}", tag_archive_path(tag), :class=>'tag', 'data-push'=>true)
   =render :partial=>'post_actions', :object=>post, :as=>:post

@@ -33,6 +33,7 @@ div{
 	cursor: default;
 	margin: 0px;
 	padding: 0px;
+	box-sizing: border-box;
 }
 
 html, body{
@@ -112,6 +113,7 @@ p{
 	font-size: 16px;
 	margin: 0px;
 	padding: 0px;
+	text-align: left;
 	text-indent: 20px;
 }
 
@@ -278,21 +280,21 @@ table{
 	top: #{$header_height};
 	width: 100%;
 	z-index: 5;
+}
 
-	#scene_body{
-		display: inline-block;
-		margin: 20px 0 20px 0;
-		min-height: calc(100% -#{$header_height});
-		min-height: -moz-calc(100% - #{$header_height});
-		min-height: -webkit-calc(100% - #{$header_height});
-		max-width: 960px;
-		overflow: visible;
-		width: calc(100% - #{$scene_body_margin_x});
-		width: -moz-calc(100% - #{$scene_body_margin_x});
-		width: -webkit-calc(100% - #{$scene_body_margin_x});
-		text-align: left;
-		
-	}
+#scene_content{}
+
+#scene_body{
+	display: inline-block;
+	margin: 20px 0 20px 0;
+	min-height: calc(100% -#{$header_height});
+	min-height: -moz-calc(100% - #{$header_height});
+	min-height: -webkit-calc(100% - #{$header_height});
+	overflow: visible;
+	width: calc(100% - #{$scene_body_margin_x});
+	width: -moz-calc(100% - #{$scene_body_margin_x});
+	width: -webkit-calc(100% - #{$scene_body_margin_x});
+	text-align: left;
 }
 
 #subscribe{
