@@ -41,4 +41,5 @@ $anim_fade_in_duration: 0.5s;
   animation-duration: #{$anim_fade_in_duration};
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
+  opacity: 0;
 }

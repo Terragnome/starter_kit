@@ -12,8 +12,8 @@ StarterKit::Application.routes.draw do
   get 'latest' => 'posts#latest'
   get 'collection/:tag(/:page)' => 'posts#feed', :as=>'feed'
 
-  get 'archive' => 'posts#index'
-  get 'archive/:tag' => 'posts#index_by_tag', :as=>'tag_archive'
+  # get 'archive' => 'posts#index'
+  # get 'archive/:tag' => 'posts#index_by_tag', :as=>'tag_archive'
 
   get ':id(/:display_slug)', to: 'posts#show', :as=>'post'
 
