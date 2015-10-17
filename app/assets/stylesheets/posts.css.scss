@@ -160,12 +160,6 @@ $feed_list_padding_h: 0px;
 				margin: 0px 2px 0px 10px;
 			}
 		}
-		.comment_count{
-			color: #{$base_color};
-		}
-		.fb_comments_count_zero{
-			display: none;
-		}
 		.share_container{
 			display: none;
 		}
@@ -303,6 +297,10 @@ $feed_list_padding_h: 0px;
 			text-align: center;
 			margin: 20px 0px 40px 0px;
 
+			.description{
+				margin: 50px 0 0 0;
+			}
+
 			p{
 				margin: 0 0 20px 0;
 
@@ -320,6 +318,7 @@ $feed_list_padding_h: 0px;
 				.photo{
 					width: auto;
 					max-height: 500px;
+					max-width: 100%;
 				}
 			}
 		}
@@ -332,12 +331,6 @@ $feed_list_padding_h: 0px;
 				float: left;
 				margin: 0px 2px 0px 10px;
 			}
-		}
-		.comment_count{
-			color: #{$base_color};
-		}
-		.fb_comments_count_zero{
-			display: none;
 		}
 		.share_container{
 			display: none;

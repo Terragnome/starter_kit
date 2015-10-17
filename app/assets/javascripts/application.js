@@ -92,7 +92,6 @@ Application.InitScroll = function(scrollTimeoutInterval){
 	    }
 	    scrollTimeout = setTimeout(Application.OnScroll, scrollTimeoutInterval);
 	});
-
 }
 
 Application.OnScroll = function () {
