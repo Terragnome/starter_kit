@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer  :user_id, :null=>false
       t.string   :title, :null=>false
       t.text     :body, :null=>false
-        t.boolean  :active, :null=>false, :default=>false
+      t.boolean  :active, :null=>false, :default=>false
       t.datetime :created_at
       t.datetime :posted_at
     end

@@ -11,13 +11,9 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   def summary
-    summary_len = 280
-
     s = body
-    if s.length > summary_len
-      s="#{s[0..summary_len]}..."
-    end
-
+    # summary_len = 500
+    # s = s.length > summary_len ? "#{s[0..summary_len]}..." : s
     return s
   end
 

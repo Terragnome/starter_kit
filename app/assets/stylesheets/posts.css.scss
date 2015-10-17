@@ -26,6 +26,9 @@
 	}
 
 	.feed_post{
+		float: left;
+		display: inline-block;
+		width: 300px;
 		margin: 30px 10px 30px 10px;
 		text-align: left;
 
@@ -74,10 +77,22 @@
 			}
 		}
 		.body{
+			overflow: hidden;
 			margin: 20px 0px 40px 0px;
 
+			.photo_container{
+				width: 100%;
+				img{
+					width: auto;
+					max-height: 300px;
+					margin: 25px 0 25px 0;
+				}
+			}
+
 			p{
+				text-align: left;
 				margin: 0 0 20px 0;
+
 				a{
 					cursor: pointer;
 					color: black;
@@ -112,7 +127,7 @@
 			font-family: 'Oswald';
 			font-size: 14px;
 			font-weight: normal;
-			text-align: center;
+			text-align: left;
 			text-transform: uppercase;
 
 			.tags_title{
@@ -257,6 +272,13 @@
 
 			p{
 				margin: 0 0 20px 0;
+
+				a{
+					cursor: pointer;
+					font-family: 'Lato';
+					font-size: 16px;
+					text-transform: none;
+				}
 			}
 		}
 		.actions{

@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151012021454) do
     t.boolean  "active",         default: false, null: false
     t.datetime "created_at"
     t.datetime "posted_at"
-    t.float    "cost",           default: 0.0
+    t.integer  "cost",           default: 0
     t.string   "call_to_action"
     t.string   "url"
   end

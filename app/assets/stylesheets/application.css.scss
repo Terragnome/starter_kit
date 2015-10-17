@@ -112,6 +112,7 @@ p{
 	font-size: 16px;
 	margin: 0px;
 	padding: 0px;
+	text-indent: 20px;
 }
 
 span{
@@ -150,7 +151,9 @@ table{
 
 .pointer{ cursor: pointer; }
 
-.clearfix{ display: inline-block; }
+.clearfix{
+	display: inline-block;
+}
 .clearfix:after{
     clear: both;
     content: " ";

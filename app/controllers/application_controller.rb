@@ -8,8 +8,9 @@ class ApplicationController < ActionController::Base
   has_mobile_fu false
 
   def set_constants
-    @app_title_components=['EVERYDAY', 'GEAR']
-    @app_title=@app_title_components.join('')
+    @app_title_components=['Pursuit','of','Hobbiness']
+    @app_title="The Pursuit of Hobbiness"
+    @app_title_short = @app_title_components.collect{|x| x[0]}
     @app_description='._.'
 
     @asset_root = StarterKit::Application.config.asset_root
