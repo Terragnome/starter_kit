@@ -1,9 +1,11 @@
 #header
-  / =link_to(root_path, 'data-push'=>true) do
-  .logo
-    / =image_tag("#{@asset_root}/avatars/mikey.png", :id=>'header_logo')
-  #header_title.title
-    -title=""
-    -header.each_with_index do |comp, i|
-      -title << (i%2 == 0 ? "<span class='highlight'>#{comp}</span>" : comp)
-    =title.html_safe
+  .title
+    .title_prefix
+      %span
+        ="The"
+      %span.pursuit
+        ="Pursuit"
+      %span
+        ="of"
+    .title_body
+      ="Hobbiness"

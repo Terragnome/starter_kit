@@ -3,7 +3,8 @@
 @import '_constants';
 
 #header{
-	background-color: #{$base_color};
+	background-image: url(/assets/workshop_blur.jpg);
+	background-size: cover;
 	width: 100%;
 	height: #{$header_height};
 	min-width: #{$header_min_width};
@@ -24,9 +25,25 @@
 	.title{
 		color: white;
 		font-family: 'LeagueGothic';
-		font-size: 120px;
-		margin: #{$header_height - 115} 0px 0px #{$logo_img_width+15};
+		text-align: center;
 		text-transform: uppercase;
+	 	text-shadow: 2px 2px 10px #{$shadow_gray};
+		width: 100%;
+		margin: 180px 0 0 0;
+
+		.title_prefix{
+			font-size: 24px;
+			.pursuit{
+				font-size: 40px;
+				letter-spacing: 1px;
+				margin: 0 3px 0 8px;
+			}
+		}
+		.title_body{
+			font-size: 80px;
+			letter-spacing: 1px;
+			margin: -20px 0 0 0;
+		}
 	}
 
 	.highlight{
@@ -232,11 +249,11 @@ $nav_icon_bar_height: 2px;
 
 @media screen and (max-width: 844px){
 	#header{
+		/*
 		.title{
 			display: none;
 		}
-		.logo{
-		}
+		*/
 	}
 }
 
@@ -246,9 +263,11 @@ $nav_icon_bar_height: 2px;
 			margin: 0 7px 0 7px;
 		}
 
+		/*
 		.title{
 			display: none;
 		}
+		*/
 
 		.header_bar_inner{
 			a{

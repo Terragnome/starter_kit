@@ -28,6 +28,7 @@ $feed_list_padding_h: 0px;
 
 #post_feed{
 	padding: 10px 10px 25px 10px;
+	margin: 30px 0 0 0;
 	text-align: center;
 
 	.more_posts{
@@ -64,10 +65,10 @@ $feed_list_padding_h: 0px;
 		background-color: white;
 		display: inline-block;
 		min-width: #{$feed_post_min_width};
-		width: 32.75%;
+		width: 31.75%;
 		padding: 30px 20px 30px 20px;
-		margin: 5px 0 5px 0;
-	 	box-shadow: 2px 2px 10px #{$subtle_gray};
+		margin: 40px 0 40px 0;
+	 	box-shadow: 2px 2px 10px #{$shadow_gray};
 
 		.header{
 			text-align: left;
@@ -185,7 +186,7 @@ $feed_list_padding_h: 0px;
 
 	@media (max-width: #{$feed_post_min_width*3-$feed_list_padding_h*2+25}){
 	  .feed_post{
-	    width: 49.75%; 
+	    width: 48%; 
 	  }
 	}
 

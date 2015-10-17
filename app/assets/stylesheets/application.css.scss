@@ -56,17 +56,19 @@ html, body{
 	}
 }
 
-html{ 
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none; 
+html{
+	background-color: #{$base_color};
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; 
 }
+
 p,a,h1,h2,h3,h4,h5,h6,div,br,li,td,article{
-    -o-user-select: text;
-    -moz-user-select: text;
-    -webkit-user-select: text;
-    user-select: text;
+  -o-user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 h1{
@@ -199,7 +201,7 @@ table{
 }
 
 .spacer{
-	border-bottom: 1px solid #{$spacer_gray};
+	/*border-bottom: 1px solid #{$spacer_gray};*/
 }
 
 .title{
@@ -261,7 +263,6 @@ table{
 }
 
 #scene{
-	background-color: white;
 	color: #{$base_color};
 	min-height: calc(100% -#{$header_height});
 	min-height: -moz-calc(100% - #{$header_height});

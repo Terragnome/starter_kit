@@ -6,4 +6,5 @@
 
   -if feed_list.next_page
     -next_url = feed_url(:tag=>tag, :page=>feed_list.next_page)
+
     =link_to('More', next_url, :class=>['more_posts', 'button'], 'data-push'=>true)
