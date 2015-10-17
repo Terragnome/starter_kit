@@ -6,8 +6,28 @@
 $feed_post_min_width: 280px;
 $feed_list_padding_h: 0px;
 
+.post_tag_cloud{
+	margin: 10px 0 30px 0;
+	text-align: center;
+
+	.tag{
+		background-color: #{$base_color};
+		color: white;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 14px;
+		margin: 1px;
+		padding: 3px 10px 5px 10px;
+		text-transform: uppercase;
+		&:hover{
+			background-color: #{$highlight_color};
+			color: white;
+		}
+	}
+}
+
 #post_feed{
-	margin: 10px 0px 25px 0px;
+	padding: 10px 10px 25px 10px;
 	text-align: center;
 
 	.more_posts{
@@ -29,16 +49,25 @@ $feed_list_padding_h: 0px;
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
-  	justify-content: space-between;
-  	padding: 0 #{$feed_list_padding_h} 0 #{$feed_list_padding_h};
+		justify-content: space-between;
   	box-sizing: border-box;
+  	padding: 0 #{$feed_list_padding_h} 0 #{$feed_list_padding_h};
+  }
+
+  .feed_post_spacer{
+  	min-width: #{$feed_post_min_width};
+		width: 32.75%;
   }
 
 	.feed_post{
+		cursor: pointer;
+		background-color: white;
 		display: inline-block;
 		min-width: #{$feed_post_min_width};
-		width: 33.33%;
+		width: 32.75%;
 		padding: 30px 20px 30px 20px;
+		margin: 5px 0 5px 0;
+	 	box-shadow: 2px 2px 10px #{$subtle_gray};
 
 		.header{
 			text-align: left;
@@ -91,7 +120,9 @@ $feed_list_padding_h: 0px;
 			margin: 20px 0px 30px 0px;
 
 			.photo_gallery{
+				cursor: pointer;
 				width: 100%;
+				height: 500px;
 				margin: 25px 0 25px 0;
 
 				img{
@@ -146,11 +177,7 @@ $feed_list_padding_h: 0px;
 			text-align: center;
 			text-transform: uppercase;
 			width: 100%;
-
-			.tags_title{
-				display: inline;
-				margin: 0 10px 0 0;		
-			}
+			opacity: 0;
 
 			a{
 				display: inline-block;
@@ -165,7 +192,7 @@ $feed_list_padding_h: 0px;
 
 	@media (max-width: #{$feed_post_min_width*3-$feed_list_padding_h*2}){
 	  .feed_post{
-	    width: 50%; 
+	    width: 49.75%; 
 	  }
 	}
 
@@ -177,26 +204,6 @@ $feed_list_padding_h: 0px;
 }
 
 #post_index{
-	.tag_cloud{
-		margin: 10px 0 30px 0;
-		text-align: center;
-
-		.tag{
-			background-color: #{$base_color};
-			color: white;
-			cursor: pointer;
-			display: inline-block;
-			font-size: 14px;
-			margin: 1px;
-			padding: 3px 10px 5px 10px;
-			text-transform: uppercase;
-			&:hover{
-				background-color: #{$highlight_color};
-				color: white;
-			}
-		}
-	}
-
 	.posts{
 		margin: 30px 0px 30px 0px;
 		text-align: center;
@@ -346,11 +353,6 @@ $feed_list_padding_h: 0px;
 			text-transform: uppercase;
 			margin: 40px 0 0px 0;
 
-			.tags_title{
-				display: inline;
-				margin: 0 10px 0 0;		
-			}
-
 			a{
 				display: inline-block;
 				color: #{$highlight_color};
@@ -377,7 +379,6 @@ $feed_list_padding_h: 0px;
 
 .share{
 	background-color: white;
-	/*box-shadow: 0px 0px 3px white;*/
 	min-width: 280px;
 	padding: 15px 15px 25px 15px;
 	pointer-events: auto;

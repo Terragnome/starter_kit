@@ -12,12 +12,7 @@
         =image_tag(ph.remote_url, :class=>'photo')
     %p.description
       =post.body.gsub(/\n/, '<br/>').html_safe
-    -if post.tag_list.count>0
-      .tags
-        / .tags_title
-        /   TAGS
-        -post.tag_list.each do |tag|
-          =link_to("##{tag}", tag_archive_path(tag), :class=>'tag', 'data-push'=>true)
+    =render :partial=>'post_tags', :object=>post.tag_list
   =render :partial=>'post_actions', :object=>post, :as=>:post
   .share_container
     =render :partial=>'share', :object=>post

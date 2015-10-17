@@ -1,5 +1,3 @@
-.tag_cloud
-  -tag_cloud(tag_cloud.order(:name), %w(css1)) do |tag|
-    =link_to tag_archive_path(tag.name), 'data-push'=>true do
-      .tag
-        ="##{tag.name} ( #{tag.taggings_count} )"
+.post_tag_cloud.anim_fade_in
+  -tag_cloud(tag_cloud, %w(css1)) do |tag|
+    =link_to("##{tag.name} ( #{tag.taggings_count} )", feed_path(tag.name), :class=>'tag', 'data-push'=>true)

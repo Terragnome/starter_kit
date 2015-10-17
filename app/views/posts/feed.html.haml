@@ -3,6 +3,10 @@
 -else
   -wiselinks_title("#{@tag.capitalize} | #{@app_title_short}")
 
+-if @tags and @tags.count>0
+  =render :partial=>'tag_cloud', :object=>@tags
+  .spacer
+
 #post_feed
   #post_feed_list
     =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tag=>@tag}

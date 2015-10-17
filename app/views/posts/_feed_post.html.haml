@@ -7,19 +7,14 @@
         .text
           =feed_post.ago.capitalize
   .body
-    -if feed_post.cover_photo
-      .photo_gallery
-        =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do      
+    =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do
+      -if feed_post.cover_photo
+        .photo_gallery
           =image_tag(feed_post.cover_photo.remote_url, :class=>"photo")
-    %p.description
-      =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do
-        =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
-    -if feed_post.tag_list.count>0
-      .tags
-        / .tags_title
-        /   TAGS
-        -feed_post.tag_list.each do |tag|
-          =link_to("##{tag}", tag_archive_path(tag), :class=>'tag', 'data-push'=>true)
+      %p.description
+        =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do
+          =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
+    =render :partial=>'post_tags', :object=>feed_post.tag_list
   =render :partial=>'feed_post_actions', :object=>feed_post, :as=> :post
   .share_container
     =render :partial=>'share', :object=>feed_post

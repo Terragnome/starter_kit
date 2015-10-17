@@ -1,6 +1,8 @@
 .feed_list
   -feed_list.each do |post|
     =render :partial=>'feed_post', :object=>post
+  -(3-feed_list.length%3).times do |spacer|
+    .feed_post_spacer
 
   -if feed_list.next_page
     -next_url = feed_url(:tag=>tag, :page=>feed_list.next_page)

@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def set_constants
     @app_title_components=['Pursuit','Hobbiness']
     @app_title="The Pursuit of Hobbiness"
-    @app_title_short = @app_title_components.collect{|x| x[0]}
+    @app_title_short = @app_title_components.collect{|x| x[0]}.join("")
     @app_description='._.'
 
     @asset_root = StarterKit::Application.config.asset_root

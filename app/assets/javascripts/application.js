@@ -44,7 +44,7 @@ Application.OnPageAlways = function(e, target, render, url){
 
 	Application.autoPageScroll = $('html, body').animate({
 		scrollTop: 0
-	}, 150);
+	}, 250);
 
 	// $('#scene_content').css('opacity', 0.1);
 	// $('#scene_content').animate({opacity: 1}, 100);

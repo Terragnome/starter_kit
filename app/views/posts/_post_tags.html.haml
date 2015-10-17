@@ -1,0 +1,4 @@
+-if post_tags.count>0
+  .tags
+    -post_tags.each do |tag|
+      =link_to("##{tag}", feed_path(tag), :class=>'tag', 'data-push'=>true)

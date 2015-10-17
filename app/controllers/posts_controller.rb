@@ -1,11 +1,12 @@
 class PostsController < ApplicationController 
-  @@feed_length = 5
+  @@feed_length = 6
 
   def latest
     @tag=:all
     @page=1
 
     @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
+    @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
 
     respond_to do |format|
       format.html{render action: 'feed'}
@@ -18,10 +19,13 @@ class PostsController < ApplicationController
     @page = params.has_key?(:page) ? params[:page].to_i : 1
     @scroll = params.has_key?(:scroll) ? params[:scroll] : :next
 
+
     if @tag == :all
       @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
+      @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
     else
       @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
+      @tags = @posts.tag_counts_on(:tags).order('taggings_count DESC')
     end
 
     @posts.reverse if @scroll == :prev
@@ -54,15 +58,15 @@ class PostsController < ApplicationController
     end
   end
 
-  def index
-    @posts=Post.active
-    @tags=@posts.tag_counts_on(:tags)
-    
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
+  # def index
+  #   @posts=Post.active
+  #   @tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
+
+  #   respond_to do |format|
+  #     format.html
+  #     format.js
+  #   end
+  # end
 
   def show
     begin

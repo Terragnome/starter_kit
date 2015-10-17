@@ -2,18 +2,18 @@
 	from{
 		transform: translateY(-100%);
 	}
-    to{
-    	transform: translateY(0%);
-    }
+  to{
+  	transform: translateY(0%);
+  }
 }
 
 @keyframes AnimFadeIn {
 	from{
 		opacity: 0;
 	}
-    to{
-    	opacity: 1;
-    }
+  to{
+  	opacity: 1;
+  }
 }
 
 @keyframes AnimRollUp {
@@ -25,18 +25,20 @@
     }
 }
 
+$anim_roll_down_duration: 0.3s;
 .anim_roll_down{
-	-webkit-animation: AnimRollDown 0.3s;
+	-webkit-animation: AnimRollDown #{$anim_roll_down_duration};
 	animation-name: AnimRollDown;
-    animation-duration: 0.3s;
+  animation-duration: #{$anim_roll_down_duration};
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
 
+$anim_fade_in_duration: 0.5s;
 .anim_fade_in{
-	-webkit-animation: AnimFadeIn 0.5s;
+	-webkit-animation: AnimFadeIn #{$anim_fade_in_duration};
 	animation-name: AnimFadeIn;
-    animation-duration: 0.5s;
+  animation-duration: #{$anim_fade_in_duration};
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
