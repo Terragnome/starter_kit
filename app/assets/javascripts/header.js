@@ -22,8 +22,6 @@ Header.CloseMenu = function(){
 	navMenu.removeClass("anim_roll_down");
 	navMenu.removeClass("anim_fade_in");
 	navMenu.hide();
-
-	$("#nav_icon").removeClass('open');
 }
 
 Header.OnResize = function(){

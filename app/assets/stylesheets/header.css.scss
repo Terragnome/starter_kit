@@ -5,6 +5,8 @@
 #header{
 	background-image: url(/assets/workshop_blur.jpg);
 	background-size: cover;
+	background-repeat: no-repeat;
+	/*background-color: #f0f0f0;*/
 	width: 100%;
 	height: #{$header_height};
 	min-width: #{$header_min_width};
@@ -33,6 +35,8 @@
 
 		.title_prefix{
 			font-size: 24px;
+			margin: 0 0 0 -3px;
+
 			.pursuit{
 				font-size: 40px;
 				letter-spacing: 1px;
@@ -247,15 +251,7 @@ $nav_icon_bar_height: 2px;
 	}
 }
 
-@media screen and (max-width: 844px){
-	#header{
-		/*
-		.title{
-			display: none;
-		}
-		*/
-	}
-}
+@media screen and (max-width: 844px){}
 
 @media screen and (max-width: 720px){
 	#header_bar{
@@ -263,11 +259,9 @@ $nav_icon_bar_height: 2px;
 			margin: 0 7px 0 7px;
 		}
 
-		/*
 		.title{
 			display: none;
 		}
-		*/
 
 		.header_bar_inner{
 			a{

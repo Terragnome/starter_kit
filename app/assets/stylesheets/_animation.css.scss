@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes AnimRollUp {
+    from{
+      transform: translateY(0%);
+    }
+    to{
+      transform: translateY(-100%);
+    }
+}
+
 @keyframes AnimFadeIn {
 	from{
 		opacity: 0;
@@ -16,13 +25,13 @@
   }
 }
 
-@keyframes AnimRollUp {
-   	from{
-    	transform: translateY(0%);
-    }
-    to{
-    	transform: translateY(-100%);
-    }
+@keyframes AnimFadeOut {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
 }
 
 $anim_roll_down_duration: 0.3s;
@@ -42,4 +51,14 @@ $anim_fade_in_duration: 0.75s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
   opacity: 0;
+}
+
+$anim_fade_out_duration: 0.75s;
+.anim_fade_out{
+  -webkit-animation: AnimFadeOut #{$anim_fade_out_duration};
+  animation-name: AnimFadeOut;
+  animation-duration: #{$anim_fade_out_duration};
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  opacity: 1;
 }

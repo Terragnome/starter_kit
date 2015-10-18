@@ -14,7 +14,5 @@
       =post.body.gsub(/\n/, '<br/>').html_safe
     =render :partial=>'post_tags', :object=>post.tag_list
   =render :partial=>'post_actions', :object=>post, :as=>:post
-  .share_container
-    =render :partial=>'share', :object=>post
 :javascript
   Post.Init();

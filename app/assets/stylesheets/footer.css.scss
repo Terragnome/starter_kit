@@ -8,10 +8,15 @@
 	height: #{$footer_height};
 	padding: 5px 0 0 0;
 	width: 100%;
+
 	a{
 		color: white;
 		font-size: 13px;
 		margin: 0px 10px 0px 10px;
-		text-shadow: 5px 5px 10px #{$shadow_gray};
+		text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.8);;
+	}
+
+	.est{
+		color: white;
 	}
 }

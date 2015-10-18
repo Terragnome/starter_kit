@@ -16,7 +16,5 @@
           =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
     =render :partial=>'post_tags', :object=>feed_post.tag_list
   =render :partial=>'feed_post_actions', :object=>feed_post, :as=> :post
-  .share_container
-    =render :partial=>'share', :object=>feed_post
 :javascript
   Post.Init();

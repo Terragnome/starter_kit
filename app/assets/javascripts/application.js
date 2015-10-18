@@ -93,8 +93,23 @@ Application.InitScroll = function(scrollTimeoutInterval){
 Application.OnScroll = function () {
 	if(Application.autoPageScroll) Application.autoPageScroll.stop();
 	
+	Application.UpdateTitle();
+
 	// Application.UpdateHeaderBar(230);
 	// PostFeed.OnScroll();
+}
+
+Application.UpdateTitle = function(){
+	var scrollPosition = $(window).scrollTop();
+	var headerTitle = $("#header_title");
+
+	if(scrollPosition > 0){
+		headerTitle.addClass("anim_fade_out");
+		headerTitle.removeClass("anim_fade_in");		
+	}else{
+		headerTitle.addClass("anim_fade_in");
+		headerTitle.removeClass("anim_fade_out");
+	}
 }
 
 // Application.UpdateHeaderBar = function(scrollCutoff){
