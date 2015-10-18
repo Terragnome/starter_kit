@@ -177,7 +177,7 @@ $feed_list_padding_h: 0px;
 				margin: 0 5px 0 0;
 			}
 
-			.twitter_button{
+			.icon_button{
 				float: right;
 
 				background: url(/assets/icons/twitter.svg);
@@ -188,21 +188,21 @@ $feed_list_padding_h: 0px;
 				color: #{$highlight_color};
 				fill: currentColor;
 				width: 25px;
-				margin: 0 0 0 5px;
+				margin: 0 0 0 5px;			
+			}
+
+			.twitter_button{
+				background: url(/assets/icons/twitter.svg);
+				background-position: center;
+				background-size: auto 24px;
+				background-repeat: no-repeat;
 			}
 
 			.facebook_button{
-				float: right;
-
 				background: url(/assets/icons/facebook.svg);
 				background-position: center;
 				background-size: auto 23px;
 				background-repeat: no-repeat;
-
-				color: #{$highlight_color};
-				fill: currentColor;
-				width: 25px;
-				margin: 0 0 0 5px;
 			}
 		}
 		.tags{
