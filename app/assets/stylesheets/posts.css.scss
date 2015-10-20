@@ -27,59 +27,6 @@ $feed_list_padding_h: 0px;
 	}
 }
 
-.post_actions{
-	font-size: 14px;
-	margin: 10px 0px 40px 0px;
-	min-height: 20px;
-	a{
-		display: inline-block;
-	}
-
-	.button{
-		height: 21px;
-
-		&:hover{
-			color: white;
-			background-color: #{$highlight_color};
-		}
-	}
-
-	.buy_button{
-		float: left;
-		margin: 0 5px 0 0;
-	}
-
-	.icon_button{
-		float: right;
-		margin: 0 0 0 5px;
-		text-align: left;		
-		padding-right: 10px;
-	}
-
-	.twitter_button{
-		background: url(/assets/icons/twitter.svg);
-		background-position: left;
-		background-size: auto 24px;
-		background-repeat: no-repeat;
-		background-position: 10px;
-
-		color: #{$highlight_color};
-		fill: currentColor;
-		padding-left: 39px;
-	}
-
-	.facebook_button{
-		background: url(/assets/icons/facebook.svg);
-		background-position: left;
-		background-size: auto 23px;
-		background-repeat: no-repeat;
-		background-position: 8px;
-
-		color: #{$highlight_color};
-		fill: currentColor;
-		padding-left: 34px;
-	}
-}
 .tags{
 	display: inline-block;
 	font-family: #{$title_font};
@@ -96,6 +43,59 @@ $feed_list_padding_h: 0px;
 		font-size: 13px;
 		font-weight: normal;
 		margin: 0px 5px 0px 5px;
+	}
+}
+
+.post_actions{
+	font-size: 14px;
+	margin: 10px 0px 40px 0px;
+	min-height: 20px;
+	a{
+		display: inline-block;
+	}
+
+	.button{
+		height: 21px;
+
+		&:hover{
+			color: white;
+			background-color: #{$highlight_color};
+			border-color: #{$highlight_color};
+		}
+	}
+
+	.buy_button{
+		float: left;
+		margin: 0 5px 0 0;
+	}
+
+	.icon_button{
+		float: right;
+		margin: 0 0 0 5px;
+		text-align: left;		
+		padding-right: 10px;
+
+		fill: #{$base_color};
+		color: #{$base_color};
+		border-color: #{$base_color};
+	}
+
+	.twitter_button{
+		background: url(/assets/icons/twitter.svg) no-repeat;
+		background-position: left;
+		background-size: auto 24px;
+		background-repeat: no-repeat;
+		background-position: 10px;
+		padding-left: 39px;
+	}
+
+	.facebook_button{
+		background: url(/assets/icons/facebook.svg) no-repeat;
+		background-position: left;
+		background-size: auto 23px;
+		background-repeat: no-repeat;
+		background-position: 8px;
+		padding-left: 34px;
 	}
 }
 
@@ -368,21 +368,10 @@ $feed_list_padding_h: 0px;
 			}
 		}
 		.tags{
-			display: inline-block;
-			font-family: #{$title_font};
-			font-size: 14px;
-			font-weight: normal;
-			width: 100%;
-			text-align: center;
-			text-transform: uppercase;
 			margin: 40px 0 0px 0;
 
 			a{
-				display: inline-block;
-				color: #{$highlight_color};
-				float: none;
 				font-size: 15px;
-				font-weight: normal;
 				margin: 0px 13px 0px 13px;
 			}
 		}

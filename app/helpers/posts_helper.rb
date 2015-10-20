@@ -7,8 +7,6 @@ module PostsHelper
   end 
 
   def format_for_counter(num)
-    puts "TRACE *************** #{num}"
-
     return "" if [nil, 0, "0", ""].include?(num)
     return "#{number_with_delimiter(num, :delimiter=>',')}" if num < 99999
     return "#{number_with_delimiter(num/1000, :delimiter=>',').to_i}K" if num < 999999

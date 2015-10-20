@@ -76,8 +76,6 @@ class PostsController < ApplicationController
     #   redirect_to latest_path and return
     # end
 
-    puts "TRACE ************** #{@post}"
-
     respond_to do |format|
       format.html
       format.js
