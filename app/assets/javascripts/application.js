@@ -81,8 +81,9 @@ Application.InitResize = function(){
 
 var scrollTimeout;
 Application.InitScroll = function(scrollTimeoutInterval){
-	$(document).scroll(function (){
+	$(document).scroll(function(){
 	    if(scrollTimeout){
+	    		Application.GreedyOnScroll();
 	        clearTimeout(scrollTimeout);
 	        scrollTimeout = null;
 	    }
@@ -90,10 +91,12 @@ Application.InitScroll = function(scrollTimeoutInterval){
 	});
 }
 
-Application.OnScroll = function () {
-	if(Application.autoPageScroll) Application.autoPageScroll.stop();
-	
+Application.GreedyOnScroll = function() {
 	Application.UpdateTitle();
+}
+
+Application.OnScroll = function() {
+	if(Application.autoPageScroll) Application.autoPageScroll.stop();
 
 	// Application.UpdateHeaderBar(230);
 	// PostFeed.OnScroll();
