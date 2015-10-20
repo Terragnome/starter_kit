@@ -43,7 +43,7 @@ Application.OnPageAlways = function(e, target, render, url){
 	if(Application.autoPageScroll) Application.autoPageScroll.stop();
 
 	Application.autoPageScroll = $('html, body').animate({
-		scrollTop: 0
+		scrollTop: 370
 	}, 250);
 }
 

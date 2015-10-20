@@ -4,9 +4,12 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 
-
 # Use mysql as the database for Active Record
 gem 'mysql2'
+# For caching
+gem 'redis'
+# Use Thin instead of WEBrick
+gem 'thin'
 
 group :assets do
   # Use SCSS for stylesheets
@@ -43,9 +46,6 @@ gem 'mobile-fu'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
-# Use Thin instead of WEBrick
-gem 'thin'
 
 # Use haml instead of erb
 gem 'haml'
