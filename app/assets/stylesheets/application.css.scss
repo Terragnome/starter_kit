@@ -20,7 +20,7 @@
 a{
 	color: #{$highlight_color};
 	cursor: pointer;
-	font-family: 'Oswald';
+	font-family: #{$title_font};
 	text-decoration: none;
 	text-transform: uppercase;
 	&:hover{
@@ -73,7 +73,7 @@ p,a,h1,h2,h3,h4,h5,h6,div,br,li,td,article{
 
 h1{
 	border: 0px;
-	font-family: 'Oswald';
+	font-family: #{$title_font};
 	font-size: 32px;
 	margin: 0px;
 	padding: 0px;
@@ -82,7 +82,7 @@ h1{
 
 h2{
 	border: 0px;
-	font-family: 'Oswald';
+	font-family: #{$title_font};
 	font-size: 40px;
 	margin: 0px;
 	padding: 0px;
@@ -101,12 +101,12 @@ img{
 }
 
 label{
-	font-family: 'Lato';
+	font-family: #{$body_font};
 }
 
 p{
 	border: 0px;
-	font-family: 'Lato';
+	font-family: #{$body_font};
 	font-size: 16px;
 	margin: 0px;
 	padding: 0px;
@@ -205,11 +205,11 @@ table{
 }
 
 .title{
-	font-family: 'Oswald';
+	font-family: #{$title_font};
 }
 
 .date{
-	font-family: 'Lato';
+	font-family: #{$body_font};
 }
 
 .navigation{

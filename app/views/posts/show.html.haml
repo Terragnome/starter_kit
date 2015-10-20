@@ -1,6 +1,6 @@
--wiselinks_title("#{@post.title} | #{@app_title_short}")
+-app_title(@post.title)
 
-#post_show.anim_fade_in
+#post_show
   -if @post
     =render partial:'post', object:@post
   -else

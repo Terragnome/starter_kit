@@ -1,20 +1,19 @@
 .feed_post{:id=>"feed_post_#{feed_post.id}"}
   .header
     %h1
-      =link_to(feed_post.title, post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true)
+      =ajax_link_to(feed_post.title, full_post_path(feed_post))
     .info_section
       .info
         .text
           =feed_post.ago.capitalize
   .body
-    =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do
+    =link_to(full_post_path(feed_post), 'data-push'=>true) do
       -if feed_post.cover_photo
         .photo_gallery
           =image_tag(feed_post.cover_photo.remote_url, :class=>"photo")
       %p.description
-        =link_to(post_path(feed_post.id, :display_slug=>feed_post.display_slug), 'data-push'=>true) do
-          =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
+        =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
     =render :partial=>'post_tags', :object=>feed_post.tag_list
-  =render :partial=>'feed_post_actions', :object=>feed_post, :as=> :post
+  =render :partial=>'post_actions', :object=>feed_post, :as=> :post, :locals=>{:is_feed=>true}
 :javascript
   Post.Init();

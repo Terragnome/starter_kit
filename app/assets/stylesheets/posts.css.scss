@@ -27,6 +27,78 @@ $feed_list_padding_h: 0px;
 	}
 }
 
+.post_actions{
+	font-size: 14px;
+	margin: 10px 0px 40px 0px;
+	min-height: 20px;
+	a{
+		display: inline-block;
+	}
+
+	.button{
+		height: 21px;
+
+		&:hover{
+			color: white;
+			background-color: #{$highlight_color};
+		}
+	}
+
+	.buy_button{
+		float: left;
+		margin: 0 5px 0 0;
+	}
+
+	.icon_button{
+		float: right;
+		margin: 0 0 0 5px;
+		text-align: left;		
+		padding-right: 10px;
+	}
+
+	.twitter_button{
+		background: url(/assets/icons/twitter.svg);
+		background-position: left;
+		background-size: auto 24px;
+		background-repeat: no-repeat;
+		background-position: 10px;
+
+		color: #{$highlight_color};
+		fill: currentColor;
+		padding-left: 39px;
+	}
+
+	.facebook_button{
+		background: url(/assets/icons/facebook.svg);
+		background-position: left;
+		background-size: auto 23px;
+		background-repeat: no-repeat;
+		background-position: 8px;
+
+		color: #{$highlight_color};
+		fill: currentColor;
+		padding-left: 34px;
+	}
+}
+.tags{
+	display: inline-block;
+	font-family: #{$title_font};
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+
+	a{
+		display: inline-block;
+		color: #{$highlight_color};
+		float: none;
+		font-size: 13px;
+		font-weight: normal;
+		margin: 0px 5px 0px 5px;
+	}
+}
+
 #post_feed{
 	padding: 10px 10px 25px 10px;
 	margin: 30px 0 0 0;
@@ -103,7 +175,7 @@ $feed_list_padding_h: 0px;
 					.text{
 						cursor: inherit;
 						float: left;
-						font-family: 'Lato';
+						font-family: #{$body_font};
 						font-size: 15px;
 						margin: 1px 0px 0px 0px;
 					}
@@ -139,88 +211,18 @@ $feed_list_padding_h: 0px;
 			}
 
 			.description{
-				overflow: hidden;
-				height: 60px;
+ 				overflow: hidden;
+ 				height: 60px;
 			}
 
 			p{
+				cursor: pointer;
+				color: #{$base_color};
+				font-family: #{$body_font};
+				font-size: 16px;
+				text-transform: none;
+
 				margin: 0 0 20px 0;
-
-				a{
-					cursor: pointer;
-					color: #{$base_color};
-					font-family: 'Lato';
-					font-size: 16px;
-					text-transform: none;
-				}
-			}
-		}
-		.actions{
-			font-size: 14px;
-			margin: 10px 0px 40px 0px;
-			min-height: 20px;
-			a{
-				display: inline-block;
-			}
-
-			.button{
-				height: 21px;
-
-				&:hover{
-					color: white;
-					background-color: #{$highlight_color};
-				}
-			}
-
-			.buy_button{
-				float: left;
-				margin: 0 5px 0 0;
-			}
-
-			.icon_button{
-				float: right;
-
-				background: url(/assets/icons/twitter.svg);
-				background-position: center;
-				background-size: auto 24px;
-				background-repeat: no-repeat;
-
-				color: #{$highlight_color};
-				fill: currentColor;
-				width: 25px;
-				margin: 0 0 0 5px;			
-			}
-
-			.twitter_button{
-				background: url(/assets/icons/twitter.svg);
-				background-position: center;
-				background-size: auto 24px;
-				background-repeat: no-repeat;
-			}
-
-			.facebook_button{
-				background: url(/assets/icons/facebook.svg);
-				background-position: center;
-				background-size: auto 23px;
-				background-repeat: no-repeat;
-			}
-		}
-		.tags{
-			display: inline-block;
-			font-family: 'Oswald';
-			font-size: 14px;
-			font-weight: normal;
-			text-align: center;
-			text-transform: uppercase;
-			width: 100%;
-
-			a{
-				display: inline-block;
-				color: #{$highlight_color};
-				float: none;
-				font-size: 13px;
-				font-weight: normal;
-				margin: 0px 5px 0px 5px;
 			}
 		}
 	}
@@ -288,7 +290,7 @@ $feed_list_padding_h: 0px;
 
 #post_show{
 	.placeholder{
-		font-family: 'Lato';
+		font-family: #{$body_font};
 		text-align: center;
 		top: 50%;
 		vertical-align: center;
@@ -325,7 +327,7 @@ $feed_list_padding_h: 0px;
 					.text{
 						cursor: inherit;
 						float: left;
-						font-family: 'Lato';
+						font-family: #{$body_font};
 						font-size: 15px;
 						margin: 1px 0px 0px 0px;
 					}
@@ -349,7 +351,7 @@ $feed_list_padding_h: 0px;
 
 				a{
 					cursor: pointer;
-					font-family: 'Lato';
+					font-family: #{$body_font};
 					font-size: 16px;
 					text-transform: none;
 				}
@@ -365,59 +367,9 @@ $feed_list_padding_h: 0px;
 				}
 			}
 		}
-		.actions{
-			font-size: 14px;
-			margin: 10px 0px 40px 0px;
-			min-height: 20px;
-			a{
-				display: inline-block;
-			}
-
-			.button{
-				height: 21px;
-
-				&:hover{
-					color: white;
-					background-color: #{$highlight_color};
-				}
-			}
-
-			.buy_button{
-				float: left;
-				margin: 0 5px 0 0;
-			}
-
-			.twitter_button{
-				float: right;
-
-				background: url(/assets/icons/twitter.svg);
-				background-position: center;
-				background-size: auto 24px;
-				background-repeat: no-repeat;
-
-				color: #{$highlight_color};
-				fill: currentColor;
-				width: 25px;
-				margin: 0 0 0 5px;
-			}
-
-			.facebook_button{
-				float: right;
-
-				background: url(/assets/icons/facebook.svg);
-				background-position: center;
-				background-size: auto 23px;
-				background-repeat: no-repeat;
-
-				color: #{$highlight_color};
-				fill: currentColor;
-				width: 25px;
-				margin: 0 0 0 5px;
-			}
-		}
 		.tags{
 			display: inline-block;
-			font-family: 'Oswald';
+			font-family: #{$title_font};
 			font-size: 14px;
 			font-weight: normal;
 			width: 100%;

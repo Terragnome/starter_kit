@@ -1,5 +1,5 @@
 var Post = Post || {};
 
 Post.Init = function(){
-	$('html,body').scrollTop(0);
+	// $('html,body').scrollTop(0);
 }

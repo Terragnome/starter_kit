@@ -1,11 +1,6 @@
--if @tag == :all
-  -wiselinks_title(@app_title)
--else
-  -wiselinks_title("#{@tag.capitalize} | #{@app_title_short}")
+-app_title(@tag.capitalize)
 
--if @tags and @tags.count>0
-  =render :partial=>'tag_cloud', :object=>@tags
-  .spacer
+=render :partial=>'tag_cloud', :object=>@tags
 
 #post_feed
   #post_feed_list

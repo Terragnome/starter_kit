@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   has_many :photos, :through=>:post_photos
 
   before_validation :set_posted_at
+  before_validation :set_slug
 
   scope :active, -> { where(active:true).order(:posted_at=>:desc, :id=>:desc) }
   
@@ -76,6 +77,10 @@ class Post < ActiveRecord::Base
 
   def set_posted_at
     self.posted_at = Time.now if self.active && self.posted_at.blank?
+  end
+
+  def set_slug
+    self.slug = self.display_slug
   end
 
 end

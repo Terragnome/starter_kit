@@ -1,3 +1,5 @@
-.post_tag_cloud.anim_fade_in
-  -tag_cloud(tag_cloud, %w(css1)) do |tag|
-    =link_to("##{tag.name} ( #{tag.taggings_count} )", feed_path(tag.name), :class=>'tag', 'data-push'=>true)
+-if tag_cloud and tag_cloud.length>0
+  .post_tag_cloud.anim_fade_in
+    -tag_cloud(tag_cloud, %w(css1)) do |tag|
+      =ajax_link_to("##{tag.name} ( #{tag.taggings_count} )", feed_path(tag.name), :class=>'tag')
+  .spacer

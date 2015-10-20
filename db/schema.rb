@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012021454) do
+ActiveRecord::Schema.define(version: 20151020194905) do
 
   create_table "photos", force: true do |t|
     t.string "name",         null: false
@@ -42,10 +42,12 @@ ActiveRecord::Schema.define(version: 20151012021454) do
     t.integer  "cost",           default: 0
     t.string   "call_to_action"
     t.string   "url"
+    t.string   "slug"
   end
 
   add_index "posts", ["active"], name: "index_posts_on_active", using: :btree
   add_index "posts", ["created_at"], name: "index_posts_on_created_at", using: :btree
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
   add_index "posts", ["title"], name: "index_posts_on_title", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 

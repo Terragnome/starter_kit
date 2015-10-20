@@ -10,11 +10,7 @@
           =image_tag('/assets/icons/mail.png')
           .text
             =user.nickname
-    -if user_signed_in? && user == current_user
-      .info
-        .text
-          =link_to('EDIT', rails_admin.edit_path(model_name:'user', id:user.id))
   %p.body
     =user.profile
   .navigation
-    =link_to("POSTS", user_archive_path(user.nickname), 'data-push'=>true)
+    =ajax_link_to("POSTS", user_archive_path(user.nickname))

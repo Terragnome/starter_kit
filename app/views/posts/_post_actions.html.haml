@@ -1,7 +1,10 @@
 -post_url = post_url(post.id, :display_slug=>post.display_slug)
 
-.actions
+.post_actions
   -if post.url != ""
     =link_to(post.display_call_to_action, post.url, :target=>"_blank", :class=>['button', 'buy_button'])
-  =link_to("", "http://www.facebook.com/share.php?u=#{post_url}", :target=>"_blank", :class=>["button", "icon_button", "facebook_button"])
-  =link_to("", "http://twitter.com/home?status=#{post.title} #{post_url}", :target=>"_blank", :class=>["button", "icon_button", "twitter_button"])
+  -elsif is_feed
+    =ajax_link_to(post.display_call_to_action, full_post_path(post), :class=>['button', 'buy_button'])
+
+  =link_to(format_for_counter(123), "http://www.facebook.com/share.php?u=#{post_url}", :target=>"_blank", :class=>["button", "icon_button", "facebook_button"])
+  =link_to(format_for_counter(1234), "http://twitter.com/home?status=#{post.title} #{post_url}", :target=>"_blank", :class=>["button", "icon_button", "twitter_button"])

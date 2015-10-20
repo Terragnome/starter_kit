@@ -69,11 +69,14 @@ class PostsController < ApplicationController
   # end
 
   def show
-    begin
-      @post=Post.active.find(params[:id])
-    rescue
-      redirect_to latest_path and return
-    end
+    # begin
+    @post = Post.active.where(:id=>params[:id]).take()
+    @post ||= Post.active.where(:slug=>params[:id]).take()
+    # rescue
+    #   redirect_to latest_path and return
+    # end
+
+    puts "TRACE ************** #{@post}"
 
     respond_to do |format|
       format.html

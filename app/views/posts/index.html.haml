@@ -1,4 +1,4 @@
--wiselinks_title("Archive | #{@app_title_short}")
+-app_title("Archive")
 
 #post_index
   -if @tags.count>0
@@ -6,7 +6,7 @@
     .spacer
   .posts
     -@posts.each do |p|
-      =link_to post_path(p.id, :display_slug=>p.display_slug), 'data-push'=>true do
+      =ajax_link_to post_path(p.id, :display_slug=>p.display_slug) do
         .entry{:class=>"#{(p.id%10==0 ? 'tenth' : p.id%2==0 ? 'even' : 'odd')}"}
           .title
             =p.title.upcase
