@@ -24,7 +24,7 @@ Post.Share = function(obj){
     .done(function(data){
       if(data){ $(obj).text(data); }
     })
-    // .fail(function(data){})
-    // .always(function(data){});
+    .fail(function(data){})
+    .always(function(data){});
   }
 }
