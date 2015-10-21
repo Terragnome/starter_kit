@@ -1,5 +1,5 @@
 class PostsController < ApplicationController 
-  @@feed_length = 6
+  @@feed_length = 6 # This should be a multiple of 6
 
   def latest
     @tag=:all
@@ -26,8 +26,6 @@ class PostsController < ApplicationController
       @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
       @tags = @posts.tag_counts_on(:tags).where.not(:name=>@tag).order('taggings_count DESC')
     end
-
-    puts "#{@tags} #{@tags.class}"
 
     @posts.reverse if @scroll == :prev
 

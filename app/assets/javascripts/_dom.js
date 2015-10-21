@@ -3,8 +3,9 @@ var DOM = DOM || {};
 DOM.Init = function(){
   DOM._window = $(window);
   DOM._document = $(document);
-  DOM._body = $('body');
   DOM._htmlBody = $('html, body');
+  DOM._html = $('html');
+  DOM._body = $('body');
 
   DOM._blocker = $("#blocker");
   DOM._headerBar = $("#header_bar");

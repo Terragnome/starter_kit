@@ -15,9 +15,7 @@ Scroll.Init = function(scrollTimeoutInterval){
   });
 }
 
-Scroll.OnScroll = function(){
-  if(Scroll.autoScroll) Scroll.autoScroll.stop();
-}
+Scroll.OnScroll = function(){}
 
 Scroll.OnScrollGreedy = function(){
   Application.UpdateTitle();
@@ -40,6 +38,7 @@ Scroll.AutoScrollTo = function(pos){
 
 Scroll.EnableManual = function(){
   DOM._htmlBody.off('scroll touchmove mousewheel');
+  Input.EnablePointerEvents();
 }
 
 Scroll.DisableManual = function(){
@@ -48,4 +47,5 @@ Scroll.DisableManual = function(){
     e.stopPropagation();
     return false;
   });
+  Input.DisablePointerEvents();
 }
