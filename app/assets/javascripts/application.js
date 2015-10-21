@@ -40,7 +40,10 @@ Application.OnPageLoading = function(e, target, render, url){}
 Application.OnPageRedirected = function(e, target, render, url){}
 Application.OnPageDone = function(e, target, render, url){}
 Application.OnPageFail = function(e, target, render, url){}
-Application.OnPageAlways = function(e, target, render, url){ Scroll.AutoScrollTo(370); }
+Application.OnPageAlways = function(e, target, render, url){
+	Scroll.AutoScrollTo(370);
+	Header.CloseMenu();
+}
 
 Application.InitResize = function(){
 	DOM._window.resize(function (){

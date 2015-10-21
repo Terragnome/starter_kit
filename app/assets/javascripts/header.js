@@ -1,29 +1,32 @@
 var Header = Header || {};
 
 Header.Init = function(){
-	DOM._headerNavIcon.click(Header.ToggleMenu);
+	Header._bar = DOM._headerBar;
+	Header._navIcon = DOM._headerNavIcon;
+	Header._navMenu = DOM._headerNavMenu;
+
+	Header._navIcon.click(Header.ToggleMenu);
 }
 
 Header.ToggleMenu = function(){
-	Blocker.Toggle();
-	var isOpen = DOM._headerNavMenu.hasClass("anim_roll_down");
+	var isOpen = Header._navMenu.hasClass("anim_roll_down");
 	isOpen ? Header.CloseMenu() : Header.OpenMenu();
 
-	DOM._headerNavIcon.toggleClass('open');
+	Header._navIcon.toggleClass('open');
 }
 Header.OpenMenu = function(){
-	var navMenu = DOM._headerNavMenu;
+	var navMenu = Header._navMenu;
 	navMenu.toggleClass("anim_roll_down");
 	navMenu.toggleClass("anim_fade_in");
 	navMenu.show();
 }
 Header.CloseMenu = function(){
-	var navMenu = DOM._headerNavMenu;
+	var navMenu = Header._navMenu;
 	navMenu.removeClass("anim_roll_down");
 	navMenu.removeClass("anim_fade_in");
 	navMenu.hide();
 
-	DOM._headerNavIcon.removeClass('open');
+	Header._navIcon.removeClass('open');
 }
 
 Header.OnResize = function(){
@@ -32,7 +35,7 @@ Header.OnResize = function(){
 
 // Header.Update = function(scrollCutoff){
 // 	var scrollPosition = DOM._window.scrollTop();
-// 	var headerBar = DOM._headerBar;
+// 	var headerBar = Header._bar;
 // 	if(scrollPosition >= scrollCutoff){
 // 		if( !headerBar.hasClass("anim_roll_down") ){
 // 			headerBar.show();
