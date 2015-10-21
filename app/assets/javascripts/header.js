@@ -1,24 +1,23 @@
 var Header = Header || {};
 
 Header.Init = function(url){
-	$("#nav_icon").click(Header.ToggleMenu);
-	$("#header_bar").find(".nav_button").click(Header.CloseMenu);
+	Application._headerNavIcon.click(Header.ToggleMenu);
 }
 
 Header.ToggleMenu = function(){
-	var isOpen = $(".nav_menu").hasClass("anim_roll_down");
+	var isOpen = Application._headerNavMenu.hasClass("anim_roll_down");
 	isOpen ? Header.CloseMenu() : Header.OpenMenu();
 
-	$("#nav_icon").toggleClass('open');
+	Application._headerNavIcon.toggleClass('open');
 }
 Header.OpenMenu = function(){
-	var navMenu = $(".nav_menu");
+	var navMenu = Application._headerNavMenu;
 	navMenu.toggleClass("anim_roll_down");
 	navMenu.toggleClass("anim_fade_in");
 	navMenu.show();
 }
 Header.CloseMenu = function(){
-	var navMenu = $(".nav_menu");
+	var navMenu = Application._headerNavMenu;
 	navMenu.removeClass("anim_roll_down");
 	navMenu.removeClass("anim_fade_in");
 	navMenu.hide();

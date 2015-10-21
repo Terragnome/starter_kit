@@ -22,11 +22,22 @@ var Application = Application || {};
 Application.Init = function(){
 	window.wiselinks = new Wiselinks($('#scene_body'));
 
-	$(document).off('page:loading').on('page:loading', Application.OnPageLoading);
-	$(document).off('page:redirected').on('page:redirected', Application.OnPageRedirected);
-	$(document).off('page:always').on('page:always', Application.OnPageAlways);
-	$(document).off('page:done').on('page:done', Application.OnPageDone);
-	$(document).off('page:fail').on('page:fail', Application.OnPageFail);
+	Application._window = $(window);
+	Application._document = $(document);
+	Application._body = $('body');
+	Application._htmlBody = $('html, body');
+
+	Application._blocker = $("#blocker");
+	Application._headerBar = $("#header_bar");
+	Application._headerTitle = $("#header_title");
+	Application._headerNavIcon = $("#header_nav_icon");
+	Application._headerNavMenu = $("#header_nav_menu");
+
+	Application._document.off('page:loading').on('page:loading', Application.OnPageLoading);
+	Application._document.off('page:redirected').on('page:redirected', Application.OnPageRedirected);
+	Application._document.off('page:always').on('page:always', Application.OnPageAlways);
+	Application._document.off('page:done').on('page:done', Application.OnPageDone);
+	Application._document.off('page:fail').on('page:fail', Application.OnPageFail);
 
 	Application.InitResize();
 	Application.InitScroll(100);
@@ -38,10 +49,10 @@ Application.Init = function(){
 Application.StartScroll = function(pos){
 	Application.StopScroll();
 
-	var curScroll = $('body').scrollTop();
+	var curScroll = Application._body.scrollTop();
 	var distance = Math.abs(curScroll-pos);
 
-	Application.autoPageScroll = $('body').animate(
+	Application.autoPageScroll = Application._body.animate(
 		{
 			scrollTop: pos,
 		},
@@ -79,12 +90,12 @@ Application.SetObjDisplay = function(obj, isOn){
 	}
 }
 
-Application.GetBlocker = function(){ return $('#blocker'); }
+Application.GetBlocker = function(){ return Application._blocker; }
 Application.ToggleBlocker = function(){ Application.SetBlockerDisplay(Application.GetBlocker(), (obj.css('display')=='none')); }
 Application.SetBlockerDisplay = function(isOn){
 	var blocker = Application.GetBlocker();
 	if(isOn){
-		$('html,body').css('pointer-events', 'none');
+		Application._htmlBody.css('pointer-events', 'none');
 		blocker.fadeIn('fast', function(){ Application.SetObjDisplay(blocker, true); });
 	}else{
 		blocker.fadeOut('fast', function(){ Application.SetObjDisplay(blocker, false); });
@@ -92,7 +103,7 @@ Application.SetBlockerDisplay = function(isOn){
 }
 
 Application.InitResize = function(){
-	$(window).resize(function (){
+	Application._window.resize(function (){
 		Header.OnResize();
 	});
 }
@@ -110,25 +121,16 @@ Application.InitScroll = function(scrollTimeoutInterval){
 	});
 }
 
-var canGreedyScroll = true;
 Application.GreedyOnScroll = function(){
-	if(canGreedyScroll){
-		canGreedyScroll = false;
-		setTimeout(Application.WakeGreedyScroll, 250);		
-
-		Application.UpdateTitle();
-	}
-}
-Application.WakeGreedyScroll = function(){
-	canGreedyScroll = true;
+	Application.UpdateTitle();
 }
 
 Application.EnableManualScroll = function(){
-	$('html, body').off('scroll touchmove mousewheel');
+	Application._htmlBody.off('scroll touchmove mousewheel');
 }
 
 Application.DisableManualScroll = function(){
-	$('html, body').on('scroll touchmove mousewheel', function(e){
+	Application._htmlBody.on('scroll touchmove mousewheel', function(e){
 	  e.preventDefault();
 	  e.stopPropagation();
 	  return false;
@@ -143,8 +145,8 @@ Application.OnScroll = function() {
 }
 
 Application.UpdateTitle = function(){
-	var scrollPosition = $(window).scrollTop();
-	var headerTitle = $("#header_title");
+	var scrollPosition = Application._window.scrollTop();
+	var headerTitle = Application._headerTitle;
 
 	if(scrollPosition > 0){
 		headerTitle.addClass("anim_fade_out");
@@ -156,8 +158,8 @@ Application.UpdateTitle = function(){
 }
 
 // Application.UpdateHeaderBar = function(scrollCutoff){
-// 	var scrollPosition = $(window).scrollTop();
-// 	var headerBar = $("#header_bar");
+// 	var scrollPosition = Application._window.scrollTop();
+// 	var headerBar = Application._headerBar;
 // 	if(scrollPosition >= scrollCutoff){
 // 		if( !headerBar.hasClass("anim_roll_down") ){
 // 			headerBar.show();
