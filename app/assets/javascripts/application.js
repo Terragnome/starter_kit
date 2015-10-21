@@ -35,16 +35,34 @@ Application.Init = function(){
 	Header.Init();
 }
 
+Application.StartScroll = function(pos){
+	Application.StopScroll();
+
+	var curScroll = $('body').scrollTop();
+	var distance = Math.abs(curScroll-pos);
+
+	Application.autoPageScroll = $('body').animate(
+		{
+			scrollTop: pos,
+		},
+		{
+			duration: distance/2.5,
+			start: Application.DisableManualScroll,
+			always: Application.EnableManualScroll,
+		}
+	);
+}
+
+Application.StopScroll = function(){
+	if(Application.autoPageScroll) Application.autoPageScroll.stop();
+}
+
 Application.OnPageLoading = function(e, target, render, url){}
 
 Application.OnPageRedirected = function(e, target, render, url){}
 
 Application.OnPageAlways = function(e, target, render, url){
-	if(Application.autoPageScroll) Application.autoPageScroll.stop();
-
-	Application.autoPageScroll = $('html, body').animate({
-		scrollTop: 370
-	}, 250);
+	Application.StartScroll(370);
 }
 
 Application.OnPageDone = function(e, target, render, url){}
@@ -91,12 +109,24 @@ Application.InitScroll = function(scrollTimeoutInterval){
 	});
 }
 
-Application.GreedyOnScroll = function() {
+Application.GreedyOnScroll = function(){
 	Application.UpdateTitle();
 }
 
+Application.EnableManualScroll = function(){
+	$('html, body').off('scroll touchmove mousewheel');
+}
+
+Application.DisableManualScroll = function(){
+	$('html, body').on('scroll touchmove mousewheel', function(e){
+	  e.preventDefault();
+	  e.stopPropagation();
+	  return false;
+	});
+}
+
 Application.OnScroll = function() {
-	if(Application.autoPageScroll) Application.autoPageScroll.stop();
+	Application.StopScroll();
 
 	// Application.UpdateHeaderBar(230);
 	// PostFeed.OnScroll();

@@ -12,9 +12,7 @@ Post.Init = function(){
 
 Post.Share = function(obj){
   var externalUrl = $(obj).attr('external_url');
-  if(externalUrl){
-    window.open(externalUrl);
-  }
+  if(externalUrl) window.open(externalUrl);
 
   var shareUrl = $(obj).attr('share_url');
   if(shareUrl){
