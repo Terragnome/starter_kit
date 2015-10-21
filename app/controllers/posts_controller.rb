@@ -21,11 +21,13 @@ class PostsController < ApplicationController
 
     if @tag == :all
       @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
-      @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
+      @tags=Post.tag_counts_on(:tags).where.not(:name=>@tag).order('taggings_count DESC')
     else
       @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
-      @tags = @posts.tag_counts_on(:tags).order('taggings_count DESC')
+      @tags = @posts.tag_counts_on(:tags).where.not(:name=>@tag).order('taggings_count DESC')
     end
+
+    puts "#{@tags} #{@tags.class}"
 
     @posts.reverse if @scroll == :prev
 
