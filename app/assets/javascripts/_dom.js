@@ -11,6 +11,8 @@ DOM.Init = function(){
   DOM._headerTitle = $("#header_title");
   DOM._headerNavIcon = $("#header_nav_icon");
   DOM._headerNavMenu = $("#header_nav_menu");
+
+  DOM._postFeedList = $("#post_feed_list");
 }
 
 DOM.ToggleDisplay = function(obj){

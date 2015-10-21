@@ -1,22 +1,27 @@
 @import '_animation';
 @import '_colors';
 @import '_constants';
+@import '_fonts';
 
 #footer{
 	bottom: 0px;
-	font-weight: normal;
 	height: #{$footer_height};
 	padding: 5px 0 0 0;
 	width: 100%;
 
+	span{
+		font-family: #{$body_font};
+		font-weight: normal;
+		font-size: 12px;
+		color: white;
+		text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.8);
+	}
+
 	a{
 		color: white;
 		font-size: 13px;
+		font-weight: normal;
 		margin: 0px 10px 0px 10px;
-		text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.8);;
-	}
-
-	.est{
-		color: white;
+		text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.8);
 	}
 }

@@ -1,5 +1,8 @@
 .spacer
 #footer
+  %span
+    ="COPYRIGHT © 2015 #{@app_title}, LLC"
+
   =link_to('ABOUT', about_path, 'data-push'=>true)
   -if @primary_user
     =mail_to(@primary_user.email, 'CONTACT')

@@ -1,10 +1,17 @@
-.feed_list
+-next_url = nil
+-next_ajax = nil
+
+-if feed_list.next_page
+  -next_url = feed_url(:tag=>tag, :page=>feed_list.next_page)
+  -next_ajax = feed_url(:tag=>tag, :page=>feed_list.next_page, :format=>:js)
+
+.feed_list{:next_url=>next_url, :next_ajax=>next_ajax}
   -feed_list.each do |post|
     =render :partial=>'feed_post', :object=>post
   -(3-feed_list.length%3).times do |spacer|
     .feed_post_spacer
 
-  -if feed_list.next_page
+  -if next_url
     -next_url = feed_url(:tag=>tag, :page=>feed_list.next_page)
     =link_to('More', next_url, 'data-push'=>true, :class=>['more_posts', 'button'])
 

@@ -1,67 +1,61 @@
 var PostFeed = PostFeed || {};
 
-PostFeed.Init = function(){}
+PostFeed.Init = function(){
+  PostFeed.isLoading = false;
+}
 
 // PostFeed.OnScroll = function(){
-//     var postFeed = $("#post_feed_list");
+//   var postFeed = DOM._postFeedList;
 
-//     var scrollPos = $(window).scrollTop();
-//     var scrollBottom = $(document).height()-$(window).outerHeight();
+//   var scrollPos = DOM._window.scrollTop();
+//   var scrollBottom = DOM._document.height() - DOM._window.outerHeight();
 
-//     // console.log(scrollPos);
-//     // var bbox = $("#post_feed_list").get(0).getBoundingClientRect();
-//     // console.log( "TOP: "+bbox.top );
-//     // console.log( "BOTTOM: "+bbox.bottom );
+//   if(!PostFeed.isLoading && postFeed.length){
+//     var isPrev = false; // (scrollPos <= 0);
+//     var isNext = (scrollPos >= scrollBottom);
 
-//     if(!PostFeed.isLoading && postFeed.length){
-//         var isPrev = (scrollPos <= 0);
-//         var isNext = (scrollPos >= scrollBottom);
+//     if(isPrev || isNext){
+//       PostFeed.isLoading = true;
 
-//         console.log("isPrev "+isPrev);
-//         console.log("isNext "+isNext);
-
-//         if(isPrev || isNext){
-//             PostFeed.isLoading = true;
-
-//             var urls = $(".feed_list")
-//             if(isPrev){
-//                 urls = urls.first();
-//                 var prevUrl = urls.attr("prev_url");
-//                 var prevAjax = urls.attr("prev_ajax");
-//                 if(prevUrl){
-//                     PostFeed.LoadMore(
-//                         prevUrl,
-//                         prevAjax,
-//                         "prev",
-//                         true
-//                     );
-//                 }else{
-//                     PostFeed.isLoading = false;
-//                 }
-//             }else{
-//                 urls = urls.last();
-//                 var nextUrl = urls.attr("next_url");
-//                 var nextAjax = urls.attr("next_ajax");
-
-//                 console.log(nextUrl);
-//                 console.log(nextAjax);
-
-//                 if(nextUrl){
-//                     PostFeed.LoadMore(
-//                         nextUrl,
-//                         nextAjax,
-//                         "next",
-//                         true
-//                     );
-//                 }else{
-//                     PostFeed.isLoading = false;
-//                 }
-//             }
+//       var urls = DOM._postFeedList.find(".feed_list");
+//       if(isPrev){
+//         urls = urls.first();
+//         var prevUrl = urls.attr("prev_url");
+//         var prevAjax = urls.attr("prev_ajax");
+//         if(prevUrl){
+//           PostFeed.LoadMore(
+//               prevUrl,
+//               prevAjax,
+//               "prev",
+//               true
+//           );
+//         }else{
+//           PostFeed.isLoading = false;
 //         }
+//       }else{
+//         urls = urls.last();
+//         var nextUrl = urls.attr("next_url");
+//         var nextUrlAjax = urls.attr("next_ajax");
+
+//         if(nextUrl){
+//           PostFeed.LoadMore(
+//             nextUrl,
+//             nextUrlAjax,
+//             "next",
+//             true
+//           );
+//         }else{
+//           PostFeed.isLoading = false;
+//         }
+//       }
 //     }
+//   }
 // }
 
 // PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
+//   console.log("nextUrl "+nextUrl);
+//   console.log("nextAjax "+nextUrlAjax);
+
 // 	var request = $.ajax({
 // 		type: "GET",
 // 		url: nextUrlAjax,
@@ -72,7 +66,7 @@ PostFeed.Init = function(){}
 //   	if(updateHistory) history.pushState({id: nextUrl}, '', nextUrl);
 
 //     var elems = $(".feed_list");
-//     var lastElem = $(".feed_list").last();
+//     var lastElem = elems.last();
 
 //     elems.each(function(i, elem){
 //     	if( $(elem)[0] != lastElem[0] ){
@@ -82,15 +76,15 @@ PostFeed.Init = function(){}
 
 //     if(scroll == "next"){
 //     }else if(scroll == "prev"){
-//       var firstFeedList = $(".feed_list").first();
+//       var firstFeedList = elems.first();
 //       if(updateHistory){
-//         $(window).scrollTop($(firstFeedList).height());
+//         DOM._window.scrollTop($(firstFeedList).height());
 //       }
 //   	}
 //   })
 //   .fail(function(data) {
 //   })
 //   .always(function(data) {
-//     // PostFeed.isLoading = false;
+//     PostFeed.isLoading = false;
 //   });
 // }
