@@ -46,7 +46,7 @@ Application.StartScroll = function(pos){
 			scrollTop: pos,
 		},
 		{
-			duration: distance/2.5,
+			duration: distance/3.5,
 			start: Application.DisableManualScroll,
 			always: Application.EnableManualScroll,
 		}
@@ -100,17 +100,27 @@ Application.InitResize = function(){
 var scrollTimeout;
 Application.InitScroll = function(scrollTimeoutInterval){
 	$(document).scroll(function(){
-	    if(scrollTimeout){
-	    		Application.GreedyOnScroll();
-	        clearTimeout(scrollTimeout);
-	        scrollTimeout = null;
-	    }
-	    scrollTimeout = setTimeout(Application.OnScroll, scrollTimeoutInterval);
+		Application.GreedyOnScroll();
+
+    if(scrollTimeout){
+        clearTimeout(scrollTimeout);
+        scrollTimeout = null;
+    }
+    scrollTimeout = setTimeout(Application.OnScroll, scrollTimeoutInterval);
 	});
 }
 
+var canGreedyScroll = true;
 Application.GreedyOnScroll = function(){
-	Application.UpdateTitle();
+	if(canGreedyScroll){
+		canGreedyScroll = false;
+		setTimeout(Application.WakeGreedyScroll, 250);		
+
+		Application.UpdateTitle();
+	}
+}
+Application.WakeGreedyScroll = function(){
+	canGreedyScroll = true;
 }
 
 Application.EnableManualScroll = function(){
