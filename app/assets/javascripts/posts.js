@@ -11,9 +11,13 @@ Post.Init = function(){
 }
 
 Post.Share = function(obj){
-  var objId = $(obj).attr('id');
+  var externalUrl = $(obj).attr('external_url');
+  if(externalUrl){
+    window.open(externalUrl);
+  }
+
   var shareUrl = $(obj).attr('share_url');
-  if(objId && shareUrl){
+  if(shareUrl){
     var request = $.ajax({
       type: "PUT",
       url: shareUrl,
