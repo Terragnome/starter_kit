@@ -13,4 +13,4 @@
   %p.body
     =user.profile
   .navigation
-    =ajax_link_to("POSTS", user_archive_path(user.nickname))
+    =link_to("POSTS", user_archive_path(user.nickname), 'data-push'=>true)

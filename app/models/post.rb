@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   has_many :post_photos
   has_many :photos, :through=>:post_photos
 
+  has_many :counters, :as=>:countable
+
   before_validation :set_posted_at
   before_validation :set_slug
 
@@ -12,9 +14,23 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   def summary
-    s = "#{body.split(".")[0]}..."
-    # s = s.length > summary_len ? "#{s[0..summary_len]}..." : s
-    return s
+    "#{body.split(".")[0]}..."
+  end
+
+  def facebook_count
+    begin
+      self.counters.find_or_create_by(:key=>:facebook).counter
+    rescue
+      0
+    end
+  end
+
+  def twitter_count
+    begin
+      self.counters.find_or_create_by(:key=>:twitter).counter
+    rescue
+      0
+    end
   end
 
   def previous

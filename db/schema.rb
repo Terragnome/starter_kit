@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020194905) do
+ActiveRecord::Schema.define(version: 20151021001922) do
+
+  create_table "counters", force: true do |t|
+    t.string   "countable_type"
+    t.integer  "countable_id"
+    t.string   "key"
+    t.integer  "counter",        default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "photos", force: true do |t|
     t.string "name",         null: false

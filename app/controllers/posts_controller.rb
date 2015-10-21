@@ -19,7 +19,6 @@ class PostsController < ApplicationController
     @page = params.has_key?(:page) ? params[:page].to_i : 1
     @scroll = params.has_key?(:scroll) ? params[:scroll] : :next
 
-
     if @tag == :all
       @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
       @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
@@ -36,27 +35,27 @@ class PostsController < ApplicationController
     end
   end
 
-  def index_by_tag
-    tag=params[:tag]
-    @posts=Post.active.tagged_with(tag)
-    @tags=@posts.tag_counts_on(:tags)
+  # def index_by_tag
+  #   tag=params[:tag]
+  #   @posts=Post.active.tagged_with(tag)
+  #   @tags=@posts.tag_counts_on(:tags)
 
-    respond_to do |format|
-      format.html{render action: 'index'}
-      format.js{render action: 'index'}
-    end
-  end
+  #   respond_to do |format|
+  #     format.html{render action: 'index'}
+  #     format.js{render action: 'index'}
+  #   end
+  # end
 
-  def index_by_user
-    user=User.find_by_nickname(params[:nickname])
-    @posts=user.posts.active
-    @tags=@posts.tag_counts_on(:tags)
+  # def index_by_user
+  #   user=User.find_by_nickname(params[:nickname])
+  #   @posts=user.posts.active
+  #   @tags=@posts.tag_counts_on(:tags)
 
-    respond_to do |format|
-      format.html{render action: 'index'}
-      format.js{render action: 'index'}
-    end
-  end
+  #   respond_to do |format|
+  #     format.html{render action: 'index'}
+  #     format.js{render action: 'index'}
+  #   end
+  # end
 
   # def index
   #   @posts=Post.active
@@ -69,16 +68,35 @@ class PostsController < ApplicationController
   # end
 
   def show
-    # begin
-    @post = Post.active.where(:id=>params[:id]).take()
-    @post ||= Post.active.where(:slug=>params[:id]).take()
-    # rescue
-    #   redirect_to latest_path and return
-    # end
+    begin
+      @post = Post.active.where(:id=>params[:id]).take()
+      @post ||= Post.active.where(:slug=>params[:id]).take()
+    rescue
+      redirect_to latest_path and return
+    end
 
     respond_to do |format|
       format.html
       format.js
+    end
+  end
+
+  def share
+    @post = Post.active.where(:id=>params[:id]).take()
+
+    @share_count = 0
+    if @post
+      key = params[:key].to_sym()
+      if [:facebook, :twitter].include?(key)
+        counter = Counter.find_or_create_by(:countable_type=>@post.class, :countable_id=>@post.id, :key=>key)
+        counter.increment()
+        counter.save()
+        @share_count = counter.counter
+      end
+    end
+
+    respond_to do |format|
+      format.js{render action: 'share'}
     end
   end
 

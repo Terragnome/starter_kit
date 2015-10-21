@@ -1,6 +1,6 @@
 -if navigation.previous || navigation.next
   .navigation
     -if navigation.previous
-      =ajax_link_to("PREVIOUS", full_post_path(navigation.previous), :id=>'previous_post')
+      =link_to("PREVIOUS", full_post_path(navigation.previous), 'data-push'=>true, :id=>'previous_post')
     -if navigation.next
-      =ajax_link_to("NEXT", full_post_path(navigation.next), :id=>'next_post')
+      =link_to("NEXT", full_post_path(navigation.next), 'data-push'=>true, :id=>'next_post')

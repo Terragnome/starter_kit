@@ -1,7 +1,7 @@
 .feed_post{:id=>"feed_post_#{feed_post.id}"}
   .header
     %h1
-      =ajax_link_to(feed_post.title, full_post_path(feed_post))
+      =link_to(feed_post.title, full_post_path(feed_post), 'data-push'=>true)
     .info_section
       .info
         .text
@@ -15,5 +15,3 @@
         =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
     =render :partial=>'post_tags', :object=>feed_post.tag_list
   =render :partial=>'post_actions', :object=>feed_post, :as=> :post, :locals=>{:is_feed=>true}
-:javascript
-  Post.Init();
