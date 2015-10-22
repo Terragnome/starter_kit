@@ -1,7 +1,7 @@
 StarterKit::Application.routes.draw do
   mount RailsAdmin::Engine => '/comu', :as => 'rails_admin'
-  
-  devise_for :users
+
+  devise_for :users, :path => '_comu', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   resources :users
   
   get 'about' => 'info#about'
