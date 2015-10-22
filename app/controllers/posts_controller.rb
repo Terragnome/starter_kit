@@ -40,8 +40,9 @@ class PostsController < ApplicationController
       @post = Post.active.where(:id=>params[:id]).take()
       @post ||= Post.active.where(:slug=>params[:id]).take()
     rescue
-      redirect_to latest_path and return
     end
+
+    redirect_to latest_path and return if not @post
 
     respond_to do |format|
       format.html

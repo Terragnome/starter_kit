@@ -9,7 +9,7 @@
   .body
     .photo_gallery
       -post.photos.each do |ph|
-        =image_tag(ph.remote_url, :class=>'photo')
+        =image_tag(ph.remote_url, :class=>'photo', :title=>ph.name, :alt=>ph.name)
     %p.description
       =post.body.gsub(/\n/, '<br/>').html_safe
     =render :partial=>'post_tags', :object=>post.tag_list
