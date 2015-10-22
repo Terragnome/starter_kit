@@ -4,10 +4,6 @@
 @import '_fonts';
 
 #header{
-	background-image: url(/assets/workshop_blur.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	/*background-color: #f0f0f0;*/
 	width: 100%;
 	height: #{$header_height};
 	min-width: #{$header_min_width};

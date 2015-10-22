@@ -37,8 +37,6 @@ div{
 }
 
 html, body{
-	background-repeat: no-repeat;
-	background-size: cover;
 	border: 0px;
 	height: 100%;
 	margin: 0px;
@@ -62,6 +60,17 @@ html{
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none; 
+}
+
+#background{
+	position: fixed;
+	background-image: url(/assets/workshop_blur.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #f0f0f0;
+
+	width: 100%;
+	height: 100%;
 }
 
 p,a,h1,h2,h3,h4,h5,h6,div,br,li,td,article{

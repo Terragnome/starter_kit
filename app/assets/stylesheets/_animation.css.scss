@@ -34,20 +34,18 @@
   }
 }
 
-$anim_roll_down_duration: 0.3s;
 .anim_roll_down{
-	-webkit-animation: AnimRollDown #{$anim_roll_down_duration};
+	-webkit-animation: AnimRollDown 0.3s;
 	animation-name: AnimRollDown;
-  animation-duration: #{$anim_roll_down_duration};
+  animation-duration: 0.3s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
 
-$anim_fade_in_duration: 0.75s;
 .anim_fade_in{
-	-webkit-animation: AnimFadeIn #{$anim_fade_in_duration};
+	-webkit-animation: AnimFadeIn 0.7s;
 	animation-name: AnimFadeIn;
-  animation-duration: #{$anim_fade_in_duration};
+  animation-duration: 0.7s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
   opacity: 0;
@@ -55,9 +53,9 @@ $anim_fade_in_duration: 0.75s;
 
 $anim_fade_out_duration: 0.75s;
 .anim_fade_out{
-  -webkit-animation: AnimFadeOut #{$anim_fade_out_duration};
+  -webkit-animation: AnimFadeOut 0.7s;
   animation-name: AnimFadeOut;
-  animation-duration: #{$anim_fade_out_duration};
+  animation-duration: 0.7s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   opacity: 1;

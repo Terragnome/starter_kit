@@ -8,7 +8,7 @@ $feed_post_width: 32.75%;
 $feed_list_padding_h: 0px;
 
 .post_tag_cloud{
-	margin: 10px 0 30px 0;
+	margin: 30px 0 30px 0;
 	text-align: center;
 
 	.tag{
@@ -122,7 +122,6 @@ $feed_list_padding_h: 0px;
 
 		&:hover{
 			background-color: #{$highlight_color};
-			border-color: #{$highlight_color};
 			outline-color: #{$highlight_color};
 		}
 	}

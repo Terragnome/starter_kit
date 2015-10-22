@@ -5,8 +5,6 @@ Scroll.Init = function(scrollTimeoutInterval){
   Scroll.autoScroll = null;
 
   $(document).scroll(function(){
-    Scroll.OnScrollGreedy();
-
     if(scrollTimeout){
         clearTimeout(scrollTimeout);
         scrollTimeout = null;
@@ -15,25 +13,24 @@ Scroll.Init = function(scrollTimeoutInterval){
   });
 }
 
-Scroll.OnScroll = function(){}
-
-Scroll.OnScrollGreedy = function(){
+Scroll.OnScroll = function(){
   Application.UpdateTitle();
 }
 
 Scroll.AutoScrollTo = function(pos){
   if(Scroll.autoScroll) Scroll.autoScroll.stop();
 
-  var curScroll = DOM._body.scrollTop();
-  var distance = Math.abs(curScroll-pos);
-  Scroll.autoScroll = DOM._body.animate(
-    { scrollTop: pos },
-    {
-      duration: distance/1.5,
-      start: Scroll.DisableManual,
-      always: Scroll.EnableManual
-    }
-  );
+  DOM._body.scrollTop(pos);
+  // var curScroll = DOM._body.scrollTop();
+  // var distance = Math.abs(curScroll-pos);
+  // Scroll.autoScroll = DOM._body.animate(
+  //   { scrollTop: pos },
+  //   {
+  //     duration: distance/1.75,
+  //     start: Scroll.DisableManual,
+  //     always: Scroll.EnableManual
+  //   }
+  // );
 }
 
 Scroll.EnableManual = function(){
