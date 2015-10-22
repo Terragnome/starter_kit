@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
     @app_title = APP_CONFIG['app_title']
     @app_title_components = APP_CONFIG['app_title_components']
     @app_title_short = @app_title_components.collect{|x| x[0]}.join("")
-    @app_description='._.'
 
     @asset_root = StarterKit::Application.config.asset_root
 
