@@ -1,6 +1,6 @@
 var Post = Post || {};
 
-Post.Init = function(){
+Post.Init = function(summary){
   $(".post_actions").each(function(i, obj){
     $(obj).find(".icon_button").each(function(j, btnObj){
       $(btnObj).click(function(e){

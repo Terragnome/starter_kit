@@ -6,20 +6,21 @@
     =stylesheet_link_tag    "application", media:"all", "data-turbolinks-track"=>true
     =javascript_include_tag "application", "data-turbolinks-track"=>true
     =csrf_meta_tags
-    %meta{:name=>'description', :content=>'Find a new hobby. All the guides and gear you need to pursue hobbies like art, cooking, beekeeping, archery, running, and more.'}
-    %meta{:name=>'viewport', :content=>'width=device-width, initial-scale=1.0'}
+    %meta{ name: 'keywords', content: meta_keywords } 
+    %meta{ name: 'description', content: meta_description }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
   %body
+    -meta_description()
+    -meta_keywords()
     #background
     #popups
     #blocker
-    #fb-root
-    =render :partial=>'layouts/header_bar'
-    =render :partial=>'layouts/header', :object=>@app_title_components
-    #scene{:style=>"overflow:#{is_mobile_device? ? 'visible' : 'scroll'};"}
-      =render :partial=>'layouts/header_bar'
+    =render partial: 'layouts/header_bar'
+    =render partial: 'layouts/header', object: @app_title_components
+    #scene{ style: "overflow:#{is_mobile_device? ? 'visible' : 'scroll'};"}
       #scene_content
         #scene_body
           =yield
-        / =render :partial=>'layouts/ads'
-        =render :partial=>'layouts/footer'
-    / =render :partial=>'layouts/analytics'
+        / =render partial: 'layouts/ads'
+        =render partial: 'layouts/footer'
+    / =render partial: 'layouts/analytics'

@@ -65,4 +65,8 @@ Application.UpdateTitle = function(){
 	}
 }
 
+Application.UpdateDescription = function(m){
+	DOM._appDescription.content(m);
+}
+
 $(Application.Init);

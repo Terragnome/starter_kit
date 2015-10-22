@@ -7,6 +7,8 @@ DOM.Init = function(){
   DOM._html = $('html');
   DOM._body = $('body');
 
+  DOM._appDescription = $('#app_description');
+
   DOM._blocker = $("#blocker");
   DOM._headerBar = $("#header_bar");
   DOM._headerTitle = $("#header_title");

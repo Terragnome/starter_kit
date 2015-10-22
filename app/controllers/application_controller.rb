@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   has_mobile_fu false
 
   def set_constants
-    @app_title_components=['Pursuit','Hobbiness']
-    @app_title="The Pursuit of Hobbiness"
+    @app_title = APP_CONFIG['app_title']
+    @app_title_components = APP_CONFIG['app_title_components']
     @app_title_short = @app_title_components.collect{|x| x[0]}.join("")
     @app_description='._.'
 

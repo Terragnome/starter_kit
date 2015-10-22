@@ -39,7 +39,7 @@ gem 'will_paginate'
 gem 'newrelic_rpm'
 
 #For heroku
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 # Mobile
 gem 'mobile-fu'
