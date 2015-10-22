@@ -1,0 +1,13 @@
+@import '_animation';
+@import '_colors';
+@import '_constants';
+@import '_fonts';
+
+#admin{
+  background-color: white;
+  padding: 30px;
+
+  h2{
+    font-family: #{$title_font};
+  }
+}

@@ -84,15 +84,16 @@ h1{
 	border: 0px;
 	font-family: #{$title_font};
 	font-size: 32px;
+	text-transform: uppercase;
 	margin: 0px;
 	padding: 0px;
-	text-transform: uppercase;
 }
 
 h2{
 	border: 0px;
 	font-family: #{$title_font};
 	font-size: 40px;
+	text-transform: uppercase;
 	margin: 0px;
 	padding: 0px;
 }
@@ -107,6 +108,20 @@ img{
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+}
+
+input[type=submit]{
+	cursor: pointer;
+	background-color: #{$base_color};
+	color: white;
+	font-family: #{$title_font};
+	text-transform: uppercase;
+	border: 0px;
+	padding: 5px 7px 5px 7px;
+
+	&:hover{
+		background-color: #{$highlight_color};
+	}
 }
 
 label{

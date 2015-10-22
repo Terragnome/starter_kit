@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   
   has_mobile_fu false
 
+  layout :layout_by_resource
+
   def set_constants
     @app_title = APP_CONFIG['app_title']
     @app_title_components = APP_CONFIG['app_title_components']
@@ -15,5 +17,11 @@ class ApplicationController < ActionController::Base
     @asset_root = StarterKit::Application.config.asset_root
 
     @primary_user=User.first
+  end
+
+  protected
+
+  def layout_by_resource
+    devise_controller? ? "admin" : "application"
   end
 end
