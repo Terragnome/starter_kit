@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-StarterKit::Application.config.secret_key_base = 'bf022d394317d9c5c4a7840e69159ce3d503d156faccf370a7ed27834808ea78167295b5e63ed6090543d51d3f126539ce716757134a03dd6897b5f8345b09c8'
+StarterKit::Application.config.secret_key_base = '10618ad97a6af63b7a88d8ffebaed56bce39c6ce45e42d89ab23bbd9a8be98074aae7b7c6f9f0256f40e93be3a30c0b89114355509c70d2c923520dbf51f1822'
