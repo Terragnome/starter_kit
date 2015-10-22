@@ -30,7 +30,7 @@ Application.Init = function(){
 	DOM._document.off('page:fail').on('page:fail', Application.OnPageFail);
 
 	Input.Init();
-	Scroll.Init(100);
+	Scroll.Init(250);
 	Blocker.Init(DOM._blocker);
 	Header.Init();
 

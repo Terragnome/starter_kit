@@ -20,7 +20,6 @@ Scroll.OnScroll = function(){
 Scroll.AutoScrollTo = function(pos){
   if(Scroll.autoScroll) Scroll.autoScroll.stop();
 
-  DOM._body.scrollTop(pos);
   // var curScroll = DOM._body.scrollTop();
   // var distance = Math.abs(curScroll-pos);
   // Scroll.autoScroll = DOM._body.animate(
@@ -31,6 +30,8 @@ Scroll.AutoScrollTo = function(pos){
   //     always: Scroll.EnableManual
   //   }
   // );
+  DOM._body.scrollTop(pos);
+  //
 }
 
 Scroll.EnableManual = function(){

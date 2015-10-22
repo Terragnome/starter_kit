@@ -10,7 +10,7 @@
     =link_to(full_post_path(feed_post), 'data-push'=>true) do
       -if feed_post.cover_photo
         .photo_gallery
-          =image_tag(feed_post.cover_photo.remote_url, :class=>"photo")
+          =image_tag(feed_post.cover_photo.remote_url, :class=>"photo", :alt=>"#{feed_post.title}")
       %p.description
         =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
     =render :partial=>'post_tags', :object=>feed_post.tag_list
