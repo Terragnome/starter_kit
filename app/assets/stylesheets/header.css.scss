@@ -129,25 +129,59 @@ $nav_icon_bar_height: 2px;
 	z-index: 6;
 }
 
-#header_nav_menu{
-	background: #{$base_color};
-	display: none;
-	opacity: 0;
-	padding: 30px 0 0 0;
-	width: 100%;
-	top: #{$header_bar_height};
-	z-index: 5;
+#header_search_bar{
+	position: fixed;
+	top: 7px;
+	right: 8px;
+	z-index: 7;
 
-	a{
-		display: block;
-		height: 50px;
+	.search_icon{
+		float: right;
+		cursor: pointer;
+		background: url(/assets/icons/search.svg) no-repeat;
+		background-position: center;
+		background-size: auto 24px;
+		background-repeat: no-repeat;
+
+		background-color: #{$base_color};
+		color: white;
+		font-size: 46px;
+		width: 38px;
+		height: 32px;
+		border: 0px;
+
+		&:hover{
+			background-color: #{$highlight_color};
+		}
 	}
 
-	#header_nav_menu_inner{
-		margin: 0 0 30px 0;
-		width: 100%;
-		text-align: center;
+	.search_field{
+		float: right;
+		background-color: #{$base_color};
+		color: white;
+		font-family: #{$body_font};
+		font-size: 15px;
+		font-weight: none;
+		text-tranform: none;
+		width: 200px;
+		padding: 6px 0 6px 0;
+		border: 1px solid white;
+		margin: 0px;
+
+		&:hover{}
 	}
+}
+
+#header_app_icon{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 45px;
+	height: 45px;
+	background: url(/assets/icons/twitter.svg) no-repeat;
+	background-position: center;
+	background-size: auto 24px;
+	background-repeat: no-repeat;
 }
 
 #header_nav_icon{
@@ -233,44 +267,24 @@ $nav_icon_bar_height: 2px;
 	}
 }
 
-#header_search_bar{
-	position: fixed;
-	top: 7px;
-	right: 8px;
-	z-index: 7;
+#header_nav_menu{
+	background: #{$base_color};
+	display: none;
+	opacity: 0;
+	padding: 30px 0 0 0;
+	width: 100%;
+	top: #{$header_bar_height};
+	z-index: 5;
 
-	.search_icon{
-		float: right;
-		cursor: pointer;
-		background: url(/assets/icons/search.svg) no-repeat;
-		background-position: center;
-		background-size: auto 24px;
-		background-repeat: no-repeat;
-
-		background-color: #{$base_color};
-		color: white;
-		font-size: 46px;
-		width: 38px;
-		height: 32px;
-		border: 0px;
-
-		&:hover{
-			background-color: #{$highlight_color};
-		}
+	a{
+		display: block;
+		height: 50px;
 	}
 
-	.search_field{
-		float: right;
-		background-color: #{$base_color};
-		color: white;
-		font-family: #{$body_font};
-		font-size: 15px;
-		font-weight: none;
-		text-tranform: none;
-		width: 200px;
-		padding: 6px 0 6px 0;
-		border: 1px solid white;
-		margin: 0px;
+	#header_nav_menu_inner{
+		margin: 0 0 30px 0;
+		width: 100%;
+		text-align: center;
 	}
 }
 
@@ -282,10 +296,6 @@ $nav_icon_bar_height: 2px;
 			margin: 0 7px 0 7px;
 		}
 
-		.title{
-			display: none;
-		}
-
 		#header_bar_inner{
 			a{
 				display: none;
@@ -295,5 +305,9 @@ $nav_icon_bar_height: 2px;
 		#header_nav_icon{
 			display: block;
 		}
+	}
+
+	#header_app_icon{
+		display: none;
 	}
 }
