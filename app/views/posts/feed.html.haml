@@ -2,8 +2,12 @@
 
 =render :partial=>'tag_cloud', :object=>@tags
 
-#post_feed
-  #post_feed_list
-    =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tag=>@tag}
-:javascript
-  PostFeed.Init();
+-if @posts.count > 0
+  #post_feed
+    #post_feed_list
+      =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tag=>@tag}
+  :javascript
+    PostFeed.Init();
+-else
+  .no_entries
+    No articles found. Please check later.

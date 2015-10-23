@@ -167,6 +167,14 @@ table{
 
 .none{ display: none; }
 
+.no_entries{
+	font-family: #{$body_font};
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.8);
+	margin: -25px 0 55px 0;
+}
+
 .left{ float: left; }
 .right{ float: right }
 .bold{ font-weight: bold; }

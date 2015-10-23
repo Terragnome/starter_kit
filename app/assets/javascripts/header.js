@@ -11,14 +11,14 @@ Header.Init = function(){
 Header.ToggleMenu = function(){
 	var isOpen = Header._navMenu.hasClass("anim_roll_down");
 	isOpen ? Header.CloseMenu() : Header.OpenMenu();
-
-	Header._navIcon.toggleClass('open');
 }
 Header.OpenMenu = function(){
 	var navMenu = Header._navMenu;
 	navMenu.toggleClass("anim_roll_down");
 	navMenu.toggleClass("anim_fade_in");
 	navMenu.show();
+
+	Header._navIcon.addClass('open');
 }
 Header.CloseMenu = function(){
 	var navMenu = Header._navMenu;
