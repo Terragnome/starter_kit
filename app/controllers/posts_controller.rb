@@ -1,39 +1,16 @@
 class PostsController < ApplicationController 
   @@feed_length = 6 # This should be a multiple of 6
 
+  before_filter :prepare_feed, :only=>[:latest, :feed]
+
   def latest
-    @tag=:all
-    @page=1
-
-    @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
-    @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
-    @selected_tags = []
-
     respond_to do |format|
       format.html{render action: 'feed'}
       format.js{render action: 'feed'}
-    end
+    end    
   end
 
   def feed
-    @tag = params.has_key?(:tag) ? params[:tag].to_sym : :all
-    @page = params.has_key?(:page) ? params[:page].to_i : 1
-    @scroll = params.has_key?(:scroll) ? params[:scroll] : :next
-
-    if @tag == :all
-      @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
-    else
-      @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
-    end
-
-    @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
-
-    @selected_tags = []
-    @tags.each{|tag| @selected_tags.push(tag) if tag.name == @tag.to_s}
-    @tags = @tags-@selected_tags
-
-    @posts.reverse if @scroll == :prev
-
     respond_to do |format|
       format.html
       format.js
@@ -105,5 +82,27 @@ class PostsController < ApplicationController
   #     format.js
   #   end
   # end
+
+  private
+
+    def prepare_feed
+      @tag = params.has_key?(:tag) ? params[:tag].to_sym : :all
+      @page = params.has_key?(:page) ? params[:page].to_i : 1
+      @scroll = params.has_key?(:scroll) ? params[:scroll] : :next
+
+      if @tag == :all
+        @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
+      else
+        @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
+      end
+
+      @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
+
+      @selected_tags = []
+      @tags.each{|tag| @selected_tags.push(tag) if tag.name == @tag.to_s}
+      @tags = @tags-@selected_tags
+
+      @posts.reverse if @scroll == :prev
+    end
 
 end

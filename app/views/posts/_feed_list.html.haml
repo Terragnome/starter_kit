@@ -14,7 +14,6 @@
   -if next_url
     -next_url = feed_url(:tag=>tag, :page=>feed_list.next_page)
     =link_to('More', next_url, 'data-push'=>true, :class=>['more_posts', 'button'])
-    .loader
 
 :javascript
   Post.Init();
