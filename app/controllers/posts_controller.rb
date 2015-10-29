@@ -1,7 +1,5 @@
 class PostsController < ApplicationController 
-  @@feed_length = 1 # This should be a multiple of 6
-
-  # before_filter :prepare_feed, :only=>[:latest, :feed]
+  @@feed_length = 6 # This should be a multiple of 6
 
   def latest
     prepare_feed()
@@ -84,10 +82,9 @@ class PostsController < ApplicationController
         @tags = @tags.collect{|x| x.to_sym}
         @posts=Post.active.tagged_with(@tags)
         @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
-        @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
         @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
-        @selected_tags.sort_by{|x| x.name}
         @all_tags = @all_tags-@selected_tags
+        @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
       end
 
       @posts.reverse if scroll == :prev
