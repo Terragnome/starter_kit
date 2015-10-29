@@ -74,7 +74,7 @@ class PostsController < ApplicationController
     def prepare_feed
       @tags ||= :all
       @page ||= params.has_key?(:page) ? params[:page].to_i : 1
-      @scroll ||= params.has_key?(:scroll) ? params[:scroll] : :next
+      scroll ||= params.has_key?(:scroll) ? params[:scroll] : :next
 
       @selected_tags = []
       if @tags == :all
@@ -86,12 +86,11 @@ class PostsController < ApplicationController
         @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
         @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
         @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
-
         @selected_tags.sort_by{|x| x.name}
         @all_tags = @all_tags-@selected_tags
       end
 
-      @posts.reverse if @scroll == :prev
+      @posts.reverse if scroll == :prev
     end
 
 end

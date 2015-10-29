@@ -33,27 +33,26 @@ module PostsHelper
 
   def seo_feed_path(tags, **kwargs)
     tags = seo_feed_params(tags)
-    return latest_path if tags == :all
-    return feed_path(:tag=>tags.first) if tags.length == 1
-    return tag_feed_path(:tags=>tags.join(','))
+    return latest_path(**kwargs) if tags == :all
+    return feed_path(:tag=>tags.first, **kwargs) if tags.length == 1
+    return tag_feed_path(:tags=>tags.join(','), **kwargs)
   end
 
   def seo_feed_url(tags, **kwargs)
     tags = seo_feed_params(tags)
-    return latest_url if tags == :all
-    return feed_url(:tag=>tags.first) if tags.length == 1
-    return tag_feed_url(:tags=>tags.join(','))
+    return latest_url(**kwargs) if tags == :all 
+    return feed_url(:tag=>tags.first, **kwargs) if tags.length == 1
+    return tag_feed_url(:tags=>tags.join(','), **kwargs)
   end
 
   private
 
   def seo_feed_params(parms)
     begin
-      parms = parms.split(",")
+      parms = parms.split(",").flatten
     rescue
       parms = :all
     end
-
     parms
   end
 

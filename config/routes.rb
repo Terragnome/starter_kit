@@ -9,7 +9,7 @@ StarterKit::Application.routes.draw do
   get 'privacy' => 'info#privacy'
   get 'terms' => 'info#terms'
 
-  get 'latest' => 'posts#latest'
+  get 'latest/(:page)' => 'posts#latest', :as=>'latest'
   get 'collection' => 'posts#tag_feed', :as=>'tag_feed'
   get 'collection/:tag(/:page)' => 'posts#feed', :as=>'feed'
 
