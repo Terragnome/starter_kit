@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
     @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
     @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
+    @selected_tags = []
 
     respond_to do |format|
       format.html{render action: 'feed'}
@@ -21,11 +22,15 @@ class PostsController < ApplicationController
 
     if @tag == :all
       @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
-      @tags=Post.tag_counts_on(:tags).where.not(:name=>@tag).order('taggings_count DESC')
     else
       @posts=Post.active.tagged_with(@tag).paginate(:page=>@page, :per_page=>@@feed_length)
-      @tags = @posts.tag_counts_on(:tags).where.not(:name=>@tag).order('taggings_count DESC')
     end
+
+    @tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
+
+    @selected_tags = []
+    @tags.each{|tag| @selected_tags.push(tag) if tag.name == @tag.to_s}
+    @tags = @tags-@selected_tags
 
     @posts.reverse if @scroll == :prev
 

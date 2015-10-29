@@ -1,6 +1,6 @@
 -app_title(@tag.capitalize)
 
-=render :partial=>'tag_cloud', :object=>@tags
+=render :partial=>'tag_cloud', :locals=>{:tags=>@tags, :selected=>@selected_tags}
 
 -if @posts.count > 0
   #post_feed

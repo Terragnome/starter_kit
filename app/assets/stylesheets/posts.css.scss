@@ -25,6 +25,17 @@ $feed_list_padding_h: 0px;
 			color: white;
 		}
 	}
+
+	.selected{
+		background-color: #{$medium_gray};
+		margin: 0 5px 0 5px;
+
+		.close_button{
+			pointer-events: none;
+			display: inline-block;
+			margin: 0 -5px 0 8px;
+		}
+	}
 }
 
 .tags{

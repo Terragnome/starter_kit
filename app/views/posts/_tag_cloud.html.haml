@@ -1,5 +1,14 @@
--if tag_cloud and tag_cloud.length>0
-  .post_tag_cloud.anim_fade_in
-    -tag_cloud(tag_cloud, %w(css1)) do |tag|
-      =link_to("##{tag.name} ( #{tag.taggings_count} )", feed_path(tag.name), 'data-push'=>true, class: 'tag')
-  .spacer
+-if (tags and tags.length>0) or (selected and selected.length>0)
+  .post_tag_cloud
+    -if selected
+      -tag_cloud(selected, %w(css1)) do |tag|
+        =link_to feed_path(tag.name), 'data-push'=>true, class: 'tag selected' do
+          ="##{tag.name}"
+          .close_button
+            %span
+            %span
+
+    -if tags
+      -tag_cloud(tags, %w(css1)) do |tag|
+        =link_to("##{tag.name} ( #{tag.taggings_count} )", feed_path(tag.name), 'data-push'=>true, class: 'tag')
+.spacer

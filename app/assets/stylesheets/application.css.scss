@@ -218,6 +218,33 @@ table{
 	}
 }
 
+$close_button_bar_width: 15px;
+$close_button_bar_height: 2px;
+.close_button{
+	span{
+		display: block;
+		height: #{$close_button_bar_height};
+		width: #{$close_button_bar_width};
+		background: white;
+	}
+
+	span:nth-child(1) {
+		margin: -7px 0 0 0;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	span:nth-child(2) {
+		margin: #{-$close_button_bar_height} 0 0 0;
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+}
+
 .buy_button{
 	background-color: #{$base_color};
 	border-color: #{$base_color};
