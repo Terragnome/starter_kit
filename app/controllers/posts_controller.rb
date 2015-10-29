@@ -1,7 +1,14 @@
 class PostsController < ApplicationController 
   @@feed_length = 6 # This should be a multiple of 6
 
-  before_filter :prepare_feed, :only=>[:latest, :feed]
+  before_filter :prepare_feed, :only=>[:latest, :feed, :tag_feed]
+
+  def feed
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   def latest
     respond_to do |format|
@@ -10,10 +17,10 @@ class PostsController < ApplicationController
     end    
   end
 
-  def feed
+  def tag_feed
     respond_to do |format|
-      format.html
-      format.js
+      format.html{render action: 'feed'}
+      format.js{render action: 'feed'}
     end
   end
 
@@ -51,44 +58,12 @@ class PostsController < ApplicationController
     end
   end
 
-  # def index_by_tag
-  #   tag=params[:tag]
-  #   @posts=Post.active.tagged_with(tag)
-  #   @tags=@posts.tag_counts_on(:tags)
-
-  #   respond_to do |format|
-  #     format.html{render action: 'index'}
-  #     format.js{render action: 'index'}
-  #   end
-  # end
-
-  # def index_by_user
-  #   user=User.find_by_nickname(params[:nickname])
-  #   @posts=user.posts.active
-  #   @tags=@posts.tag_counts_on(:tags)
-
-  #   respond_to do |format|
-  #     format.html{render action: 'index'}
-  #     format.js{render action: 'index'}
-  #   end
-  # end
-
-  # def index
-  #   @posts=Post.active
-  #   @tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
-
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
-
   private
 
     def prepare_feed
-      @tag = params.has_key?(:tag) ? params[:tag].to_sym : :all
-      @page = params.has_key?(:page) ? params[:page].to_i : 1
-      @scroll = params.has_key?(:scroll) ? params[:scroll] : :next
+      @tag ||= params.has_key?(:tag) ? params[:tag].to_sym : :all
+      @page ||= params.has_key?(:page) ? params[:page].to_i : 1
+      @scroll ||= params.has_key?(:scroll) ? params[:scroll] : :next
 
       if @tag == :all
         @posts=Post.active.paginate(:page=>@page, :per_page=>@@feed_length)
@@ -100,6 +75,8 @@ class PostsController < ApplicationController
 
       @selected_tags = []
       @tags.each{|tag| @selected_tags.push(tag) if tag.name == @tag.to_s}
+      @selected_tags.sort_by{|x| x.name}
+
       @tags = @tags-@selected_tags
 
       @posts.reverse if @scroll == :prev

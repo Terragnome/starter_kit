@@ -2,7 +2,7 @@
   .post_tag_cloud
     -if selected
       -tag_cloud(selected, %w(css1)) do |tag|
-        =link_to feed_path(tag.name), 'data-push'=>true, class: 'tag selected' do
+        =link_to tag_feed_path(:tag=>tag.name), 'data-push'=>true, class: 'tag selected' do
           ="##{tag.name}"
           .close_button
             %span
@@ -10,5 +10,5 @@
 
     -if tags
       -tag_cloud(tags, %w(css1)) do |tag|
-        =link_to("##{tag.name} ( #{tag.taggings_count} )", feed_path(tag.name), 'data-push'=>true, class: 'tag')
+        =link_to("##{tag.name} ( #{tag.taggings_count} )", tag_feed_path(:tag=>tag.name), 'data-push'=>true, class: 'tag')
 .spacer
