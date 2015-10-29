@@ -1,11 +1,11 @@
--app_title(@tag.capitalize)
+-feed_title(@tags)
 
-=render :partial=>'tag_cloud', :locals=>{:tags=>@tags, :selected=>@selected_tags}
+=render :partial=>'tag_cloud', :locals=>{:tags=>@all_tags, :selected=>@selected_tags}
 
 -if @posts.count > 0
   #post_feed
     #post_feed_list
-      =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tag=>@tag}
+      =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags}
   :javascript
     PostFeed.Init();
 -else

@@ -1,14 +1,15 @@
--if (tags and tags.length>0) or (selected and selected.length>0)
-  .post_tag_cloud
-    -if selected
-      -tag_cloud(selected, %w(css1)) do |tag|
-        =link_to tag_feed_path(:tags=>tag.name), 'data-push'=>true, class: 'tag selected' do
-          ="##{tag.name}"
-          .close_button
-            %span
-            %span
+.post_tag_cloud
+  -selected ||= []
+  -tag_cloud(selected, %w(css1)) do |tag, css_class|
+    -new_tags=(selected-[tag]).join(",")
+    =link_to seo_feed_path(new_tags), 'data-push'=>true, class: 'tag selected' do
+      ="##{tag.name}"
+      .close_button
+        %span
+        %span
 
-    -if tags
-      -tag_cloud(tags, %w(css1)) do |tag|
-        =link_to("##{tag.name} ( #{tag.taggings_count} )", tag_feed_path(:tags=>tag.name), 'data-push'=>true, class: 'tag')
+  -tags ||= []
+  -tag_cloud(tags, %w(css1)) do |tag, css_class|
+    -new_tags=(selected+[tag]).join(",")
+    =link_to("##{tag.name} ( #{tag.taggings_count} )", seo_feed_path(new_tags), 'data-push'=>true, class: 'tag')
 .spacer
