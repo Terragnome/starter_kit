@@ -82,8 +82,9 @@ class PostsController < ApplicationController
         @all_tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
       else
         @tags = @tags.collect{|x| x.to_sym}
-        @posts=Post.active.tagged_with(@tags).paginate(:page=>@page, :per_page=>@@feed_length)
+        @posts=Post.active.tagged_with(@tags)
         @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
+        @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
         @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
 
         @selected_tags.sort_by{|x| x.name}
