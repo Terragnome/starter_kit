@@ -1,14 +1,7 @@
 class PostsController < ApplicationController 
   @@feed_length = 6 # This should be a multiple of 6
 
-  before_filter :prepare_feed, :only=>[:latest, :feed, :tag_feed]
-
-  def feed
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
+  before_filter :prepare_feed, :only=>[:latest, :feed]
 
   def latest
     respond_to do |format|
@@ -18,9 +11,21 @@ class PostsController < ApplicationController
   end
 
   def tag_feed
+    tags ||= params.has_key?(:tags) ? params[:tags].split(",").each{|x| x.to_sym} : [:all]
+
+    # redirect_to latest_path and return if tags.count == 0
+    redirect_to feed_path(tags.first) and return if tags.count <= 1
+
     respond_to do |format|
       format.html{render action: 'feed'}
       format.js{render action: 'feed'}
+    end
+  end
+
+  def feed
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
