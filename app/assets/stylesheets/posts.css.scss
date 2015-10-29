@@ -17,9 +17,11 @@ $feed_list_padding_h: 0px;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 14px;
+		text-transform: uppercase;
 		margin: 1px;
 		padding: 3px 10px 5px 10px;
-		text-transform: uppercase;
+		box-shadow: 2px 2px 10px #{$shadow_gray};
+
 		&:hover{
 			background-color: #{$highlight_color};
 			color: white;
