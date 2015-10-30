@@ -17,6 +17,10 @@ class Post < ActiveRecord::Base
     "#{body.split(".")[0]}..."
   end
 
+  def tag_names
+    self.tags.collect{|x| x.name}
+  end
+
   def facebook_count
     begin
       self.counters.where(:key=>:facebook).take().counter
