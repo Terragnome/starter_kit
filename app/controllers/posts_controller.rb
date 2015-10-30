@@ -83,6 +83,16 @@ class PostsController < ApplicationController
         @posts=Post.active.tagged_with(@tags)
         @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
         @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
+
+        tag_counts = {}        
+        @posts.each do |post|
+          post.tags.each do |tag|
+            tag_counts[tag.id] = 0 if not tag_counts.include?(tag.id)
+            tag_counts[tag.id] += 1
+          end
+        end
+        @all_tags.each{|tag| tag.taggings_count = tag_counts[tag.id] if tag_counts.include?(tag.id) }
+
         @all_tags = @all_tags-@selected_tags
         @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
       end
