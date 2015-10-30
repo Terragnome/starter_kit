@@ -18,7 +18,7 @@
     =render partial: 'layouts/header/header'
     #scene{ style: "overflow:#{is_mobile_device? ? 'visible' : 'scroll'};"}
       #scene_content
-        #scene_loader.spinner
+        #scene_loader.spinner.anim_fade_in
           .rect1
           .rect2
           .rect3

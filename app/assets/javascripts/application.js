@@ -45,11 +45,12 @@ Application.OnPageRedirected = function(e, target, render, url){}
 Application.OnPageDone = function(e, target, render, url){}
 Application.OnPageFail = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
-	Scroll.AutoScrollTo(370);
 	Header.CloseMenu();
 
 	DOM._sceneLoader.hide();
 	DOM._sceneBody.show();
+
+	Scroll.AutoScrollTo(370);
 }
 
 Application.InitResize = function(){
