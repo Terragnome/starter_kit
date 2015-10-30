@@ -84,7 +84,7 @@ class Post < ActiveRecord::Base
   end
 
   def display_call_to_action
-    call_to_action = self.call_to_action != "" ? self.call_to_action : cost>0 ? "Explore" : "Learn More"
+    call_to_action = self.call_to_action != "" ? self.call_to_action : self.url != "" ? "Explore" : "Learn More"
     call_to_action = "#{call_to_action} $#{cost}" if cost>0
     call_to_action
   end
