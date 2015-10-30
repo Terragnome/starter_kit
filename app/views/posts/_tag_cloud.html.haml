@@ -1,15 +1,15 @@
 .post_tag_cloud
   -selected ||= []
-  -tag_cloud(selected, %w(css1)) do |tag, css_class|
-    -new_tags=(selected-[tag]).join(",")
-    =link_to seo_feed_path(new_tags), 'data-push'=>true, class: 'tag selected' do
-      ="##{tag.name}"
-      .close_button
-        %span
-        %span
-
   -tags ||= []
   -tag_cloud(tags, %w(css1)) do |tag, css_class|
-    -new_tags=(selected+[tag]).join(",")
-    =link_to("##{tag.name} ( #{tag.taggings_count} )", seo_feed_path(new_tags), 'data-push'=>true, class: 'tag')
+    -if selected.include?(tag)
+      -new_tags=(selected-[tag]).join(",")
+      =link_to seo_feed_path(new_tags), 'data-push'=>true, class: 'tag selected' do
+        ="##{tag.name}"
+        .close_button
+          %span
+          %span
+    -else
+      -new_tags=(selected+[tag]).join(",")
+      =link_to("##{tag.name} ( #{tag.taggings_count} )", seo_feed_path(new_tags), 'data-push'=>true, class: 'tag')
 .spacer
