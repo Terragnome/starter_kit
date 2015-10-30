@@ -3,14 +3,14 @@ module PostsHelper
   include ActionView::Helpers::NumberHelper
 
   def app_title(stub)
-    wiselinks_title( stub.downcase().to_sym() == :all ? @app_title : "#{stub.to_s.capitalize} | #{@app_title_short}" )
+    wiselinks_title( stub.downcase().to_sym() == :all ? @app_title : "#{stub.to_s} | #{@app_title_short}" )
   end 
 
   def feed_title(tags)
     if not tags or tags == :all
       app_title(:all)
     else
-      tags.count == 1 ? app_title(tags.first) : app_title('Collection')
+      tags.count == 1 ? app_title(tags.first.capitalize) : app_title('Collection')
     end
   end
 
