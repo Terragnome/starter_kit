@@ -32,6 +32,10 @@
 }
 
 #contact{
+  a{
+    font-family: #{$body_font};
+    text-transform: none;
+  }
 }
 
 #privacy{

@@ -3,4 +3,4 @@
     %h1.title
       CONTACT
     %p
-      Praise me!
+      =mail_to(@primary_user.email, @primary_user.email.capitalize)
