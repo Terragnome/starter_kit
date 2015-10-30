@@ -3,6 +3,10 @@ StarterKit::Application.routes.draw do
 
   devise_for :users, :path => '_comu', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   resources :users
+
+  get "/404" => "errors#not_found"
+  get "/422" => "errors#unprocessable_entity"
+  get "/500" => "errors#internal_server_error"
   
   get 'about' => 'info#about'
   get 'contact' => 'info#contact'
@@ -13,8 +17,8 @@ StarterKit::Application.routes.draw do
   get 'collection' => 'posts#tag_feed', :as=>'tag_feed'
   get 'collection/:tag(/:page)' => 'posts#feed', :as=>'feed'
 
-  get ':id(/:display_slug)' => 'posts#show', :as=>'post'
   put ':id/share/:key' => 'posts#share', :as=>'post_share'
+  get ':id(/:display_slug)' => 'posts#show', :as=>'post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
