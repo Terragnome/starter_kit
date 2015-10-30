@@ -34,8 +34,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post ||= Post.includes(:photos, :tags).active.where(:slug=>params[:id]).take()
-    @post ||= Post.includes(:photos, :tags).active.where(:id=>params[:id]).take()
+    @post ||= Post.includes(:counters, :photos, :tags).active.where(:slug=>params[:id]).take()
+    @post ||= Post.includes(:counters, :photos, :tags).active.where(:id=>params[:id]).take()
     redirect_to latest_path and return if not @post
 
     respond_to do |format|
@@ -72,11 +72,11 @@ class PostsController < ApplicationController
 
       @selected_tags = []
       if @tags == :all
-        @posts=Post.includes(:photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
+        @posts=Post.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
         @all_tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
       else
         @tags = @tags.collect{|x| x.to_sym}
-        @posts=Post.includes(:photos, :tags).active.tagged_with(@tags)
+        @posts=Post.includes(:counters, :photos, :tags).active.tagged_with(@tags)
         @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
 
         tag_counts = {}        

@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
 
   def facebook_count
     begin
-      self.counters.where(:key=>:facebook).take().counter
+      self.counters.select{|x| x.key=='facebook'}.first.counter
     rescue
       0
     end
@@ -31,7 +31,7 @@ class Post < ActiveRecord::Base
 
   def twitter_count
     begin
-      self.counters.where(:key=>:twitter).take().counter
+      self.counters.select{|x| x.key=='twitter'}.first.counter
     rescue
       0
     end
