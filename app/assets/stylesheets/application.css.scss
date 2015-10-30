@@ -325,7 +325,9 @@ $close_button_bar_height: 2px;
 	z-index: 5;
 }
 
-#scene_content{}
+#scene_loader{
+	display: none;
+}
 
 #scene_body{
 	display: inline-block;

@@ -37,13 +37,19 @@ Application.Init = function(){
 	Application.InitResize();
 }
 
-Application.OnPageLoading = function(e, target, render, url){}
+Application.OnPageLoading = function(e, target, render, url){
+	DOM._sceneLoader.show();
+	DOM._sceneBody.hide();
+}
 Application.OnPageRedirected = function(e, target, render, url){}
 Application.OnPageDone = function(e, target, render, url){}
 Application.OnPageFail = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
 	Scroll.AutoScrollTo(370);
 	Header.CloseMenu();
+
+	DOM._sceneLoader.hide();
+	DOM._sceneBody.show();
 }
 
 Application.InitResize = function(){
