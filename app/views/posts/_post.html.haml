@@ -12,7 +12,7 @@
         =image_tag(ph.remote_url, :class=>'photo', :title=>ph.name, :alt=>ph.name)
     %p.description
       =post.body.gsub(/\n/, '<br/>').html_safe
-    =render :partial=>'post_tags', :object=>post.tag_list
+    =render :partial=>'post_tags', :object=>post.tags
   =render :partial=>'post_actions', :object=>post, :as=>:post
 :javascript
   Post.Init();

@@ -1,6 +1,6 @@
 -app_title(@post.title)
 -meta_description(@post.summary)
--meta_keywords(@post.tag_list)
+-meta_keywords(@post.tags.collect{|x| x.name})
 
 #post_show
   -if @post

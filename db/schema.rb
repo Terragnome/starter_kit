@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20151021001922) do
     t.datetime "updated_at"
   end
 
+  add_index "counters", ["countable_type", "countable_id", "key"], name: "index_counters_on_countable_type_and_countable_id_and_key", unique: true, using: :btree
+
   create_table "photos", force: true do |t|
     t.string "name",         null: false
     t.string "remote_url",   null: false

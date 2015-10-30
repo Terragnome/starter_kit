@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
 
   def facebook_count
     begin
-      self.counters.find_or_create_by(:key=>:facebook).counter
+      self.counters.where(:key=>:facebook).take().counter
     rescue
       0
     end
@@ -27,7 +27,7 @@ class Post < ActiveRecord::Base
 
   def twitter_count
     begin
-      self.counters.find_or_create_by(:key=>:twitter).counter
+      self.counters.where(:key=>:twitter).take().counter
     rescue
       0
     end

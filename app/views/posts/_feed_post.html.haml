@@ -13,5 +13,5 @@
           =image_tag(feed_post.cover_photo.remote_url, :class=>"photo", :title=>feed_post.title, :alt=>feed_post.title)
       %p.description{:itemprop=>'description'}
         =sanitize(feed_post.summary.gsub(/\n/, '<br/>'))
-    =render :partial=>'post_tags', :object=>feed_post.tag_list
+    =render :partial=>'post_tags', :object=>feed_post.tags
   =render :partial=>'post_actions', :object=>feed_post, :as=> :post, :locals=>{:is_feed=>true}

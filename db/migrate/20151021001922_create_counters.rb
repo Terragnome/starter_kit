@@ -7,6 +7,6 @@ class CreateCounters < ActiveRecord::Migration
       t.integer :counter, :default=>0
       t.timestamps
     end
-    add_index :counters, [:countable_type, :countable_id, :key]
+    add_index :counters, [:countable_type, :countable_id, :key], unique: true
   end
 end
