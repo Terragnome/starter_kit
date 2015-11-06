@@ -52,7 +52,9 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-Once Upon A Time is a cardgame whose gameplay revolves about creativity and storytelling.  
+Once Upon A Time is a cardgame in which players exercise their creativity and storytelling to craft the perfect fairy tale.  Players take turns telling a story and playing special cards to take control of the narrative.
+
+The winner is the person who is able to introduce all their story elements and successfully finish it.  This is a great game for experienced boardgamers who are looking for something a little different.
 """
 p.url = "http://amzn.to/1kzbgSm"
 p.cost = 20
@@ -61,24 +63,13 @@ p.active = true
 p.save
 
 p = Post.find_or_initialize_by(
-  :title=>"Vibram KSO Trek",
-  :user=>User.first,
-)
-p.body = """
-TEST
-"""
-p.url = "http://amzn.to/1Moz8D4"
-p.cost = 20
-p.tag_list.add("gear", "shoes", "running")
-p.active = true
-p.save
-
-p = Post.find_or_initialize_by(
   :title=>"The Bread Bible",
   :user=>User.first,
 )
 p.body = """
-TEST
+Rose Levy Beranbaum's \"The Bread Bible\" is an excellent resource for bakers of all levels.  The Bread Bible was the 2003 winner of the Gourmand World Cookbook Awards in the Best Bread Book Category.  Recipes are detailed and contain overviews of the chemistry and how variants influence the final product.
+
+The Basic Hearth Bread is an great recipe for beginners while the Proscuitto Ring is great for those with a little more experience.  Highly recommended for anyone interested in baking bread as a hobby.
 """
 p.url = "http://amzn.to/1PsYpgf"
 p.cost = 22
@@ -91,7 +82,11 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+I'm a huge fan of Alton Brown.  Watching old episodes of Good Eats was how I got into cooking and developed a skillset and a hobby that has served me well into the present, and \"I'm Just Here For the Food\" was my first cookbook.
+
+Alton's writing style is both informative and entertaining.  He explains the chemical processes that underlie various cooking techniques, and \"I'm Just Here for the Food\"'s focus on methodology over the repeating individual recipes verbatim is its great strength.
+
+\"I'm Just Here for the Food\" is a worthy addition the the library for cooks of all levels.
 """
 p.url = "http://amzn.to/1S3N2un"
 p.cost = 26
@@ -104,10 +99,13 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+\"Plenty More\" is a cookbook focusing on vegetarian recipes from the founder of Ottoloenghi in London, Yotam Ottolenghi.  While I love meat, Ottolenghi's recipes and vibrant flavor choices make this an excellent cookbook for anyone looking to add variety to their home dining experience.
+
+Preparing delicious recipes without meat is an illuminating challenge for anyone pursuing cooking as a hobby, so I would highly recommend this cookbook.
 """
 p.url = "http://amzn.to/1kzbbhq"
-p.tag_list.add("books", "food", "cooking")
+p.cost = 20
+p.tag_list.add("books", "food", "cooking", "vegetarian")
 p.active = true
 p.save
 
@@ -116,7 +114,9 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+Now owned by Kershaw in Tualatin, Oregon, Shun knives are handmade in Japan.  Knives are an essential tool for any chef, the Shun Classic is made with a 32 layer VG-10 steel full tang blade and a resin impregnated PakkaWod handle that is both beautiful and hygenic.
+
+Dull knives tend to be a bigger cause of kitchen mishaps than sharp ones because more force is required to make a cut.  VG-10 is a higher quality harder steel that allows Shun knives to be ground to razor sharp 15 degree cutting angle.
 """
 p.url = "http://amzn.to/1kzb99p"
 p.cost = 136

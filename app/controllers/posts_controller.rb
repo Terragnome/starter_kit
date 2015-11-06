@@ -51,7 +51,7 @@ class PostsController < ApplicationController
     if @post
       key = params[:key].to_sym()
       if [:facebook, :twitter].include?(key)
-        counter = Counter.find_or_create_by(:countable_type=>@post.class, :countable_id=>@post.id, :key=>key)
+        counter = Counter.find_or_create_by(:countable_type=>@post.class.to_s, :countable_id=>@post.id, :key=>key)
         counter.increment()
         counter.save()
         @share_count = counter.counter
