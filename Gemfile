@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.1.1'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'pg'
 # For caching
 gem 'redis'
 # Use Thin instead of WEBrick

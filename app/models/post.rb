@@ -14,7 +14,10 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   def summary
-    "#{body.split(".")[0]}..."
+    token_body = body.gsub("\n", " ")
+    s = token_body.split(". ")[0..1].join(".\n\n")
+    s = "#{s}..." if body.length != s.length
+    s
   end
 
   def tag_names
@@ -88,7 +91,7 @@ class Post < ActiveRecord::Base
   end
 
   def display_call_to_action
-    call_to_action = self.call_to_action != "" ? self.call_to_action : self.url != "" ? "Explore" : "Learn More"
+    call_to_action = [nil, ""].include?(self.call_to_action) ? self.url != "" ? "Explore" : "Learn More" : self.call_to_action
     call_to_action = "#{call_to_action} $#{cost}" if cost>0
     call_to_action
   end

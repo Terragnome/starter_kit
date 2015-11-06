@@ -209,6 +209,8 @@ $feed_list_padding_h: 0px;
 			}
 		}
 		.body{
+			overflow: hidden;
+			height: 700px;
 			text-align: center;
 			margin: 20px 0px 30px 0px;
 
@@ -227,8 +229,6 @@ $feed_list_padding_h: 0px;
 			}
 
 			.description{
- 				overflow: hidden;
- 				height: 60px;
 			}
 
 			p{
