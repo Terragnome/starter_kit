@@ -11,5 +11,8 @@
           %span
     -else
       -new_tags=(selected+[tag]).join(",")
-      =link_to("##{tag.name} ( #{tag.taggings_count} )", seo_feed_path(new_tags), 'data-push'=>true, class: 'tag')
+      =link_to(seo_feed_path(new_tags), 'data-push'=>true, class: 'tag') do
+        ="##{tag.name}"
+        %span.counter
+          ="(#{tag.taggings_count})"
 .spacer

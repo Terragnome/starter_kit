@@ -20,7 +20,11 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+Opinel has been making knives since 1890 from its headquarters in Saint-Jean-de-Maurienne, Savoie, France.  The Opinel No. 8 is its most popular blade, known the world over for its high carbon steel blade, locking mechanism, and locking ring.
+
+When twisted, the ring locks the blade in place, giving the the strength of a fixed blade design.  The wooden handle enabled the knife to float when dropped in water.
+
+The Opinel was selected in 1985 by the Victoria and Albert Museum in London as one of the 100 most beautiful products in the world and has been exhibited in New York's Metropolitan Museum of Art as a design masterpiece.
 """
 p.url = "http://amzn.to/1PsYznQ"
 p.cost = 13
@@ -33,7 +37,9 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+Martin Archery is an American bowmaker founded by Gail Martin 1938, and makes some of the finest traditional and hunting bows in the world.  The Martin Mamba was the recurve bow used to light the torch for the 1992 Summer Olympics in Barcelona.
+
+The bow is made of an Eastern Hard Maple core surrounded by black fiberglass.  The bow has a Bubinga stripe lined with Shedua which enhances its beauty.  Reinforced bow tips allow the use of today's modern bow strings.
 """
 p.url = "http://amzn.to/1kzbkl9"
 p.cost = 559
@@ -46,7 +52,7 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+Once Upon A Time is a cardgame whose gameplay revolves about creativity and storytelling.  
 """
 p.url = "http://amzn.to/1kzbgSm"
 p.cost = 20
@@ -437,7 +443,7 @@ p = Post.find_or_initialize_by(
 p.body = """
 Tom Standage's \"A History of the World in 6 Glasses\" is a compelling guide through human history told through six beverages that changed the world.
 
-Standage covers everything from the development of beer as a mystic beverage used in religious ceremonies, through the cultivation of wine as a status symbol in ancient Greece, coffee as the drink of the Enlightenment, and the consumption of purified water in the modern age.the role of tea as a driver for British colonialism, and the spirits that powered the settling of the new world. 
+Standage covers everything from the development of beer as a mystic beverage used in religious ceremonies, through the cultivation of wine as a status symbol in ancient Greece, coffee as the drink of the Enlightenment, and the consumption of purified water in the modern age.the role of tea as a driver for British colonialism, and the spirits that powered the settling of the new world.  
 """
 p.url = "http://amzn.to/1MCR0FS"
 p.cost = 25
@@ -505,7 +511,7 @@ p = Post.find_or_initialize_by(
 p.body = """
 Saunders Combo Points are an excellent alternative to field tips for your arrows and are suitable for target shooting or for hunting small game.
 
-They have a black zinc coating which resists rust, and a shape that makes them easy to pull out of embedded into had surfaces like wood. I've had Saunders Combo Points strike nails hidden in a bale of hay with only minimal damage.
+They have a black zinc coating which resists rust, and a shape that makes them easy to pull out of embedded into had surfaces like wood.  I've had Saunders Combo Points strike nails hidden in a bale of hay with only minimal damage.
 
 It's important that your arrows and tips match the spine of your bow, so Three Rivers Archery offers a convenient <a href='http://www.3riversarchery.com/spinecalculator.asp'>dynamic spine calculator<a>.
 """
@@ -520,9 +526,9 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-Yurbuds Inspire 100 In-Ear Headphones are excellent for runners because the headphone shape allows them to snap onto your ears and stay in without any hooks or other devices. They're suprisingly comfortable, and allow enough sound to leak in that I'm able to hear cars coming when running on the road or in the city.
+Yurbuds Inspire 100 In-Ear Headphones are excellent for runners because the headphone shape allows them to snap onto your ears and stay in without any hooks or other devices.  They're suprisingly comfortable, and allow enough sound to leak in that I'm able to hear cars coming when running on the road or in the city.
 
-Yurbuds also has an excellent replacement program for the ear cups, and after losing one of the earcups I was able to buy another pair for only a fraction of the cost. Highly recommended.
+Yurbuds also has an excellent replacement program for the ear cups, and after losing one of the earcups I was able to buy another pair for only a fraction of the cost.  Highly recommended.
 """
 p.url = "http://amzn.to/1MCQTdm"
 p.cost = 15
@@ -535,7 +541,7 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-The Lifestraw Water Filter is a compact water purification system capable of removing 99.9999% or waterborn pathogens. At only 2oz it's capable of purifying 1,000L of water and is perfect for situations where fresh water's required but space is at a premium.
+The Lifestraw Water Filter is a compact water purification system capable of removing 99.9999% or waterborn pathogens.  At only 2oz it's capable of purifying 1,000L of water and is perfect for situations where fresh water's required but space is at a premium.
 
 These qualities earned Lifestraw a Time Magazine \"Invention of the Year\" award and the perfect gift or purchase for ultralight backpackers, travelers, boy scouts, hunters, and outdoor enthusiasts all over the world.
 """
@@ -552,7 +558,7 @@ p = Post.find_or_initialize_by(
 p.body = """
 Swedish Fireseel is a compact firestarting device capable of generating a 3,000° C spark and starting fires in difficult conditions.
 
-This Swedish Firesteel is good for over 12,000 strikes and has been approved by the International Survival Instructors Association. This makes it a great gift or purchase for anyone interested in outdoor hobbies.
+This Swedish Firesteel is good for over 12,000 strikes and has been approved by the International Survival Instructors Association.  This makes it a great gift or purchase for anyone interested in outdoor hobbies.
 """
 p.url = "http://amzn.to/1S3JQi8"
 p.cost = 17
@@ -580,13 +586,13 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-Samick is a Korean company which manufactures a variety of bows for sport and competition; the Sage is an excellent entry-level recurve bow for any beginner who is interested in archery as a hobby.
+Samick is a Korean company which manufactures a variety of bows for sport and competition.  The Samick Sage is an excellent entry-level recurve bow for any beginner who is interested in archery as a hobby.
 
-It's a takedown recurve, which means that the limbs of the bow can be removed for easier transportation or replaced if damaged or when you're ready for a more powerful bow.
+It's a takedown recurve, which means that the limbs of the bow can be removed for easier transportation or replaced if damaged or when you're ready for a more powerful bow.  Reinforced limb tips mean that it's capable of using strings made of FastFlight and other modern materials.
 
-Archery uses a specific set of back muscles, and it's common for beginners to attempt to use bows with draw weights that are too high. A good thing to remember is that Olympic archers shoot 50# bows, and it is perfectly respectible for a new archer to start with a bow in the 20#-30# range to learn good form.
+Archery uses a specific set of back muscles, and it's common for beginners to attempt to use bows with draw weights that are too high.  A good thing to remember is that Olympic archers shoot 50# bows, and it is perfectly respectible for a new archer to start with a bow in the 20#-30# range to learn good form.
 
-The type of bow you choose (right or left) is determined by your dominant eye rather than your dominant hand. To determine your eye dominance, pick something far away and use both of your hands to form a ring around it. Slowly bring your hands toward your face. Which ever eye you bring your hands toward is your dominant eye.
+The type of bow you choose (right or left) is determined by your dominant eye rather than your dominant hand.  To determine your eye dominance, pick something far away and use both of your hands to form a ring around it.  Slowly bring your hands toward your face.  Which ever eye you bring your hands toward is your dominant eye.
 """
 p.url = "http://amzn.to/1MCQO9u"
 p.cost = 140
@@ -599,11 +605,11 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-Gold Tip Expedition Hunters are an economical choice for archers interested in using carbon arrows. Carbon is an extremely stiff and light material and offers a number of advantages when compared to other arrow types. It is more durable than wood so is capable of surviving strikes against harder objects and is lighter than aluminum which gives it superior speed and improved accuracy over long distances.
+Gold Tip Expedition Hunters are an economical choice for archers interested in using carbon arrows.  Carbon is an extremely stiff and light material and offers a number of advantages when compared to other arrow types.  It is more durable than wood so is capable of surviving strikes against harder objects and is lighter than aluminum which gives it superior speed and improved accuracy over long distances.
 
-In terms of drawbacks, carbon arrows can develop small cracks if they strike a sufficiently hard object. If a cracked arrow is shot, it could break and potentially cause injury. Fortunately arrows can be easily checked for cracks by <a href='http://www.eastonarchery.com/warning-use'>flexing them</a>.
+In terms of drawbacks, carbon arrows can develop small cracks if they strike a sufficiently hard object.  If a cracked arrow is shot, it could break and potentially cause injury.  Fortunately arrows can be easily checked for cracks by <a href='http://www.eastonarchery.com/warning-use'>flexing them</a>.
 
-The 3555 arrows are suited for bows with draw weights from 35#-55#. 5575 arrows are suited for bows with draw weights from #55-#75.
+The 3555 arrows are suited for bows with draw weights from 35#-55#.  5575 arrows are suited for bows with draw weights from #55-#75.
 """
 p.url = "http://amzn.to/1S3JfNt"
 p.cost = 140
