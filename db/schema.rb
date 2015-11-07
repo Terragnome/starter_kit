@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20151021001922) do
 
   create_table "photos", force: true do |t|
     t.string "name",         null: false
-    t.string "remote_url",   null: false
+    t.string "remote_url"
     t.string "internal_url"
   end
 

@@ -15,6 +15,12 @@ u.save
 Post.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('posts')
 
+Photo.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('photos')
+
+PostPhoto.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('post_photos')
+
 p = Post.find_or_initialize_by(
   :title=>"Opinel No. 8",
   :user=>User.first,
@@ -227,6 +233,11 @@ p.cost = 10
 p.tag_list.add("gear", "food", "cooking", "baking")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"twist_silicon_whisk.jpeg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>"Velesco Silicone Baking Mat",
@@ -239,6 +250,11 @@ p.url = "http://amzn.to/1Moykhs"
 p.cost = 20
 p.tag_list.add("gear", "food", "baking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"velesco_silicon_bake_mat.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -253,9 +269,14 @@ p.cost = 8
 p.tag_list.add("gear", "food", "cooking", "baking")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"pyrex_2_cup_glass.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
-  :title=>"Bang",
+  :title=>"Bang!",
   :user=>User.first,
 )
 p.body = """
@@ -265,6 +286,11 @@ p.url = "http://amzn.to/1kzaDrY"
 p.cost = 17
 p.tag_list.add("toys", "boardgames", "cardgames")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"bang.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -279,6 +305,11 @@ p.cost = 3
 p.tag_list.add("gear", "archery")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"allen_bow_string_wax.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Gateway 4" Feathers',
@@ -291,6 +322,11 @@ p.url = "http://amzn.to/1S3Lqk4"
 p.cost = 38
 p.tag_list.add("gear", "archery")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"gateway_feathers.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -305,6 +341,11 @@ p.cost = 11
 p.tag_list.add("books", "running")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"born_to_run.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Ad Hoc at Home',
@@ -317,6 +358,11 @@ p.url = "http://amzn.to/1kzaox5"
 p.cost = 11
 p.tag_list.add("books", "food", "cooking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"ad_hoc_at_home.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -331,6 +377,11 @@ p.cost = 11
 p.tag_list.add("tools", "woodworking")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"kreg_jig_k4.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Smallworld',
@@ -343,6 +394,11 @@ p.url = "http://amzn.to/1kzamoR"
 p.cost = 28
 p.tag_list.add("toys", "boardgames")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"smallworld.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -357,6 +413,11 @@ p.cost = 32
 p.tag_list.add("toys", "boardgames")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"ticket_to_ride.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Grayling Fletching Jig',
@@ -369,6 +430,11 @@ p.url = "http://amzn.to/1MoxMrQ"
 p.cost = 11
 p.tag_list.add("tools", "archery")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"grayling_fletching_jig.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -383,6 +449,11 @@ p.cost = 9
 p.tag_list.add("tools", "archery")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"goldtip_arrow_glue.png"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'DeWalt DWE575SB Circular Saw',
@@ -395,6 +466,11 @@ p.url = "http://amzn.to/1PsX6xQ"
 p.cost = 129
 p.tag_list.add("tools", "woodworking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"dewalt_dwe575sb.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -409,6 +485,11 @@ p.cost = 9
 p.tag_list.add("toys", "boardgames", "cardgames")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"love_letter.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Cards Against Humanity',
@@ -422,6 +503,11 @@ p.cost = 25
 p.tag_list.add("toys", "boardgames", "cardgames")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"cards_against_humanity.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Vortex Optics Solo 10x25 Monocular',
@@ -434,6 +520,11 @@ p.url = "http://amzn.to/1S3KtZ5"
 p.cost = 52
 p.tag_list.add("gear", "backpacking", "hiking", "camping", "archery")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"vortex_optics_solo.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -450,6 +541,11 @@ p.cost = 25
 p.tag_list.add("books", "reading", "food", "drinking", "history")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"a_history_of_the_world_in_6_glasses.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'The Name of the Wind',
@@ -462,6 +558,11 @@ p.url = "http://amzn.to/1MCQV5c"
 p.cost = 8
 p.tag_list.add("books", "reading", "fantasy")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"the_name_of_the_wind.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -476,7 +577,11 @@ p.cost = 99
 p.tag_list.add("edc", "food", "knives", "gear")
 p.active = true
 p.save
-
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"shun_higo_nokami.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Easton Hip Quiver',
@@ -490,6 +595,11 @@ p.cost = 64
 p.tag_list.add("gear", "archery", "quiver")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"easton_hip_quiver.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Chemex Glass Coffee Maker',
@@ -502,6 +612,11 @@ p.url = "http://amzn.to/1MCQTKz"
 p.cost = 45
 p.tag_list.add("tools", "food", "coffee")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"chemex_8_cup_coffee_maker.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -520,6 +635,11 @@ p.cost = 7
 p.tag_list.add("gear", "archery")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"saunders_combo_point.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Yurbuds Inspire 100 In-Ear Headphones',
@@ -534,6 +654,11 @@ p.url = "http://amzn.to/1MCQTdm"
 p.cost = 15
 p.tag_list.add("gear", "running", "music")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"yurbuds_inspire_100.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -550,6 +675,11 @@ p.cost = 18
 p.tag_list.add("gear", "backpacking", "hiking", "camping")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"lifestraw.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Swedish FireSteel',
@@ -565,6 +695,11 @@ p.cost = 17
 p.tag_list.add("gear", "backpacking", "hiking", "camping")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"swedish_firesteel.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'The Alchemist',
@@ -579,6 +714,11 @@ p.url = "http://amzn.to/1PsWpV3"
 p.cost = 10
 p.tag_list.add("books", "reading", "philosophy")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"the_alchemist.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -599,6 +739,11 @@ p.cost = 140
 p.tag_list.add("gear", "archery", "bows")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"samick_sage.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>'Gold Tip Expedition Hunter',
@@ -616,3 +761,12 @@ p.cost = 140
 p.tag_list.add("gear", "archery", "arrows")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"goldtip_expedition_hunter.jpg"
+)
+p.save
+
+
+
+

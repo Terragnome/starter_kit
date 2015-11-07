@@ -27,5 +27,7 @@ StarterKit::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.action_controller.perform_caching = false
+
   config.asset_root = '/assets'
 end
