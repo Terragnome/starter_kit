@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   end
 
   def asset_url
-    return "#{StarterKit::ASSET_URL}/#{internal_url}" if internal_url and internal_url != ""
+    return "#{StarterKit::ASSET_ROOT}/#{internal_url}" if internal_url and internal_url != ""
     remote_url
   end
 end

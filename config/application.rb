@@ -25,4 +25,6 @@ module StarterKit
     ActsAsTaggableOn.force_lowercase = true
     ActsAsTaggableOn.remove_unused_tags = true
   end
+
+  ASSET_ROOT = "https://googledrive.com/host/0BwCD42LpcEbxY2xDODlRLUEzbEE"
 end
