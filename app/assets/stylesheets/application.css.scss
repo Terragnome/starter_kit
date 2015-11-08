@@ -327,8 +327,15 @@ $close_button_bar_height: 2px;
 
 #scene_loader{
 	display: none;
+	text-align: center;
+	width: 100%;
 	margin: auto;
 	margin-bottom: 100px;
+
+	.spinner{
+		width: 100%;
+		text-align: center;
+	}
 }
 
 #scene_body{

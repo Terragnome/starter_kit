@@ -18,11 +18,8 @@
     =render partial: 'layouts/header/header'
     #scene{ style: "overflow:#{is_mobile_device? ? 'visible' : 'scroll'};"}
       #scene_content
-        #scene_loader.spinner.anim_fade_in
-          .rect1
-          .rect2
-          .rect3
-          .rect4
+        #scene_loader
+          =render partial: 'layouts/spinner'
         #scene_body
           =yield
         / =render partial: 'layouts/ads'
