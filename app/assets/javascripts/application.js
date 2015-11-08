@@ -40,13 +40,13 @@ Application.Init = function(){
 Application.OnPageLoading = function(e, target, render, url){
 	DOM._sceneLoader.show();
 	DOM._sceneBody.hide();
+
+	Header.CloseMenu();
 }
 Application.OnPageRedirected = function(e, target, render, url){}
 Application.OnPageDone = function(e, target, render, url){}
 Application.OnPageFail = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
-	Header.CloseMenu();
-
 	DOM._sceneLoader.hide();
 	DOM._sceneBody.show();
 
