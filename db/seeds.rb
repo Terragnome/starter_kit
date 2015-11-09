@@ -304,7 +304,11 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+While it's possible to use the EatSmart Precision Pro Scale for dieting, I like to use it to measure the dry weight of ingredients for baking.  Bread in particular is sensitive to the amounts of ingredients since almost every bread is made frome the same four primary ingredients: flour, water, yeast, and salt.
+
+Flour, and salt in particular can be difficult to measure because how well it's packed can influence cause a different amounts to fit into the same volume.  Measuring the mass of ingredients fixes this problem, making a digital scale an essential tool for anyone pursuing baking as a hobby.
+
+While there are scales with more features or more impressive designs, the EatSmart Precision Pro Digital Kitchen Scale met all my needs at a compact size and an affordable price.
 """
 p.url = "http://amzn.to/1PsXKv6"
 p.cost = 15
@@ -322,7 +326,11 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+The worst parts of whisking are cleaning, storing, and actually using the whisk.  While the Twist 2-in-1 Silicone Whisk won't help with the whisking, it will help with the cleaning and storage.
+
+By twisiting the knob, the tines of the whisk lay flat which makes it easy to store in the same cupboard or drawer as your other utensils.  The silicone coating helps prevent things from sticking, and the flattened shape is also a lot easier to go over with a sponge.
+
+The tradeoff is that the whisk is slightly heaver, but overall the Twist-2-in-1 Silicone Whisk is an excellent tool or gift for anyone pursuing cooking or baking as a hobby.
 """
 p.url = "http://amzn.to/1PsXIn2"
 p.cost = 10
