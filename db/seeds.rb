@@ -28,14 +28,21 @@ p = Post.find_or_initialize_by(
 p.body = """
 Opinel has been making knives since 1890 from its headquarters in Saint-Jean-de-Maurienne, Savoie, France.  The Opinel No. 8 is its most popular blade, known the world over for its high carbon steel blade, locking mechanism, and locking ring.
 
-When twisted, the ring locks the blade in place, giving the the strength of a fixed blade design.  The wooden handle enabled the knife to float when dropped in water.
+When twisted, the ring locks the blade in place, giving it the strength of a fixed blade design.  The wooden handle enabled the knife to float when dropped in water.
 
 The Opinel was selected in 1985 by the Victoria and Albert Museum in London as one of the 100 most beautiful products in the world and has been exhibited in New York's Metropolitan Museum of Art as a design masterpiece.
+
+I use an Opinel as my edc knife because I wanted a knife with a beautiful classic design but that could be easily replaced if I lost it.  The high carbon steel blade can be sharpened easily with a whetstone to a razor edge, although it must be treated to avoid rust.  One option is to oil it, but I chose to use vinegar to form an black oxidized coat instead and have never had any problems.
 """
 p.url = "http://amzn.to/1PsYznQ"
 p.cost = 13
 p.tag_list.add("gear", "edc", "knives")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"opinel_no_8.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -43,14 +50,21 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-Martin Archery is an American bowmaker founded by Gail Martin 1938, and makes some of the finest traditional and hunting bows in the world.  The Martin Mamba was the recurve bow used to light the torch for the 1992 Summer Olympics in Barcelona.
+Martin Archery is an American bowmaker founded by Gail Martin 1938 and makes some of the finest traditional wood bows in the world.  The Martin Mamba is one of its greatest designs and was the bow used to light the torch for the 1992 Summer Olympics in Barcelona.
 
-The bow is made of an Eastern Hard Maple core surrounded by black fiberglass.  The bow has a Bubinga stripe lined with Shedua which enhances its beauty.  Reinforced bow tips allow the use of today's modern bow strings.
+The Martin Mamba is a 58\" recurve bow made of Eastern Hard Maple core and accentuated with a Bubinga stripe lined with Shedua.  Like most modern recurves, it has fiberglass laminations along the face and reinforced bow tips allow the use of modern bow strings made of materials such as Fast Flight.  The sight window is cut past center which allows it to accept a greater spine range of arrows.
+
+I chose the Martin Mamba as my first recurve because it was a handcrafted American bow with a storied history.  It's a work of art that I love looking at on my bow rack even when I'm not at the range.  For those just getting into archery as a hobby, the most important thing to remember is never to draw your bow back and release it without an arrow (dry fire).  You should also never prop it up vertically, never store it strung, and never leave it in a hot car or in a damp place as all of these things can damage the bow.
 """
 p.url = "http://amzn.to/1kzbkl9"
 p.cost = 559
 p.tag_list.add("gear", "archery", "bows")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"martin_mamba.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -61,11 +75,18 @@ p.body = """
 Once Upon A Time is a cardgame in which players exercise their creativity and storytelling to craft the perfect fairy tale.  Players take turns telling a story and playing special cards to take control of the narrative.
 
 The winner is the person who is able to introduce all their story elements and successfully finish it.  This is a great game for experienced boardgamers who are looking for something a little different.
+
+I played this in a group of four and found that to be a good group size.
 """
 p.url = "http://amzn.to/1kzbgSm"
 p.cost = 20
 p.tag_list.add("toys", "boardgames", "cardgames")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"once_upon_a_time.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -73,14 +94,21 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-Rose Levy Beranbaum's \"The Bread Bible\" is an excellent resource for bakers of all levels.  The Bread Bible was the 2003 winner of the Gourmand World Cookbook Awards in the Best Bread Book Category.  Recipes are detailed and contain overviews of the chemistry and how variants influence the final product.
+Rose Levy Beranbaum's \"The Bread Bible\" is an excellent resource for bakers of all levels and the 2003 winner of the Gourmand World Cookbook Awards in the Best Bread Book Category.  Recipes are detailed and contain overviews of the chemistry and recipes often contain a few variants with descriptions of hwo they will influence the final product.
 
-The Basic Hearth Bread is an great recipe for beginners while the Proscuitto Ring is great for those with a little more experience.  Highly recommended for anyone interested in baking bread as a hobby.
+The Basic Hearth Bread is an great recipe for beginners while the Proscuitto Ring is great for those with a little more experience.
+
+This was the book that taught me that kneading the dough is what produces the protein gluten, punching down the dough distributes air bubbles in the crumb, and that professional bakers use scales because they are more precise that measuring cups which can be inprecise if the flour is tightly packed.  I trace much of love of baking back to this book and highly recommended it for anyone interested in baking bread as a hobby.
 """
 p.url = "http://amzn.to/1PsYpgf"
 p.cost = 22
 p.tag_list.add("books", "food", "baking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"the_bread_bible.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -88,16 +116,21 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-I'm a huge fan of Alton Brown.  Watching old episodes of Good Eats was how I got into cooking and developed a skillset and a hobby that has served me well into the present, and \"I'm Just Here For the Food\" was my first cookbook.
+I'm a huge fan of Alton Brown.  Watching old episodes of Good Eats and \"I'm Just Here For the Food\" as my first cookbook were how I got into cooking and developed a skillset and a hobby that has served me well into the present.
 
-Alton's writing style is both informative and entertaining.  He explains the chemical processes that underlie various cooking techniques, and \"I'm Just Here for the Food\"'s focus on methodology over the repeating individual recipes verbatim is its great strength.
+Alton's writing style is both informative and entertaining.  He explains the chemical processes that underlie various cooking techniques, and \"I'm Just Here for the Food\"'s focus on truly understanding methodology over the rote memorization of individual recipes verbatim is its great strength.  Reading this book teaches you how to cook, not just how to do what you're told.
 
-\"I'm Just Here for the Food\" is a worthy addition the the library for cooks of all levels.
+\"I'm Just Here for the Food\" is a worthy addition the the library for cooks of all levels and the Broiled, Butterflied Chicken is still one of my favorite go to recipes.
 """
 p.url = "http://amzn.to/1S3N2un"
 p.cost = 26
 p.tag_list.add("books", "food", "cooking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"im_just_here_for_the_food.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -105,14 +138,19 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-\"Plenty More\" is a cookbook focusing on vegetarian recipes from the founder of Ottoloenghi in London, Yotam Ottolenghi.  While I love meat, Ottolenghi's recipes and vibrant flavor choices make this an excellent cookbook for anyone looking to add variety to their home dining experience.
+\"Plenty More\" is a cookbook focusing on vegetarian recipes from the founder of Ottoloenghi in London, Yotam Ottolenghi.  While I love meat (like, a lot), Ottolenghi's recipes and vibrant flavor choices make this an excellent cookbook for anyone looking to add variety to their home dining experience.
 
-Preparing delicious recipes without meat is an illuminating challenge for anyone pursuing cooking as a hobby, so I would highly recommend this cookbook.
+Preparing delicious recipes without meat, whether for health, preference, or ideology, is an illuminating challenge for anyone pursuing cooking as a hobby.  A nice ribeye or duck breast practically cooks itself, so I found avoiding meat to be a really meaningful and interesting constraint.
 """
 p.url = "http://amzn.to/1kzbbhq"
 p.cost = 20
 p.tag_list.add("books", "food", "cooking", "vegetarian")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"plenty_more.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -120,14 +158,21 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-Now owned by Kershaw in Tualatin, Oregon, Shun knives are handmade in Japan.  Knives are an essential tool for any chef, the Shun Classic is made with a 32 layer VG-10 steel full tang blade and a resin impregnated PakkaWod handle that is both beautiful and hygenic.
+Although it is owned by Kershaw Knives in Tualatin, Oregon, Shun knives are high quality knives that are handmade in Japan.  The Shun Classic 8-Inch Chef's Knife is made with a 32 layer VG-10 steel, full tang blade, and a resin impregnated PakkaWod handle that is both beautiful and functional.
 
-Dull knives tend to be a bigger cause of kitchen mishaps than sharp ones because more force is required to make a cut.  VG-10 is a higher quality harder steel that allows Shun knives to be ground to razor sharp 15 degree cutting angle.
+Knives are an essential tool for any chef, and dull knives can be a major cause of accidents in the kitchen.  Having to push down harder in order to make cuts increases the force that's require and makes slips and accidental cuts possible.  Shun Classics are made of high quality VG-10, whose hardness allows Shun knives to be ground to razor sharp 15 degree cutting angle.
+
+While stamped steel knife blocks can be more affordable for those on a budget, a chef's knife, paring knife, and bread knife are all you really need to get started in your home kitchen.  With proper care, a Shun chef's knife is an investment that you'll be able to use for the rest of your life.
 """
 p.url = "http://amzn.to/1kzb99p"
 p.cost = 136
 p.tag_list.add("gear", "food", "cooking", "knives")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"shun_classic_8_inch_chefs_knife.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -135,12 +180,19 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+KitchenAid is an industry leader in kitchen appliances, and the KitchenAid 5 Quart Start Mixer is an essential tool for anyone pursuing cooking or baking as a hobby.  A stand mixer can knead sticky doughs with its dough hook, whip fresh cream or meringues for cakes, and even grind meat for sausages with the proper attachment.
+
+While the price may intially seem daunting, I found the solid build quality and excellent reputation to be worth the investment.  It's possible to get by without a stand mixer, but if it's within your budget having a KitchenAid 5 Quart Stand Mixer simplifies a lot of routine tasks.  Your back and your forearms will thank you.
 """
 p.url = "http://amzn.to/1PsYalk"
 p.cost = 299
 p.tag_list.add("gear", "food", "cooking", "baking", "mixer")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"kitchenaid_5_quart_stand_mixer.jpeg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -148,12 +200,21 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+I've loved Legos ever since I got my first set as a kid, and somehow I managed to grow up into a giant kid instead of a regular man.  When I bought the Lego Star Wars Ewok Village, a big part of me wanted to high five 6 year old me through the space time continuum.
+
+The Lego Star Wars Ewok Village combines one of the most iconic toys in the world with one of the most iconic film franchises.  The set itself includes a great set of minifigs, with characters like R2-D2, Luke Skywalker, Princess Leia, Han Solo, Chewbacca, C-3PO, Rebel soldiers, Ewoks, Scout Troopers and Stormtroopers.
+
+At 1,990 pieces this is a huge set that towers at over 13\" high, and the organic shapes make this set a joy to build.  Nets and traps allow you to act out some of your favorite scenes from d Episode VI.
 """
 p.url = "http://amzn.to/1PsXY5q"
 p.cost = 250
 p.tag_list.add("gear", "lego", "toys")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"lego_star_wars_ewok_village.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -161,12 +222,21 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+The Glencairn Whiskey Tasting Glass was designed by Raymond Davidson of Glencairn Crystal in Scotland and came into production in 2001.
+
+Its pear shaped design is based on the nosing copitas used in whiskey laboratories all over the world and was made with the help of master blenders from the largest whiskey makers in Scotland.
+
+While the snifter is a popular vessel, the curves shape of the Glencairn Whiskey Tasting Glass concentrates the aroma of the whiskey while minimizing evaporation, and it's fun to have a special glass to use when cracking open a Glenfarclas 25 or Taketsuru 21.
 """
 p.url = "http://amzn.to/1PsXX1z"
 p.cost = 17
 p.tag_list.add("gear", "mixology", "drinking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"glencairn_whiskey_glass.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -174,12 +244,21 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+Cast iron is impossible to beat for heat retention, and Lodge has been making them since 1896.  The Lodge Cast Iron Skillet is the perfect tool for recipes that start on the stove and end up in the oven, and is my weapon of choice for a ribeye steak.
+
+Cast iron is the original non-stick surface since its high specific heat allows it to maintain high temperatures that vaporize liquids on contact, preventing them from sticking.  The Lodge Cast Iron Skillet is preseasoned, but in the event it's damaged it can be reapplied simply by wiping down with oil and baking upside down at high temperatures.
+
+Cast iron does rust if left in contact with water, but can be cleaned by scrubbing down with salt and wiping clean with oil.
 """
 p.url = "http://amzn.to/1kzaUes"
 p.cost = 33
 p.tag_list.add("gear", "food", "cooking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"lodge_cast_iron_skillet.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -187,12 +266,19 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-TEST
+Want to impress the love of your life?  Try grating an orange and 2-3 lemons worth of zest into your favorite waffle or pancake recipe with the Microplane Classic Zester/Grater for some serious brownie points.
+
+The Microplane is solidly build with a rubber handle and plastic sheath that prevents the tines from getting caught.  Since receiving one for Christmas a few years back this has been one of my favorite tools for adding some zest to everyday dishes.
 """
 p.url = "http://amzn.to/1kzaQv8"
 p.cost = 11
 p.tag_list.add("gear", "food", "cooking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"microplane_classic_zester.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(
@@ -207,6 +293,11 @@ p.cost = 24
 p.tag_list.add("toys", "boardgames")
 p.active = true
 p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"pandemic.jpg"
+)
+p.save
 
 p = Post.find_or_initialize_by(
   :title=>"EatSmart Precision Pro Digital Kitchen Scale",
@@ -219,6 +310,11 @@ p.url = "http://amzn.to/1PsXKv6"
 p.cost = 15
 p.tag_list.add("gear", "food", "cooking", "baking")
 p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"eatsmart_precision_pro_scale.jpg"
+)
 p.save
 
 p = Post.find_or_initialize_by(

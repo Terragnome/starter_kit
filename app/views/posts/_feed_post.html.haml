@@ -1,6 +1,6 @@
 .feed_post{:id=>"feed_post_#{feed_post.id}"}
   .header
-    %h1{:itemprop=>'name'}
+    %h2{:itemprop=>'name'}
       =link_to(feed_post.title, full_post_path(feed_post), 'data-push'=>true)
     .info_section
       .info
