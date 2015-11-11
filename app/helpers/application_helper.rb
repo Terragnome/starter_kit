@@ -17,4 +17,17 @@ module ApplicationHelper
       content_for?(:meta_description) ? content_for(:meta_description) : APP_CONFIG['app_description']
     end
   end
+
+  def site_link()
+    link_to("The Pursuit of Hobbiness", "pursuitofhobbiness.com")
+  end
+
+  def site_email(stub, link_text=nil)
+    addr = "#{stub}@pursuitofhobbiness.com"
+    mail_to(addr, link_text || addr )
+  end
+
+  def contact_email
+    site_email("contact")
+  end
 end
