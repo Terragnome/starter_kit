@@ -15,8 +15,6 @@ class ApplicationController < ActionController::Base
     @app_title_short = APP_CONFIG['app_title_components'].collect{|x| x[0]}.join("")
 
     @asset_root = StarterKit::Application.config.asset_root
-
-    @primary_user=User.first
   end
 
   protected

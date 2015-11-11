@@ -30,12 +30,12 @@ module ApplicationHelper
     link_to(link_text || site_name, site_url())
   end
 
-  def site_email(stub, link_text=nil)
+  def site_email_link(stub, link_text=nil)
     addr = "#{stub}@#{site_url()}"
     mail_to(addr, link_text || addr )
   end
 
-  def contact_email
-    site_email("contact")
+  def contact_email_link
+    site_email_link("contact")
   end
 end
