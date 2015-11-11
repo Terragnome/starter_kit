@@ -200,11 +200,9 @@ p = Post.find_or_initialize_by(
   :user=>User.first,
 )
 p.body = """
-I've loved Legos ever since I got my first set as a kid, and somehow I managed to grow up into a giant kid instead of a regular man.  When I bought the Lego Star Wars Ewok Village, a big part of me wanted to high five 6 year old me through the space time continuum.
-
 The Lego Star Wars Ewok Village combines one of the most iconic toys in the world with one of the most iconic film franchises.  The set itself includes a great set of minifigs, with characters like R2-D2, Luke Skywalker, Princess Leia, Han Solo, Chewbacca, C-3PO, Rebel soldiers, Ewoks, Scout Troopers and Stormtroopers.
 
-At 1,990 pieces this is a huge set that towers at over 13\" high, and the organic shapes make this set a joy to build.  Nets and traps allow you to act out some of your favorite scenes from d Episode VI.
+At 1,990 pieces this is a huge set that towers at over 13\" high, and the organic shapes make this set a joy to build.  Nets and traps allow you to act out some of your favorite scenes from d Episode VI.  I found this to be an incredibly fun set to build.  Highly recommended for any Lego fan.
 """
 p.url = "http://amzn.to/1PsXY5q"
 p.cost = 250
@@ -285,9 +283,7 @@ p = Post.find_or_initialize_by(
   :title=>"Pandemic",
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1kzaPY8"
 p.cost = 24
 p.tag_list.add("toys", "boardgames")
@@ -347,9 +343,7 @@ p = Post.find_or_initialize_by(
   :title=>"Velesco Silicone Baking Mat",
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1Moykhs"
 p.cost = 20
 p.tag_list.add("gear", "food", "baking")
@@ -365,9 +359,7 @@ p = Post.find_or_initialize_by(
   :title=>"Pyrex 2-Cup Glass Measuring Cup",
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1Moympu"
 p.cost = 8
 p.tag_list.add("gear", "food", "cooking", "baking")
@@ -383,9 +375,7 @@ p = Post.find_or_initialize_by(
   :title=>"Bang!",
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1kzaDrY"
 p.cost = 17
 p.tag_list.add("toys", "boardgames", "cardgames")
@@ -401,9 +391,7 @@ p = Post.find_or_initialize_by(
   :title=>"Allen Bow String Wax",
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1S3LHUg"
 p.cost = 3
 p.tag_list.add("gear", "archery")
@@ -419,9 +407,7 @@ p = Post.find_or_initialize_by(
   :title=>'Gateway 4" Feathers',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1S3Lqk4"
 p.cost = 38
 p.tag_list.add("gear", "archery")
@@ -437,9 +423,7 @@ p = Post.find_or_initialize_by(
   :title=>'Born To Run',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1S3LiRJ"
 p.cost = 11
 p.tag_list.add("books", "running")
@@ -455,9 +439,7 @@ p = Post.find_or_initialize_by(
   :title=>'Ad Hoc at Home',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1kzaox5"
 p.cost = 11
 p.tag_list.add("books", "food", "cooking")
@@ -473,9 +455,7 @@ p = Post.find_or_initialize_by(
   :title=>'Kreg Jig K4 Pocket Jig',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MoxSQ4"
 p.cost = 11
 p.tag_list.add("tools", "woodworking")
@@ -491,9 +471,7 @@ p = Post.find_or_initialize_by(
   :title=>'Smallworld',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1kzamoR"
 p.cost = 28
 p.tag_list.add("toys", "boardgames")
@@ -509,9 +487,7 @@ p = Post.find_or_initialize_by(
   :title=>'Ticket to Ride',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MoxQb5"
 p.cost = 32
 p.tag_list.add("toys", "boardgames")
@@ -527,9 +503,7 @@ p = Post.find_or_initialize_by(
   :title=>'Grayling Fletching Jig',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MoxMrQ"
 p.cost = 11
 p.tag_list.add("tools", "archery")
@@ -545,9 +519,7 @@ p = Post.find_or_initialize_by(
   :title=>'Gold Tip Arrow Glue',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1PsX7Sr"
 p.cost = 9
 p.tag_list.add("tools", "archery")
@@ -563,9 +535,7 @@ p = Post.find_or_initialize_by(
   :title=>'DeWalt DWE575SB Circular Saw',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1PsX6xQ"
 p.cost = 129
 p.tag_list.add("tools", "woodworking")
@@ -581,9 +551,7 @@ p = Post.find_or_initialize_by(
   :title=>'Love Letter',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1kza5lN"
 p.cost = 9
 p.tag_list.add("toys", "boardgames", "cardgames")
@@ -599,9 +567,7 @@ p = Post.find_or_initialize_by(
   :title=>'Cards Against Humanity',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MCQZln"
 p.cost = 25
 p.tag_list.add("toys", "boardgames", "cardgames")
@@ -617,9 +583,7 @@ p = Post.find_or_initialize_by(
   :title=>'Vortex Optics Solo 10x25 Monocular',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1S3KtZ5"
 p.cost = 52
 p.tag_list.add("gear", "backpacking", "hiking", "camping", "archery")
@@ -655,9 +619,7 @@ p = Post.find_or_initialize_by(
   :title=>'The Name of the Wind',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MCQV5c"
 p.cost = 8
 p.tag_list.add("books", "reading", "fantasy")
@@ -673,9 +635,7 @@ p = Post.find_or_initialize_by(
   :title=>'Shun Higo Nokami Personal Knife',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MCQW9g"
 p.cost = 99
 p.tag_list.add("edc", "food", "knives", "gear")
@@ -691,9 +651,7 @@ p = Post.find_or_initialize_by(
   :title=>'Easton Hip Quiver',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MCQU19"
 p.cost = 64
 p.tag_list.add("gear", "archery", "quiver")
@@ -709,9 +667,7 @@ p = Post.find_or_initialize_by(
   :title=>'Chemex Glass Coffee Maker',
   :user=>User.first,
 )
-p.body = """
-TEST
-"""
+p.body = """"""
 p.url = "http://amzn.to/1MCQTKz"
 p.cost = 45
 p.tag_list.add("tools", "food", "coffee")
@@ -872,5 +828,9 @@ p.photos.find_or_create_by(
 p.save
 
 
-
-
+Post.all.each do |x|
+  if not x.body or x.body.length == 0
+    x.active = false
+    x.save
+  end
+end
