@@ -18,8 +18,16 @@ module ApplicationHelper
     end
   end
 
-  def site_link()
-    link_to("The Pursuit of Hobbiness", "pursuitofhobbiness.com")
+  def site_name()
+    "The Pursuit of Hobbiness"
+  end
+
+  def site_url()
+    "pursuitofhobbiness.com"
+  end    
+
+  def site_link(link_text=nil)
+    link_to(link_text || site_name, site_url())
   end
 
   def site_email(stub, link_text=nil)
