@@ -26,6 +26,15 @@
 
     }
   }
+
+  a{
+    font-family: #{$body_font};
+    text-transform: none;
+  }
+
+  p{
+    margin: 0 0 40px 0;
+  }
 }
 
 #about{
