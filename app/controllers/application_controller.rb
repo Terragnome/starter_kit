@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def set_constants
     @app_title = APP_CONFIG['app_title']
+    @app_url = APP_CONFIG['app_url']
     @app_title_short = APP_CONFIG['app_title_components'].collect{|x| x[0]}.join("")
 
     @asset_root = StarterKit::Application.config.asset_root

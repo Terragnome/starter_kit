@@ -19,11 +19,11 @@ module ApplicationHelper
   end
 
   def site_name()
-    "The Pursuit of Hobbiness"
+    @app_title
   end
 
   def site_url()
-    "pursuitofhobbiness.com"
+    @app_url
   end    
 
   def site_link(link_text=nil)
@@ -31,7 +31,7 @@ module ApplicationHelper
   end
 
   def site_email(stub, link_text=nil)
-    addr = "#{stub}@pursuitofhobbiness.com"
+    addr = "#{stub}@#{site_url()}"
     mail_to(addr, link_text || addr )
   end
 
