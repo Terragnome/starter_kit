@@ -73,10 +73,10 @@ class PostsController < ApplicationController
       @selected_tags = []
       if @tags == :all
         @posts=Post.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
-        @all_tags=Post.tag_counts_on(:tags).order('taggings_count DESC')
+        @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC')
       else
         @tags = @tags.collect{|x| x.to_sym}
-        @posts=Post.includes(:counters, :photos, :tags).active.tagged_with(@tags)
+        @posts=Post.active.includes(:counters, :photos, :tags).active.tagged_with(@tags)
         @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
 
         tag_counts = {}        
