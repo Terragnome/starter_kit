@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.#{APP_CONFIG['app_url']}"
+SitemapGenerator::Sitemap.default_host = "http://#{APP_CONFIG['app_url']}"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
