@@ -13,9 +13,11 @@ class Post < ActiveRecord::Base
   
   acts_as_taggable
 
-  def summary
-    token_body = body.gsub("\n", "  ")
-    s = token_body.split(".  ")[0..1].join(".\n\n")
+  def display_summary
+    token_body = "#{summary.gsub("\n", " ")}\n" if summary
+    token_body += body.gsub("\n", " ")
+
+    s = token_body.split(". ")[0..1].join(".\n\n")
     s = "#{s}..." if body.length != s.length
     s
   end

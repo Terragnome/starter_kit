@@ -25,12 +25,23 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  Post.find_each do |post|
+  Post.active.find_each do |post|
     add post_path(post.display_slug), :lastmod => post.posted_at
   end
 
-  Post.tag_counts.each do |tag|
+  tags = Post.tag_counts
+
+  tags.each do |tag|
     add feed_path(tag.name), :changefreq => 'weekly'
+  end
+
+  tags.length.times do |i|
+    break if i>3
+
+    tags.permutation(i).each do |combo|
+      sorted_combo = combo.sort{|a,b| a.name <=> b.name }.join(',')
+      add tag_feed_path(:tags=>sorted_combo), :changefreq => 'weekly'
+    end
   end
 end
 
