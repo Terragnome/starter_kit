@@ -966,10 +966,10 @@ Congratulations!  You now know everything you need to begin looking for your per
 p.tag_list.add("gear", "guides", "archery")
 p.active = true
 p.save
-p.photos.find_or_create_by(
-  :name=>"cover",
-  :internal_url=>"guides_beginner_archery_gear.jpg"
-)
+# p.photos.find_or_create_by(
+#   :name=>"cover",
+#   :internal_url=>"guides_beginner_archery_gear.jpg"
+# )
 p.save
 
 Post.all.each do |x|
