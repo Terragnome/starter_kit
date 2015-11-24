@@ -317,19 +317,17 @@ $feed_list_padding_h: 0px;
 			text-align: center;
 			margin: 20px 0px 40px 0px;
 
-			.description{
-				margin: 50px 0 0 0;
-			}
-
 			p{
-				margin: 0 0 20px 0;
-
 				a{
 					cursor: pointer;
 					font-family: #{$body_font};
 					font-size: 16px;
 					text-transform: none;
 				}
+			}
+
+			.summary{
+				font-style: italic;
 			}
 
 			.photo_gallery{

@@ -10,11 +10,10 @@
     .photo_gallery
       -post.photos.each do |ph|
         =image_tag(ph.asset_url, :class=>'photo', :title=>ph.name, :alt=>ph.name)
+    -if post.summary
+      %p.summary
+        =post.summary.gsub(/\n/, '<br/>').html_safe
     %p.description
-      -if post.summary
-        %i
-          =post.summary.gsub(/\n/, '<br/>').html_safe
-        %br
       =post.body.gsub(/\n/, '<br/>').html_safe
     =render :partial=>'post_tags', :object=>post.tag_names
   =render :partial=>'post_actions', :object=>post, :as=>:post
