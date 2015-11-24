@@ -914,7 +914,7 @@ p.summary = """
 This guide will walk you through all the gear you need to get started with archery as a hobby.
 """
 p.body = """
-Archery is a great hobby for men and women that gets you outdoors and teaches strength, focus, and consistency.  When I was just getting started I read a lot of book, guides, and, blogs, so I decided to collect some of the most useful information into one spot.  One of the most important things to learn as an archer is never to dry fire your bow, meaning to pull back the string and release it without shooting an arrow.  This can severely damage or destroy your bow since the energy that would have been used to shoot an arrow gets absorbed by the bow instead.  Bows that are dry fired often explode, and even those that don't may develop microscopic cracks that may not be immediately visible but will shortens theirs lives significantly.  It's important to keep this in mind when buying a used bow or a bow online.  With that warning out of the way, here we go!
+Archery is a great hobby for men and women that gets you outdoors and teaches strength, focus, and consistency.  When I was just getting started I read a lot of books, guides, and, blogs to learn the basics, so I decided to collect some of the most useful information into one spot.  One of the most important things to learn as an archer is never to dry fire your bow, meaning to pull back the string and release it without shooting an arrow.  This can severely damage or destroy your bow since the energy that would have been used to shoot an arrow gets absorbed by the bow instead.  Bows that are dry fired often explode, and even those that don't may develop microscopic cracks that may not be immediately visible but will shortens theirs lives significantly.  It's important to keep this in mind when buying a used bow or a bow online.  With that warning out of the way, here we go!
 
 Bows
 
@@ -966,10 +966,10 @@ Congratulations!  You now know everything you need to begin looking for your per
 p.tag_list.add("gear", "guides", "archery")
 p.active = true
 p.save
-# p.photos.find_or_create_by(
-#   :name=>"",
-#   :internal_url=>""
-# )
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"guides_beginner_archery_gear.jpg"
+)
 p.save
 
 Post.all.each do |x|
