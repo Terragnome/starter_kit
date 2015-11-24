@@ -3,7 +3,7 @@
 -share_url = "#{@app_title} - #{post.title} #{post_url}"
 
 .post_actions
-  -if post.url != ""
+  -if post.url != "" and post.url != nil
     =link_to(post.display_call_to_action, post.url, :target=>"_blank", :class=>['button', 'buy_button'])
   -elsif is_feed
     =link_to(post.display_call_to_action, full_post_path(post), 'data-push'=>true, :class=>['button', 'buy_button'])

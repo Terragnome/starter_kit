@@ -87,8 +87,8 @@ class Post < ActiveRecord::Base
 
   def display_slug
     s = self.title
+    s = s.gsub(/[^a-zA-Z0-9\-\_ ]/, "")
     s = s.gsub(/ +/, "-")
-    s = s.gsub(/[^a-zA-Z0-9\-\_]/, "")
     s
   end
 

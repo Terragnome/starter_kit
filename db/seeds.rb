@@ -753,7 +753,7 @@ Saunders Combo Points are an excellent alternative to field tips for your arrows
 
 They have a black zinc coating which resists rust, and a shape that makes them easy to pull out of embedded into had surfaces like wood. I've had Saunders Combo Points strike nails hidden in a bale of hay with only minimal damage.
 
-It's important that your arrows and tips match the spine of your bow, so Three Rivers Archery offers a convenient <a href='http://www.3riversarchery.com/spinecalculator.asp'>dynamic spine calculator<a> which you can use to find the right arrows for you.
+It's important that your arrows and tips match the spine of your bow, so Three Rivers Archery offers a convenient <a href='http://www.3riversarchery.com/dynamic-spine-arrow-calculator-from-3rivers-archery.html'>dynamic spine calculator</a> which you can use to find the right arrows for you.
 """
 p.url = "http://amzn.to/1MCQVly"
 p.cost = 7
@@ -906,6 +906,71 @@ p.photos.find_or_create_by(
 )
 p.save
 
+p = Post.find_or_initialize_by(
+  :title=>"Guides | Beginner Archery Gear",
+  :user=>User.first,
+)
+p.summary = """
+This guide will walk you through all the gear you need to get started with archery as a hobby.
+"""
+p.body = """
+Archery is a great hobby for men and women that gets you outdoors and teaches strength, focus, and consistency.  When I was just getting started I read a lot of book, guides, and, blogs, so I decided to collect some of the most useful information into one spot.  One of the most important things to learn as an archer is never to dry fire your bow, meaning to pull back the string and release it without shooting an arrow.  This can severely damage or destroy your bow since the energy that would have been used to shoot an arrow gets absorbed by the bow instead.  Bows that are dry fired often explode, and even those that don't may develop microscopic cracks that may not be immediately visible but will shortens theirs lives significantly.  It's important to keep this in mind when buying a used bow or a bow online.  With that warning out of the way, here we go!
+
+Bows
+
+As a beginning archer, your first decision will be what kind of bow you want to shoot: Traditional, Compound, or Olympic.
+
+Traditional
+Traditional bows are what most people think of when they imagine archery. Traditional bows are usually made of dense flexible woods like ash or maple, although many modern bows also use fiberglass for strength and safety.  There are many types of traditional bow from cultures around the world, but the bows that you are most likely to see on the range are the longbow and the recurve bow.  Longbows are the more primitive of the two and are usually over 62\" long and form a C shape when strung.  They get most of their strength from their length, and are usually quieter than recurves because the strings don't touch the bow when shot.  Recurve bows have an extra curve toward their tips where the string touches the limbs of the bow.  This shape act like a lever which allow the same power to be generated in a shorter bow.  The tradeoff for this mechanical advantage is that recurve bows are slightly louder than longbows since the string touches the limbs when fired.  This can be mitigated by string silencers, which quiet the string by reducing the speed that they hits the limbs at.  Longbows and recurve bows can be found made as takedown bows, which means that the limbs can be removed from the riser for easier transportation and storage.  Modern manufacturing techniques have minimized these differences, and you should pick whatever bow you like the most.  My first bow was the Martin Mamba and to is one of my favorite bows to shoot to this day.  While exception shooters can be accurate at longer distances, most traditional hunters not using sights or stabilizers should try to limit their shots to 20 to 30 yards.
+
+Compound
+Compound bows are the height of modern bow technology and use a system of cables and pulleys (called cams) to produce a more powerful bow.  Compound bows can be as short as 30\" and easily shoot arrows at over 300 feet/sec, whereas even the most powerful traditional bows rarely exceed these speeds.  With traditional bows, the further back you draw the string the more weight you are pulling, so if you are shooting a 40# bow you are holding 40# at full draw.  With a compound you start by pulling the full weight of the bow, but partway through the cams kick in and the bow becomes easier to pull.  This is called letoff, and the decrease in draw weight can be as much as 75-80%.  This means that at full draw a 70# compound bow will feel like 14#, which makes aiming at a target much easier.  These advantages make compound bows a favorite for bowhunters, who often spend hours hiding in trees or blinds waiting for the perfect shot.  Compound bow shooters often utilize sights and stabilizers, and setting up a compound bow can be significantly more expensive than a traditional to buy and maintain.  Skilled hunters using compound bows can make accurate shots as far as 60 yards.  There are several styles of cams for compound bows (single, twin, binary, hybrid) with various strengths and weaknesses.  Single cams were the earliest type and are usually the least expensive and most reliable.  Dual cams generate power with both cams, but require more maintenance to keep the cams synchronized.  Hybrid cams utilize a control and a power cam to combine the best of both worlds without requiring synchronization like twin cams.  Binary cams connect the cams directly to one another so they rotate together to get the advantages of twin cams without the timing issues, although they can be more expensive than other options.
+
+Olympic
+Olympic bows sit somewhere between traditional and compound bows.  They are often made of advanced materials like carbon fiber and are as long as 66\" to increase stability.  Olympic shooters also utilize tools like stabilizers, sights, and clickers (ensures consistent draw length) to ensure to maximize accuracy.  Olympic bows are generally unsuitable for hunting because their large size, weight, and stabilizers make them impractical to maneuver in wooded environments.  Olympic archers also shoot at extreme distances as far as 70 to 90 yards, and use correspondingly light arrows which also are not well suited for taking game.
+
+Arrows
+
+Once you've picked your style of bow, your next decision as an archer will be what kind of arrows you shoot.  You can find premade arrows online, but longer term you'll get better results by making your own arrows with a fletching jig, which is actually pretty easy.  While modern arrows sometimes combine multiple materials, the most common materials for arrows are wood, aluminum, carbon, and fiberglass.  Arrow weight is measured in grains, and most bows have a minimum grain weight of arrow they have to shoot to avoid damaging the bow, so make sure to keep this in mind when choosing your arrows.
+
+Wood
+There are many woods that are suitable for arrows, but one of the most popular for its strength and price is Port Orford Cedar.  Cedar arrows tend to be heavier than aluminum or carbon and come in standard widths like 5/16\", 11/23\", and 23/63\" so make sure your nocks and points match.  Bamboo is another natural material that is popular among traditional archers since it is lighter and stronger than cedar.  Both of these materials are less durable than carbon or aluminum, and many archers to shoot them long term find it more economical to make their own arrows.  Wood arrows should never be shot from a compound bow, as the way their apply force will cause the arrow to explode and also damage the bow.
+
+Carbon
+Carbon fiber has gained a reputation as a strong and lightweight material, and those characterstics extend to their use in arrows.  Carbon arrows are both lighter and faster than any natural material, and are a popular choice for compound shooters since the faster the arrow the less it's impacted by gravity.  That means that for longer shots are easier since you don't have to compensate as much for gravity, which also helps when you're shooting at unmarked distances.  Carbon arrow are incredibly strong and can ofter survive impacts with metal, wood, or rocks that would destroy wooden arrows, but if this happens it's important to check your arrow for cracks and perform a flex test.  Take the arrow and flex it, listening for a crackling sound that sounds like fiber rubbing together.  If a carbon arrow with a crack is fired, it could potentially break and injure the shooter.  This is an even bigger danger for compound bows since their aggressive acceleration puts arrows under greater stress than a traditional bows.  Carbon arrows usually have inserts which allow you to switch out your points, allowing the same arrows to be used for target shooting or hunting.  Nocks can also be easily pulled out and replaced if damaged.  Unlike wooden or aluminum arrows, carbon arrows are stiff so never need to be straightened.  Most Olympic archers use carbon arrows.
+
+Aluminum
+Aluminum arrows have many of the same advantages as carbon arrows and were the preferred choice of Olympic archers before carbon arrows were invented.  They are more durable that wooden arrows and use inserts that allow the tips to be swapped.  Aluminum arrows that hit hard surfaces don't crack so won't explode, but they will sometimes bend which will require the arrow to be straightened.  Aluminum arrows are heavier, which makes judging distance more important, but their increased mass also helps in penetration relative to diameter which can be beneficial for hunters, although aluminum arrow also tend to be thicker than carbon arrows.  Many youth arrows are made of aluminum.
+
+Fiberglass
+Fiberglass arrows are only really used for low poundage beginner bows.  They are inexpensive and virtually indestructible, which can make them a good choice for younger archers.
+
+After you've chosen your arrow material you'll need to match the spine of the arrow to the bow.  I found this to be really intimidating when I first started out, but it's really not that bad.  Let's get started.
+
+The spine of an arrow is the amount that it flexes when shot.  If you imagine taking a think piece of wood like a skewer and pushing on both ends, the wood will bend and then spring back into shape when you let go.  The same thing happens with an arrow when it's shot from a bow.  There's an ideal amount of flexibility in order for the arrow to be pointing straight after it's done flexing.  If the arrow is too stiff (overspined), the arrow won't bend enough to get and it will end up striking the target to the left.  If the arrow isn't stiff enough (underspined), then the arrow will flex too much and you'll end up missing to the right.  The earliest bows didn't have a shelf, so the spine was even more important because the arrow needed to flex arond the bow in order to shoot straight.  Modern recurves often have a shelf that is cut to center or past it, which means that the arrow doesn't have to bend around the riser anymore.  This allows the bows to shoot a slightly wider range of spines, although you still want to match the two as closely as possible for the most accuracy.
+
+If you're going the traditional route, 3RiversArchery offers a convenient <a href='http://www.3riversarchery.com/dynamic-spine-arrow-calculator-from-3rivers-archery.html'>dynamic spine calculator</a>.  All you need to do is enter in your bow, arrow, and physical measurements and it will tell you whether your arrows are the right spine.  If you are shooting a compound bow, every major manufacturer (Easton, Gold Tip, Carbon Express, etc) has an arrow chart you can reference to determine the kind of shafts that match your bow, although more hand tuning will be required.
+
+Fletching
+Traditional archers tend to shoot their arrows off the shelf, but compound and Olympic archers almost always use a device called a rest.  A rest holds up the arrow and minimizes contact between the arrow and the bow, improving accuracy.  If you are planning to shoot off the shelf, you should always use feathers to fletch your arrow with feathers since they will bend out of the way.  Plastic vanes can be more durable, but require a rest otherwise they will deflect the arrow and ruin your shot if they touch the riser.
+
+Releasess
+
+The last thing you'll need to choose is your release.  If you're shooting traditional or Olympic archery, you will probably be shooting using your fingers, which means that you will be using either a shooting glove or a tab.  Tabs tend to be thicker, more durable, and ensure more consistent pressure across your fingers.  Gloves allow you to feel the string more.  The difference between the two comes mostly down to personal preference.  I shoot with a glove, but a good friend of mine shoots with a tab.  Asian style bows are shot with a thumb ring, although this is far less common.  If you are shooting a compound, the short length of the bow makes it difficult to shoot with your fingers since the string makes a sharper angle at full draw which can pinch your fingers.  Compound bow shooters tend to use mechanical releases, which are devices that hold onto the string and let go when a button or trigger is pushed.  These can come in hook or caliper styles and are also a matter of personal preference.
+
+Arm Guard
+Arms guards/bracers are technically not necessary if you have perfect form, but I would highly recommend them for a beginner archer.  If your form is even slightly off can end up hitting the forearm of your bow hand with the string when you shoot, leaving large and painful bruises.  I definitely happened to me.
+
+Congratulations!  You now know everything you need to begin looking for your perfect bow and arrow.
+"""
+p.tag_list.add("gear", "guides", "archery")
+p.active = true
+p.save
+# p.photos.find_or_create_by(
+#   :name=>"",
+#   :internal_url=>""
+# )
+p.save
 
 Post.all.each do |x|
   if (not x.body or x.body.length == 0) or (not x.summary or x.summary.length == 0)
