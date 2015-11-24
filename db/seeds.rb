@@ -56,7 +56,7 @@ I chose the Martin Mamba as my first recurve because it was a handcrafted Americ
 '''
 p.url = "http://amzn.to/1kzbkl9"
 p.cost = 559
-p.tag_list.add("gear", "archery", "bows")
+p.tag_list.add("gear", "archery", "bows", "traditional", "recurve")
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -872,7 +872,7 @@ The type of bow you choose (right or left) is determined by your dominant eye ra
 """
 p.url = "http://amzn.to/1MCQO9u"
 p.cost = 140
-p.tag_list.add("gear", "archery", "bows")
+p.tag_list.add("gear", "archery", "bows", "traditional", "recurve")
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -963,7 +963,7 @@ Arms guards/bracers are technically not necessary if you have perfect form, but 
 
 Congratulations!  You now know everything you need to begin looking for your perfect bow and arrow.
 """
-p.tag_list.add("gear", "guides", "archery")
+p.tag_list.add("gear", "guides", "archery", "beginner")
 p.active = true
 p.save
 # p.photos.find_or_create_by(
