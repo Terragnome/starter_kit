@@ -18,7 +18,7 @@ StarterKit::Application.routes.draw do
   get 'hobby/:tag(/:page)' => 'posts#feed', :as=>'feed'
 
   put ':id/share/:key' => 'posts#share', :as=>'post_share'
-  get ':id/get' => 'posts#convert', :as=>'post_convert'
+  get ':id/explore' => 'posts#convert', :as=>'post_convert'
   get ':id(/:display_slug)' => 'posts#show', :as=>'post'
 
   # The priority is based upon order of creation: first created -> highest priority.
