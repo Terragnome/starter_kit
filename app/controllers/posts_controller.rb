@@ -38,6 +38,13 @@ class PostsController < ApplicationController
     @post ||= Post.includes(:counters, :photos, :tags).active.where(:id=>params[:id]).take()
     redirect_to latest_path and return if not @post
 
+    # puts @post.tags.class
+
+    # @related_guides = nil
+    # if not @post.tagged_with(:guides)
+    #   @related_guides = Post.active.tagged_with(@post.tags, :on=>:tags, :any=>true)
+    # end
+
     respond_to do |format|
       format.html
       format.js
@@ -61,6 +68,11 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.js{render action: 'share'}
     end
+  end
+
+  def convert
+    @post = Post.active.where(:id=>params[:id]).take()
+    redirect_to @post.url and return
   end
 
   private
