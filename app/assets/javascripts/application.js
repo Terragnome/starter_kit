@@ -52,7 +52,7 @@ Application.OnPageAlways = function(e, target, render, url){
 	DOM._sceneBody.show();
 	DOM._header.show();
 
-	Scroll.AutoScrollTo(370);
+	Scroll.AutoScrollTo(500);
 }
 
 Application.InitResize = function(){
