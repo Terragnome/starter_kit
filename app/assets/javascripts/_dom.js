@@ -10,6 +10,8 @@ DOM.Init = function(){
   DOM._appDescription = $('#app_description');
 
   DOM._blocker = $('#blocker');
+
+  DOM._header = $('#header');
   DOM._headerBar = $('#header_bar');
   DOM._headerTitle = $('#header_title');
   DOM._headerNavIcon = $('#header_nav_icon');

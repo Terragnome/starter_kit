@@ -40,6 +40,7 @@ Application.Init = function(){
 Application.OnPageLoading = function(e, target, render, url){
 	DOM._sceneLoader.show();
 	DOM._sceneBody.hide();
+	DOM._header.hide();
 
 	Header.CloseMenu();
 }
@@ -49,6 +50,7 @@ Application.OnPageFail = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
 	DOM._sceneLoader.hide();
 	DOM._sceneBody.show();
+	DOM._header.show();
 
 	Scroll.AutoScrollTo(370);
 }
@@ -57,19 +59,6 @@ Application.InitResize = function(){
 	DOM._window.resize(function (){
 		Header.OnResize();
 	});
-}
-
-Application.UpdateTitle = function(){
-	var scrollPosition = DOM._window.scrollTop();
-	var headerTitle = DOM._headerTitle;
-
-	if(scrollPosition > 0){
-		headerTitle.addClass("anim_fade_out");
-		headerTitle.removeClass("anim_fade_in");		
-	}else{
-		headerTitle.addClass("anim_fade_in");
-		headerTitle.removeClass("anim_fade_out");
-	}
 }
 
 Application.UpdateDescription = function(m){
