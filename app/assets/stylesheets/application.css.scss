@@ -364,13 +364,12 @@ $close_button_bar_height: 2px;
 	display: none;
 	text-align: center;
 	width: 100%;
-	margin: auto;
-	margin-top: 150px;
-	margin-bottom: 150px;
+	height: 70%;
 
 	.spinner{
+		position: relative;
 		width: 100%;
-		text-align: center;
+		top: 40%;
 	}
 }
 

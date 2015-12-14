@@ -15,10 +15,10 @@
     #popups
     #blocker
     =render partial: 'layouts/header/header'
+    #scene_loader
+      =render partial: 'layouts/spinner'
     #scene{ style: "overflow:#{is_mobile_device? ? 'visible' : 'scroll'};"}
       #scene_content
-        #scene_loader
-          =render partial: 'layouts/spinner'
         #scene_body
           =yield
         / =render partial: 'layouts/ads'
