@@ -13,9 +13,7 @@ Scroll.Init = function(scrollTimeoutInterval){
   });
 }
 
-Scroll.OnScroll = function(){
-  Application.UpdateTitle();
-}
+Scroll.OnScroll = function(){}
 
 Scroll.AutoScrollTo = function(pos){
   if(Scroll.autoScroll) Scroll.autoScroll.stop();

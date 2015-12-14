@@ -42,9 +42,8 @@ Application.OnPageLoading = function(e, target, render, url){
 	DOM._sceneBody.hide();
 	DOM._header.hide();
 
-	Scroll.AutoScrollTo(0);
-
 	Header.CloseMenu();
+	Scroll.AutoScrollTo(0);
 }
 Application.OnPageRedirected = function(e, target, render, url){}
 Application.OnPageDone = function(e, target, render, url){}
@@ -54,7 +53,8 @@ Application.OnPageAlways = function(e, target, render, url){
 	DOM._sceneBody.show();
 	DOM._header.show();
 
-	Scroll.AutoScrollTo(500);
+	var scrollPos = DOM._header.offset().top+DOM._header.height()-50;
+	Scroll.AutoScrollTo(scrollPos);
 }
 
 Application.InitResize = function(){
