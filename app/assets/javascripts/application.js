@@ -42,6 +42,8 @@ Application.OnPageLoading = function(e, target, render, url){
 	DOM._sceneBody.hide();
 	DOM._header.hide();
 
+	Scroll.AutoScrollTo(0);
+
 	Header.CloseMenu();
 }
 Application.OnPageRedirected = function(e, target, render, url){}
