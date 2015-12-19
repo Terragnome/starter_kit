@@ -1,0 +1,1 @@
+var PostFeed=PostFeed||{};PostFeed.Init=function(){PostFeed.isLoading=!1};
