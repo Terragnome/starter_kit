@@ -20,8 +20,6 @@ module StarterKit
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
-
     config.exceptions_app = self.routes
 
     ActsAsTaggableOn.force_lowercase = true
