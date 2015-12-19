@@ -1,4 +1,4 @@
-=link_to(full_post_path(related)) do 
+=link_to(full_post_path(related), 'data-push'=>true) do 
   .related{:id=>"related_#{related.id}"}
     %h3
       =related.title
