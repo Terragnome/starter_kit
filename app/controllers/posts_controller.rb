@@ -38,13 +38,6 @@ class PostsController < ApplicationController
     @post ||= Post.includes(:counters, :photos, :tags).active.where(:id=>params[:id]).take()
     redirect_to latest_path and return if not @post
 
-    # puts @post.tags.class
-
-    # @related_guides = nil
-    # if not @post.tagged_with(:guides)
-    #   @related_guides = Post.active.tagged_with(@post.tags, :on=>:tags, :any=>true)
-    # end
-
     respond_to do |format|
       format.html
       format.js

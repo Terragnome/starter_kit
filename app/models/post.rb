@@ -13,6 +13,20 @@ class Post < ActiveRecord::Base
   
   acts_as_taggable
 
+  def is_guide
+    self.tags.collect{|x|x.name}.include?("guides")
+  end
+
+  def related
+    tag_names = tags.collect{|x|x.name}
+    if is_guide
+      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides", :exclude=>true)
+    else
+      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides")
+    end
+    results
+  end
+
   def display_summary
     token_body = "#{summary.gsub("\n", " ")}\n" if summary
     token_body += body.gsub("\n", " ")

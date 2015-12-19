@@ -17,4 +17,4 @@
       =post.body.gsub(/\n/, '<br/>').html_safe
     =render :partial=>'post_tags', :object=>post.tag_names
   =render :partial=>'post_actions', :object=>post, :as=>:post
-  //=render :partial=>'related'
+  =render :partial=>'feed_related', :object=>post.related
