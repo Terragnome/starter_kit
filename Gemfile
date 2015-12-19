@@ -20,6 +20,10 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
+# Asset compression
+gem 'rack-zippy'
+gem 'heroku-deflater', :group => :production
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
