@@ -36,7 +36,7 @@ SitemapGenerator::Sitemap.create do
   end
 
   tags.length.times do |i|
-    break if i>3
+    break if i>2
 
     tags.permutation(i).each do |combo|
       sorted_combo = combo.sort{|a,b| a.name <=> b.name }.join(',')
