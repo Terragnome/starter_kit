@@ -1,5 +1,7 @@
 -if feed_related and feed_related.length>0
-  %div
-    Related items
-  -feed_related.each do |post|
-    =render :partial=>"related", :object=>post
+  .feed_related
+    %h2.title
+      Related items
+    .list
+      -feed_related.each do |post|
+        =render :partial=>"related", :object=>post

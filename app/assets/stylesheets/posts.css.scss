@@ -355,6 +355,37 @@ $feed_list_padding_h: 0px;
 	}
 }
 
+.feed_related{
+	margin: 60px 0 0 0;
+	.title{
+
+	}
+
+	.list{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: space-between;
+  	box-sizing: border-box;
+		margin: 30px 0 0 0;
+
+		.related{
+			display: inline-block;
+			cursor: pointer;
+			color: #{$base_color};
+			width: 350px;
+			height: 200px;
+			margin: 5px 5px 20px 5px;
+			padding: 20px 20px 30px 20px;
+		 	box-shadow: 2px 2px 10px #{$shadow_gray};
+
+			h3{
+				text-align: center;
+			}
+		}
+	}
+}
+
 .navigation{
 	margin: 20px 0 0 0;
 	a{

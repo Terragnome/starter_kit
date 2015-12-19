@@ -1,2 +1,4 @@
-%div
-  =related.slug
+=link_to(full_post_path(related)) do 
+  .related{:id=>"related_#{related.id}"}
+    %h3
+      =related.title
