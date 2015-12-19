@@ -6,8 +6,6 @@
   #post_feed
     #post_feed_list
       =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags}
-  :javascript
-    PostFeed.Init();
 -else
   .no_entries
     No articles found. Please check later.

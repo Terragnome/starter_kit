@@ -35,6 +35,9 @@ Application.Init = function(){
 	Header.Init();
 
 	Application.InitResize();
+
+	Post.Init();
+	PostFeed.Init();
 }
 
 Application.OnPageLoading = function(e, target, render, url){
