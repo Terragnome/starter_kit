@@ -2,3 +2,6 @@
   .related{:id=>"related_#{related.id}"}
     %h3
       =related.title
+    -ph = related.cover_photo
+    -if ph
+      =image_tag(ph.asset_url, :class=>'photo', :title=>ph.name, :alt=>ph.name)
