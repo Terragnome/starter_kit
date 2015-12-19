@@ -3,7 +3,6 @@
   %head
     %title
       =@app_title
-    =stylesheet_link_tag "application", :async=>true, media:"all", "data-turbolinks-track"=>true
     =csrf_meta_tags
     %meta{ name: 'keywords', content: meta_keywords } 
     %meta{ name: 'description', content: meta_description }
@@ -24,5 +23,6 @@
         =render partial: 'layouts/footer'
     =render partial: 'layouts/analytics'
 
+  =stylesheet_link_tag "application", media:"all", "data-turbolinks-track"=>true
   =javascript_include_tag "jquery", "data-turbolinks-track"=>true
   =javascript_include_tag "application", :async=>Rails.env.production?, "data-turbolinks-track"=>true
