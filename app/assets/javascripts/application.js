@@ -35,6 +35,7 @@ Application.Init = function(){
 	Header.Init();
 
 	Application.InitResize();
+	Application.sceneTop = DOM._scene.css('top');
 
 	Post.Init();
 	PostFeed.Init();
@@ -42,6 +43,7 @@ Application.Init = function(){
 
 Application.OnPageLoading = function(e, target, render, url){
 	DOM._sceneLoader.show();
+	DOM._scene.css('top', 0);
 	DOM._sceneBody.hide();
 	DOM._header.hide();
 
@@ -53,6 +55,7 @@ Application.OnPageDone = function(e, target, render, url){}
 Application.OnPageFail = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
 	DOM._sceneLoader.hide();
+	DOM._scene.css('top', Application.sceneTop);
 	DOM._sceneBody.show();
 	DOM._header.show();
 
