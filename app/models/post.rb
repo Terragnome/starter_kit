@@ -15,13 +15,21 @@ class Post < ActiveRecord::Base
 
   @@num_related = 12
 
+  @@exclude_related_tags = [
+    "gear",
+    "tools",
+    "beginner",
+    "intermediate",
+    "expert"
+  ]
+
   def is_guide
     self.tags.collect{|x|x.name}.include?("guides")
   end
 
   def related
     tag_names = tags.collect{|x|x.name}
-    tag_names -= ["gear"]
+    tag_names -= @@exclude_related_tags
     if is_guide
       results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides", :exclude=>true).take(@@num_related)
     else
