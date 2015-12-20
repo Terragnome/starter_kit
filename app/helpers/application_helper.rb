@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def app_title(stub)
+    wiselinks_title( stub.downcase().to_sym() == :all ? @app_title : "#{stub.to_s} | #{@app_title_short}" )
+  end 
+  
   def meta_keywords(tags = nil)
     kws = APP_CONFIG['app_keywords'].to_set
 

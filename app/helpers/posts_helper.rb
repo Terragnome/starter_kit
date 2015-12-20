@@ -1,10 +1,7 @@
 module PostsHelper
+  include ApplicationHelper
   include ActsAsTaggableOn::TagsHelper
   include ActionView::Helpers::NumberHelper
-
-  def app_title(stub)
-    wiselinks_title( stub.downcase().to_sym() == :all ? @app_title : "#{stub.to_s} | #{@app_title_short}" )
-  end 
 
   def feed_title(tags)
     if not tags or tags == :all
@@ -35,6 +32,7 @@ module PostsHelper
     tags = seo_feed_params(tags)
     return latest_path(**kwargs) if tags == :all or tags.length == 0
     return feed_path(:tag=>tags.first, **kwargs) if tags.length == 1
+    tags.sort!{|a,b| a<=>b}
     return tag_feed_path(:tags=>tags.join(','), **kwargs)
   end
 
@@ -42,6 +40,7 @@ module PostsHelper
     tags = seo_feed_params(tags)
     return latest_url(**kwargs) if tags == :all or tags.length == 0
     return feed_url(:tag=>tags.first, **kwargs) if tags.length == 1
+    tags.sort!{|a,b| a<=>b}
     return tag_feed_url(:tags=>tags.join(','), **kwargs)
   end
 
