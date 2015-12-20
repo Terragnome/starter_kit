@@ -21,6 +21,7 @@ class Post < ActiveRecord::Base
 
   def related
     tag_names = tags.collect{|x|x.name}
+    tag_names -= ["gear"]
     if is_guide
       results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides", :exclude=>true).take(@@num_related)
     else
