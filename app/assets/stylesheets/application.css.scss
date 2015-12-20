@@ -350,6 +350,7 @@ $close_button_bar_height: 2px;
 }
 
 #scene{
+	top: #{$header_height};
 	color: #{$base_color};
 	min-height: calc(100% -#{$header_height});
 	min-height: -moz-calc(100% - #{$header_height});

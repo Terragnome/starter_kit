@@ -4,6 +4,7 @@
 @import '_fonts';
 
 #footer{
+	background-color: #{$base_color};
 	bottom: 0px;
 	height: #{$footer_height};
 	padding: 25px 0 0 0;
