@@ -38,7 +38,9 @@ class PostsController < ApplicationController
     @post ||= Post.includes(:counters, :photos, :tags).active.where(:id=>params[:id]).take()
     redirect_to latest_path and return if not @post
 
-    set_title(@post.title)
+    meta_title(@post.title)
+    meta_keywords(@post.tag_names)
+    meta_description(@post.summary)
 
     respond_to do |format|
       format.html
@@ -72,11 +74,11 @@ class PostsController < ApplicationController
 
   private
 
-    def set_feed_title
+    def meta_title_feed
       if not @tags or @tags == :all
-        set_title(:all)
+        meta_title(:all)
       else
-        set_title(@tags.count == 1 ? @tags.first.capitalize : 'Collection')
+        meta_title(@tags.count == 1 ? @tags.first.capitalize : 'Collection')
       end
     end
 
@@ -109,7 +111,7 @@ class PostsController < ApplicationController
 
       @posts.reverse if scroll == :prev
 
-      set_feed_title()
+      meta_title_feed()
     end
 
 end

@@ -1,29 +1,18 @@
 module ApplicationHelper
-  def app_title(title)
+  def meta_title(title)
     wiselinks_title(title)
   end 
   
-  def meta_keywords(tags = nil)
-    kws = APP_CONFIG['app_keywords'].to_set
-
-    if tags.present?
-      kws += tags.to_set if tags.present?
-      content_for :meta_keywords, kws.to_a.sort.join(', ')
-    else
-      content_for?(:meta_keywords) ? content_for(:meta_keywords) : kws.to_a.sort.join(', ')
-    end
+  def meta_keywords(kws)
+    content_for :meta_keywords, kws
   end
 
-  def meta_description(desc = nil)
-    if desc.present?
-      content_for :meta_description, desc
-    else
-      content_for?(:meta_description) ? content_for(:meta_description) : APP_CONFIG['app_description']
-    end
+  def meta_description(desc)
+    content_for :meta_description, desc
   end
 
   def site_name()
-    @app_title
+    @meta_title
   end
 
   def site_url()

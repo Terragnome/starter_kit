@@ -10,18 +10,30 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
 
   def set_constants
-    @app_title = APP_CONFIG['app_title']
-    @app_url = APP_CONFIG['app_url']
-    @app_title_short = APP_CONFIG['app_title_components'].collect{|x| x[0]}.join("")
+    meta_title()
+    meta_keywords()
+    meta_description()
 
+    @app_url = APP_CONFIG['app_url']
     @asset_root = StarterKit::Application.config.asset_root
   end
 
-  def set_title(stub)
-    @app_title = stub.downcase().to_sym() == :all ? APP_CONFIG['app_title'] : "#{stub.to_s} | #{@app_title_short}"
+protected
+
+  def meta_title(stub=nil)
+    @meta_title = (!stub.present? or stub.downcase().to_sym() == :all) ? APP_CONFIG['app_title'] : "#{stub.to_s} | #{@meta_title_short}"
+    @meta_title_short = APP_CONFIG['app_title_components'].collect{|x| x[0]}.join("")
   end
 
-  protected
+  def meta_keywords(tags=nil)
+    kws = APP_CONFIG['app_keywords'].to_set
+    kws += tags.to_set if tags.present?
+    @meta_keywords = kws.to_a.sort.join(',')
+  end
+
+  def meta_description(desc=nil)
+    @meta_description = desc.present? ? desc : APP_CONFIG['app_description']
+  end
 
   def layout_by_resource
     devise_controller? ? "admin" : "application"

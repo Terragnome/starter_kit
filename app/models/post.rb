@@ -27,12 +27,11 @@ class Post < ActiveRecord::Base
   end
 
   def related
-    tag_names = tags.collect{|x|x.name}
-    tag_names -= @@exclude_related_tags
+    related_tags = self.tag_names - @@exclude_related_tags
     if is_guide
-      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides", :exclude=>true).take(@@num_related)
+      results = Post.active.tagged_with(related_tags, :on=>:tags, :any=>true).tagged_with("guides", :exclude=>true).take(@@num_related)
     else
-      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides").take(@@num_related)
+      results = Post.active.tagged_with(related_tags, :on=>:tags, :any=>true).tagged_with("guides").take(@@num_related)
     end
     results
   end

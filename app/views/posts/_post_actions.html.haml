@@ -1,6 +1,6 @@
 -is_feed ||= false
 -post_url = post_url(post.id, :display_slug=>post.display_slug)
--share_url = "#{@app_title} - #{post.title} #{post_url}"
+-share_url = "#{@meta_title} - #{post.title} #{post_url}"
 
 .post_actions
   -if post.url != "" and post.url != nil

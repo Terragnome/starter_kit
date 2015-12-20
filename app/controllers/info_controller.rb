@@ -1,5 +1,5 @@
 class InfoController < ApplicationController
-  before_filter :set_info_title
+  before_filter :meta_title_info
 
   def about
     respond_to do |format|
@@ -31,8 +31,8 @@ class InfoController < ApplicationController
 
 private
 
-  def set_info_title
-    set_title(params[:action].capitalize())
+  def meta_title_info
+    meta_title(params[:action].capitalize())
   end
 
 end
