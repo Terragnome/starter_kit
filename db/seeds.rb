@@ -907,7 +907,7 @@ p.photos.find_or_create_by(
 p.save
 
 p = Post.find_or_initialize_by(
-  :title=>"Guides | Beginner Archery Gear",
+  :title=>"Beginner's Guide to Archery Gear",
   :user=>User.first,
 )
 p.summary = """
