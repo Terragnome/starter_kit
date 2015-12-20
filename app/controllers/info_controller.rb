@@ -1,7 +1,7 @@
 class InfoController < ApplicationController
-  def about
-    set_title("About")
+  before_filter :set_info_title
 
+  def about
     respond_to do |format|
       format.html
       format.js
@@ -9,8 +9,6 @@ class InfoController < ApplicationController
   end
   
   def contact
-    set_title("Contact")
-
     respond_to do |format|
       format.html
       format.js
@@ -18,8 +16,6 @@ class InfoController < ApplicationController
   end
   
   def privacy
-    set_title("Privacy")
-
     respond_to do |format|
       format.html
       format.js
@@ -27,11 +23,16 @@ class InfoController < ApplicationController
   end
   
   def terms
-    set_title("Terms")
-    
     respond_to do |format|
       format.html
       format.js
     end
   end
+
+private
+
+  def set_info_title
+    set_title(params[:action].capitalize())
+  end
+
 end

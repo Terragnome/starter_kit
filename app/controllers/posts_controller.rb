@@ -1,4 +1,4 @@
-class PostsController < ApplicationController 
+class PostsController < ApplicationController
   @@feed_length = 12 # This should be a multiple of 6
 
   def latest
@@ -72,11 +72,11 @@ class PostsController < ApplicationController
 
   private
 
-    def set_feed_title(tags)
-      if not tags or tags == :all
+    def set_feed_title
+      if not @tags or @tags == :all
         set_title(:all)
       else
-        set_title(tags.count == 1 ? tags.first.capitalize : 'Collection')
+        set_title(@tags.count == 1 ? @tags.first.capitalize : 'Collection')
       end
     end
 
@@ -107,9 +107,9 @@ class PostsController < ApplicationController
         @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
       end
 
-      set_feed_title(@tags)
-
       @posts.reverse if scroll == :prev
+
+      set_feed_title()
     end
 
 end
