@@ -42,7 +42,7 @@ Application.Init = function(){
 
 Application.OnPageLoading = function(e, target, render, url){
 	DOM._sceneLoader.show();
-	DOM._sceneBody.hide();
+	DOM._scene.hide();
 	DOM._header.hide();
 
 	Header.CloseMenu();
@@ -53,7 +53,7 @@ Application.OnPageDone = function(e, target, render, url){}
 Application.OnPageFail = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
 	DOM._sceneLoader.hide();
-	DOM._sceneBody.show();
+	DOM._scene.show();
 	DOM._header.show();
 
 	var scrollPos = DOM._header.offset().top+DOM._header.height()-50;
