@@ -3,14 +3,6 @@ module PostsHelper
   include ActsAsTaggableOn::TagsHelper
   include ActionView::Helpers::NumberHelper
 
-  def feed_title(tags)
-    if not tags or tags == :all
-      app_title(:all)
-    else
-      tags.count == 1 ? app_title(tags.first.capitalize) : app_title('Collection')
-    end
-  end
-
   def format_for_counter(num=nil)
     return "" if [nil, 0, "0", ""].include?(num)
     return "#{number_with_delimiter(num, :delimiter=>',')}" if num < 99999

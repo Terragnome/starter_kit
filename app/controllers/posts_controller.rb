@@ -38,6 +38,8 @@ class PostsController < ApplicationController
     @post ||= Post.includes(:counters, :photos, :tags).active.where(:id=>params[:id]).take()
     redirect_to latest_path and return if not @post
 
+    set_title(@post.title)
+
     respond_to do |format|
       format.html
       format.js
@@ -70,6 +72,14 @@ class PostsController < ApplicationController
 
   private
 
+    def set_feed_title(tags)
+      if not tags or tags == :all
+        set_title(:all)
+      else
+        set_title(tags.count == 1 ? tags.first.capitalize : 'Collection')
+      end
+    end
+
     def prepare_feed
       @tags ||= :all
       @page ||= params.has_key?(:page) ? params[:page].to_i : 1
@@ -96,6 +106,8 @@ class PostsController < ApplicationController
         @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
         @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
       end
+
+      set_feed_title(@tags)
 
       @posts.reverse if scroll == :prev
     end

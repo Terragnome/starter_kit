@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     @asset_root = StarterKit::Application.config.asset_root
   end
 
+  def set_title(stub)
+    @app_title = stub.downcase().to_sym() == :all ? APP_CONFIG['app_title'] : "#{stub.to_s} | #{@app_title_short}"
+  end
+
   protected
 
   def layout_by_resource
