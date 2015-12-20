@@ -17,7 +17,6 @@ class Post < ActiveRecord::Base
 
   @@exclude_related_tags = [
     "gear",
-    "tools",
     "beginner",
     "intermediate",
     "expert"
