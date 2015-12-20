@@ -1,5 +1,6 @@
-=link_to(full_post_path(related), 'data-push'=>true) do 
-  .related{:id=>"related_#{related.id}"}
+
+.related{:id=>"related_#{related.id}"}
+  =link_to(full_post_path(related), 'data-push'=>true) do 
     %h3
       =related.title
     -ph = related.cover_photo

@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
   
   acts_as_taggable
 
+  @@num_related = 12
+
   def is_guide
     self.tags.collect{|x|x.name}.include?("guides")
   end
@@ -20,9 +22,9 @@ class Post < ActiveRecord::Base
   def related
     tag_names = tags.collect{|x|x.name}
     if is_guide
-      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides", :exclude=>true)
+      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides", :exclude=>true).take(@@num_related)
     else
-      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides")
+      results = Post.active.tagged_with(tag_names, :on=>:tags, :any=>true).tagged_with("guides").take(@@num_related)
     end
     results
   end

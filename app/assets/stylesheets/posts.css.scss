@@ -5,7 +5,9 @@
 
 $feed_post_min_width: 280px;
 $feed_post_width: 32.75%;
-$feed_list_padding_h: 0px;
+
+$related_post_min_width: 230px;
+$related_post_width: 24%;
 
 .post_tag_cloud{
 	padding: 20px 0 0px 0;
@@ -134,7 +136,7 @@ $feed_list_padding_h: 0px;
 		width: 100%;
 		border: 1px solid white;
 		outline: 5px solid #{$base_color};
-		margin: 30px 0 60px 0;
+		margin: 50px 0 60px 0;
 		padding: 30px 0 30px 0;
 	 	box-shadow: 4px 4px 10px #{$shadow_gray};
 
@@ -150,7 +152,7 @@ $feed_list_padding_h: 0px;
 		width: 100%;
 		justify-content: space-between;
   	box-sizing: border-box;
-  	padding: 0 #{$feed_list_padding_h} 0 #{$feed_list_padding_h};
+  	padding: 0px;
   }
 
   .feed_post_spacer{
@@ -249,16 +251,12 @@ $feed_list_padding_h: 0px;
 		}
 	}
 
-	@media (max-width: #{$feed_post_min_width*3-$feed_list_padding_h*2+25}){
-	  .feed_post{
-	    width: 48%; 
-	  }
+	@media (max-width: #{$feed_post_min_width*3+25}){
+	  .feed_post{ width: 48%; }
 	}
 
-	@media (max-width: #{$feed_post_min_width*2-$feed_list_padding_h*2+25}){
-		.feed_post{
-			width: 100%;
-		}
+	@media (max-width: #{$feed_post_min_width*2+25}){
+		.feed_post{ width: 100%; }
 	}
 }
 
@@ -361,28 +359,50 @@ $feed_list_padding_h: 0px;
 		justify-content: space-between;
   	box-sizing: border-box;
 		margin: 30px 0 0 0;
+	}
 
-		.related{
-			display: inline-block;
-			cursor: pointer;
-			color: #{$base_color};
-			width: 350px;
-			max-height: 320px;
-			margin: 5px 5px 20px 5px;
-			padding: 20px 15px 30px 15px;
-		 	box-shadow: 2px 2px 10px #{$shadow_gray};
-			text-align: center;
+	.related_spacer{
+  	min-width: #{$related_post_min_width};
+		width: #{$related_post_width};
+	}
 
-			h3{
-				margin: 0 0 15px 0;
-			}
+	.related{
+		display: inline-block;
+		cursor: pointer;
+		color: #{$base_color};
+  	min-width: #{$related_post_min_width};
+		width: #{$related_post_width};
+		max-height: 320px;
+		margin: 5px 5px 20px 5px;
+		padding: 20px 5px 30px 5px;
+	 	box-shadow: 2px 2px 10px #{$shadow_gray};
+		text-align: center;
 
-			img{
-				width: auto;
-				height: 230px;
-				max-width: 100%;
-			}
+		h3{
+			margin: 0 0 15px 0;
 		}
+
+		a{
+			color: #{$base_color};
+		}
+
+		img{
+			width: auto;
+			height: 230px;
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: #{$related_post_min_width*4+125}){
+	  .related{ width: 32%; }
+	}
+
+	@media (max-width: #{$related_post_min_width*3+125}){
+	  .related{ width: 48%; }
+	}
+
+	@media (max-width: #{$related_post_min_width*2+125}){
+		.related{ width: 100%; }
 	}
 }
 
