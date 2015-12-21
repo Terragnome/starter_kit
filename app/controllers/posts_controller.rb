@@ -72,46 +72,46 @@ class PostsController < ApplicationController
     redirect_to @post.url and return
   end
 
-  private
+private
 
-    def meta_title_feed
-      if not @tags or @tags == :all
-        meta_title(:all)
-      else
-        meta_title(@tags.count == 1 ? @tags.first.capitalize : 'Collection')
-      end
+  def meta_title_feed
+    if not @tags or @tags == :all
+      meta_title(:all)
+    else
+      meta_title(@tags.count == 1 ? @tags.first.capitalize : 'Collection')
     end
+  end
 
-    def prepare_feed
-      @tags ||= :all
-      @page ||= params.has_key?(:page) ? params[:page].to_i : 1
-      scroll ||= params.has_key?(:scroll) ? params[:scroll] : :next
+  def prepare_feed
+    @tags ||= :all
+    @page ||= params.has_key?(:page) ? params[:page].to_i : 1
+    scroll ||= params.has_key?(:scroll) ? params[:scroll] : :next
 
-      @selected_tags = []
-      if @tags == :all
-        @posts=Post.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
-        @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC')
-      else
-        @tags = @tags.collect{|x| x.to_sym}
-        @posts=Post.active.includes(:counters, :photos, :tags).active.tagged_with(@tags)
-        @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
+    @selected_tags = []
+    if @tags == :all
+      @posts=Post.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
+      @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC')
+    else
+      @tags = @tags.collect{|x| x.to_sym}
+      @posts=Post.active.includes(:counters, :photos, :tags).active.tagged_with(@tags)
+      @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
 
-        tag_counts = {}        
-        @posts.each do |post|
-          post.tags.each do |tag|
-            tag_counts[tag.id] = 0 if not tag_counts.include?(tag.id)
-            tag_counts[tag.id] += 1
-          end
+      tag_counts = {}        
+      @posts.each do |post|
+        post.tags.each do |tag|
+          tag_counts[tag.id] = 0 if not tag_counts.include?(tag.id)
+          tag_counts[tag.id] += 1
         end
-
-        @all_tags.each{|tag| tag.taggings_count = tag_counts[tag.id] if tag_counts.include?(tag.id) }
-        @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
-        @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
       end
 
-      @posts.reverse if scroll == :prev
-
-      meta_title_feed()
+      @all_tags.each{|tag| tag.taggings_count = tag_counts[tag.id] if tag_counts.include?(tag.id) }
+      @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
+      @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
     end
+
+    @posts.reverse if scroll == :prev
+
+    meta_title_feed()
+  end
 
 end

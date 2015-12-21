@@ -2,13 +2,13 @@ module ApplicationHelper
   def meta_title(title)
     wiselinks_title(title)
   end 
-  
-  def meta_keywords(kws)
-    content_for :meta_keywords, kws
+
+  def meta_keywords(keywords)
+    # wiselinks_keywords(keywords)
   end
 
   def meta_description(desc)
-    content_for :meta_description, desc
+    wiselinks_description(desc)
   end
 
   def site_name()
