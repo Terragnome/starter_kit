@@ -345,7 +345,7 @@ Becoming Batman is really a physiology book discuised as a comic book.  While it
 """
 p.url = "http://amzn.to/1OlYXq7"
 p.cost = 17
-p.tag_list.add("book", "fitness", "comics", "science")
+p.tag_list.add("books", "fitness", "comics", "science")
 p.active = true
 p.save
 p.photos.find_or_create_by(
