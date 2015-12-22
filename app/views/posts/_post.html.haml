@@ -5,7 +5,7 @@
     .info_section
       .info
         .text
-          =post.ago.capitalize
+          ="#{post.user.nickname} | #{post.ago.capitalize}"
   .body
     .photo_gallery
       -post.photos.each do |ph|

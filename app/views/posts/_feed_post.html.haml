@@ -5,7 +5,7 @@
     .info_section
       .info
         .text
-          =feed_post.ago.capitalize
+          ="#{feed_post.user.nickname} | #{feed_post.ago.capitalize}"
   .body
     =link_to(full_post_path(feed_post), 'data-push'=>true) do
       -if feed_post.cover_photo
