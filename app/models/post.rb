@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
 
   has_many :counters, :as=>:countable
 
+  before_validation :set_user
   before_validation :set_posted_at
   before_validation :set_slug
 
@@ -122,6 +123,10 @@ class Post < ActiveRecord::Base
   end
 
   private
+
+  def set_user
+    self.user = User.first if not self.user
+  end
 
   def set_posted_at
     self.posted_at = Time.now if self.active && self.posted_at.blank?
