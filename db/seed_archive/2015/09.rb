@@ -89,8 +89,10 @@ p.save
 p = Post.find_or_initialize_by(
   :title=>"Bohning Tex-Tite Bow String Wax",
 )
-p.summary = """"""
-p.body = """"""
+p.summary = """Bohning's Tex-Tite Bow String Wax is a natural based wax designed especially for synthetic fiber bowstrings. This wax will lubricate and lengthen the life of your string. Tex-Tite will remain tack under all weather conditions!"""
+p.body = """
+These days pretty much all bowstrings are made of synthetic fibers like Dacron or FastFlight.  In order to protect the string from abrasive substances like dirt and dust and to extend the lifetime of the browstring, you should make sure to wax your bow string regularly.  Bohning Tex-Tite is a great buy because it is a soft wax, so when you're working it into your bowstring it doesn't require and much rubbing to get it into the fibers, which helps with string stretching.  There is also a silicone version that comes in green, although I haven't tried it personally yet.
+"""
 p.url = "http://amzn.to/1OlXLTC"
 p.cost = 4
 p.tag_list.add("gear", "archery")
@@ -98,7 +100,7 @@ p.active = true
 p.save
 p.photos.find_or_create_by(
   :name=>"cover",
-  :internal_url=>"bohning_textite_bowstring_wax"
+  :internal_url=>"bohning_textite_bowstring_wax.jpg"
 )
 p.posted_at = "2015-09-29"
 p.save

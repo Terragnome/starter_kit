@@ -389,7 +389,8 @@ $related_post_width: 24%;
 
 		img{
 			width: auto;
-			height: 230px;
+			height: auto;
+			max-height: 230px;
 			max-width: 100%;
 		}
 	}

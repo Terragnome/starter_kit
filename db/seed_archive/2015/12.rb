@@ -354,3 +354,66 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2015-12-22"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Scott Rhino XT Release'
+)
+p.summary = """
+The Rhino XT is an open hook, single sear release designed for the serious bow hunter. The XT's spring loaded stainless steel hook creates quick and easy loading of your loop. This release features interchangeable springs for trigger sensitivity adjustment, a forward trigger to maximize draw length and our patented nine-hole length adjustment. Internal components are machined from stainless steel to deliver a lifetime of performance.
+"""
+p.body = """
+I chose the Scott Rhino XT Release since I was looking for a hook-style release with durable construction and a heavier trigger.  The Rhino is extremely customizable and comes with different springs and hooks that you can attach to customize the feel.  I use the velcro version and am happy with it, but others have suggested the buckle version is better for hunting because it is quieter and the use of holes makes the sizing consistent.  Releases are usually used with compound bows since the short axle to axle length (as short as 30\" whereas even short recurve bows are rarely shorter than 58\") causes significant string pinch on your fingers which can affect the shot.  This release is heavy duty and feels like it will last forever.
+"""
+p.url = "http://amzn.to/1YzBEZj"
+p.cost = 79
+p.tag_list.add("gear", "archery", "release")
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"scott_rhino_xt.jpg"
+)
+p.posted_at = "2015-12-22"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Axcel 5 Pin .019 Fiber Armortech HD Hunting Sight'
+)
+p.summary = """
+The Armortech Hunting Sight was voted best buy winner, from Inside Archery Magazine, its very first year on the market. The windage knob fetures 20 clicks per revolution adjustability. To move the individual sight pin up or down, turn micro adjustment knob. The sight pin pivot lock is engineered to not vibrate loose. Do not over tighten or damage will result. The engraved partial ring at depth of sight pins, is designed for greater accuracy when viewed slightly off center. The Armor fiber technology provides 100% protection to fibers that are fully enclosed inside tubing. Includes a Mathews(R) Harmonic Damper.
+"""
+p.body = """
+When choosing the sight for my hunting compound, the two most popular options were sights built by Spot Hogg and Armourtech.  While Spott Hogg sights are also excellent, I was impressed by the solid aluminum build quality of the Armortech.  I feels seriously ready to take on the wear and tear of a trek through the woods.  It has micro windage adjustments for 3 axes, as well as individual pin adjustments and is compatible with all standard rheostat lights, although a light is not included.  The fibers in the pins are fully enclosed, but there is a clear plastic window in the front that allows it to gather a lot of light.  In practice, I found the pins to be extremely bright and rarely needed the rheostat light to see the pins.  It also includes threading for adding on a lense if you find that you want additional magnification.  If you plan to mount the sight as far out as it will go, I found a 3/16\" peep to be perfect, whereas a 1/4\" peep is perfect for the second to furthest setting.  I plan to use the 1/4\" for hunting since the larger diameter will allow for more light in low light situations.  The level comes attached at the bottom of the sight, but it's removable so I moved it to the top of the sight so that it would be visible from inside the peep.  This sight works with both left and right handed bows and comes with instructions on how to attach it to either side.
+"""
+p.url = "http://amzn.to/1QFQ5fz"
+p.cost = 169
+p.tag_list.add("gear", "archery", "sight")
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"axcel_armortech_hd.jpg"
+)
+p.posted_at = "2015-12-22"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Octane Deadlock Pro Bow Quiver'
+)
+p.summary = """
+Octane Deadlock Pro 5 - arrow Quiver stays light 'n' tight! The Deadlock Pro weighs just 0.4 lbs., and with a wide range of adjustability, it holds arrows so close to your bow that you'll barely notice it's there. Constructed of carbon and lightweight components, this is an extremely lightweight, quiet Quiver that doesn't skimp on strength or durability. Draw: 1-Pc. design made from carbon and lightweight components, weighs just 0.4 lbs. Extended gripper will hold all arrow sizes; Quiet quick-detach system with an arm-locking latch for fast removal; Adjustable in and out, so you can get the quiver as close to your riser as possible; Pre-cut foam accepts most popular fixed and mechanical broadheads. Order yours today! Octane Deadlock Pro 5-arrow Quiver
+"""
+p.body = """
+I chose the Octane Deadlock Pro Bow Quiver because it offered most of the features and had a similar design to the TightSpot quiver but at a fraction of the cost.  The quiver is solidly constructed around two carbonfiber rods, and the hood contains high density foam with cutouts for 2, 3, and 4 blade broadhead designs.  Arrows are held in place with flexible metal ridges that are coated in rubber so can grip all types of shafts.  The arrows can be adjusted up, down, and towards the bow which helps tremendously with balance.  If a bow quiver is too far away from the riser, the weight and the torque can make it strenuous to keep the bow from canting.  With the Deadlock Pro, I was able to move it all the way down until it was practically touching my cable slide, which made my shooting more stable and comfortable even with the quiver on.  I was able to test this by moving the quiver to the farthest setting which made the bow feel much top heavier.  An extremely well designed quiver that looks and feels like a quality product.
+"""
+p.url = "http://amzn.to/1QFRp1W"
+p.cost = 90
+p.tag_list.add("gear", "archery", "quiver")
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"octane_deadlock_pro.jpg"
+)
+p.posted_at = "2015-12-22"
+p.save
