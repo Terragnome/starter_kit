@@ -417,3 +417,24 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2015-12-22"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Carbon Express String-Loop Nocking Pliers'
+)
+p.summary = """
+The Universal Nocking Plier opens nock sets without damage, two hole size for nock set installation, pre-stretches D-loop, permanently tightens D-loop to string, heavy duty comfortable extra large grip.
+"""
+p.body = """
+Nocking pliers are useful because they allow you to add and remove brass nocks from bowstrings without damaging them.  I originally bought a cheaper set of pliers that could only tighten them, but it was kind of annoying not being able to reuse a nock if I needed to replace the string.  This one also includes tools for tightening D-loops.  A useful tool to have in your archery pack.
+"""
+p.url = "http://amzn.to/1YzFQIx"
+p.cost = 13
+p.tag_list.add("gear", "archery")
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"carbon_express_nocking_pliers.jpg"
+)
+p.posted_at = "2015-12-22"
+p.save
