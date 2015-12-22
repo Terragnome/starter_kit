@@ -126,10 +126,10 @@ Congratulations!  You now know everything you need to begin looking for your per
 p.tag_list.add("gear", "guides", "archery", "beginner")
 p.active = true
 p.save
-# p.photos.find_or_create_by(
-#   :name=>"cover",
-#   :internal_url=>"guides_beginner_archery_gear.jpg"
-# )
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"guide_beginner_archery_gear.jpg"
+)
 p.posted_at = "2015-12-01"
 p.save
 

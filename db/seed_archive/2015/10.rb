@@ -74,7 +74,7 @@ The Kreg Jig K4 Pocket Jig is one of my favorite woodworking tools since it allo
 """
 p.url = "http://amzn.to/1MoxSQ4"
 p.cost = 11
-p.tag_list.add("tools", "woodworking")
+p.tag_list.add("tools", "woodworking", "diy")
 p.active = true
 p.save
 p.photos.find_or_create_by(

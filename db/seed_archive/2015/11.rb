@@ -47,7 +47,7 @@ The Dewalt DWE575SB 7-1/4-inch lightweight circular saw with electric brake is d
 p.body = """A simple circular saw lets you build an incredible number of things. If you need to cut a straight line you can clamp a rule or a board down, then use it to guide the saw."""
 p.url = "http://amzn.to/1PsX6xQ"
 p.cost = 129
-p.tag_list.add("tools", "woodworking")
+p.tag_list.add("tools", "woodworking", "diy")
 p.active = true
 p.save
 p.photos.find_or_create_by(
