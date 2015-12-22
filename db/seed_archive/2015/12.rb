@@ -164,7 +164,9 @@ p = Post.find_or_initialize_by(
 p.summary = """
 The riveting first-person narrative of a young man who grows to be the most notorious magician his world has ever seen. From his childhood in a troupe of traveling players, to years spent as a near-feral orphan in a crime- ridden city, to his daringly brazen yet successful bid to enter a legendary school of magic, The Name of the Wind is a masterpiece that transports readers into the body and mind of a wizard. It is a high-action novel written with a poet's hand, a powerful coming-of-age story of a magically gifted young man, told through his eyes: to read this book is to be the hero.
 """
-p.body = """"""
+p.body = """
+To be honest I haven't read this book yet, but I've had it recommended to me by four separate people so it's on my list.
+"""
 p.url = "http://amzn.to/1MCQV5c"
 p.cost = 8
 p.tag_list.add("books", "reading", "fantasy")
@@ -183,7 +185,9 @@ p = Post.find_or_initialize_by(
 p.summary = """
 This beautifully crafted folding knife is an extremely handsome accessory, whether carried as a tasteful pocketknife or a personal steak knife. First manufactured in 1896 in Meiji-era Japan, this style of knife is considered to be the first Japanese pocketknife. One of the key characteristics of the traditional Higo-No Kami is that when the knife is closed, part of the blade tang protrudes and can be used like a small lever to open the knife with one hand.
 """
-p.body = """This knife is not robust enough for an outdoorsman, and at this price point not one that I'd rather use my Opinel for rough tasks where it might get damaged. It's beautfully crafted though, and fits easily into a suit pocket for the gentleman on the go."""
+p.body = """
+This knife is not robust enough for an outdoorsman, and at this price point not one that I'd rather use my Opinel for rough tasks where it might get damaged. It's beautfully crafted though, and fits easily into a suit pocket for the gentleman on the go.
+"""
 p.url = "http://amzn.to/1MCQW9g"
 p.cost = 99
 p.tag_list.add("edc", "food", "knives", "gear")
@@ -202,7 +206,9 @@ p = Post.find_or_initialize_by(
 p.summary = """
 Easton Hip Quiver keeps extra arrows close - at - hand. Always have an arrow ready! This Easton Hip Quiver keeps arrows handy and protected. The fine points: Sturdy nylon and molded foam body is lightweight yet durable; Oversized compartments with zippered external pocket and internal pocket dividers; Molded arrow separators hold arrows securely; Top pocket for releases, pens, smart phone, etc.; Bow square slot and D-rings. Measures 46' l. x 10\" w. x 8\" h.
 """
-p.body = """My buddy has used this quiver for the last two years, and I've been impressed by the quality of construction. The main compartment is subdivided into smaller pockets, which lets him organize his arrows by different tips (blunts vs field) which is extremely useful."""
+p.body = """
+My buddy has used this quiver for the last two years, and I've been impressed by the quality of construction. The main compartment is subdivided into smaller pockets, which lets him organize his arrows by different tips (blunts vs field) which is extremely useful.
+"""
 p.url = "http://amzn.to/1MCQU19"
 p.cost = 64
 p.tag_list.add("gear", "archery", "quiver")
@@ -322,6 +328,29 @@ p.save
 p.photos.find_or_create_by(
   :name=>"cover",
   :internal_url=>"swedish_firesteel.jpg"
+)
+p.posted_at = "2015-12-22"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Becoming Batman'
+)
+p.summary = """
+Battling bad guys. High-tech hideouts. The gratitude of the masses. Who at some point in their life hasn't dreamed of being a superhero? Impossible, right? Or is it?
+
+Possessing no supernatural powers, Batman is the most realistic of all the superheroes. His feats are achieved through rigorous training and mental discipline, and with the aid of fantastic gadgets. Drawing on his training as a neuroscientist, kinesiologist, and martial artist, E. Paul Zehr explores the question: Could a mortal ever become Batman?
+"""
+p.body = """
+Becoming Batman is really a physiology book discuised as a comic book.  While it gues the extra mile of citing comic books for Batman's various feats of strength, this is a book geared more toward biology nerds and covers things like the mechanism by which a martial artist's bones become harder and the effects of late night exercise on performance.  A thoughtful exploration of a fun premise and a good gift for Batman, Biology, or comic fans.
+"""
+p.url = "http://amzn.to/1OlYXq7"
+p.cost = 17
+p.tag_list.add("book", "fitness", "comics", "science")
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"becoming_batman.jpg"
 )
 p.posted_at = "2015-12-22"
 p.save

@@ -69,7 +69,9 @@ p = Post.find_or_initialize_by(
   :title=>"Pandemic",
 )
 p.summary = """Four diseases have broken out in the world and it is up to a team of specialists in various fields to find cures for these diseases before mankind is wiped out. Players must work together playing to their characters' strengths and planning their strategy of eradication before the diseases overwhelm the world with ever-increasing outbreaks. For example the Operation Specialist can build research stations which are needed to find cures for the diseases. The Scientist needs only 4 cards of a particular disease to cure it instead of the normal 5. But the diseases are out breaking fast and time is running out: the team must try to stem the tide of infection in diseased areas while also towards cures. A truly cooperative game where you all win or you all lose."""
-p.body = """"""
+p.body = """
+Pandemic is a great alternative for traditional boardgames since it's cooperative.  Everyone is on the same team trying to prevent the spread of global disease and each role is different and important, so it really forces some fun strategization.  Great for game nights when you want to want to stay friends with the people you play with (unlike Settlers of Catan).
+"""
 p.url = "http://amzn.to/1kzaPY8"
 p.cost = 24
 p.tag_list.add("toys", "boardgames")

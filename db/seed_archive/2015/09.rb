@@ -31,7 +31,11 @@ p.summary = """Instead of lubricating your baking sheet with oil & fat, make it 
 Not only does it eliminate potentially dangerous elements from your diet, but it also makes your life a bit easier and more enjoyable. Because once you finish baking, all you need to do is to rinse the mat in warm soapy water, roll it up & store.
 
 And most of the time, you don't even have to wash your sheet."""
-p.body = """"""
+p.body = """
+I always feel a bit guilty about using parchment paper once and throwing it away immediately after, but with the Velesco Silicone Baking Mat you get almost all the benefits of parchment paper but are able to reuse it.  It also prevents you from needing to smear butter or oil over your cookware which can get messy.
+
+Highly recommended for anyone who loves to bake, with the caveat that silicone is usually only rated to withstand temperatures of 425F, so don't try to use this for super high temperature recipes like pizzas.
+"""
 p.url = "http://amzn.to/1Moykhs"
 p.cost = 20
 p.tag_list.add("gear", "food", "baking")
@@ -48,7 +52,9 @@ p = Post.find_or_initialize_by(
   :title=>"Pyrex 2-Cup Glass Measuring Cup",
 )
 p.summary = """Add a measure of consistency to your kitchen with the Pyrex 2-Cup Measuring Cup that is sturdy and easy-to-read. Measurement indicators and the easy to grab handle are designed to make it easy to mix, measure and pour. Whether you are preparing a multi-course meal or simply a snack for one, Pyrex offers products which make food preparation a little easier, from beginning to end. There's no substitute for Pyrex, the original glass bakeware. Introduced 90 years ago and made of a durable, high temperature material, Pyrex remains the ideal medium for safe, dependable food preparation. Use and care: Avoid sudden temperature changes. No stovetop or broiler use. Do not overheat oil or butter. Microwave and dishwasher safe."""
-p.body = """"""
+p.body = """
+Pyrex liquid measuring cups are microwave and dishwasher safe and make measuring and pouring out liquids a lot more convenient because they have a spout and clearly maked lines.  I will sometimes use the same measuring cup to do all the liquids for a recipe like a cake since you can use the lines to pour a half cup of honey onto a cup of oil.  I've used the same measuring cup for years without any signs of wear so they're very durable.
+"""
 p.url = "http://amzn.to/1Moympu"
 p.cost = 8
 p.tag_list.add("gear", "food", "cooking", "baking")
@@ -65,7 +71,9 @@ p = Post.find_or_initialize_by(
   :title=>"Bang!",
 )
 p.summary = """When a man with a pistol meets a man with a Winchester, you might say that the one with the pistol is a dead man, unless his pistol is a Volcanic, In the wild west, the Outlaws hunt the Sheriff, the Sheriff hunts the Outlaws, and the Renegade plots in secret, ready to join one side or the other. Before long, bullets start to fly, Which gunmen are Deputies, ready to sacrifice themselves for the Sheriff? And which are the merciless Outlaws, looking to gun him down? The world's best-selling wild west card game is back in a new, richer format. Easier to learn and play than ever before, Game Contents: 7 Role Cards (1 Sheriff, 2 Deputies, 3 Outlaws, 1 Renegade), 16 Characters, 80 Playing Cards, 7 Summary Cards, 7 Player Board, 30 Bullet Tokens, Rulebook in Full Color."""
-p.body = """"""
+p.body = """
+Bang! is like Magic the Gathering combined with Mafia.  It's a great game because the randomization of hidden roles and character cards make it unique everytime.  It's best suited for around 4 players, and is easy enough to learn that people usually get the hang of it by the end of the first game.  Good for casual boardgame players.
+"""
 p.url = "http://amzn.to/1kzaDrY"
 p.cost = 17
 p.tag_list.add("toys", "boardgames", "cardgames")
@@ -79,18 +87,18 @@ p.posted_at = "2015-09-22"
 p.save
 
 p = Post.find_or_initialize_by(
-  :title=>"Allen Bow String Wax",
+  :title=>"Bohning Tex-Tite Bow String Wax",
 )
 p.summary = """"""
 p.body = """"""
-p.url = "http://amzn.to/1S3LHUg"
-p.cost = 3
+p.url = "http://amzn.to/1OlXLTC"
+p.cost = 4
 p.tag_list.add("gear", "archery")
 p.active = true
 p.save
 p.photos.find_or_create_by(
   :name=>"cover",
-  :internal_url=>"allen_bow_string_wax.jpg"
+  :internal_url=>"bohning_textite_bowstring_wax"
 )
 p.posted_at = "2015-09-29"
 p.save
