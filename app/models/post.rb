@@ -37,6 +37,10 @@ class Post < ActiveRecord::Base
     results
   end
 
+  def display_byline
+    "#{user.nickname} | #{ago.capitalize}"
+  end
+
   def display_summary
     token_body = "#{summary.gsub("\n", " ")}\n" if summary
     token_body += body.gsub("\n", " ")

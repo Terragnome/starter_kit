@@ -5,7 +5,7 @@
     .info_section
       .info
         .text
-          ="#{post.user.nickname} | #{post.ago.capitalize}"
+          =post.display_byline
   .body
     .photo_gallery
       -post.photos.each do |ph|
