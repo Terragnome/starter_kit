@@ -15,13 +15,15 @@ Header.Init = function(){
 	Header._searchField.keypress(function(e) {
 	  if (e.which == 13) {
 	  	Header._searchForm.submit(function(){
+	  		Application.ShowLoader();
 	  		$.ajax({
           url: $(this).attr('action'),
           type: $(this).attr('method'),
           data: $(this).serialize(),
-          success: function( response ) {
+          success: function(response){
             console.log( response );
-          }
+          },
+          complete: Application.HideLoader
 	  		});
 	  		return false;
 	  	});
