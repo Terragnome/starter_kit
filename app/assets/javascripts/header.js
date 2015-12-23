@@ -23,21 +23,34 @@ Header.Init = function(){
 	Header._searchField.focusout(Header.CloseSearch);
 }
 
+Header.Clear = function(){
+	Header.CloseSearch();
+	Header.CloseMenu();
+}
+
 Header.ToggleSearch = function(){
 	var isOpen = !Header._searchField.hasClass("none");
 	isOpen ? Header.CloseSearch() : Header.OpenSearch();
 }
 
 Header.OpenSearch = function(){
+	Header.Clear();
+
 	var searchField = Header._searchField;
 	searchField.removeClass("none");
 	searchField.focus();
+
+	var searchIcon = Header._searchIcon;
+	searchIcon.addClass("none");
 }
 
 Header.CloseSearch = function(){
 	var searchField = Header._searchField;
 	searchField.val('');
 	searchField.addClass("none");
+
+	var searchIcon = Header._searchIcon;
+	searchIcon.removeClass("none");
 }
 
 Header.ToggleMenu = function(){
@@ -45,6 +58,8 @@ Header.ToggleMenu = function(){
 	isOpen ? Header.CloseMenu() : Header.OpenMenu();
 }
 Header.OpenMenu = function(){
+	Header.Clear();
+
 	var navMenu = Header._navMenu;
 	navMenu.toggleClass("anim_roll_down");
 	navMenu.toggleClass("anim_fade_in");
@@ -62,7 +77,7 @@ Header.CloseMenu = function(){
 }
 
 Header.OnResize = function(){
-	Header.CloseMenu();
+	Header.Clear();
 }
 
 // Header.Update = function(scrollCutoff){

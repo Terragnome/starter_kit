@@ -1,4 +1,4 @@
 #header_search_bar
   %button.search_icon{:id=>"header_search_icon"}
-  %form{:id=>"header_search_form", :action=>post_search_path(), :method=>:get}
-    %input.search_field.none{:id=>"header_search_field", :type=>:text, :name=>:q, :placeholder=>"Search"}
+  %form{:action=>post_search_path(), :method=>:get, :id=>"header_search_form"}
+    =text_field_tag(:q, "", :placeholder=>"Search", :id=>"header_search_field", :class=>"search_field none")
