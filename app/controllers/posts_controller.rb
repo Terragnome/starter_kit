@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     end
 
     respond_to do |format|
-      format.js{render action: 'share'}
+      format.js{ render action: 'share' }
     end
   end
 
@@ -73,9 +73,14 @@ class PostsController < ApplicationController
   end
 
   def search
-    results = Post.fuzzy_search(title: params[:q])
-    results.each{|x| puts "***************** #{x.title}"}
-    render :text=>results.to_s
+    @posts = Post.fuzzy_search(title: params[:q])
+
+    puts "TRACE ************** #{@posts.to_json}"
+
+    respond_to do |format|
+      format.html{ render json: @posts }
+      format.json{ render json: @posts }
+    end
   end
 
 private

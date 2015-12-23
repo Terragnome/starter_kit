@@ -42,11 +42,7 @@ Application.Init = function(){
 }
 
 Application.OnPageLoading = function(e, target, render, url){
-	DOM._sceneLoader.show();
-	DOM._scene.css('top', 0);
-	DOM._sceneBody.hide();
-	DOM._header.hide();
-
+	Application.ShowLoader();
 	Header.CloseMenu();
 	Scroll.AutoScrollTo(0);
 }
@@ -54,11 +50,7 @@ Application.OnPageRedirected = function(e, target, render, url){}
 Application.OnPageDone = function(e, target, render, url){}
 Application.OnPageFail = function(e, target, render, url){}
 Application.OnPageAlways = function(e, target, render, url){
-	DOM._sceneLoader.hide();
-	DOM._scene.css('top', Application.sceneTop);
-	DOM._sceneBody.show();
-	DOM._header.show();
-
+	Application.HideLoader();
 	var scrollPos = DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height();
 	Scroll.AutoScrollTo(scrollPos);
 }
@@ -67,6 +59,20 @@ Application.InitResize = function(){
 	DOM._window.resize(function (){
 		Header.OnResize();
 	});
+}
+
+Application.ShowLoader = function(){
+	DOM._sceneLoader.show();
+	DOM._scene.css('top', 0);
+	DOM._sceneBody.hide();
+	DOM._header.hide();
+}
+
+Application.HideLoader = function(){
+	DOM._sceneLoader.hide();
+	DOM._scene.css('top', Application.sceneTop);
+	DOM._sceneBody.show();
+	DOM._header.show();
 }
 
 Application.UpdateDescription = function(m){

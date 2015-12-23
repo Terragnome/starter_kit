@@ -13,11 +13,13 @@ StarterKit::Application.routes.draw do
   get 'privacy' => 'info#privacy'
   get 'terms' => 'info#terms'
 
+  get '/search' => 'posts#search', :as=>'post_search'
+
   get 'latest/(:page)' => 'posts#latest', :as=>'latest'
   get 'hobby' => 'posts#tag_feed', :as=>'tag_feed'
   get 'hobby/:tag(/:page)' => 'posts#feed', :as=>'feed'
 
-  get '/search' => 'posts#search', :as=>'post_search'
+
   put ':id/share/:key' => 'posts#share', :as=>'post_share'
   get ':id/explore' => 'posts#convert', :as=>'post_convert'
   get ':id(/:display_slug)' => 'posts#show', :as=>'post'
