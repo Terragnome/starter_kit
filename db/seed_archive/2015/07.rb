@@ -97,7 +97,7 @@ At 1,990 pieces this is a huge set that towers at over 13\" high, and the organi
 """
 p.url = "http://amzn.to/1PsXY5q"
 p.cost = 250
-p.tag_list.add("gear", "lego", "toys")
+p.tag_list.add("gear", "lego", "toys", "fun")
 p.active = true
 p.save
 p.photos.find_or_create_by(
