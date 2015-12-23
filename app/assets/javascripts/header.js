@@ -25,7 +25,6 @@ Header.Init = function(){
           type: $(this).attr('method'),
           data: $(this).serialize(),
           success: function(response){
-            console.log( response );
             $("#scene_body").html(response);
           },
           complete: Application.HideLoader
