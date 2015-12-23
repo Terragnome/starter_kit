@@ -26,8 +26,6 @@ Header.Init = function(){
           data: $(this).serialize(),
           success: function(response){
             console.log( response );
-
-            $('#post_feed_list').html(response);
           },
           complete: Application.HideLoader
 	  		});
@@ -40,7 +38,7 @@ Header.Init = function(){
 	  	Header.CloseSearch();
 	  }
 	});
-	Header._searchField.focusout(Header.CloseSearch);
+	// Header._searchField.focusout(Header.CloseSearch);
 }
 
 Header.Clear = function(){
@@ -54,6 +52,8 @@ Header.ToggleSearch = function(){
 }
 
 Header.OpenSearch = function(){
+	Header._searchField.val('');
+
 	Header.Clear();
 	Header._nav.addClass('none');
 	Header._search.removeClass('none');
@@ -66,9 +66,6 @@ Header.CloseSearch = function(){
 	Header._search
 	Header._search.addClass('none');
 	Header._nav.removeClass('none');
-
-	var searchField = Header._searchField;
-	searchField.val('');
 }
 
 Header.ToggleMenu = function(){
