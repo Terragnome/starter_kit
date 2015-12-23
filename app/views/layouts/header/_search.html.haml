@@ -1,4 +1,6 @@
-#header_search_bar
-  %button.search_icon{:id=>"header_search_icon"}
-  %form{:action=>post_search_path(), :method=>:get, :id=>"header_search_form"}
-    =text_field_tag(:q, "", :placeholder=>"Search", :id=>"header_search_field", :class=>"search_field none")
+#header_search.none
+  .header_bar_inner
+    %form{:action=>ajax_post_search_path(), :method=>:get, :id=>"header_search_form"}
+      =text_field_tag(:q, "", :placeholder=>"Search", :id=>"header_search_field", :class=>"search_field")
+  .header_bar_decoration_1
+  .header_bar_decoration_2

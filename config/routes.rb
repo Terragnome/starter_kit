@@ -13,6 +13,8 @@ StarterKit::Application.routes.draw do
   get 'privacy' => 'info#privacy'
   get 'terms' => 'info#terms'
 
+  get 'ajax/search' => 'posts#ajax_search', :as=>'ajax_post_search'
+
   get 'search' => 'posts#search', :as=>'post_search'
 
   get 'latest/(:page)' => 'posts#latest', :as=>'latest'

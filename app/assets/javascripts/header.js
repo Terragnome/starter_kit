@@ -2,9 +2,11 @@ var Header = Header || {};
 
 Header.Init = function(){
 	Header._bar = DOM._headerBar;
+	Header._nav = DOM._headerNav;
 	Header._navIcon = DOM._headerNavIcon;
 	Header._navMenu = DOM._headerNavMenu;
 
+	Header._search = DOM._headerSearch;
 	Header._searchForm = DOM._headerSearchForm;
 	Header._searchIcon = DOM._headerSearchIcon;
 	Header._searchField = DOM._headerSearchField;
@@ -14,7 +16,9 @@ Header.Init = function(){
 
 	Header._searchField.keypress(function(e) {
 	  if (e.which == 13) {
-	  	Header._searchForm.submit(function(){
+	  	Header._searchForm.submit(function(e){
+	  		e.preventDefault();
+
 	  		Application.ShowLoader();
 	  		$.ajax({
           url: $(this).attr('action'),
@@ -22,11 +26,15 @@ Header.Init = function(){
           data: $(this).serialize(),
           success: function(response){
             console.log( response );
+
+            $('#post_feed_list').html(response);
           },
           complete: Application.HideLoader
 	  		});
+
 	  		return false;
 	  	});
+
 	  	Header.CloseSearch();
 	  }else if(e.which == 27) {
 	  	Header.CloseSearch();
@@ -41,28 +49,26 @@ Header.Clear = function(){
 }
 
 Header.ToggleSearch = function(){
-	var isOpen = !Header._searchField.hasClass("none");
+	var isOpen = !Header._search.hasClass("none");
 	isOpen ? Header.CloseSearch() : Header.OpenSearch();
 }
 
 Header.OpenSearch = function(){
 	Header.Clear();
+	Header._nav.addClass('none');
+	Header._search.removeClass('none');
 
 	var searchField = Header._searchField;
-	searchField.removeClass("none");
 	searchField.focus();
-
-	var searchIcon = Header._searchIcon;
-	searchIcon.addClass("none");
 }
 
 Header.CloseSearch = function(){
+	Header._search
+	Header._search.addClass('none');
+	Header._nav.removeClass('none');
+
 	var searchField = Header._searchField;
 	searchField.val('');
-	searchField.addClass("none");
-
-	var searchIcon = Header._searchIcon;
-	searchIcon.removeClass("none");
 }
 
 Header.ToggleMenu = function(){

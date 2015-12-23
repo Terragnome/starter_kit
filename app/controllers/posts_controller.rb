@@ -85,6 +85,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def ajax_search
+    query = params[:q]
+    @posts = Post.active.basic_search(query)
+    @posts += Post.active.includes(:tags).tagged_with(query)
+    @tags = []
+    prepare_feed()
+
+    respond_to do |format|
+      format.html{ render partial: 'feed_list', object: @posts }
+    end
+  end
+
 private
 
   def meta_title_feed
