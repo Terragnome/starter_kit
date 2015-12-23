@@ -76,19 +76,11 @@ class PostsController < ApplicationController
     query = params[:q]
     @posts = Post.active.basic_search(query)
     @posts += Post.active.includes(:tags).tagged_with(query)
-    # @posts = @posts.collect{|x| {title: x.title, slug: x.slug} }
-
-    @tags = [:test]
-
+    @tags = []
     prepare_feed()
 
-    puts "TRACE ************************* #{@posts.count}"
-
     respond_to do |format|
-      format.html{
-        render action: 'feed'
-        # render json: @posts
-      }
+      format.html{ render action: 'feed' }
       format.json{ render json: @posts }
     end
   end
@@ -132,6 +124,8 @@ private
       end
       @posts.reverse if scroll == :prev
     end
+    @all_tags ||= []
+
     meta_title_feed()
   end
 

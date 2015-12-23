@@ -21,6 +21,8 @@
 var Application = Application || {};
 
 Application.Init = function(){
+	$.turbo.use('pjax:start', 'pjax:end');
+
 	window.wiselinks = new Wiselinks($('#scene_body'));
 
 	DOM.Init();
