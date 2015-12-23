@@ -12,9 +12,30 @@ Header.Init = function(){
 	Header._navIcon.click(Header.ToggleMenu);
 	Header._searchIcon.click(Header.ToggleSearch);
 
+	Header._searchField.typeahead({
+	  minLength: 3,
+	  highlight: true
+	},
+	{
+	  name: '',
+	  source: mySource
+	});
+
 	Header._searchField.keypress(function(e) {
 	  if (e.which == 13) {
-	  	Header._searchForm.submit();
+	  	Header._searchForm.submit(function(){
+	  		$.ajax({
+          url: $(this).attr('action'),
+          type: $(this).attr('method'),
+          contentType: "application/json",
+          data: $(this).serialize(),
+          dataType: "json",
+          success: function( response ) {
+            alert( response );
+          }
+	  		});
+	  		return false;
+	  	});
 	  	Header.CloseSearch();
 	  }else if(e.which == 27) {
 	  	Header.CloseSearch();

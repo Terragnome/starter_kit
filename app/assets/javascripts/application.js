@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require wiselinks
+//= rewuire lib.typeahead.bundle.min
 //= require_tree .
 
 var Application = Application || {};
