@@ -25,6 +25,8 @@ Header.Init = function(){
           type: $(this).attr('method'),
           data: $(this).serialize(),
           success: function(response){
+          	var nextUrl = this.url;
+          	history.pushState({id: nextUrl}, '', nextUrl);
             $("#scene_body").html(response);
           },
           complete: Application.HideLoader
