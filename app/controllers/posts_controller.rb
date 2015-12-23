@@ -93,7 +93,7 @@ class PostsController < ApplicationController
     prepare_feed()
 
     respond_to do |format|
-      format.html{ render partial: 'feed_list', object: @posts }
+      format.html{ render partial: 'feed', object: @posts }
     end
   end
 

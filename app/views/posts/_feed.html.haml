@@ -1,0 +1,17 @@
+-meta_title(@meta_title)
+-meta_keywords(@meta_keywords)
+-meta_description(@meta_description)
+
+=render :partial=>'tag_cloud', :locals=>{:tags=>@all_tags, :selected=>@selected_tags}
+
+-if @posts.count > 0
+  #post_feed
+    #post_feed_list
+      =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags}
+-else
+  .info_section
+    .content
+      %h1.title
+        No posts found
+      %p
+        Try again later

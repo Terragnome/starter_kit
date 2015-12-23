@@ -26,6 +26,7 @@ Header.Init = function(){
           data: $(this).serialize(),
           success: function(response){
             console.log( response );
+            $("#scene_body").html(response);
           },
           complete: Application.HideLoader
 	  		});
@@ -38,7 +39,7 @@ Header.Init = function(){
 	  	Header.CloseSearch();
 	  }
 	});
-	// Header._searchField.focusout(Header.CloseSearch);
+	Header._searchField.focusout(Header.CloseSearch);
 }
 
 Header.Clear = function(){
