@@ -1,7 +1,7 @@
 -next_url = nil
 -next_ajax = nil
 
--if feed_list.next_page
+-if feed_list.try(:next_page)
   -next_url = seo_feed_url(tags, :page=>feed_list.next_page)
   -next_ajax = seo_feed_url(tags, :page=>feed_list.next_page, :format=>:js)
 

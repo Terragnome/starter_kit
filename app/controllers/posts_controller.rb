@@ -34,8 +34,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post ||= Post.includes(:counters, :photos, :tags).active.where(:slug=>params[:id]).take()
-    @post ||= Post.includes(:counters, :photos, :tags).active.where(:id=>params[:id]).take()
+    @post ||= Post.active.includes(:counters, :photos, :tags).where(:slug=>params[:id]).take()
+    @post ||= Post.active.includes(:counters, :photos, :tags).where(:id=>params[:id]).take()
     redirect_to latest_path and return if not @post
 
     meta_title(@post.title)
@@ -73,12 +73,22 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.fuzzy_search(title: params[:q])
+    query = params[:q]
+    @posts = Post.active.basic_search(query)
+    @posts += Post.active.includes(:tags).tagged_with(query)
+    # @posts = @posts.collect{|x| {title: x.title, slug: x.slug} }
 
-    puts "TRACE ************** #{@posts.to_json}"
+    @tags = [:test]
+
+    prepare_feed()
+
+    puts "TRACE ************************* #{@posts.count}"
 
     respond_to do |format|
-      format.html{ render json: @posts }
+      format.html{
+        render action: 'feed'
+        # render json: @posts
+      }
       format.json{ render json: @posts }
     end
   end
@@ -99,29 +109,29 @@ private
     scroll ||= params.has_key?(:scroll) ? params[:scroll] : :next
 
     @selected_tags = []
-    if @tags == :all
-      @posts=Post.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
-      @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC')
-    else
-      @tags = @tags.collect{|x| x.to_sym}
-      @posts=Post.active.includes(:counters, :photos, :tags).active.tagged_with(@tags)
-      @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
+    if not @posts
+      if @tags == :all
+        @posts=Post.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
+        @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC')
+      else
+        @tags = @tags.collect{|x| x.to_sym}
+        @posts=Post.active.includes(:counters, :photos, :tags).tagged_with(@tags)
+        @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
 
-      tag_counts = {}        
-      @posts.each do |post|
-        post.tags.each do |tag|
-          tag_counts[tag.id] = 0 if not tag_counts.include?(tag.id)
-          tag_counts[tag.id] += 1
+        tag_counts = {}        
+        @posts.each do |post|
+          post.tags.each do |tag|
+            tag_counts[tag.id] = 0 if not tag_counts.include?(tag.id)
+            tag_counts[tag.id] += 1
+          end
         end
+
+        @all_tags.each{|tag| tag.taggings_count = tag_counts[tag.id] if tag_counts.include?(tag.id) }
+        @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
+        @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
       end
-
-      @all_tags.each{|tag| tag.taggings_count = tag_counts[tag.id] if tag_counts.include?(tag.id) }
-      @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
-      @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
+      @posts.reverse if scroll == :prev
     end
-
-    @posts.reverse if scroll == :prev
-
     meta_title_feed()
   end
 

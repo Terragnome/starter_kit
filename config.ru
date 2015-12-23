@@ -8,4 +8,5 @@ require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
 
 require 'textacular'
+ActiveRecord::Base.connection.execute("SELECT set_limit(0.15);")
 ActiveRecord::Base.extend(Textacular)
