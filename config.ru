@@ -6,3 +6,6 @@ use Rack::Zippy::AssetServer, asset_root
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
+
+require 'textacular'
+ActiveRecord::Base.extend(Textacular)
