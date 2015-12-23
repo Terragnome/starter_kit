@@ -19,17 +19,19 @@ Header.Init = function(){
 	  	Header._searchForm.submit(function(e){
 	  		e.preventDefault();
 
-	  		Application.ShowLoader();
+	  		Application.OnPageLoading();
+
+	  		var ajaxParam = "&ajax=true";
 	  		$.ajax({
           url: $(this).attr('action'),
           type: $(this).attr('method'),
-          data: $(this).serialize(),
+          data: $(this).serialize()+ajaxParam,
           success: function(response){
-          	var nextUrl = this.url;
+          	var nextUrl = this.url.replace(ajaxParam, "");
           	history.pushState({id: nextUrl}, '', nextUrl);
             $("#scene_body").html(response);
           },
-          complete: Application.HideLoader
+          complete: Application.OnPageAlways
 	  		});
 
 	  		return false;

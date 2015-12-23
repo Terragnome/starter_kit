@@ -1,4 +1,4 @@
 #header_search.none
   .header_bar_inner
-    %form{:action=>ajax_post_search_path(), :method=>:get, :id=>"header_search_form"}
+    %form{:action=>post_search_path(), :method=>:get, :id=>"header_search_form"}
       =text_field_tag(:q, "", :placeholder=>"Search", :id=>"header_search_field", :class=>"search_field")

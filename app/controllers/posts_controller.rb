@@ -79,21 +79,11 @@ class PostsController < ApplicationController
     @tags = []
     prepare_feed()
 
+    meta_title(query)
+
     respond_to do |format|
-      format.html{ render action: 'feed' }
+      format.html{ render action: 'feed', layout: params[:ajax] != 'true' }
       format.json{ render json: @posts }
-    end
-  end
-
-  def ajax_search
-    query = params[:q]
-    @posts = Post.active.basic_search(query)
-    @posts += Post.active.includes(:tags).tagged_with(query)
-    @tags = []
-    prepare_feed()
-
-    respond_to do |format|
-      format.html{ render partial: 'feed', object: @posts }
     end
   end
 
