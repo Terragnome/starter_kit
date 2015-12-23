@@ -134,13 +134,19 @@ $nav_icon_bar_height: 2px;
 }
 
 #header_search_bar{
+	pointer-events: none;
 	position: fixed;
-	top: 7px;
-	right: 8px;
+	top: 8px;
+	left: 5px;
 	z-index: 7;
 
+	#header_search_form{
+		float: left;
+	}
+
 	.search_icon{
-		float: right;
+		pointer-events: auto;
+		float: left;
 		cursor: pointer;
 		background: url(/icons/search.svg) no-repeat;
 		background-position: center;
@@ -156,12 +162,12 @@ $nav_icon_bar_height: 2px;
 		border: 0px;
 
 		&:hover{
-			background-color: #{$highlight_color};
+			color: #{$highlight_color};
 		}
 	}
 
 	.search_field{
-		float: right;
+		pointer-events: auto;
 		background-color: #{$base_color};
 		color: white;
 		font-family: #{$body_font};
@@ -169,12 +175,10 @@ $nav_icon_bar_height: 2px;
 		font-weight: normal;
 		text-transform: none;
 		outline: none;
-		width: 200px;
+		width: 150px;
+		margin: 1px 0 0 3px;
 		padding: 4px 4px 4px 4px;
 		border: 1px solid white;
-		margin: 2px 0 0 0;
-
-		&:hover{}
 	}
 }
 

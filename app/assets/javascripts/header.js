@@ -5,7 +5,39 @@ Header.Init = function(){
 	Header._navIcon = DOM._headerNavIcon;
 	Header._navMenu = DOM._headerNavMenu;
 
+	Header._searchForm = DOM._headerSearchForm;
+	Header._searchIcon = DOM._headerSearchIcon;
+	Header._searchField = DOM._headerSearchField;
+
 	Header._navIcon.click(Header.ToggleMenu);
+	Header._searchIcon.click(Header.ToggleSearch);
+
+	Header._searchField.keypress(function(e) {
+	  if (e.which == 13) {
+	  	Header._searchForm.submit();
+	  	Header.CloseSearch();
+	  }else if(e.which == 27) {
+	  	Header.CloseSearch();
+	  }
+	});
+	Header._searchField.focusout(Header.CloseSearch);
+}
+
+Header.ToggleSearch = function(){
+	var isOpen = !Header._searchField.hasClass("none");
+	isOpen ? Header.CloseSearch() : Header.OpenSearch();
+}
+
+Header.OpenSearch = function(){
+	var searchField = Header._searchField;
+	searchField.removeClass("none");
+	searchField.focus();
+}
+
+Header.CloseSearch = function(){
+	var searchField = Header._searchField;
+	searchField.val('');
+	searchField.addClass("none");
 }
 
 Header.ToggleMenu = function(){

@@ -72,6 +72,12 @@ class PostsController < ApplicationController
     redirect_to @post.url and return
   end
 
+  def search
+    results = Post.fuzzy_search(title: params[:q])
+    results.each{|x| puts "***************** #{x.title}"}
+    render :text=>results.to_s
+  end
+
 private
 
   def meta_title_feed

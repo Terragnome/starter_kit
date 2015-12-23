@@ -16,7 +16,9 @@ DOM.Init = function(){
   DOM._headerTitle = $('#header_title');
   DOM._headerNavIcon = $('#header_nav_icon');
   DOM._headerNavMenu = $('#header_nav_menu');
-  DOM._headerSearchBar = $('#header_search_bar');
+  DOM._headerSearchForm = $('#header_search_form');
+  DOM._headerSearchIcon = $('#header_search_icon');
+  DOM._headerSearchField = $('#header_search_field');
 
   DOM._scene = $('#scene');
   DOM._sceneLoader = $('#scene_loader');
