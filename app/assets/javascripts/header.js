@@ -42,7 +42,7 @@ Header.Init = function(){
 	  	Header.CloseSearch();
 	  }
 	});
-	Header._searchField.focusout(Header.CloseSearch);
+	Header._searchField.blur(Header.CloseSearch);
 }
 
 Header.Clear = function(){
