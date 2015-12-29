@@ -108,6 +108,10 @@ img{
     user-select: none;
 }
 
+input[type="text"] {
+    -webkit-user-select: text;
+}
+
 input[type=submit]{
 	cursor: pointer;
 	background-color: #{$base_color};
@@ -116,6 +120,7 @@ input[type=submit]{
 	text-transform: uppercase;
 	border: 0px;
 	padding: 5px 7px 5px 7px;
+
 
 	&:hover{
 		background-color: #{$highlight_color};
