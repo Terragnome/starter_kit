@@ -50,8 +50,12 @@ Header.Clear = function(){
 	Header.CloseMenu();
 }
 
+Header.IsSearchOpen = function(){
+	return !Header._search.hasClass("none");
+}
+
 Header.ToggleSearch = function(){
-	var isOpen = !Header._search.hasClass("none");
+	var isOpen = Header.IsSearchOpen();
 	isOpen ? Header.CloseSearch() : Header.OpenSearch();
 }
 
@@ -72,8 +76,12 @@ Header.CloseSearch = function(){
 	Header._nav.removeClass('none');
 }
 
+Header.IsMenuOpen = function(){
+	return Header._navMenu.hasClass("anim_roll_down");
+}
+
 Header.ToggleMenu = function(){
-	var isOpen = Header._navMenu.hasClass("anim_roll_down");
+	var isOpen = Header.IsMenuOpen();
 	isOpen ? Header.CloseMenu() : Header.OpenMenu();
 }
 Header.OpenMenu = function(){
@@ -96,7 +104,9 @@ Header.CloseMenu = function(){
 }
 
 Header.OnResize = function(){
-	Header.Clear();
+	if(!Header.IsSearchOpen()){
+		Header.Clear();
+	}
 }
 
 // Header.Update = function(scrollCutoff){
