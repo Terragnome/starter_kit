@@ -34,7 +34,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post ||= Post.active.includes(:counters, :photos, :tags).where(:slug=>params[:id]).take()
+    begin
+      @post ||= Post.active.includes(:counters, :photos, :tags).where(:slug=>params[:id].downcase()).take()
+    rescue
+    end
     @post ||= Post.active.includes(:counters, :photos, :tags).where(:id=>params[:id]).take()
     redirect_to latest_path and return if not @post
 
