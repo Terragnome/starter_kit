@@ -564,3 +564,24 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2015-12-29"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Anova Culinary Bluetooth Precision Cooker'
+)
+p.summary = """
+The Anova Precision Cooker makes it easy to get professional-level cooking results at home. To use the Anova Precision Cooker, you simply attach it to a pot, put your food in a seal-able bag and set the time and temperature. The Precision Cooker circulates water around the pot while ensuring a consistent temperature throughout. The Precision Cooker also connects to your phone, allowing you to cook amazing meals by simply touching a button. The food is amazing, tender, and moist every time.
+"""
+p.body = """
+Sous vide allows for food to stay tender and moist by cooking it at low temperatures for long periods of time.  This is done by immmersing the food in liquid that has its temperature carefully controlled and is constantly circulated.  Wheras professional units cost thousands of dollars, the Anova Precision Cooker attaches to your existing pots and makes sous vide practical at home.  Highly recommended for home chefs.
+"""
+p.url = "http://amzn.to/1QYQ3zj"
+p.cost = 179
+p.tag_list.add(TagType::GEAR, TagType::COOKING, TagType::FOOD)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"anova_bluetooth_precision_cooker.jpg"
+)
+p.posted_at = "2015-12-29"
+p.save
