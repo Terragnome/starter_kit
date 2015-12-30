@@ -12,7 +12,7 @@ class TagType
   FOOD = "food"
   FITNESS = "fitness"
   GEAR = "gear"
-  GUIDE = "guide"
+  GUIDES = "guides"
   HIKING = "hiking"
   HUNTING = "hunting"
   LEGO = "lego"

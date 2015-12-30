@@ -123,7 +123,7 @@ Arms guards/bracers are technically not necessary if you have perfect form, but 
 
 Congratulations!  You now know everything you need to begin looking for your perfect bow and arrow.
 """
-p.tag_list.add(TagType::GEAR, TagType::GUIDE, TagType::ARCHERY)
+p.tag_list.add(TagType::GEAR, TagType::GUIDES, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
