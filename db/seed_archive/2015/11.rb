@@ -9,7 +9,7 @@ This game plays like Connect 4 or Go. A lot of the strategy comes from trying to
 """
 p.url = "http://amzn.to/1MoxQb5"
 p.cost = 32
-p.tag_list.add("toys", "boardgames")
+p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -28,7 +28,7 @@ Fletch new arrows or repair damaged ones with a Fletching Jig that can do it all
 p.body = """There are more expensive jigs out there, but this one is cheap, accurate, and gets the job done. I've fletches hundreds of arrows with this jig. The only upkeep is in wiping off extra glue from the clamp so glue doesn't dry on it."""
 p.url = "http://amzn.to/1MoxMrQ"
 p.cost = 11
-p.tag_list.add("tools", "archery")
+p.tag_list.add(TagType::TOOLS, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -47,7 +47,7 @@ The Dewalt DWE575SB 7-1/4-inch lightweight circular saw with electric brake is d
 p.body = """A simple circular saw lets you build an incredible number of things. If you need to cut a straight line you can clamp a rule or a board down, then use it to guide the saw."""
 p.url = "http://amzn.to/1PsX6xQ"
 p.cost = 129
-p.tag_list.add("tools", "woodworking", "diy")
+p.tag_list.add(TagType::TOOLS, TagType::DIY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -66,7 +66,7 @@ All of the eligible young men (and many of the not-so-young) seek to woo the pri
 p.body = """This game is easy to learn and has really quick rounds which makes it ideal for if you're waiting for something or aren't sure how long you'll be able to play. It's ridiculously satisfying to be a Guard and knock someone else out before they even have a chance to make a move."""
 p.url = "http://amzn.to/1kza5lN"
 p.cost = 9
-p.tag_list.add("toys", "boardgames", "cardgames")
+p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -87,7 +87,7 @@ The game is simple. Each round, one player asks a question from a Black Card, an
 p.body = """This game is like NSFW Apples to Apples. It's a great party game that scales to large groups, but use discretion. I like to play the Rando Cardrissian modification, where you deal cards to an imaginary player and randomly pick one every round. It's great fun to talk trash to people who are worse than chance. Another house rule that can speed up the game is that the last card that a person tries to play in a round is ignored."""
 p.url = "http://amzn.to/1MCQZln"
 p.cost = 25
-p.tag_list.add("toys", "boardgames", "cardgames")
+p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
 p.save
 p.photos.find_or_create_by(

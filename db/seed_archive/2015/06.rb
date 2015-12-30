@@ -7,7 +7,7 @@ I use an Opinel as my everday carry knife because I wanted a knife with a beauti
 '''
 p.url = "http://amzn.to/1PsYznQ"
 p.cost = 13
-p.tag_list.add("gear", "edc", "knives")
+p.tag_list.add(TagType::GEAR, TagType::EDC, TagType::KNIVES)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -32,7 +32,7 @@ I chose the Martin Mamba as my first recurve because it was a handcrafted Americ
 '''
 p.url = "http://amzn.to/1kzbkl9"
 p.cost = 559
-p.tag_list.add("gear", "archery", "bows", "traditional", "recurve")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -55,7 +55,7 @@ I played this in a group of four and found that to be a good group size.
 """
 p.url = "http://amzn.to/1kzbgSm"
 p.cost = 20
-p.tag_list.add("toys", "boardgames", "cardgames")
+p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -78,7 +78,7 @@ This was the book that taught me that kneading the dough is what produces the pr
 """
 p.url = "http://amzn.to/1PsYpgf"
 p.cost = 22
-p.tag_list.add("books", "food", "baking")
+p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::BAKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(

@@ -7,7 +7,7 @@ You can always have a quality optic close at hand with the Solo Monocular. This 
 """
 p.url = "http://amzn.to/1S3KtZ5"
 p.cost = 52
-p.tag_list.add("gear", "backpacking", "hiking", "camping", "archery")
+p.tag_list.add(TagType::GEAR, TagType::BACKPACKING, TagType::CAMPING, TagType::ARCHERY, TagType::OUTDOORS)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -34,7 +34,7 @@ The type of bow you choose (right or left) is determined by your dominant eye ra
 """
 p.url = "http://amzn.to/1MCQO9u"
 p.cost = 140
-p.tag_list.add("gear", "archery", "bows", "traditional", "recurve")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -59,7 +59,7 @@ The 3555 arrows are suited for bows with draw weights from 35#-55#. 5575 arrows 
 """
 p.url = "http://amzn.to/1S3JfNt"
 p.cost = 140
-p.tag_list.add("gear", "archery", "arrows")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -123,7 +123,7 @@ Arms guards/bracers are technically not necessary if you have perfect form, but 
 
 Congratulations!  You now know everything you need to begin looking for your perfect bow and arrow.
 """
-p.tag_list.add("gear", "guides", "archery", "beginner")
+p.tag_list.add(TagType::GEAR, TagType::GUIDE, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -148,7 +148,7 @@ Standage covers everything from the development of beer as a mystic beverage use
 """
 p.url = "http://amzn.to/1MCR0FS"
 p.cost = 25
-p.tag_list.add("books", "reading", "food", "drinking", "history")
+p.tag_list.add(TagType::BOOKS, TagType::FOOD)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -169,7 +169,7 @@ To be honest I haven't read this book yet, but I've had it recommended to me by 
 """
 p.url = "http://amzn.to/1MCQV5c"
 p.cost = 8
-p.tag_list.add("books", "reading", "fantasy")
+p.tag_list.add(TagType::BOOKS)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -190,7 +190,7 @@ This knife is not robust enough for an outdoorsman, and at this price point not 
 """
 p.url = "http://amzn.to/1MCQW9g"
 p.cost = 99
-p.tag_list.add("edc", "food", "knives", "gear")
+p.tag_list.add(TagType::EDC, TagType::KNIVES, TagType::GEAR)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -211,7 +211,7 @@ My buddy has used this quiver for the last two years, and I've been impressed by
 """
 p.url = "http://amzn.to/1MCQU19"
 p.cost = 64
-p.tag_list.add("gear", "archery", "quiver")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -230,7 +230,7 @@ Known as a pristine coffeemaker, Chemex employs all of the chemically correct me
 p.body = """Fancy and hipster coffee drinkers in my office swear by the Chemex. I needed someone to teach me how to use it, but once you go through it it's a pretty simple process and you can use whatever filters you want on it. Recommended as an alternative to a french press for people who only need 1-2 cups at a time. Just don't confuse it with a vase"""
 p.url = "http://amzn.to/1MCQTKz"
 p.cost = 45
-p.tag_list.add("tools", "food", "coffee")
+p.tag_list.add(TagType::TOOLS, TagType::FOOD)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -255,7 +255,7 @@ It's important that your arrows and tips match the spine of your bow, so Three R
 """
 p.url = "http://amzn.to/1MCQVly"
 p.cost = 7
-p.tag_list.add("gear", "archery")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -278,7 +278,7 @@ The silicon for the tips will eventually loosed a bit with use, which happened f
 """
 p.url = "http://amzn.to/1MCQTdm"
 p.cost = 15
-p.tag_list.add("gear", "running", "music")
+p.tag_list.add(TagType::GEAR, TagType::RUNNING, TagType::MUSIC)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -301,7 +301,7 @@ These qualities earned Lifestraw a Time Magazine \"Invention of the Year\" award
 """
 p.url = "http://amzn.to/1S3JV5p"
 p.cost = 18
-p.tag_list.add("gear", "backpacking", "hiking", "camping")
+p.tag_list.add(TagType::GEAR, TagType::BACKPACKING, TagType::HIKING, TagType::OUTDOORS)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -322,7 +322,7 @@ Swedish Fireseel is capable of generating a 3,000° C spark and starting fires i
 """
 p.url = "http://amzn.to/1PUBSZQ"
 p.cost = 13
-p.tag_list.add("gear", "backpacking", "hiking", "camping")
+p.tag_list.add(TagType::GEAR, TagType::BACKPACKING, TagType::HIKING, TagType::OUTDOORS)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -345,7 +345,7 @@ Becoming Batman is really a physiology book discuised as a comic book.  While it
 """
 p.url = "http://amzn.to/1OlYXq7"
 p.cost = 17
-p.tag_list.add("books", "fitness", "comics", "science")
+p.tag_list.add(TagType::BOOKS, TagType::FITNESS, TagType::COMICS, TagType::SCIENCE)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -366,7 +366,7 @@ I chose the Scott Rhino XT Release since I was looking for a hook-style release 
 """
 p.url = "http://amzn.to/1YzBEZj"
 p.cost = 79
-p.tag_list.add("gear", "archery", "release")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -387,7 +387,7 @@ When choosing the sight for my hunting compound, the two most popular options we
 """
 p.url = "http://amzn.to/1QFQ5fz"
 p.cost = 169
-p.tag_list.add("gear", "archery", "sight")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -408,7 +408,7 @@ I chose the Octane Deadlock Pro Bow Quiver because it offered most of the featur
 """
 p.url = "http://amzn.to/1QFRp1W"
 p.cost = 90
-p.tag_list.add("gear", "archery", "quiver")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -429,7 +429,7 @@ Nocking pliers are useful because they allow you to add and remove brass nocks f
 """
 p.url = "http://amzn.to/1YzFQIx"
 p.cost = 13
-p.tag_list.add("gear", "archery")
+p.tag_list.add(TagType::ARCHERY, TagType::GEAR)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -437,4 +437,130 @@ p.photos.find_or_create_by(
   :internal_url=>"carbon_express_nocking_pliers.jpg"
 )
 p.posted_at = "2015-12-22"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'J.A. HENCKELS INTERNATIONAL Classic 8-inch Chef\'s Knife'
+)
+p.summary = """
+J.A Henckels Classic knives are made of high quality German carbon no-stain steel. The one-piece traditional forged construction provides durability and features a full bolster for added weight, comfort, and safety. Traditional three rivet handle with exposed full tang and full bolster provide a comfortable grip with balance and support.
+"""
+p.body = """
+Henckels is one of Germany's oldest knife manufacturers and has been in operation since 1731.  The Henckels Classic series is a great option for aspiring home chefs who are looking for the advantages of forged knives without the high costs associated with other premium brands.  Forged knives have the benefits of being stiffer, heavier, and harder than stamped blades which helps with helps knives hold their edges longer and reduces fatigue while cutting.
+"""
+p.url = "http://amzn.to/1OVBuq2"
+p.cost = 34
+p.tag_list.add(TagType::GEAR, TagType::KNIVES, TagType::FOOD)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"henckels_8_inch_chef.jpg"
+)
+p.posted_at = "2015-12-28"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Wusthof Classic 3-1/2-Inch Paring Knife'
+)
+p.summary = """
+Perform all of your small cutting tasks with this Wustof Classic paring knife. Made in Solingen, Germany, it was hand-forged in 38 manufacturing steps by skilled craftsmen. The high-carbon stainless steel blade is hardened to maintain a sharp edge, and its full tang provides perfect balance with a riveted, high-impact composition handle. Wusthof's newest state of the art technology incorporates a new computer controlled method for putting the edge on Classic knives and allows for an exacting edge from the tip of the knife down to the heel. With this newer precision, the knives are made sharper to 14 degrees per side for a total of 28 degrees, doubling the sharpness retention. This knife is backed by a manufacturer's limited lifetime warranty and is the perfect addition to your cutlery collection.
+"""
+p.body = """
+Aside from your chef's knife, your paring knife will probably be your most frequently used knife so it's worth it to pay extra for quality, and Wusthof is one of best.  Treat yo\'self!
+"""
+p.url = "http://amzn.to/1YNkr4a"
+p.cost = 40
+p.tag_list.add(TagType::GEAR, TagType::KNIVES, TagType::FOOD)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"wusthof_classic_paring_knife.jpg"
+)
+p.posted_at = "2015-12-29"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Wonder Cup Adjustable Measuring Cup'
+)
+p.summary = """
+Replace all your measuring tools with the handy dandy Wonder Cup! This wonder cup (one cup version) could easily take the place of all of your measuring aids in the kitchen. Measures all scales from teaspoons to to pints. Also provides instant conversion between U.S. measurements and the metric system. Measure an ingredient you need in just 3 easy steps: 1) PRESS to release cup from sleeve 2) TWIST to desired point on scale 3)PUSH to eject contents Measures up to 1 cup of ingredients. Eliminates clean up between ingredients Measures wet or dry ingredients. Great for sticky or solid items like peanut butter and shortening. Provides every measurement from teaspoons to pints. Instant conversion between U.S. and the metric system
+"""
+p.body = """
+The perfect tool for the obsessive compulsive chef.  If you've ever tried to measure exactly 1 cup of honey, you'll see the value in a tool that lets you push it out.  An elegant measuring tool for a more civilized age.
+"""
+p.url = "http://amzn.to/1krIQJE"
+p.cost = 9
+p.tag_list.add(TagType::GEAR, TagType::COOKING, TagType::BAKING, TagType::FOOD)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"wonder_cup.jpg"
+)
+p.posted_at = "2015-12-29"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Muzzy Broadheads'
+)
+p.summary = """
+Muzzy Broadheads - 6 Pack are screw in broadheads. Muzzy Broadheads have become legendary for their Bad To The Bone dependability and true flight. It begins with the hollow ground design of Muzzy Trocar tips, which are responsible for the exceptional penetrating power through both flesh and bone. Razor sharp stainless steel blades interlock within the body of Muzzy Broadheads forming a column of steel that adds support to the aircraft aluminum bodies. You can't go wrong with Muzzy Broadheads. Popular ultra-lite Head. 1-3/16 inch cutting diameter and .020 inch thickness. They are BAD TO THE BONE!
+"""
+p.body = """
+Muzzys are cheap, have the reliability of fixed blades, and come razor-sharp straight from the factory.  I've shot these into wood and had them survive with only minimal damage.  Worst case the tip and blades are all replaceable.
+"""
+p.url = "http://amzn.to/1ZACffO"
+p.cost = 39
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY, TagType::HUNTING)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"muzzy_broadheads.jpg"
+)
+p.posted_at = "2015-12-29"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Bee Stinger Pro Hunter Maxx Stabilizer'
+)
+p.summary = """
+Bee Stinger Pro Hunter Maxx 10\" Bow Stabilizer. Smooth under pressure. Bad vibes? Put the Pro Hunter Maxx Stabilizer to work on your bow for reduced vibration and better accuracy. Sims Internal Harmonic Dampener and De-Resonator perform double-duty on shot-induced vibration, delivering ultimate control before, during, and after the shot. Even better, 3 removable end weights let you customize it for balance and performance. (Un)Shocking performance: Built around a high-modulus carbon rod, providing superior stiffness; Patented design delivers maximum moment of inertia, providing better shot control; Integrated Sims Harmonic Dampener and De-Resonator control vibration; 3 independently removable end weights for custom balance.
+"""
+p.body = """
+There's a great series of articles by <a href='http://www.fieldandstream.com/blogs/whitetail-365/2013/07/does-short-stabilizer-really-add-stability'>Field & Stream</a> which test common myths for compound bows, and their conclusion was for distances shorter than 40 yards an 8\" stabilizer made no difference but at 60 yards a 10\" decreased the size of their groups by 2\".  The Bee Stinger Pro Hunter Maxx is a top of the line stabilizer with 3 customizable weights and a perfect gift for the bowhunter in your life.
+"""
+p.url = "http://amzn.to/1SlJWVd"
+p.cost = 76
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY, TagType::HUNTING)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"bee_stinger_pro_hunter_maxx_10.jpeg"
+)
+p.posted_at = "2015-12-29"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Buck 119 Special Fixed Blade Knife'
+)
+p.summary = """
+For the outdoorsmen who prefer the absolute solid feel of a fixed blade, Buck's best-selling Model 119 Special sets the standard by which others are measured. Hoyt and Al Buck used to build them by hand in their two-man shop. Today, this larger hunting knife with a large clip blade for detail work, piercing and cutting in tight places for added control, is as popular as ever. Engraving is offered on right side (blade facing right). Made in the USA.
+"""
+p.body = """
+The Buck 119 Uses 420HC steel which is an excellent material which resists rust holds a decent edge yet can still be sharpened at home with a common sharpening stone.  Had a fixed blade with a full tang and is strong enough to be used for batoning.  My blade of choice for the outdoors.
+"""
+p.url = "http://amzn.to/1SlJVk5"
+p.cost = 50
+p.tag_list.add(TagType::GEAR, TagType::KNIVES, TagType::HUNTING, TagType::OUTDOORS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"buck_119_knife.jpg"
+)
+p.posted_at = "2015-12-29"
 p.save

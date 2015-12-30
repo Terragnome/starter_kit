@@ -11,7 +11,7 @@ While the snifter is a popular vessel, the curves shape of the Glencairn Whiskey
 """
 p.url = "http://amzn.to/1PsXX1z"
 p.cost = 17
-p.tag_list.add("gear", "mixology", "drinking")
+p.tag_list.add(TagType::GEAR, TagType::MIXOLOGY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -34,7 +34,7 @@ Cast iron does rust if left in contact with water, but can be cleaned by scrubbi
 """
 p.url = "http://amzn.to/1kzaUes"
 p.cost = 33
-p.tag_list.add("gear", "food", "cooking")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -55,7 +55,7 @@ The Microplane is solidly build with a rubber handle and plastic sheath that pre
 """
 p.url = "http://amzn.to/1kzaQv8"
 p.cost = 11
-p.tag_list.add("gear", "food", "cooking")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -74,7 +74,7 @@ Pandemic is a great alternative for traditional boardgames since it's cooperativ
 """
 p.url = "http://amzn.to/1kzaPY8"
 p.cost = 24
-p.tag_list.add("toys", "boardgames")
+p.tag_list.add(TagType::BOARDGAMES, TagType::TOYS)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -102,7 +102,7 @@ While there are scales with more features or more impressive designs, the EatSma
 """
 p.url = "http://amzn.to/1PsXKv6"
 p.cost = 15
-p.tag_list.add("gear", "food", "cooking", "baking")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(

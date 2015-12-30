@@ -11,7 +11,7 @@ Alton's writing style is both informative and entertaining. He explains the chem
 """
 p.url = "http://amzn.to/1S3N2un"
 p.cost = 26
-p.tag_list.add("books", "food", "cooking")
+p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::COOKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -32,7 +32,7 @@ Preparing delicious recipes without meat, whether for health, preference, or ide
 """
 p.url = "http://amzn.to/1kzbbhq"
 p.cost = 20
-p.tag_list.add("books", "food", "cooking", "vegetarian")
+p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::COOKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -55,7 +55,7 @@ While stamped steel knife blocks can be more affordable for those on a budget, a
 """
 p.url = "http://amzn.to/1kzb99p"
 p.cost = 136
-p.tag_list.add("gear", "food", "cooking", "knives")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::KNIVES)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -76,7 +76,7 @@ While the price may intially seem daunting, I found the solid build quality and 
 """
 p.url = "http://amzn.to/1PsYalk"
 p.cost = 299
-p.tag_list.add("gear", "food", "cooking", "baking", "mixer")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -97,7 +97,7 @@ At 1,990 pieces this is a huge set that towers at over 13\" high, and the organi
 """
 p.url = "http://amzn.to/1PsXY5q"
 p.cost = 250
-p.tag_list.add("gear", "lego", "toys", "fun")
+p.tag_list.add(TagType::LEGO, TagType::TOYS)
 p.active = true
 p.save
 p.photos.find_or_create_by(

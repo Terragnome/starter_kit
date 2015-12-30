@@ -13,7 +13,7 @@ The tradeoff is that the whisk is slightly heaver, but overall the Twist-2-in-1 
 """
 p.url = "http://amzn.to/1PsXIn2"
 p.cost = 10
-p.tag_list.add("gear", "food", "cooking", "baking")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -38,7 +38,7 @@ Highly recommended for anyone who loves to bake, with the caveat that silicone i
 """
 p.url = "http://amzn.to/1Moykhs"
 p.cost = 20
-p.tag_list.add("gear", "food", "baking")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::BAKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -57,7 +57,7 @@ Pyrex liquid measuring cups are microwave and dishwasher safe and make measuring
 """
 p.url = "http://amzn.to/1Moympu"
 p.cost = 8
-p.tag_list.add("gear", "food", "cooking", "baking")
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -76,7 +76,7 @@ Bang! is like Magic the Gathering combined with Mafia.  It's a great game becaus
 """
 p.url = "http://amzn.to/1kzaDrY"
 p.cost = 17
-p.tag_list.add("toys", "boardgames", "cardgames")
+p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -95,7 +95,7 @@ These days pretty much all bowstrings are made of synthetic fibers like Dacron o
 """
 p.url = "http://amzn.to/1OlXLTC"
 p.cost = 4
-p.tag_list.add("gear", "archery")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(

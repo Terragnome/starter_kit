@@ -9,7 +9,7 @@ I primary use Gateway feathers because they're of good quality.  I'm sure there 
 """
 p.url = "http://amzn.to/1S3Lqk4"
 p.cost = 38
-p.tag_list.add("gear", "archery")
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -32,7 +32,7 @@ Since reading this book I've run well over 3,000 miles running almost entirely i
 """
 p.url = "http://amzn.to/1S3LiRJ"
 p.cost = 11
-p.tag_list.add("books", "running", "fitness")
+p.tag_list.add(TagType::BOOKS, TagType::RUNNING, TagType::FITNESS)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -53,7 +53,7 @@ While I love looking at pictures in the French Laundry cookbook, the complexity 
 """
 p.url = "http://amzn.to/1kzaox5"
 p.cost = 11
-p.tag_list.add("books", "food", "cooking")
+p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::COOKING)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -74,7 +74,7 @@ The Kreg Jig K4 Pocket Jig is one of my favorite woodworking tools since it allo
 """
 p.url = "http://amzn.to/1MoxSQ4"
 p.cost = 11
-p.tag_list.add("tools", "woodworking", "diy")
+p.tag_list.add(TagType::TOOLS, TagType::DIY)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -95,7 +95,7 @@ Think Risk, but with mini objectives and superpowers. A big part of the game is 
 """
 p.url = "http://amzn.to/1kzamoR"
 p.cost = 28
-p.tag_list.add("toys", "boardgames")
+p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
 p.save
 p.photos.find_or_create_by(
