@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   def latest
     prepare_feed()
 
+    @guides = [1]
+
     respond_to do |format|
       format.html{render action: 'feed'}
       format.js{render action: 'feed'}

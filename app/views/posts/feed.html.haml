@@ -2,9 +2,13 @@
 -meta_keywords(@meta_keywords)
 -meta_description(@meta_description)
 
+-if @guides and @guides.count > 0
+  #guide_feed
+    #guide_feed_list
+
 =render :partial=>'tag_cloud', :locals=>{:tags=>@all_tags, :selected=>@selected_tags}
 
--if @posts.count > 0
+-if @posts and @posts.count > 0
   #post_feed
     #post_feed_list
       =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags}
