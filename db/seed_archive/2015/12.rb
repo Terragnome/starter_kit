@@ -656,3 +656,51 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2015-12-31"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Imbibe!'
+)
+p.summary = """
+Cocktail writer and historian David Wondrich presents the colorful, little-known history of classic American drinks--and the ultimate mixologist's guide--in this engaging homage to Jerry Thomas, father of the American bar.
+
+Wondrich reveals never-before-published details and stories about this larger-than-life nineteenth-century figure, along with definitive recipes for more than 100 punches, cocktails, sours, fizzes, toddies, slings, and other essential drinks, along with detailed historical and mixological notes.
+ 
+The first edition, published in 2007, won a James Beard Award. Now updated with newly discovered recipes and historical information, this new edition includes the origins of the first American drink, the Mint Julep (which Wondrich places before the American Revolution), and those of the Cocktail itself. It also provides more detail about 19th century spirits, many new and colorful anecdotes and details about Thomas's life, and a number of particularly notable, delicious, and influential cocktails not covered in the original edition, rounding out the picture of pre-Prohibition tippling.
+
+This colorful and good-humored volume is a must-read for anyone who appreciates the timeless appeal of a well-made drink-and the uniquely American history behind it.
+"""
+p.body = """
+A fun exploration of the development of the American cocktail and a fun reference for recipes and ideas.  Recommended for any aspiring mixologist.
+"""
+p.url = "http://amzn.to/1SoT779"
+p.cost = 13
+p.tag_list.add(TagType::GEAR, TagType::MIXOLOGY)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"imbibe.jpg"
+)
+p.posted_at = "2015-12-31"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Round Proofing Basket Banneton Brotform'
+)
+p.summary = """
+Rattan banneton is great for proofing your bread. These are also known as \"brotforms\" or \"proofing baskets\". These baskets are used both to provide the loaf with shape and to wick moisture from the crust. When dough is risen, turn it out onto a pan to bake. The loaf will sport a gorgeous pattern of floury rings circling the deep-golden crust. Measures approximately 8.5 inches in diameter at the top, 5.5 inches in diameter at the bottom. Height is about 3.25 to 3.5 inches
+"""
+p.body = """
+A proofing basket helps prevent the dough from spreading out by providing structure during the final rise.  Works as advertised, although you can always make your own proofing basket with a kitchen towel and a bowl.
+"""
+p.url = "http://amzn.to/1PA17iW"
+p.cost = 13
+p.tag_list.add(TagType::GEAR, TagType::BAKING, TagType::FOOD)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"brotform_proofing_basket.jpg"
+)
+p.posted_at = "2015-12-31"
+p.save
