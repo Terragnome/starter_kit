@@ -429,7 +429,7 @@ Nocking pliers are useful because they allow you to add and remove brass nocks f
 """
 p.url = "http://amzn.to/1YzFQIx"
 p.cost = 13
-p.tag_list.add(TagType::ARCHERY, TagType::GEAR)
+p.tag_list.add(TagType::ARCHERY, TagType::GEAR, TagType::TOOLS)
 p.active = true
 p.save
 p.photos.find_or_create_by(
@@ -608,5 +608,26 @@ p.photos.find_or_create_by(
   :name=>"cover",
   :internal_url=>"hero_with_thousand_faces.jpg"
 )
-p.posted_at = "2015-12-29"
+p.posted_at = "2015-12-31"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Carbon Express Bow Square'
+)
+p.summary = """
+The Pro Bow Square has two different bow string settings and a wide 3-1/2\" scale working area. Strong lightweight non-corrosive anodized aluminum. Inches on one side, metric on reverse.
+"""
+p.body = """
+Having a properly set brace height and nock point is essential for keeping your arrows from fishtailing (oscillating horizontally) and porpoising (oscillating vertically), which wastes energy and spoils your accuracy.  A bow square lets you set both of these precisely and is an essential piece of equipment for any archery.  There are many good bowsquares out there but I chose this one because it's made of metal so will be more resistant to breakage and it has rounded edges that prevent it from damaging your string.
+"""
+p.url = "http://amzn.to/1MJCXOA"
+p.cost = 11
+p.tag_list.add(TagType::GEAR, TagType::ARCHERY, TagType::TOOLS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"carbon_express_bow_square.jpg"
+)
+p.posted_at = "2015-12-31"
 p.save
