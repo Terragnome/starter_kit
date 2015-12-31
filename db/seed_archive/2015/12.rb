@@ -585,3 +585,28 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2015-12-29"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'The Hero with a Thousand Faces'
+)
+p.summary = """
+Since its release in 1949, The Hero with a Thousand Faces has influenced millions of readers by combining the insights of modern psychology with Joseph Campbell’s revolutionary understanding of comparative mythology. In these pages, Campbell outlines the Hero’s Journey, a universal motif of adventure and transformation that runs through virtually all of the world’s mythic traditions. He also explores the Cosmogonic Cycle, the mythic pattern of world creation and destruction.
+
+As part of the Joseph Campbell Foundation’s Collected Works of Joseph Campbell, this third edition features expanded illustrations, a comprehensive bibliography, and more accessible sidebars.
+
+As relevant today as when it was first published, The Hero with a Thousand Faces continues to find new audiences in fields ranging from religion and anthropology to literature and film studies. The book has also profoundly influenced creative artists—including authors, songwriters, game designers, and filmmakers—and continues to inspire all those interested in the inherent human need to tell stories.
+"""
+p.body = """
+Nerds and Star Wars afficionados will remember this as one of the books that helped George Lucas write the story for the original trilogy, but Campbell's breakdown of the hero's journey as told through the myths of dozens of different cultures is an elegant distillation of those things we find most admirable in ourselves.  Highly recommended.
+"""
+p.url = "http://amzn.to/1OnFtj7"
+p.cost = 13
+p.tag_list.add(TagType::BOOKS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"hero_with_thousand_faces.jpg"
+)
+p.posted_at = "2015-12-29"
+p.save
