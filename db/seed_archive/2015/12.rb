@@ -631,3 +631,28 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2015-12-31"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>'Froz Ice Ball Maker'
+)
+p.summary = """
+Primarily designed to let whisky drinkers drink in style, with spheres that instantly chill but melt very, very slowly, not watering down the whisky. These molds can also double up as a super-fun accessory to make flavored ice for kids, kids who will go bonkers for a spherical shape of their favorite flavored ice treats.
+
+FROZ Ice Mold makes sphere ice that have smaller surface area relative to its mass and melts more slowly, chilling your drink evenly without diluting it - making it much preferred than traditional ice cubes.
+
+If you love hosting cocktail parties or enjoy a drink now and then as a relaxing bookend to your day, you'll want to try this new trend at home. Order more than one so you won't run out of ice in any of your favorite gatherings.
+"""
+p.body = """
+Adding a small amount of water in whiskey changes the flavor profile beyond dillution by sequestering certain flavors and creating others, so there really is no correct way to drink it.  Ice balls allow you to cool your whiskey while slowing the rate of dilution.  Froz Ice Ball Makers use silicon molds which make removing the ice balls easy.  The square edges of the mold also make it possible to stack multiple trays on top of each for large batches.  I enjoy freezing things like a slice of lemon or a few mint leaves and throwing the ice spheres into other pitchers since it's a pretty way to class up a beverage for parties.
+"""
+p.url = "http://amzn.to/1SoSSsT"
+p.cost = 9
+p.tag_list.add(TagType::GEAR, TagType::MIXOLOGY)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"froz_ice_ball_maker.jpg"
+)
+p.posted_at = "2015-12-31"
+p.save
