@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
   before_validation :set_user
   before_validation :set_posted_at
   before_validation :set_slug
+  before_validation :set_url
 
   scope :active, -> { where(active:true).order(:posted_at=>:desc, :id=>:desc) }
   
@@ -127,6 +128,10 @@ class Post < ActiveRecord::Base
   end
 
   private
+
+  def set_url
+    self.url = "http://www.amazon.com/dp/#{self.asin}/?tag=#{Affiliate.AMAZON_ID}" if !self.asin.blank?
+  end
 
   def set_user
     self.user = User.first if not self.user

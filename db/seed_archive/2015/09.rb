@@ -11,7 +11,7 @@ By twisiting the knob, the tines of the whisk lay flat which makes it easy to st
 
 The tradeoff is that the whisk is slightly heaver, but overall the Twist-2-in-1 Silicone Whisk is an excellent tool or gift for anyone pursuing cooking or baking as a hobby.
 """
-p.url = "http://amzn.to/1PsXIn2"
+p.asin = "B006BSBP04"
 p.cost = 10
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true
@@ -36,7 +36,7 @@ I always feel a bit guilty about using parchment paper once and throwing it away
 
 Highly recommended for anyone who loves to bake, with the caveat that silicone is usually only rated to withstand temperatures of 425F, so don't try to use this for super high temperature recipes like pizzas.
 """
-p.url = "http://amzn.to/1Moykhs"
+p.asin = "B00Y5VO6HS"
 p.cost = 20
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::BAKING)
 p.active = true
@@ -55,7 +55,7 @@ p.summary = """Add a measure of consistency to your kitchen with the Pyrex 2-Cup
 p.body = """
 Pyrex liquid measuring cups are microwave and dishwasher safe and make measuring and pouring out liquids a lot more convenient because they have a spout and clearly maked lines.  I will sometimes use the same measuring cup to do all the liquids for a recipe like a cake since you can use the lines to pour a half cup of honey onto a cup of oil.  I've used the same measuring cup for years without any signs of wear so they're very durable.
 """
-p.url = "http://amzn.to/1Moympu"
+p.asin = "B0002ITQHS"
 p.cost = 8
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true
@@ -74,8 +74,8 @@ p.summary = """When a man with a pistol meets a man with a Winchester, you might
 p.body = """
 Bang! is like Magic the Gathering combined with Mafia.  It's a great game because the randomization of hidden roles and character cards make it unique everytime.  It's best suited for around 4 players, and is easy enough to learn that people usually get the hang of it by the end of the first game.  Good for casual boardgame players.
 """
-p.url = "http://amzn.to/1kzaDrY"
-p.cost = 17
+p.asin = "B001Q4XWB8"
+p.cost = 23
 p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
 p.save
@@ -93,7 +93,7 @@ p.summary = """Bohning's Tex-Tite Bow String Wax is a natural based wax designed
 p.body = """
 These days pretty much all bowstrings are made of synthetic fibers like Dacron or FastFlight.  In order to protect the string from abrasive substances like dirt and dust and to extend the lifetime of the browstring, you should make sure to wax your bow string regularly.  Bohning Tex-Tite is a great buy because it is a soft wax, so when you're working it into your bowstring it doesn't require and much rubbing to get it into the fibers, which helps with string stretching.  There is also a silicone version that comes in green, although I haven't tried it personally yet.
 """
-p.url = "http://amzn.to/1OlXLTC"
+p.asin = "B0000AVE4T"
 p.cost = 4
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true

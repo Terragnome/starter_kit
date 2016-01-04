@@ -5,7 +5,7 @@ p.summary = """Pack light and take in bright views through the fully multi-coate
 p.body = """
 You can always have a quality optic close at hand with the Solo Monocular. This compact, easy-to-carry monocular delivers quality viewing for outdoor enthusiasts who wish to bring nature a bit closer. Fully multi-coated glass surfaces deliver bright images in a compact, lightweight, easy to handle unit. Waterproof, fogproof and shockproof. It also has a BAK-4 prisms, which have a higher refractive index than BAK-7, and multi-coated glare resistant lenses. From bowhunters to backpackers the Solo makes a great addition to any gear list.
 """
-p.url = "http://amzn.to/1S3KtZ5"
+p.asin = "B002UQ71HC"
 p.cost = 52
 p.tag_list.add(TagType::GEAR, TagType::BACKPACKING, TagType::CAMPING, TagType::ARCHERY, TagType::OUTDOORS)
 p.active = true
@@ -32,7 +32,7 @@ Archery uses a specific set of back muscles, and it's common for beginners to at
 
 The type of bow you choose (right or left) is determined by your dominant eye rather than your dominant hand. To determine your eye dominance, pick something far away and use both of your hands to form a ring around it. Slowly bring your hands toward your face. Which ever eye you bring your hands toward is your dominant eye.
 """
-p.url = "http://amzn.to/1MCQO9u"
+p.asin = "B006R8SWUO"
 p.cost = 140
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
@@ -57,8 +57,8 @@ In terms of drawbacks, carbon arrows can develop small cracks if strke hard obje
 
 The 3555 arrows are suited for bows with draw weights from 35#-55#. 5575 arrows are suited for bows with draw weights from #55-#75, but you should use Gold Tip's spine weight chart to find the right shafts for you.
 """
-p.url = "http://amzn.to/1S3JfNt"
-p.cost = 140
+p.asin = "B00SE0AA7G"
+p.cost = 130
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
@@ -146,7 +146,7 @@ Tom Standage's \"A History of the World in 6 Glasses\" is a compelling guide thr
 
 Standage covers everything from the development of beer as a mystic beverage used in religious ceremonies, through the cultivation of wine as a status symbol in ancient Greece, coffee as the drink of the Enlightenment, and the consumption of purified water in the modern age.the role of tea as a driver for British colonialism, and the spirits that powered the settling of the new world. I found this to be a fascinating read that enriched the ritual of a morning coffee or a beer after work that many of us now take for granted.
 """
-p.url = "http://amzn.to/1MCR0FS"
+p.asin = "0802715524"
 p.cost = 25
 p.tag_list.add(TagType::BOOKS, TagType::FOOD)
 p.active = true
@@ -167,7 +167,7 @@ The riveting first-person narrative of a young man who grows to be the most noto
 p.body = """
 To be honest I haven't read this book yet, but I've had it recommended to me by four separate people so it's on my list.
 """
-p.url = "http://amzn.to/1MCQV5c"
+p.asin = "0756404746"
 p.cost = 8
 p.tag_list.add(TagType::BOOKS)
 p.active = true
@@ -188,7 +188,7 @@ This beautifully crafted folding knife is an extremely handsome accessory, wheth
 p.body = """
 This knife is not robust enough for an outdoorsman, and at this price point not one that I'd rather use my Opinel for rough tasks where it might get damaged. It's beautfully crafted though, and fits easily into a suit pocket for the gentleman on the go.
 """
-p.url = "http://amzn.to/1MCQW9g"
+p.asin = "B000FNC5RS"
 p.cost = 99
 p.tag_list.add(TagType::EDC, TagType::KNIVES, TagType::GEAR)
 p.active = true
@@ -209,8 +209,8 @@ Easton Hip Quiver keeps extra arrows close - at - hand. Always have an arrow rea
 p.body = """
 My buddy has used this quiver for the last two years, and I've been impressed by the quality of construction. The main compartment is subdivided into smaller pockets, which lets him organize his arrows by different tips (blunts vs field) which is extremely useful.
 """
-p.url = "http://amzn.to/1MCQU19"
-p.cost = 64
+p.asin = "B007JTPPEG"
+p.cost = 75
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
@@ -228,8 +228,8 @@ p.summary = """
 Known as a pristine coffeemaker, Chemex employs all of the chemically correct methods for brewing. Its hourglass shaped flask is made entirely of glass, a chemically inert material that does not absorb odors or chemical residues. The Chemex Glass Coffee Maker has no moving parts and will work forever, unless it is dropped or in some other way demolished.
 """
 p.body = """Fancy and hipster coffee drinkers in my office swear by the Chemex. I needed someone to teach me how to use it, but once you go through it it's a pretty simple process and you can use whatever filters you want on it. Recommended as an alternative to a french press for people who only need 1-2 cups at a time. Just don't confuse it with a vase"""
-p.url = "http://amzn.to/1MCQTKz"
-p.cost = 45
+p.asin = "B0000YWF5E"
+p.cost = 76
 p.tag_list.add(TagType::TOOLS, TagType::FOOD)
 p.active = true
 p.save
@@ -253,8 +253,8 @@ They have a black zinc coating which resists rust, and a shape that makes them e
 
 It's important that your arrows and tips match the spine of your bow, so Three Rivers Archery offers a convenient <a href='http://www.3riversarchery.com/dynamic-spine-arrow-calculator-from-3rivers-archery.html'>dynamic spine calculator</a> which you can use to find the right arrows for you.
 """
-p.url = "http://amzn.to/1MCQVly"
-p.cost = 7
+p.asin = "B002QG09NO"
+p.cost = 10
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
@@ -276,8 +276,8 @@ Yurbuds Inspire 100 In-Ear Headphones are excellent for runners because the head
 
 The silicon for the tips will eventually loosed a bit with use, which happened for me after about 2-3 years of daily use, but Yurbuds also has an excellent replacement program for the ear cups and after losing one of the earcups (my cord got snagged against a bollard and the earphone were pulled out of my head) I was able to buy another pair for about $2. Highly recommended.
 """
-p.url = "http://amzn.to/1MCQTdm"
-p.cost = 15
+p.asin = "B00NJ1LJT8"
+p.cost = 27
 p.tag_list.add(TagType::GEAR, TagType::RUNNING, TagType::MUSIC)
 p.active = true
 p.save
@@ -299,8 +299,8 @@ The Lifestraw Water Filter is a compact water purification system capable of rem
 
 These qualities earned Lifestraw a Time Magazine \"Invention of the Year\" award and the perfect gift or purchase for ultralight backpackers, travelers, boy scouts, hunters, and outdoor enthusiasts all over the world. I like to use it by filing up my regular water bottle then drinking out of it with the LifeStraw, although they also sell a water bottle with a filter integrated into the mouth piece.
 """
-p.url = "http://amzn.to/1S3JV5p"
-p.cost = 18
+p.asin = "B006QF3TW4"
+p.cost = 19
 p.tag_list.add(TagType::GEAR, TagType::BACKPACKING, TagType::HIKING, TagType::OUTDOORS)
 p.active = true
 p.save
@@ -320,7 +320,7 @@ Originally developed for the Swedish Department of Defense, our legendary Swedis
 p.body = """
 Swedish Fireseel is capable of generating a 3,000° C spark and starting fires in difficult conditions like damp and humid environments. good for over 12,000 strikes, and has been approved by the International Survival Instructors Association. This makes it a great gift or purchase for anyone interested in outdoor hobbies or for people who just like playing with fire. My buddies and I like to use it to start wood fires in our firepit.
 """
-p.url = "http://amzn.to/1PUBSZQ"
+p.asin = "B00440VIYY"
 p.cost = 13
 p.tag_list.add(TagType::GEAR, TagType::BACKPACKING, TagType::HIKING, TagType::OUTDOORS)
 p.active = true
@@ -343,7 +343,7 @@ Possessing no supernatural powers, Batman is the most realistic of all the super
 p.body = """
 Becoming Batman is really a physiology book discuised as a comic book.  While it gues the extra mile of citing comic books for Batman's various feats of strength, this is a book geared more toward biology nerds and covers things like the mechanism by which a martial artist's bones become harder and the effects of late night exercise on performance.  A thoughtful exploration of a fun premise and a good gift for Batman, Biology, or comic fans.
 """
-p.url = "http://amzn.to/1OlYXq7"
+p.asin = "0801890632"
 p.cost = 17
 p.tag_list.add(TagType::BOOKS, TagType::FITNESS, TagType::COMICS, TagType::SCIENCE)
 p.active = true
@@ -364,7 +364,7 @@ The Rhino XT is an open hook, single sear release designed for the serious bow h
 p.body = """
 I chose the Scott Rhino XT Release since I was looking for a hook-style release with durable construction and a heavier trigger.  The Rhino is extremely customizable and comes with different springs and hooks that you can attach to customize the feel.  I use the velcro version and am happy with it, but others have suggested the buckle version is better for hunting because it is quieter and the use of holes makes the sizing consistent.  Releases are usually used with compound bows since the short axle to axle length (as short as 30\" whereas even short recurve bows are rarely shorter than 58\") causes significant string pinch on your fingers which can affect the shot.  This release is heavy duty and feels like it will last forever.
 """
-p.url = "http://amzn.to/1YzBEZj"
+p.asin = "B0000AVDJF"
 p.cost = 79
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
@@ -385,8 +385,8 @@ The Armortech Hunting Sight was voted best buy winner, from Inside Archery Magaz
 p.body = """
 When choosing the sight for my hunting compound, the two most popular options were sights built by Spot Hogg and Armourtech.  While Spott Hogg sights are also excellent, I was impressed by the solid aluminum build quality of the Armortech.  I feels seriously ready to take on the wear and tear of a trek through the woods.  It has micro windage adjustments for 3 axes, as well as individual pin adjustments and is compatible with all standard rheostat lights, although a light is not included.  The fibers in the pins are fully enclosed, but there is a clear plastic window in the front that allows it to gather a lot of light.  In practice, I found the pins to be extremely bright and rarely needed the rheostat light to see the pins.  It also includes threading for adding on a lense if you find that you want additional magnification.  If you plan to mount the sight as far out as it will go, I found a 3/16\" peep to be perfect, whereas a 1/4\" peep is perfect for the second to furthest setting.  I plan to use the 1/4\" for hunting since the larger diameter will allow for more light in low light situations.  The level comes attached at the bottom of the sight, but it's removable so I moved it to the top of the sight so that it would be visible from inside the peep.  This sight works with both left and right handed bows and comes with instructions on how to attach it to either side.
 """
-p.url = "http://amzn.to/1QFQ5fz"
-p.cost = 169
+p.asin = "B001RN09DM"
+p.cost = 176
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
 p.save
@@ -406,7 +406,7 @@ Octane Deadlock Pro 5 - arrow Quiver stays light 'n' tight! The Deadlock Pro wei
 p.body = """
 I chose the Octane Deadlock Pro Bow Quiver because it offered most of the features and had a similar design to the TightSpot quiver but at a fraction of the cost.  The quiver is solidly constructed around two carbonfiber rods, and the hood contains high density foam with cutouts for 2, 3, and 4 blade broadhead designs.  Arrows are held in place with flexible metal ridges that are coated in rubber so can grip all types of shafts.  The arrows can be adjusted up, down, and towards the bow which helps tremendously with balance.  If a bow quiver is too far away from the riser, the weight and the torque can make it strenuous to keep the bow from canting.  With the Deadlock Pro, I was able to move it all the way down until it was practically touching my cable slide, which made my shooting more stable and comfortable even with the quiver on.  I was able to test this by moving the quiver to the farthest setting which made the bow feel much top heavier.  An extremely well designed quiver that looks and feels like a quality product.
 """
-p.url = "http://amzn.to/1QFRp1W"
+p.asin = "B007V8LNT6"
 p.cost = 90
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
@@ -427,7 +427,7 @@ The Universal Nocking Plier opens nock sets without damage, two hole size for no
 p.body = """
 Nocking pliers are useful because they allow you to add and remove brass nocks from bowstrings without damaging them.  I originally bought a cheaper set of pliers that could only tighten them, but it was kind of annoying not being able to reuse a nock if I needed to replace the string.  This one also includes tools for tightening D-loops.  A useful tool to have in your archery pack.
 """
-p.url = "http://amzn.to/1YzFQIx"
+p.asin = "B005G0FE78"
 p.cost = 13
 p.tag_list.add(TagType::ARCHERY, TagType::GEAR, TagType::TOOLS)
 p.active = true
@@ -448,8 +448,8 @@ J.A Henckels Classic knives are made of high quality German carbon no-stain stee
 p.body = """
 Henckels is one of Germany's oldest knife manufacturers and has been in operation since 1731.  The Henckels Classic series is a great option for aspiring home chefs who are looking for the advantages of forged knives without the high costs associated with other premium brands.  Forged knives have the benefits of being stiffer, heavier, and harder than stamped blades which helps with helps knives hold their edges longer and reduces fatigue while cutting.
 """
-p.url = "http://amzn.to/1OVBuq2"
-p.cost = 34
+p.asin = "B00004RFMT"
+p.cost = 55
 p.tag_list.add(TagType::GEAR, TagType::KNIVES, TagType::FOOD)
 p.active = true
 p.save
@@ -469,7 +469,7 @@ Perform all of your small cutting tasks with this Wustof Classic paring knife. M
 p.body = """
 Aside from your chef's knife, your paring knife will probably be your most frequently used knife so it's worth it to pay extra for quality, and Wusthof is one of best.  Treat yo\'self!
 """
-p.url = "http://amzn.to/1YNkr4a"
+p.asin = "B00005MEGH"
 p.cost = 40
 p.tag_list.add(TagType::GEAR, TagType::KNIVES, TagType::FOOD)
 p.active = true
@@ -490,7 +490,7 @@ Replace all your measuring tools with the handy dandy Wonder Cup! This wonder cu
 p.body = """
 The perfect tool for the obsessive compulsive chef.  If you've ever tried to measure exactly 1 cup of honey, you'll see the value in a tool that lets you push it out.  An elegant measuring tool for a more civilized age.
 """
-p.url = "http://amzn.to/1krIQJE"
+p.asin = "B001D6DDPE"
 p.cost = 9
 p.tag_list.add(TagType::GEAR, TagType::COOKING, TagType::BAKING, TagType::FOOD)
 p.active = true
@@ -511,7 +511,7 @@ Muzzy Broadheads - 6 Pack are screw in broadheads. Muzzy Broadheads have become 
 p.body = """
 Muzzys are cheap, have the reliability of fixed blades, and come razor-sharp straight from the factory.  I've shot these into wood and had them survive with only minimal damage.  Worst case the tip and blades are all replaceable.
 """
-p.url = "http://amzn.to/1ZACffO"
+p.asin = "B000HX2G0C"
 p.cost = 39
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY, TagType::HUNTING)
 p.active = true
@@ -532,7 +532,7 @@ Bee Stinger Pro Hunter Maxx 10\" Bow Stabilizer. Smooth under pressure. Bad vibe
 p.body = """
 There's a great series of articles by <a href='http://www.fieldandstream.com/blogs/whitetail-365/2013/07/does-short-stabilizer-really-add-stability'>Field & Stream</a> which test common myths for compound bows, and their conclusion was for distances shorter than 40 yards an 8\" stabilizer made no difference but at 60 yards a 10\" decreased the size of their groups by 2\".  The Bee Stinger Pro Hunter Maxx is a top of the line stabilizer with 3 customizable weights and a perfect gift for the bowhunter in your life.
 """
-p.url = "http://amzn.to/1SlJWVd"
+p.asin = "B00J8POGC6"
 p.cost = 76
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY, TagType::HUNTING)
 p.active = true
@@ -553,7 +553,7 @@ For the outdoorsmen who prefer the absolute solid feel of a fixed blade, Buck's 
 p.body = """
 The Buck 119 Uses 420HC steel which is an excellent material which resists rust holds a decent edge yet can still be sharpened at home with a common sharpening stone.  Had a fixed blade with a full tang and is strong enough to be used for batoning.  My blade of choice for the outdoors.
 """
-p.url = "http://amzn.to/1SlJVk5"
+p.asin = "B000EHWWJQ"
 p.cost = 50
 p.tag_list.add(TagType::GEAR, TagType::KNIVES, TagType::HUNTING, TagType::OUTDOORS)
 p.active = true
@@ -574,7 +574,7 @@ The Anova Precision Cooker makes it easy to get professional-level cooking resul
 p.body = """
 Sous vide allows for food to stay tender and moist by cooking it at low temperatures for long periods of time.  This is done by immmersing the food in liquid that has its temperature carefully controlled and is constantly circulated.  Wheras professional units cost thousands of dollars, the Anova Precision Cooker attaches to your existing pots and makes sous vide practical at home.  Highly recommended for home chefs.
 """
-p.url = "http://amzn.to/1QYQ3zj"
+p.asin = "B00UKPBXM4"
 p.cost = 179
 p.tag_list.add(TagType::GEAR, TagType::COOKING, TagType::FOOD)
 p.active = true
@@ -599,7 +599,7 @@ As relevant today as when it was first published, The Hero with a Thousand Faces
 p.body = """
 Nerds and Star Wars afficionados will remember this as one of the books that helped George Lucas write the story for the original trilogy, but Campbell's breakdown of the hero's journey as told through the myths of dozens of different cultures is an elegant distillation of those things we find most admirable in ourselves.  Highly recommended.
 """
-p.url = "http://amzn.to/1OnFtj7"
+p.asin = "1577315936"
 p.cost = 13
 p.tag_list.add(TagType::BOOKS)
 p.active = true
@@ -620,7 +620,7 @@ The Pro Bow Square has two different bow string settings and a wide 3-1/2\" scal
 p.body = """
 Having a properly set brace height and nock point is essential for keeping your arrows from fishtailing (oscillating horizontally) and porpoising (oscillating vertically), which wastes energy and spoils your accuracy.  A bow square lets you set both of these precisely and is an essential piece of equipment for any archery.  There are many good bowsquares out there but I chose this one because it's made of metal so will be more resistant to breakage and it has rounded edges that prevent it from damaging your string.
 """
-p.url = "http://amzn.to/1MJCXOA"
+p.asin = "B002KE89MU"
 p.cost = 11
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY, TagType::TOOLS)
 p.active = true
@@ -645,7 +645,7 @@ If you love hosting cocktail parties or enjoy a drink now and then as a relaxing
 p.body = """
 Adding a small amount of water in whiskey changes the flavor profile beyond dillution by sequestering certain flavors and creating others, so there really is no correct way to drink it.  Ice balls allow you to cool your whiskey while slowing the rate of dilution.  Froz Ice Ball Makers use silicon molds which make removing the ice balls easy.  The square edges of the mold also make it possible to stack multiple trays on top of each for large batches.  I enjoy freezing things like a slice of lemon or a few mint leaves and throwing the ice spheres into other pitchers since it's a pretty way to class up a beverage for parties.
 """
-p.url = "http://amzn.to/1SoSSsT"
+p.asin = "B00H8W54EK"
 p.cost = 9
 p.tag_list.add(TagType::GEAR, TagType::MIXOLOGY)
 p.active = true
@@ -672,7 +672,7 @@ This colorful and good-humored volume is a must-read for anyone who appreciates 
 p.body = """
 A fun exploration of the development of the American cocktail and a fun reference for recipes and ideas.  Recommended for any aspiring mixologist.
 """
-p.url = "http://amzn.to/1SoT779"
+p.asin = "0399172610"
 p.cost = 13
 p.tag_list.add(TagType::GEAR, TagType::MIXOLOGY)
 p.active = true
@@ -693,7 +693,7 @@ Rattan banneton is great for proofing your bread. These are also known as \"brot
 p.body = """
 A proofing basket helps prevent the dough from spreading out by providing structure during the final rise.  Works as advertised, although you can always make your own proofing basket with a kitchen towel and a bowl.
 """
-p.url = "http://amzn.to/1PA17iW"
+p.asin = "B006WBMT0K"
 p.cost = 13
 p.tag_list.add(TagType::GEAR, TagType::BAKING, TagType::FOOD)
 p.active = true

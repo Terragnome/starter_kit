@@ -7,7 +7,7 @@ p.summary = """
 p.body = """
 I primary use Gateway feathers because they're of good quality.  I'm sure there are other brands that are just as good, but Gateway has one of the lower price points.  When choosing feathers, make sure to get right or left wing feathers to match your fletching jig.  Either type will work individually, but all the feathers on an arrow must be from the same wing and must match your clamps.  Right wing feathers will rotate the arrow clockwise, and left wing feathers counterclockwise but this happens after the arrow has already left your riser so has minimal impact on the flight.
 """
-p.url = "http://amzn.to/1S3Lqk4"
+p.asin = "B001NLLKJ0"
 p.cost = 38
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
@@ -30,7 +30,7 @@ Isolated by Mexico's deadly Copper Canyons, the blissful Tarahumara Indians have
 p.body = """
 Since reading this book I've run well over 3,000 miles running almost entirely in Vibram Fivefingers and other neutral/barefoot shoes.  The prose is really accessible and it's told kind of like an explorer rediscovering an ancient mystery.  Prior to reading this book the furthest I'd ever run was four miles.  Afterwards I was regularly knocking out 12 mile runs every weekend.
 """
-p.url = "http://amzn.to/1S3LiRJ"
+p.asin = "0307279189"
 p.cost = 11
 p.tag_list.add(TagType::BOOKS, TagType::RUNNING, TagType::FITNESS)
 p.active = true
@@ -51,7 +51,7 @@ Thomas Keller shares family-style recipes that you can make any or every day. In
 p.body = """
 While I love looking at pictures in the French Laundry cookbook, the complexity of the recipes means that I'm really not likely to make them in everyday life.  Thomas Keller's Ad Hoc cookbook is different because even though it's his more casual dining establishment, the recipes are great enough that I'll use them for nicer dinners.  Try the Caramellized Sea Scallops, they're a personal favorite.
 """
-p.url = "http://amzn.to/1kzaox5"
+p.asin = "1579653774"
 p.cost = 11
 p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::COOKING)
 p.active = true
@@ -72,8 +72,8 @@ The Kreg Jig is the perfect choice for DIY'ers and anyone new to pocket-screw jo
 p.body = """
 The Kreg Jig K4 Pocket Jig is one of my favorite woodworking tools since it allows you to make professional looking furniture without visible screws.  It does so by putting the holes at preset angles and hiding them on the underside of the board.  With it you can do things like drill multiple boards together to form the surface of a table or attach pieces of wood at 90 degree angles for tables and bookshelves.  This is an amazing tool you'll be amazed you ever went without.  Kreg also sells proprietary screws for use with the jig and wooden stubs to put into the holes to completely disguise them, but it'll also possible to get away without using these because regular wood screws work and the holes are on the underside so will never be seen.
 """
-p.url = "http://amzn.to/1MoxSQ4"
-p.cost = 11
+p.asin = "B00ZVE8Q2Y"
+p.cost = 130
 p.tag_list.add(TagType::TOOLS, TagType::DIY)
 p.active = true
 p.save
@@ -93,7 +93,7 @@ Small World is a zany, light-hearted civilization game in which 2-5 players vie 
 p.body = """
 Think Risk, but with mini objectives and superpowers. A big part of the game is in picking the right combination of creature and powers. Flying Wizards? Dipomatic Ghouls? It's pretty simple once you've learned the rules, but the number of pieces and tokens can be overwhelming for a beginner. The easiest way to learn the game is by playing. One of my favorite boardgames.  It's pretty fun and feels really strategic when played with two people, but it's really best suited for four since it requires convincing your opponents that you're not the greatest threat.
 """
-p.url = "http://amzn.to/1kzamoR"
+p.asin = "B0024H7OF6"
 p.cost = 28
 p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true

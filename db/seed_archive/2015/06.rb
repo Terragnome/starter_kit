@@ -5,7 +5,7 @@ p.summary = '''Opinel knives are the traditional French picnic knives made in Fr
 p.body = '''
 I use an Opinel as my everday carry knife because I wanted a knife with a beautiful classic design but that could be easily replaced if I lost it. The high carbon steel blade can be sharpened easily with a whetstone to a razor edge, although it must be treated to avoid rust. One option is to oil it, but I chose to use vinegar to form an black oxidized coat instead and have never had any problems.  And it floats!  There\'s enough wood in the handle that you won\'t lose it if you drop it in a lake!
 '''
-p.url = "http://amzn.to/1PsYznQ"
+p.asin = "B002SCUO04"
 p.cost = 13
 p.tag_list.add(TagType::GEAR, TagType::EDC, TagType::KNIVES)
 p.active = true
@@ -30,7 +30,7 @@ The Martin Mamba is a 58" recurve bow made of Eastern Hard Maple core and accent
 
 I chose the Martin Mamba as my first recurve because it was a handcrafted American bow with a storied history. It\'s a work of art that I love looking at on my bow rack even when I\'m not at the range. For those just getting into archery as a hobby, the most important thing to remember is never to draw your bow back and release it without an arrow (dry fire). You should also never prop it up vertically, never store it strung, and never leave it in a hot car or in a damp place as all of these things can damage the bow.
 '''
-p.url = "http://amzn.to/1kzbkl9"
+p.asin = "B003WHHNE4"
 p.cost = 559
 p.tag_list.add(TagType::GEAR, TagType::ARCHERY)
 p.active = true
@@ -53,7 +53,7 @@ The winner is the person who is able to introduce all their story elements and s
 
 I played this in a group of four and found that to be a good group size.
 """
-p.url = "http://amzn.to/1kzbgSm"
+p.asin = "1589781317"
 p.cost = 20
 p.tag_list.add(TagType::TOYS, TagType::BOARDGAMES)
 p.active = true
@@ -76,7 +76,7 @@ The Basic Hearth Bread is an great recipe for beginners while the Proscuitto Rin
 
 This was the book that taught me that kneading the dough is what produces the protein gluten, punching down the dough distributes air bubbles in the crumb, and that professional bakers use scales because they are more precise that measuring cups which can be inprecise if the flour is tightly packed. I trace much of love of baking back to this book and highly recommended it for anyone interested in baking bread as a hobby.
 """
-p.url = "http://amzn.to/1PsYpgf"
+p.asin = "0393057941"
 p.cost = 22
 p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::BAKING)
 p.active = true

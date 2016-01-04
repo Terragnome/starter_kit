@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151223023338) do
+ActiveRecord::Schema.define(version: 20160103233031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20151223023338) do
     t.string   "slug"
     t.datetime "updated_at"
     t.text     "summary"
+    t.string   "asin"
   end
 
   add_index "posts", ["active"], name: "index_posts_on_active", using: :btree

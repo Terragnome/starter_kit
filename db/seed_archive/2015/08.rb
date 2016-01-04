@@ -9,8 +9,8 @@ Its pear shaped design is based on the nosing copitas used in whiskey laboratori
 
 While the snifter is a popular vessel, the curves shape of the Glencairn Whiskey Tasting Glass concentrates the aroma of the whiskey while minimizing evaporation, and it's fun to have a special glass to use when cracking open a Glenfarclas 25 or Taketsuru 21.
 """
-p.url = "http://amzn.to/1PsXX1z"
-p.cost = 17
+p.asin = "B003TMCNI8"
+p.cost = 12
 p.tag_list.add(TagType::GEAR, TagType::MIXOLOGY)
 p.active = true
 p.save
@@ -32,7 +32,7 @@ Cast iron is the original non-stick surface since its high specific heat allows 
 
 Cast iron does rust if left in contact with water, but can be cleaned by scrubbing down with salt and wiping clean with oil.
 """
-p.url = "http://amzn.to/1kzaUes"
+p.asin = "B00008GKDG"
 p.cost = 33
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING)
 p.active = true
@@ -53,7 +53,7 @@ Want to impress the love of your life? Try grating an orange and 2-3 lemons wort
 
 The Microplane is solidly build with a rubber handle and plastic sheath that prevents the tines from getting caught. Since receiving one for Christmas a few years back this has been one of my favorite tools for adding some zest to everyday dishes.
 """
-p.url = "http://amzn.to/1kzaQv8"
+p.asin = "B00004S7V8"
 p.cost = 11
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING)
 p.active = true
@@ -72,8 +72,8 @@ p.summary = """Four diseases have broken out in the world and it is up to a team
 p.body = """
 Pandemic is a great alternative for traditional boardgames since it's cooperative.  Everyone is on the same team trying to prevent the spread of global disease and each role is different and important, so it really forces some fun strategization.  Great for game nights when you want to want to stay friends with the people you play with (unlike Settlers of Catan).
 """
-p.url = "http://amzn.to/1kzaPY8"
-p.cost = 24
+p.asin = "B00A2HD40E"
+p.cost = 26
 p.tag_list.add(TagType::BOARDGAMES, TagType::TOYS)
 p.active = true
 p.save
@@ -100,7 +100,7 @@ Flour, and salt in particular can be difficult to measure because how well it's 
 
 While there are scales with more features or more impressive designs, the EatSmart Precision Pro Digital Kitchen Scale met all my needs at a compact size and an affordable price.
 """
-p.url = "http://amzn.to/1PsXKv6"
+p.asin = "B001N07KUE"
 p.cost = 15
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true

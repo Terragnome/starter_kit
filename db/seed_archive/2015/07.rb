@@ -9,7 +9,7 @@ Alton's writing style is both informative and entertaining. He explains the chem
 
 \"I'm Just Here for the Food\" is a worthy addition the the library for cooks of all levels and the Broiled, Butterflied Chicken is still one of my favorite go to recipes.
 """
-p.url = "http://amzn.to/1S3N2un"
+p.asin = "158479559X"
 p.cost = 26
 p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::COOKING)
 p.active = true
@@ -30,7 +30,7 @@ p.body = """
 
 Preparing delicious recipes without meat, whether for health, preference, or ideology, is an illuminating challenge for anyone pursuing cooking as a hobby. A nice ribeye or duck breast practically cooks itself, so I found avoiding meat to be a really meaningful and interesting constraint.
 """
-p.url = "http://amzn.to/1kzbbhq"
+p.asin = "1607746212"
 p.cost = 20
 p.tag_list.add(TagType::BOOKS, TagType::FOOD, TagType::COOKING)
 p.active = true
@@ -53,7 +53,7 @@ Knives are an essential tool for any chef, and dull knives can be a major cause 
 
 While stamped steel knife blocks can be more affordable for those on a budget, a chef's knife, paring knife, and bread knife are all you really need to get started in your home kitchen. With proper care, a Shun chef's knife is an investment that you'll be able to use for the rest of your life.
 """
-p.url = "http://amzn.to/1kzb99p"
+p.asin = "B0000Y7KNQ"
 p.cost = 136
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::KNIVES)
 p.active = true
@@ -74,7 +74,7 @@ KitchenAid is an industry leader in kitchen appliances, and the KitchenAid 5 Qua
 
 While the price may intially seem daunting, I found the solid build quality and excellent reputation to be worth the investment. It's possible to get by without a stand mixer, but if it's within your budget having a KitchenAid 5 Quart Stand Mixer simplifies a lot of routine tasks. Your back and your forearms will thank you.
 """
-p.url = "http://amzn.to/1PsYalk"
+p.asin = "B00005UP2P"
 p.cost = 299
 p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::COOKING, TagType::BAKING)
 p.active = true
@@ -95,7 +95,7 @@ The Lego Star Wars Ewok Village combines one of the most iconic toys in the worl
 
 At 1,990 pieces this is a huge set that towers at over 13\" high, and the organic shapes make this set a joy to build. Nets and traps allow you to act out some of your favorite scenes from d Episode VI. I found this to be an incredibly fun set to build. Highly recommended for any Lego fan.
 """
-p.url = "http://amzn.to/1PsXY5q"
+p.asin = "B00F15OA5A"
 p.cost = 250
 p.tag_list.add(TagType::LEGO, TagType::TOYS)
 p.active = true
