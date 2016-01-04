@@ -1,7 +1,9 @@
 p = Post.find_or_initialize_by(
   :title=>"Opinel No. 8",
 )
-p.summary = '''Opinel knives are the traditional French picnic knives made in France since 1890. Rich in history and utility these knives are still a part of everyday culture in France. They are easy to use and they have a safe design. Each knife is made of four components, so the user need not worry about breaking parts - more common to overly complex mechanisms. Knife consists of carbon steel blade, hardwood handle, rivet and a stainless steel locking collar that prevents the knife from accidentally opening or closing. These knives are not only effective and practical; they are also beautiful. Opinel knives have been displayed in Museums and, in 1985, they were ranked as one of the "100 most beautiful products in the world", by the Victoria and Albert Museum in London. Opinel - a simple, beautiful and effective design that has survived and thrived for well over a century. Stamped with the famous Opinel crowned hand logo. 4 1/4 " closed, 3 1/4" inch blade.'''
+p.summary = '''
+Opinel knives are the traditional French picnic knives made in France since 1890. Rich in history and utility these knives are still a part of everyday culture in France. They are easy to use and they have a safe design. Each knife is made of four components, so the user need not worry about breaking parts - more common to overly complex mechanisms. Knife consists of carbon steel blade, hardwood handle, rivet and a stainless steel locking collar that prevents the knife from accidentally opening or closing. These knives are not only effective and practical; they are also beautiful. Opinel knives have been displayed in Museums and, in 1985, they were ranked as one of the "100 most beautiful products in the world", by the Victoria and Albert Museum in London. Opinel - a simple, beautiful and effective design that has survived and thrived for well over a century. Stamped with the famous Opinel crowned hand logo. 4 1/4 " closed, 3 1/4" inch blade.
+'''
 p.body = '''
 I use an Opinel as my everday carry knife because I wanted a knife with a beautiful classic design but that could be easily replaced if I lost it. The high carbon steel blade can be sharpened easily with a whetstone to a razor edge, although it must be treated to avoid rust. One option is to oil it, but I chose to use vinegar to form an black oxidized coat instead and have never had any problems.  And it floats!  There\'s enough wood in the handle that you won\'t lose it if you drop it in a lake!
 '''
@@ -20,7 +22,9 @@ p.save
 p = Post.find_or_initialize_by(
   :title=>"Martin Mamba",
 )
-p.summary = '''The Mamba recurve from Martin Archery is a redesigned Martin Highspeed of old. Traditional Bowhunters have raved about this bow for years. The Mamba is a beautiful and powerful recurve that stores a great amount of energy for FAST shooting. Maneuverable and lightweight (1 lbs 14oz), the Mamba is easy to carry and fits in tight spots. Owner\'s manual and bow stringer included.'''
+p.summary = '''
+The Mamba recurve from Martin Archery is a redesigned Martin Highspeed of old. Traditional Bowhunters have raved about this bow for years. The Mamba is a beautiful and powerful recurve that stores a great amount of energy for FAST shooting. Maneuverable and lightweight (1 lbs 14oz), the Mamba is easy to carry and fits in tight spots. Owner\'s manual and bow stringer included.
+'''
 p.body = '''
 Martin Archery prides itself on building custom handmade bows, made one at a time, by the most experienced Bowyers in the world. Since 1938."
 
@@ -45,7 +49,9 @@ p.save
 p = Post.find_or_initialize_by(
   :title=>"Once Upon A Time",
 )
-p.summary = """Tell your own fantastic tales of brave heroes and daring adventure! Once Upon a Time is the award-winning storytelling card game that encourages creativity and collaborative play. One player is the Storyteller, and begins telling a story using the fairytale elements on her Story cards, guiding the plot toward her Ending Card. The other players use their own cards to interrupt her and become the new Storyteller. The winner is the first player to use all her Story Cards and play her Ending Card. The object of the game, though, isn't just to win, but to have fun telling a story together."""
+p.summary = """
+Tell your own fantastic tales of brave heroes and daring adventure! Once Upon a Time is the award-winning storytelling card game that encourages creativity and collaborative play. One player is the Storyteller, and begins telling a story using the fairytale elements on her Story cards, guiding the plot toward her Ending Card. The other players use their own cards to interrupt her and become the new Storyteller. The winner is the first player to use all her Story Cards and play her Ending Card. The object of the game, though, isn't just to win, but to have fun telling a story together.
+"""
 p.body = """
 Once Upon A Time is a cardgame in which players exercise their creativity and storytelling to craft the perfect fairy tale. Players take turns telling a story and playing special cards to take control of the narrative.
 
@@ -68,7 +74,9 @@ p.save
 p = Post.find_or_initialize_by(
   :title=>"The Bread Bible",
 )
-p.summary = """Rose Levy Beranbaum's The Cake Bible introduced readers to a newly illuminating baking-book approach--a precisely detailed yet accessible recipe format emphasizing baking science. The Bread Bible follows the same plan, offering 150 recipes, arranged by type, for a great variety of baked goods--from muffins, popovers, and English muffins to sandwich loaves, focaccia, rolls, hearth breads, rye bread, challah, and more, with a particularly vivid (and passionate) stop at sourdough loaves. Instruction is abetted by 32 pages of photos plus 300 step-by-step illustrations that depict, for example, bagel forming, in exact, imitable detail. In addition, an introductory section, \"The Ten Essential Steps of Making Bread,\" includes a particularly lucid discussion on the way yeast works plus an invaluable comparison of kneading methods. Like the book's final look at ingredients, these \"mini-texts\" provide information uncommon to most home bread books, rendered in simple language that allays fears of putting one's hand in the dough."""
+p.summary = """
+Rose Levy Beranbaum's The Cake Bible introduced readers to a newly illuminating baking-book approach--a precisely detailed yet accessible recipe format emphasizing baking science. The Bread Bible follows the same plan, offering 150 recipes, arranged by type, for a great variety of baked goods--from muffins, popovers, and English muffins to sandwich loaves, focaccia, rolls, hearth breads, rye bread, challah, and more, with a particularly vivid (and passionate) stop at sourdough loaves. Instruction is abetted by 32 pages of photos plus 300 step-by-step illustrations that depict, for example, bagel forming, in exact, imitable detail. In addition, an introductory section, \"The Ten Essential Steps of Making Bread,\" includes a particularly lucid discussion on the way yeast works plus an invaluable comparison of kneading methods. Like the book's final look at ingredients, these \"mini-texts\" provide information uncommon to most home bread books, rendered in simple language that allays fears of putting one's hand in the dough.
+"""
 p.body = """
 Rose Levy Beranbaum's \"The Bread Bible\" is an excellent resource for bakers of all levels and the 2003 winner of the Gourmand World Cookbook Awards in the Best Bread Book Category. Recipes are detailed and contain overviews of the chemistry and recipes often contain a few variants with descriptions of hwo they will influence the final product.
 

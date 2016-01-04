@@ -1,7 +1,9 @@
 p = Post.find_or_initialize_by(
   :title=>"Glencairn Whiskey Tasting Glass",
 )
-p.summary = """Savor whisky in glasses fit for royalty! After winning the 2006 Queen's Award for Innovation the Glencairn whisky glass has earned its place on the bar. Considered the 'official whisky glass' by the experts Glencairn offers aficionados of Scotch whisky a special vessel to appreciate its nuances. Comfortable in the hand it has a full bowl that tapers at the rim to enhance color body aroma taste and finish. Machine made from fine lead-free crystal by Glencairn Crystal in Europe. Dishwasher safe. Size: 4-1/2'H 6 oz."""
+p.summary = """
+Savor whisky in glasses fit for royalty! After winning the 2006 Queen's Award for Innovation the Glencairn whisky glass has earned its place on the bar. Considered the 'official whisky glass' by the experts Glencairn offers aficionados of Scotch whisky a special vessel to appreciate its nuances. Comfortable in the hand it has a full bowl that tapers at the rim to enhance color body aroma taste and finish. Machine made from fine lead-free crystal by Glencairn Crystal in Europe. Dishwasher safe. Size: 4-1/2'H 6 oz.
+"""
 p.body = """
 The Glencairn Whiskey Tasting Glass was designed by Raymond Davidson of Glencairn Crystal in Scotland and came into production in 2001.
 
@@ -24,7 +26,9 @@ p.save
 p = Post.find_or_initialize_by(
   :title=>"Lodge Cast Iron Skillet",
 )
-p.summary = """The Lodge Cast Iron 8-inch Skillet and Red Mini Silicone Hot Handle Holder is a multi-functional cookware that works wonders with slow-cooking recipes and all your favorite foods. This pre-seasoned Skillet works like a charm right out of the box. Pancakes, eggs, and bacon somehow taste extra hearty when cooked in a heavy cast-iron skillet. Cast iron creates superior heat retention, heats evenly, and loves a campfire, unlike flimsier pans. Fry up a mess of catfish, roast chicken, or bake an apple crisp in this 8-inch pan that features a sturdy handle for heavy lifting, and two subtle side lips for pouring. While the skillet comes pre-seasoned to prevent food from sticking, it works best when sprayed or lightly coated with vegetable oil before use. The Lodge seasoning procedure is a multiple-step process in which the seasoning oil is applied via an electrostatic spray system that coats the cookware, then it's baked in commercial ovens at very high temperatures. This allows the oil to penetrate deeply into the pores of the iron."""
+p.summary = """
+The Lodge Cast Iron 8-inch Skillet and Red Mini Silicone Hot Handle Holder is a multi-functional cookware that works wonders with slow-cooking recipes and all your favorite foods. This pre-seasoned Skillet works like a charm right out of the box. Pancakes, eggs, and bacon somehow taste extra hearty when cooked in a heavy cast-iron skillet. Cast iron creates superior heat retention, heats evenly, and loves a campfire, unlike flimsier pans. Fry up a mess of catfish, roast chicken, or bake an apple crisp in this 8-inch pan that features a sturdy handle for heavy lifting, and two subtle side lips for pouring. While the skillet comes pre-seasoned to prevent food from sticking, it works best when sprayed or lightly coated with vegetable oil before use. The Lodge seasoning procedure is a multiple-step process in which the seasoning oil is applied via an electrostatic spray system that coats the cookware, then it's baked in commercial ovens at very high temperatures. This allows the oil to penetrate deeply into the pores of the iron.
+"""
 p.body = """
 Cast iron is impossible to beat for heat retention, and Lodge has been making them since 1896. The Lodge Cast Iron Skillet is the perfect tool for recipes that start on the stove and end up in the oven, and is my weapon of choice for a ribeye steak.
 
@@ -47,7 +51,9 @@ p.save
 p = Post.find_or_initialize_by(
   :title=>"Microplane Classic Zester/Grater",
 )
-p.summary = """Classic Zester Grater. Black. Blade made of surgical grade stainless steel. Plastic handle. Originally a woodworking tool, this best seller grates even the hardest Parmesan Reggiano as well as other hard cheeses into fine lacy wisps. Ideal for topping your favorite spaghetti and meatballs or a Caesar salad. Its also wonderful for. effortless citrus zesting to add natural flavors to a lemon crème brulee or a basic vinaigrette."""
+p.summary = """
+Classic Zester Grater. Black. Blade made of surgical grade stainless steel. Plastic handle. Originally a woodworking tool, this best seller grates even the hardest Parmesan Reggiano as well as other hard cheeses into fine lacy wisps. Ideal for topping your favorite spaghetti and meatballs or a Caesar salad. Its also wonderful for. effortless citrus zesting to add natural flavors to a lemon crème brulee or a basic vinaigrette.
+"""
 p.body = """
 Want to impress the love of your life? Try grating an orange and 2-3 lemons worth of zest into your favorite waffle or pancake recipe with the Microplane Classic Zester/Grater for some serious brownie points.
 
@@ -68,9 +74,11 @@ p.save
 p = Post.find_or_initialize_by(
   :title=>"Pandemic",
 )
-p.summary = """Four diseases have broken out in the world and it is up to a team of specialists in various fields to find cures for these diseases before mankind is wiped out. Players must work together playing to their characters' strengths and planning their strategy of eradication before the diseases overwhelm the world with ever-increasing outbreaks. For example the Operation Specialist can build research stations which are needed to find cures for the diseases. The Scientist needs only 4 cards of a particular disease to cure it instead of the normal 5. But the diseases are out breaking fast and time is running out: the team must try to stem the tide of infection in diseased areas while also towards cures. A truly cooperative game where you all win or you all lose."""
+p.summary = """
+Four diseases have broken out in the world and it is up to a team of specialists in various fields to find cures for these diseases before mankind is wiped out. Players must work together playing to their characters' strengths and planning their strategy of eradication before the diseases overwhelm the world with ever-increasing outbreaks. For example the Operation Specialist can build research stations which are needed to find cures for the diseases. The Scientist needs only 4 cards of a particular disease to cure it instead of the normal 5. But the diseases are out breaking fast and time is running out: the team must try to stem the tide of infection in diseased areas while also towards cures. A truly cooperative game where you all win or you all lose.
+"""
 p.body = """
-Pandemic is a great alternative for traditional boardgames since it's cooperative.  Everyone is on the same team trying to prevent the spread of global disease and each role is different and important, so it really forces some fun strategization.  Great for game nights when you want to want to stay friends with the people you play with (unlike Settlers of Catan).
+Pandemic is a great alternative for traditional boardgames since it's cooperative, so no ruined friendships!  Everyone is on the same team trying to prevent the spread of global disease and each role is different and important, so it really forces some fun strategization.  Great for game nights when you want to want to stay friends with the people you play with (unlike Settlers of Catan).
 """
 p.asin = "B00A2HD40E"
 p.cost = 26

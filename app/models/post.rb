@@ -1,4 +1,8 @@
+require 'action_view'
+
 class Post < ActiveRecord::Base
+  include ActionView::Helpers::SanitizeHelper
+
   belongs_to :user
 
   has_many :post_photos
@@ -43,11 +47,13 @@ class Post < ActiveRecord::Base
   end
 
   def display_summary
-    token_body = "#{summary.gsub("\n", " ")}\n" if summary
-    token_body += body.gsub("\n", " ")
-
-    s = token_body.split(". ")[0..1].join(".\n\n")
-    s = "#{s}..." if body.length != s.length
+    # begin
+    s = "#{body.gsub("\n", " ")}\n"
+    s = strip_tags(s)
+    s = s.scan(/[^\.!?]+[\.!?]+/).map(&:strip)[0..1].join("\n\n")
+    # rescue
+    #   s = summary
+    # end
     s
   end
 

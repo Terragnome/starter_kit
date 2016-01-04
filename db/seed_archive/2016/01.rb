@@ -1,18 +1,44 @@
-# p = Post.find_or_initialize_by(
-#   :title=>"Langstroth Hive",
-# )
-# p.summary = '''Opinel knives are the traditional French picnic knives made in France since 1890. Rich in history and utility these knives are still a part of everyday culture in France. They are easy to use and they have a safe design. Each knife is made of four components, so the user need not worry about breaking parts - more common to overly complex mechanisms. Knife consists of carbon steel blade, hardwood handle, rivet and a stainless steel locking collar that prevents the knife from accidentally opening or closing. These knives are not only effective and practical; they are also beautiful. Opinel knives have been displayed in Museums and, in 1985, they were ranked as one of the "100 most beautiful products in the world", by the Victoria and Albert Museum in London. Opinel - a simple, beautiful and effective design that has survived and thrived for well over a century. Stamped with the famous Opinel crowned hand logo. 4 1/4 " closed, 3 1/4" inch blade.'''
-# p.body = '''
-# I use an Opinel as my everday carry knife because I wanted a knife with a beautiful classic design but that could be easily replaced if I lost it. The high carbon steel blade can be sharpened easily with a whetstone to a razor edge, although it must be treated to avoid rust. One option is to oil it, but I chose to use vinegar to form an black oxidized coat instead and have never had any problems.  And it floats!  There\'s enough wood in the handle that you won\'t lose it if you drop it in a lake!
-# '''
-# p.asin = ""
-# p.cost = 13
-# p.tag_list.add(TagType::GEAR, TagType::EDC, TagType::KNIVES)
-# p.active = true
-# p.save
-# p.photos.find_or_create_by(
-#   :name=>"cover",
-#   :internal_url=>"opinel_no_8.jpg"
-# )
-# p.posted_at = "2016-01-01"
-# p.save
+p = Post.find_or_initialize_by(
+  :title=>"Emile Henry Flame Top Pizza Stone",
+)
+p.summary = '''
+For five generations, Emile Henry has been making bakeware, cookware and tableware in Marcigny, France. True to tradition, all Emile Henry pieces are carefully hand-crafted from Burgundy clay which is found naturally in the region. The mineral-rich clay is combined with 100-percent natural ingredients to create Flame Top, an innovative line of ceramic cookware that is lightweight, versatile, and unsurpassed for even heat distribution. The Emile Henry Pizza Stone features the superior heat properties of Burgundy clay with Flame Top technology turning your grill into an outdoor pizza oven. This pizza stone is designed to be used on grills; gas, charcoal and natural wood; in ovens; conventional and convection; can also be used under the broiler over an open flame. The stone heats very quickly and evenly, can withstand high temperatures and is resistant to mechanical or thermal shock. The Emile Henry Pizza stone is lighter than other stones and has integrated handles for easy transportation. A unique micro-crazed glazing makes a crispy, well-baked crust and is stain resistant. It will not become sticky or stained over time and you can cut directly on the stone without cutting or scratching the surface. Clean up is easy with soap and water and unlike non-glazed stones-it is also dishwasher safe. The stone can also be used as a grilling platter and is ideal for baking breads. Microwave, broiler, convection and conventional oven safe is has a 2 year warranty against manufacturing defects.
+'''
+p.body = '''
+A pizza stone is an essential piece of equipment for all baking enthusiasts.  Pizza stones function by adding thermal mass to the oven, which produces more consistent temperature since more heat is stored in the oven.  This produces a crispier pizza crust.  I keep my pizza stone at the floor of my oven at all times, with the exception of when I actually make pizza when I move it to the top rack and hit the broiler.  Happy baking!
+'''
+p.asin = "B003UI8B2S"
+p.cost = 46
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::BAKING, TagType::COOKING)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"emile_henry_pizza_stone.jpg"
+)
+p.posted_at = "2016-01-01"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"Culiri Pizza Cutter",
+)
+p.summary = '''
+The Culiri Pizza Rocker Cutter with Natural Wooden Handle is made especially for home made cooks like you. At only 10 ounces - it is easily managed by anyone! You do not have to be a big burly "Pizza Man" to make easy slices.
+You no longer need one of those clumsy, heavy and bulky heavy professional grade pizza wheels to slice your small pie. In one easy motion, with one rocking cut, your pizza can be sliced smooth and straight. Your muscles will thank you for saving them the strain of manually slicing through thick crust with a small heavy wheel.
+'''
+p.body = '''
+Why use a tiny spinning pizza cutter when you can use a massive pizza guillotine?!
+
+Unlike spinning cutters, rocker style cutters have no breakable moving parts and their huge size means they cleave through pizzas like an axe in the hands of a barbarian warlord.  Keep on rockin\'!
+'''
+p.asin = "B018F7GBW0"
+p.cost = 10
+p.tag_list.add(TagType::GEAR, TagType::FOOD, TagType::BAKING)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"culiri_pizza_cutter.jpg"
+)
+p.posted_at = "2016-01-01"
+p.save
