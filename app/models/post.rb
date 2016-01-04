@@ -130,7 +130,7 @@ class Post < ActiveRecord::Base
   private
 
   def set_url
-    self.url = "http://www.amazon.com/dp/#{self.asin}/?tag=#{Affiliate.AMAZON_ID}" if !self.asin.blank?
+    self.url = "http://www.amazon.com/dp/#{self.asin}/?tag=#{Affiliate::AMAZON_ID}" if !self.asin.blank?
   end
 
   def set_user
