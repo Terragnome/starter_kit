@@ -25,8 +25,6 @@ DOM.Init = function(){
   DOM._scene = $('#scene');
   DOM._sceneLoader = $('#scene_loader');
   DOM._sceneBody = $('#scene_body');
-
-  DOM._postFeedList = $('#post_feed_list');
 }
 
 DOM.ToggleDisplay = function(obj){

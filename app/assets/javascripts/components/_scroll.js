@@ -2,7 +2,7 @@ var Scroll = Scroll || {};
 
 var scrollTimeout;
 Scroll.Init = function(scrollTimeoutInterval){
-  Scroll.autoScroll = null;
+  // Scroll.autoScroll = null;
 
   $(document).scroll(function(){
     if(scrollTimeout){
@@ -16,7 +16,7 @@ Scroll.Init = function(scrollTimeoutInterval){
 Scroll.OnScroll = function(){}
 
 Scroll.AutoScrollTo = function(pos){
-  if(Scroll.autoScroll) Scroll.autoScroll.stop();
+  // if(Scroll.autoScroll) Scroll.autoScroll.stop();
 
   // var curScroll = DOM._body.scrollTop();
   // var distance = Math.abs(curScroll-pos);

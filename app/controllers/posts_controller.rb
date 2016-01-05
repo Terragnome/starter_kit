@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  @@feed_length = 12 # This should be a multiple of 6
+  @@feed_length = 6 # This should be a multiple of 6
 
   def latest
     prepare_feed()
 
-    @guides = [1]
+    # @guides = [1]
 
     respond_to do |format|
       format.html{render action: 'feed'}

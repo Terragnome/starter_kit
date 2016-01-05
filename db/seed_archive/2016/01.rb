@@ -42,3 +42,24 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2016-01-01"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"Sculpey Super Sculpturing Compound",
+)
+p.summary = '''
+SCULPEY-Super Sculpey Polymer Clay. America\'s original oven-bake clay! Sculpey is soft and pliable; works and feels like ceramic clay but will not dry out when exposed to air. The semi-transparent ceramic-like appearance of this clay; once baked makes it perfect for exposed flesh parts of home-made dolls and figurines. Shape; bake and once cool can be sanded; drilled; carved; glued; inked; painted with water based acrylics or Sculpey Brand Glaze.
+'''
+p.body = '''
+Super Sculpey is like regular sculpey only better!  Used is the same way as regular clay, but it doesn\'t dry in air and all you need is a regular oven instead of a kiln!  Once baked it becomes waterproof and extremely durable, so is the perfect material for crafts at home.  While it\'s non-toxic, it hasn\'t been evaluated for food safety, which means it\'s best not to use it for bowls or plates.
+'''
+p.asin = "B0026C1T8C"
+p.cost = 11
+p.tag_list.add(TagType::GEAR, TagType::ART)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"super_sculpey.jpg"
+)
+p.posted_at = "2016-01-04"
+p.save

@@ -12,6 +12,8 @@
   #post_feed
     #post_feed_list
       =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags}
+  #post_feed_loader
+    =render partial: 'layouts/spinner'
 -else
   .info_section
     .content

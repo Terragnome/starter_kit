@@ -1,6 +1,6 @@
 var Post = Post || {};
 
-Post.Init = function(summary){
+Post.Init = function(){
   $(".post_actions").each(function(i, obj){
     $(obj).find(".icon_button").each(function(j, btnObj){
       $(btnObj).click(function(e){
@@ -11,6 +11,8 @@ Post.Init = function(summary){
 }
 
 Post.Share = function(obj){
+  console.log("BLAH");
+
   var externalUrl = $(obj).attr('external_url');
   if(externalUrl) window.open(externalUrl);
 

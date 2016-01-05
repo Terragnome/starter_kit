@@ -39,9 +39,6 @@ Application.Init = function(){
 
 	Application.InitResize();
 	Application.sceneTop = DOM._scene.css('top');
-
-	Post.Init();
-	PostFeed.Init();
 }
 
 Application.OnPageLoading = function(e, target, render, url){

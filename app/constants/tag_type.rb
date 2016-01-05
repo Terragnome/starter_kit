@@ -1,5 +1,6 @@
 class TagType
   ARCHERY = "archery"
+  ART = "art"
   BACKPACKING = "backpacking"
   CAMPING = "camping"
   BAKING = "baking"

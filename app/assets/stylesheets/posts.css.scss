@@ -266,6 +266,15 @@ $related_post_width: 24%;
 	}
 }
 
+#post_feed_loader{
+	display: none;
+	height: 205px;
+
+	.spinner > div {
+		background-color: #{$base_color};
+	}
+}
+
 #post_show{
 	.placeholder{
 		font-family: #{$body_font};
