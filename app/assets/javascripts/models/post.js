@@ -11,8 +11,6 @@ Post.Init = function(){
 }
 
 Post.Share = function(obj){
-  console.log("BLAH");
-
   var externalUrl = $(obj).attr('external_url');
   if(externalUrl) window.open(externalUrl);
 
