@@ -53,9 +53,6 @@ Application.OnPageAlways = function(e, target, render, url){
 	Application.HideLoader();
 	var scrollPos = DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height();
 	Scroll.AutoScrollTo(scrollPos);
-
-	Post.Init();
-	PostFeed.Init();
 }
 
 Application.InitResize = function(){
