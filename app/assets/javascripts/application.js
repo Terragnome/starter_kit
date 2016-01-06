@@ -39,9 +39,6 @@ Application.init = function(){
 
 	Application.initResize();
 	Application.sceneTop = DOM._scene.css('top');
-
-	PostFeed.init();
-	Post.init();
 }
 
 Application.onPageLoading = function(e, target, render, url){
@@ -54,14 +51,14 @@ Application.onPageDone = function(e, target, render, url){}
 Application.onPageFail = function(e, target, render, url){}
 Application.onPageAlways = function(e, target, render, url){
 	Application.hideLoader();
-	var scrollPos = DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height();
-	Scroll.autoScrollTo(scrollPos);
+
+	Scroll.autoScrollTo(
+		DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height()
+	);
 }
 
 Application.initResize = function(){
-	DOM._window.resize(function (){
-		Header.onResize();
-	});
+	DOM._window.resize(Header.onResize);
 }
 
 Application.showLoader = function(){
