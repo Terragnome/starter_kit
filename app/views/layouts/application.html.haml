@@ -19,6 +19,5 @@
     #scene{ style: "overflow:#{is_mobile_device? ? 'visible' : 'scroll'};"}
       #scene_body
         =yield
-      / =render partial: 'layouts/ads'
       =render partial: 'layouts/footer'
     =render partial: 'layouts/analytics'

@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require wiselinks
-//= rewuire lib.typeahead.bundle.min
+//= require lib/typeahead.bundle.min
 //= require_tree .
 
 var Application = Application || {};
@@ -31,17 +31,14 @@ Application.init = function(){
 	DOM._document.off('page:always').on('page:always', Application.onPageAlways);
 	DOM._document.off('page:done').on('page:done', Application.onPageDone);
 	DOM._document.off('page:fail').on('page:fail', Application.onPageFail);
+	DOM._window.resize(Header.onResize);
 
 	Input.init();
 	Scroll.init(250);
 	Blocker.init(DOM._blocker);
 	Header.init();
 
-	Application.initResize();
 	Application.sceneTop = DOM._scene.css('top');
-
-	PostFeed.init();
-	Post.init();
 }
 
 Application.onPageLoading = function(e, target, render, url){
@@ -54,16 +51,7 @@ Application.onPageDone = function(e, target, render, url){}
 Application.onPageFail = function(e, target, render, url){}
 Application.onPageAlways = function(e, target, render, url){
 	Application.hideLoader();
-
-	Scroll.autoScrollTo(
-		DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height()
-	);
-
-	Post.init();
-}
-
-Application.initResize = function(){
-	DOM._window.resize(Header.onResize);
+	Scroll.autoScrollTo( DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height() );
 }
 
 Application.showLoader = function(){
