@@ -1,6 +1,6 @@
 var Header = Header || {};
 
-Header.Init = function(){
+Header.init = function(){
 	Header._bar = DOM._headerBar;
 	Header._nav = DOM._headerNav;
 	Header._navIcon = DOM._headerNavIcon;
@@ -11,15 +11,15 @@ Header.Init = function(){
 	Header._searchIcon = DOM._headerSearchIcon;
 	Header._searchField = DOM._headerSearchField;
 
-	Header._navIcon.click(Header.ToggleMenu);
-	Header._searchIcon.click(Header.ToggleSearch);
+	Header._navIcon.click(Header.toggleMenu);
+	Header._searchIcon.click(Header.toggleSearch);
 
 	Header._searchField.keypress(function(e) {
 	  if (e.which == 13) {
 	  	Header._searchForm.submit(function(e){
 	  		e.preventDefault();
 
-	  		Application.OnPageLoading();
+	  		Application.onPageLoading();
 
 	  		var ajaxParam = "&ajax=true";
 	  		$.ajax({
@@ -31,38 +31,38 @@ Header.Init = function(){
           	history.pushState({id: nextUrl}, '', nextUrl);
             $("#scene_body").html(response);
           },
-          complete: Application.OnPageAlways
+          complete: Application.onPageAlways
 	  		});
 
 	  		return false;
 	  	});
 
-	  	Header.CloseSearch();
+	  	Header.closeSearch();
 	  }else if(e.which == 27) {
-	  	Header.CloseSearch();
+	  	Header.closeSearch();
 	  }
 	});
-	Header._searchField.blur(Header.CloseSearch);
+	Header._searchField.blur(Header.closeSearch);
 }
 
-Header.Clear = function(){
-	Header.CloseSearch();
-	Header.CloseMenu();
+Header.clear = function(){
+	Header.closeSearch();
+	Header.closeMenu();
 }
 
-Header.IsSearchOpen = function(){
+Header.isSearchOpen = function(){
 	return !Header._search.hasClass("none");
 }
 
-Header.ToggleSearch = function(){
-	var isOpen = Header.IsSearchOpen();
-	isOpen ? Header.CloseSearch() : Header.OpenSearch();
+Header.toggleSearch = function(){
+	var isOpen = Header.isSearchOpen();
+	isOpen ? Header.closeSearch() : Header.openSearch();
 }
 
-Header.OpenSearch = function(){
+Header.openSearch = function(){
 	Header._searchField.val('');
 
-	Header.Clear();
+	Header.clear();
 	Header._nav.addClass('none');
 	Header._search.removeClass('none');
 
@@ -70,22 +70,22 @@ Header.OpenSearch = function(){
 	searchField.focus();
 }
 
-Header.CloseSearch = function(){
+Header.closeSearch = function(){
 	Header._search
 	Header._search.addClass('none');
 	Header._nav.removeClass('none');
 }
 
-Header.IsMenuOpen = function(){
+Header.isMenuOpen = function(){
 	return Header._navMenu.hasClass("anim_roll_down");
 }
 
-Header.ToggleMenu = function(){
-	var isOpen = Header.IsMenuOpen();
-	isOpen ? Header.CloseMenu() : Header.OpenMenu();
+Header.toggleMenu = function(){
+	var isOpen = Header.isMenuOpen();
+	isOpen ? Header.closeMenu() : Header.openMenu();
 }
-Header.OpenMenu = function(){
-	Header.Clear();
+Header.openMenu = function(){
+	Header.clear();
 
 	var navMenu = Header._navMenu;
 	navMenu.toggleClass("anim_roll_down");
@@ -94,7 +94,7 @@ Header.OpenMenu = function(){
 
 	Header._navIcon.addClass('open');
 }
-Header.CloseMenu = function(){
+Header.closeMenu = function(){
 	var navMenu = Header._navMenu;
 	navMenu.removeClass("anim_roll_down");
 	navMenu.removeClass("anim_fade_in");
@@ -103,9 +103,9 @@ Header.CloseMenu = function(){
 	Header._navIcon.removeClass('open');
 }
 
-Header.OnResize = function(){
-	if(!Header.IsSearchOpen()){
-		Header.Clear();
+Header.onResize = function(){
+	if(!Header.isSearchOpen()){
+		Header.clear();
 	}
 }
 

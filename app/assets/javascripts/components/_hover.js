@@ -1,9 +1,9 @@
 var Hover = Hover || {};
 
-Hover.DisableHover = function(){
+Hover.disableHover = function(){
   document.body.classList.remove('hover');
 }
 
-Hover.EnableHover = function(){
+Hover.enableHover = function(){
   document.body.classList.add('hover');
 }

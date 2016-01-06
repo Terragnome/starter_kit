@@ -1,15 +1,17 @@
 var PostFeed = PostFeed || {};
 
-PostFeed.Init = function(){
+PostFeed.init = function(){
   PostFeed.isLoading = false;
 
   PostFeed._feed = $("#post_feed");
   PostFeed._loader = $("#post_feed_loader");
+
+  Scroll.onScroll.callbacks.add(PostFeed.onScroll);
 }
 
-PostFeed.OnScroll = function(){
+PostFeed.onScroll = function(){
   var postFeed = PostFeed._feed;
-  if(postFeed.length <= 0) return;
+  if(!postFeed || postFeed.length <= 0) return;
   postFeed = postFeed.first();
 
   var scrollPos = DOM._window.scrollTop();
@@ -28,7 +30,7 @@ PostFeed.OnScroll = function(){
         var prevUrl = urls.attr("prev_url");
         var prevAjax = urls.attr("prev_ajax");
         if(prevUrl){
-          PostFeed.LoadMore(
+          PostFeed.loadMore(
               prevUrl,
               prevAjax,
               "prev",
@@ -43,7 +45,7 @@ PostFeed.OnScroll = function(){
         var nextUrlAjax = urls.attr("next_ajax");
 
         if(nextUrl){
-          PostFeed.LoadMore(
+          PostFeed.loadMore(
             nextUrl,
             nextUrlAjax,
             "next",
@@ -57,7 +59,7 @@ PostFeed.OnScroll = function(){
   }
 }
 
-PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
+PostFeed.loadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
   PostFeed._loader.show();
   $(".more_posts").hide();
 
@@ -83,7 +85,7 @@ PostFeed.LoadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
     }else if(scroll == "prev"){
       var firstFeedList = elems.first();
       if(updateHistory){
-        Scroll.AutoScrollTo($(firstFeedList).height());
+        Scroll.autoScrollTo($(firstFeedList).height());
       }
   	}
   })

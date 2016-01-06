@@ -20,63 +20,66 @@
 
 var Application = Application || {};
 
-Application.Init = function(){
+Application.init = function(){
 	$.turbo.use('pjax:start', 'pjax:end');
 
 	window.wiselinks = new Wiselinks($('#scene_body'));
 
-	DOM.Init();
-	DOM._document.off('page:loading').on('page:loading', Application.OnPageLoading);
-	DOM._document.off('page:redirected').on('page:redirected', Application.OnPageRedirected);
-	DOM._document.off('page:always').on('page:always', Application.OnPageAlways);
-	DOM._document.off('page:done').on('page:done', Application.OnPageDone);
-	DOM._document.off('page:fail').on('page:fail', Application.OnPageFail);
+	DOM.init();
+	DOM._document.off('page:loading').on('page:loading', Application.onPageLoading);
+	DOM._document.off('page:redirected').on('page:redirected', Application.onPageRedirected);
+	DOM._document.off('page:always').on('page:always', Application.onPageAlways);
+	DOM._document.off('page:done').on('page:done', Application.onPageDone);
+	DOM._document.off('page:fail').on('page:fail', Application.onPageFail);
 
-	Input.Init();
-	Scroll.Init(250);
-	Blocker.Init(DOM._blocker);
-	Header.Init();
+	Input.init();
+	Scroll.init(250);
+	Blocker.init(DOM._blocker);
+	Header.init();
 
-	Application.InitResize();
+	Application.initResize();
 	Application.sceneTop = DOM._scene.css('top');
+
+	PostFeed.init();
+	Post.init();
 }
 
-Application.OnPageLoading = function(e, target, render, url){
-	Application.ShowLoader();
-	Header.CloseMenu();
-	Scroll.AutoScrollTo(0);
+Application.onPageLoading = function(e, target, render, url){
+	Application.showLoader();
+	Header.closeMenu();
+	Scroll.autoScrollTo(0);
 }
-Application.OnPageRedirected = function(e, target, render, url){}
-Application.OnPageDone = function(e, target, render, url){}
-Application.OnPageFail = function(e, target, render, url){}
-Application.OnPageAlways = function(e, target, render, url){
-	Application.HideLoader();
+Application.onPageRedirected = function(e, target, render, url){}
+Application.onPageDone = function(e, target, render, url){}
+Application.onPageFail = function(e, target, render, url){}
+Application.onPageAlways = function(e, target, render, url){
+	Application.hideLoader();
 	var scrollPos = DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height();
-	Scroll.AutoScrollTo(scrollPos);
+	Scroll.autoScrollTo(scrollPos);
 }
 
-Application.InitResize = function(){
+Application.initResize = function(){
 	DOM._window.resize(function (){
-		Header.OnResize();
+		Header.onResize();
 	});
 }
 
-Application.ShowLoader = function(){
+Application.showLoader = function(){
 	DOM._sceneLoader.show();
 	DOM._scene.css('top', 0);
 	DOM._sceneBody.hide();
 	DOM._header.hide();
 }
 
-Application.HideLoader = function(){
+Application.hideLoader = function(){
 	DOM._sceneLoader.hide();
 	DOM._scene.css('top', Application.sceneTop);
 	DOM._sceneBody.show();
 	DOM._header.show();
 }
 
-Application.UpdateDescription = function(m){
+Application.updateDescription = function(m){
 	DOM._appDescription.content(m);
 }
 
-$(Application.Init);
+$(Application.init);

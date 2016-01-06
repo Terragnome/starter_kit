@@ -1,6 +1,6 @@
 var DOM = DOM || {};
 
-DOM.Init = function(){
+DOM.init = function(){
   DOM._window = $(window);
   DOM._document = $(document);
   DOM._htmlBody = $('html, body');
@@ -27,11 +27,11 @@ DOM.Init = function(){
   DOM._sceneBody = $('#scene_body');
 }
 
-DOM.ToggleDisplay = function(obj){
-  DOM.SetDisplay(obj, (obj.css('display')=='none'));
+DOM.toggleDisplay = function(obj){
+  DOM.setDisplay(obj, (obj.css('display')=='none'));
 }
 
-DOM.SetDisplay = function(obj, isOn){
+DOM.setDisplay = function(obj, isOn){
   if(obj != null){
     if(isOn){
       obj.css('display', 'block');

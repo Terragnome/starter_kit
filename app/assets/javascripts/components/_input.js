@@ -1,6 +1,6 @@
 var Input = Input || {};
 
-Input.Init = function(){}
+Input.init = function(){}
 
-Input.EnablePointerEvents = function(){ DOM._htmlBody.attr('pointer-events', 'auto'); }
-Input.DisablePointerEvents = function(){ DOM._htmlBody.attr('pointer-events', 'none'); }
+Input.enablePointerEvents = function(){ DOM._htmlBody.attr('pointer-events', 'auto'); }
+Input.disablePointerEvents = function(){ DOM._htmlBody.attr('pointer-events', 'none'); }

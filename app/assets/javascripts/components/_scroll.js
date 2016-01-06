@@ -1,7 +1,7 @@
 var Scroll = Scroll || {};
 
 var scrollTimeout;
-Scroll.Init = function(scrollTimeoutInterval){
+Scroll.init = function(scrollTimeoutInterval){
   // Scroll.autoScroll = null;
 
   $(document).scroll(function(){
@@ -9,13 +9,18 @@ Scroll.Init = function(scrollTimeoutInterval){
         clearTimeout(scrollTimeout);
         scrollTimeout = null;
     }
-    scrollTimeout = setTimeout(Scroll.OnScroll, scrollTimeoutInterval);
+    scrollTimeout = setTimeout(Scroll.onScroll, scrollTimeoutInterval);
   });
+
+  Scroll.onScroll.callbacks = $.Callbacks();
 }
 
-Scroll.OnScroll = function(){}
+Scroll.onScroll = function(){
+  Scroll.onScroll.callbacks.fire();
 
-Scroll.AutoScrollTo = function(pos){
+}
+
+Scroll.autoScrollTo = function(pos){
   // if(Scroll.autoScroll) Scroll.autoScroll.stop();
 
   // var curScroll = DOM._body.scrollTop();
@@ -32,16 +37,16 @@ Scroll.AutoScrollTo = function(pos){
   //
 }
 
-Scroll.EnableManual = function(){
+Scroll.enableManual = function(){
   DOM._htmlBody.off('scroll touchmove mousewheel');
-  Input.EnablePointerEvents();
+  Input.enablePointerEvents();
 }
 
-Scroll.DisableManual = function(){
+Scroll.disableManual = function(){
   DOM._htmlBody.on('scroll touchmove mousewheel', function(e){
     e.preventDefault();
     e.stopPropagation();
     return false;
   });
-  Input.DisablePointerEvents();
+  Input.disablePointerEvents();
 }
