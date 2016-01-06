@@ -41,7 +41,7 @@ Application.init = function(){
 	Application.sceneTop = DOM._scene.css('top');
 
 	PostFeed.init();
-	Post.init($("body"));
+	Post.init();
 }
 
 Application.onPageLoading = function(e, target, render, url){
@@ -58,6 +58,8 @@ Application.onPageAlways = function(e, target, render, url){
 	Scroll.autoScrollTo(
 		DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height()
 	);
+
+	Post.init();
 }
 
 Application.initResize = function(){

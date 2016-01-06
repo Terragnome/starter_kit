@@ -1,7 +1,8 @@
 var Post = Post || {};
 
 Post.init = function(elem){
-  $(elem).find(".post_actions").each(function(i, obj){
+  var selector = elem ? $(elem).find(".post_actions") : $(".post_actions");
+  selector.each(function(i, obj){
     $(obj).find(".icon_button").each(function(j, btnObj){
       $(btnObj).unbind("click");
       $(btnObj).click(function(e){
