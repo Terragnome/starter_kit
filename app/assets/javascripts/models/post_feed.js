@@ -6,10 +6,12 @@ PostFeed.init = function(){
   PostFeed._loader = $("#post_feed_loader");
 
   Scroll.onScroll.callbacks.add(PostFeed.onScroll);
+
+  PostFeed._feed = $("#post_feed");
 }
 
 PostFeed.onScroll = function(){
-  PostFeed._feed = $("#post_feed");
+  if(PostFeed.isLoading) return;
 
   var postFeed = $(PostFeed._feed);
   if(!postFeed || postFeed.length <= 0) return;

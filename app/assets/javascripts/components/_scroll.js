@@ -12,6 +12,7 @@ Scroll.init = function(scrollTimeoutInterval){
     scrollTimeout = setTimeout(Scroll.onScroll, scrollTimeoutInterval);
   });
 
+  if(Scroll.onScroll.callbacks) Scroll.onScroll.callbacks.empty();
   Scroll.onScroll.callbacks = $.Callbacks();
 }
 

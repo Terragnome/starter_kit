@@ -1,8 +1,9 @@
-var PostActions = PostActions || {};
+var Post = Post || {};
 
-PostActions.init = function(dom){
-  $(dom).find(".post_actions").each(function(i, obj){
+Post.init = function(){
+  $(".post_actions").each(function(i, obj){
     $(obj).find(".icon_button").each(function(j, btnObj){
+      $(btnObj).unbind("click");
       $(btnObj).click(function(e){
         Post.share(btnObj);     
       })
@@ -10,7 +11,7 @@ PostActions.init = function(dom){
   });
 }
 
-PostActions.share = function(obj){
+Post.share = function(obj){
   var externalUrl = $(obj).attr('external_url');
   if(externalUrl) window.open(externalUrl);
 

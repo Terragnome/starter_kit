@@ -5,7 +5,7 @@
   -next_url = seo_feed_url(tags, :page=>feed_list.next_page)
   -next_ajax = seo_feed_url(tags, :page=>feed_list.next_page, :format=>:js)
 
-.feed_list{:next_url=>next_url, :next_ajax=>next_ajax}
+.feed_list{:id=>"feed_list_#{feed_list.current_page}", :next_url=>next_url, :next_ajax=>next_ajax}
   -feed_list.each do |post|
     =render :partial=>'feed_post', :object=>post
   -(3-feed_list.length%3).times do |spacer|
