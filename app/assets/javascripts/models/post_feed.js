@@ -91,6 +91,8 @@ PostFeed.loadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
         Scroll.autoScrollTo($(firstFeedList).height());
       }
   	}
+
+    Post.init();
   })
   .fail(function(data) {
   })

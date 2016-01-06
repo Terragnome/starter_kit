@@ -58,9 +58,6 @@ Application.onPageAlways = function(e, target, render, url){
 	Scroll.autoScrollTo(
 		DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height()
 	);
-
-	PostFeed.init();
- 	Post.init();
 }
 
 Application.initResize = function(){
