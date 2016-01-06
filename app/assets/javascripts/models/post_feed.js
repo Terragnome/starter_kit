@@ -6,57 +6,53 @@ PostFeed.init = function(){
   PostFeed._loader = $("#post_feed_loader");
 
   Scroll.onScroll.callbacks.add(PostFeed.onScroll);
-
-  PostFeed._feed = $("#post_feed");
 }
 
 PostFeed.onScroll = function(){
-  if(PostFeed.isLoading) return;
+  if(DOM._sceneLoader.css("display") != "none" || PostFeed.isLoading) return;
 
-  var postFeed = $(PostFeed._feed);
+  PostFeed._feed = $("#post_feed");
+  var postFeed = PostFeed._feed;
   if(!postFeed || postFeed.length <= 0) return;
   postFeed = postFeed.first();
 
   var scrollPos = DOM._window.scrollTop();
   var scrollBottom = DOM._document.height() - DOM._window.outerHeight();
 
-  if(!PostFeed.isLoading && postFeed.length){
-    var isPrev = false; // (scrollPos <= 0);
-    var isNext = (scrollPos >= scrollBottom);
+  var isPrev = false; // (scrollPos <= 0);
+  var isNext = (scrollPos >= scrollBottom);
+  if(isPrev || isNext){
+    PostFeed.isLoading = true;
 
-    if(isPrev || isNext){
-      PostFeed.isLoading = true;
-
-      var urls = postFeed.find(".feed_list");
-      if(isPrev){
-        urls = urls.first();
-        var prevUrl = urls.attr("prev_url");
-        var prevAjax = urls.attr("prev_ajax");
-        if(prevUrl){
-          PostFeed.loadMore(
-              prevUrl,
-              prevAjax,
-              "prev",
-              true
-          );
-        }else{
-          PostFeed.isLoading = false;
-        }
-      }else{
-        urls = urls.last();
-        var nextUrl = urls.attr("next_url");
-        var nextUrlAjax = urls.attr("next_ajax");
-
-        if(nextUrl){
-          PostFeed.loadMore(
-            nextUrl,
-            nextUrlAjax,
-            "next",
+    var urls = postFeed.find(".feed_list");
+    if(isPrev){
+      urls = urls.first();
+      var prevUrl = urls.attr("prev_url");
+      var prevAjax = urls.attr("prev_ajax");
+      if(prevUrl){
+        PostFeed.loadMore(
+            prevUrl,
+            prevAjax,
+            "prev",
             true
-          );
-        }else{
-          PostFeed.isLoading = false;
-        }
+        );
+      }else{
+        PostFeed.isLoading = false;
+      }
+    }else{
+      urls = urls.last();
+      var nextUrl = urls.attr("next_url");
+      var nextUrlAjax = urls.attr("next_ajax");
+
+      if(nextUrl){
+        PostFeed.loadMore(
+          nextUrl,
+          nextUrlAjax,
+          "next",
+          true
+        );
+      }else{
+        PostFeed.isLoading = false;
       }
     }
   }
@@ -92,7 +88,7 @@ PostFeed.loadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
       }
   	}
 
-    Post.init();
+    Post.init(lastElem);
   })
   .fail(function(data) {
   })
