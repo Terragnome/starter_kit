@@ -39,6 +39,8 @@ Application.init = function(){
 
 	Application.initResize();
 	Application.sceneTop = DOM._scene.css('top');
+
+	PostFeed.init();
 }
 
 Application.onPageLoading = function(e, target, render, url){

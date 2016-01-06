@@ -3,14 +3,15 @@ var PostFeed = PostFeed || {};
 PostFeed.init = function(){
   PostFeed.isLoading = false;
 
-  PostFeed._feed = $("#post_feed");
   PostFeed._loader = $("#post_feed_loader");
 
   Scroll.onScroll.callbacks.add(PostFeed.onScroll);
 }
 
 PostFeed.onScroll = function(){
-  var postFeed = PostFeed._feed;
+  PostFeed._feed = $("#post_feed");
+
+  var postFeed = $(PostFeed._feed);
   if(!postFeed || postFeed.length <= 0) return;
   postFeed = postFeed.first();
 
