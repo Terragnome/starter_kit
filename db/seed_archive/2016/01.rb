@@ -63,3 +63,70 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2016-01-04"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"Vivobarefoot Men's EVO Pure Running Shoe",
+)
+p.summary = '''
+There\'s nothing holding you back, it\'s just you and the Evo Pure working together. This road running shoe will let your feet perform, as if they were barefoot. They\'re stripped back to ensure it�s your feet that are in control.
+'''
+p.body = '''
+I believe strongly in the benefits of minimalist, neutral ride running shoes and have covered well over 5,000 miles in my Vivobarefoot EVO Pures and Vibram Fivefingers.  There\'s nothing magical about minimalist shoes and wearing them won\'t instantly make you a better runner, but they will teach you proper form which will protect you from injuries in long term.  Shoes like the Vivoebarefoot EVO Pure discourage heel striking (because it hurts), and promote a healthier mid to forefoot strike which is healthier on your joints which are not protected by padding of conventional shoes.  The one caveat is that minimalist shoes like these are better for paved streets than trails since the thin soles mean you definitely feel it if you step on a rock.
+'''
+p.asin = "B00XD51L66"
+p.cost = 95
+p.tag_list.add(TagType::GEAR, TagType::RUNNING, TagType::FITNESS, TagType::OUTDOORS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"vivobarefoot_evo_pure.jpg"
+)
+p.posted_at = "2016-01-06"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"Iron Gym Upper Body Workout",
+)
+p.summary = '''
+The highly engineered yet lightweight, pro-quality steel IRON GYM™ exercise bar is instantly attached to any standard door frame at home or in a hotel room when on vacation. By utilizing your own body’s resistance across a number of possible exercises it works with you to strengthen and tone your arms, chest, back, shoulders and abs.
+
+When you’ve finished your workout, it takes just seconds to simply detach IRON GYM™ and pack it away until your next session.
+'''
+p.body = '''
+The Iron Gym Upper Body Workout pullup bar allows you to safetly and comfortably do pullups at home.  Whereas many other bars rely on friction to keep them attached to a doorway, the Iron Gym utilizes its own rotation to keep it in place without damaging your doorframe.  It\'s a great way to get a quick upper body workout at a low price.
+'''
+p.asin = "B001EJMS6K"
+p.cost = 23
+p.tag_list.add(TagType::GEAR, TagType::FITNESS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"iron_gym_pullup_bar.jpg"
+)
+p.posted_at = "2016-01-06"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"Obenauf's LP Boot Preservative",
+)
+p.summary = '''
+With regular use, boots last noticeably longer and stay comfortable even in extreme conditions.  This preservative is made in the US, and proven excellent quality since 1986.  Great for boots, car leather interior, or really any leather product!  Obenauf\'s Heavy-duty LP preservative is a blend of leather oils that gradually seep into the leather lubricating it continuously.
+'''
+p.body = '''
+Protect your leather shoes from water, dirt, and grime withe Obenauf\'s LP Boot Preservative.  It\'s super effective and has a strangely pleasant cinnamon you wouldn\'t expect from a product that does such a good job.
+'''
+p.asin = "B0002X520S"
+p.cost = 18
+p.tag_list.add(TagType::GEAR, TagType::OUTDOORS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"obenaufs_leather_preservative.jpg"
+)
+p.posted_at = "2016-01-06"
+p.save
+
+

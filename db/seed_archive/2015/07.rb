@@ -95,7 +95,7 @@ p.posted_at = "2015-07-22"
 p.save
 
 p = Post.find_or_initialize_by(
-  :title=>"Lego Star Wars Ewok Village",
+  :title=>"Lego 10236 Star Wars Ewok Village",
 )
 p.summary = """
 Travel to Endor and visit the treetop home of the Ewoks. Just like in Star Wars: Episode VI Return of the Jedi, this recreation of the Ewoks' forest dwelling is packed with cool functions, including the tree-trunk hideout, secret Lightsaber stash, spider web, net traps, slide, catapults and an elevating throne. Use the rammer function to take out the Scout Trooper's speeder − just like in the movie! Realistic details include rope walkways, vine and leaf elements, kitchen, food storage area, bedroom and a planning room. The Ewok Village set is the perfect addition to your LEGO Star Wars collection. Includes R2-D2and 16 minifigures with weapons: Luke Skywalker, Princess Leia, Han Solo, Chewbacca, C-3PO, 2 Rebel soldiers, 5 Ewoks (including Wicket, Teebo, Chief Chirpa and Logray), 2 Scout Troopers and 2 Stormtroopers.
