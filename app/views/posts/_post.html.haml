@@ -1,4 +1,5 @@
-.post{:id=>"post_#{post.id}"}
+-post_id = "post_#{post.id}"
+.post{:id=>post_id}
   .header
     %h1
       =post.title
@@ -18,3 +19,8 @@
     =render :partial=>'post_tags', :object=>post.tag_names
   =render :partial=>'post_actions', :object=>post, :as=>:post
   =render :partial=>'feed_related', :object=>post.related
+
+:javascript
+  $(function(){
+    Post.init($("#{post_id}"))
+  })

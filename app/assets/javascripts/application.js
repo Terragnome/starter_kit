@@ -41,6 +41,10 @@ Application.init = function(){
 	Application.sceneTop = DOM._scene.css('top');
 }
 
+Application.updateDescription = function(m){
+	DOM._appDescription.content(m);
+}
+
 Application.onPageLoading = function(e, target, render, url){
 	Application.showLoader();
 	Header.closeMenu();
@@ -66,10 +70,6 @@ Application.hideLoader = function(){
 	DOM._scene.css('top', Application.sceneTop);
 	DOM._sceneBody.show();
 	DOM._header.show();
-}
-
-Application.updateDescription = function(m){
-	DOM._appDescription.content(m);
 }
 
 $(Application.init);
