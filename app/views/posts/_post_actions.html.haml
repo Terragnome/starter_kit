@@ -8,8 +8,6 @@
   -elsif is_feed
     =link_to(post.display_call_to_action, full_post_path(post), 'data-push'=>true, :class=>['button', 'buy_button'])
 
-  =share_url
-
   %a.button.icon_button.facebook_button{:id=>"share_facebook_#{post.id}", :share_url=>post_share_url(post.id, :key=>:facebook, :format=>:js), :external_url=>"http://www.facebook.com/share.php?u=#{post_url}"}
     =format_for_counter(post.facebook_count)
 
