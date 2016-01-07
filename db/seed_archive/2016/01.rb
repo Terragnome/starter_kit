@@ -68,7 +68,7 @@ p = Post.find_or_initialize_by(
   :title=>"Vivobarefoot Men's EVO Pure Running Shoe",
 )
 p.summary = '''
-There\'s nothing holding you back, it\'s just you and the Evo Pure working together. This road running shoe will let your feet perform, as if they were barefoot. They\'re stripped back to ensure it�s your feet that are in control.
+There\'s nothing holding you back, it\'s just you and the Evo Pure working together. This road running shoe will let your feet perform, as if they were barefoot. They\'re stripped back to ensure it\'s your feet that are in control.
 '''
 p.body = '''
 I believe strongly in the benefits of minimalist, neutral ride running shoes and have covered well over 5,000 miles in my Vivobarefoot EVO Pures and Vibram Fivefingers.  There\'s nothing magical about minimalist shoes and wearing them won\'t instantly make you a better runner, but they will teach you proper form which will protect you from injuries in long term.  Shoes like the Vivoebarefoot EVO Pure discourage heel striking (because it hurts), and promote a healthier mid to forefoot strike which is healthier on your joints which are not protected by padding of conventional shoes.  The one caveat is that minimalist shoes like these are better for paved streets than trails since the thin soles mean you definitely feel it if you step on a rock.
