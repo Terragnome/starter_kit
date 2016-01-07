@@ -114,15 +114,14 @@ private
 
       has_categories = categories.length > 0
       has_entries = entries.length > 0
+
       title_components = []
       title_components.push( oxford_commas(categories) ) if has_categories
       title_components.push("for") if has_categories and has_entries
       title_components.push(oxford_commas(entries)) if has_entries
+
       meta_title(title_components.join(" "))
     end
-  end
-
-  def meta_title_description
   end
 
   def prepare_feed
@@ -157,7 +156,6 @@ private
     @all_tags ||= []
 
     meta_title_feed()
-    meta_title_description()
   end
 
 end
