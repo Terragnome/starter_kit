@@ -84,7 +84,7 @@ class PostsController < ApplicationController
     @tags = []
     prepare_feed()
 
-    meta_title(query)
+    meta_title("Guides and Gear about \"#{query}\"")
 
     respond_to do |format|
       format.html{ render action: 'feed', layout: params[:ajax] != 'true' }
@@ -94,12 +94,31 @@ class PostsController < ApplicationController
 
 private
 
+  def oxford_commas(entries)
+    return "" if entries.length == 0
+    return entries[0] if entries.length == 1
+    return entries.join(" and ") if entries.length == 2
+    formatted_entries = entries[0..-2]
+    "#{formatted_entries.join(", ")}, and #{formatted_entries[-1]}"
+  end
+
   def meta_title_feed
     if not @tags or @tags == :all
       meta_title(:all)
+    elsif @tags.count == 1
+      meta_title(@tags.first.capitalize)
     else
-      meta_title(@tags.count == 1 ? @tags.first.capitalize : 'Collection')
+      entries = @tags.collect{|x|x.capitalize}
+      categories = entries.select{|x|x == :Gear or x == :Guides}.sort!{|a,b| b<=>a}
+      entries -= categories
+
+      title = oxford_commas(categories)
+      title = "#{title} for #{oxford_commas(entries)}" if entries.length > 0
+      meta_title(title)
     end
+  end
+
+  def meta_title_description
   end
 
   def prepare_feed
@@ -134,6 +153,7 @@ private
     @all_tags ||= []
 
     meta_title_feed()
+    meta_title_description()
   end
 
 end
