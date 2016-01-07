@@ -150,3 +150,36 @@ p.photos.find_or_create_by(
 p.posted_at = "2016-01-07"
 p.save
 
+p = Post.find_or_initialize_by(
+  :title=>"Coronado French Style Easel",
+)
+p.summary = '''
+The Coronado is the perfect easel for painting at home or on the go! It is great for small apartments or large studios. You will enjoy the many uses this great easel provides due to it\'s compact size.
+
+The Coronado Sketch Box is a fully adjustable field easel and storage unit all in one!
+
+Made of hand-sanded beech wood and finished with brass hardware and a durable leather handle.
+
+It features a 12" Wide sliding drawer with divided compartments, a 11" x 18" removable wooden palette, adjustable shoulder strap.
+
+Fully extendable to 71" - It is small enough to store in a closet, yet large enough to hold a 34" canvas.
+
+It has brass hooks that allow for the transport of wet canvas
+
+Fully adjustable easel orientation
+'''
+p.body = '''
+Paint in the glory of the great outdoors!  An easel makes it much easier to bring your paints outside or to location for landscapes.  I used one of these for oil painting in college and was impressed by the solid construction and ease of use.
+'''
+p.asin = "B00EUJK8PO"
+p.cost = 90
+p.tag_list.add(TagType::GEAR, TagType::ART)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"coronado_french_style_easel.jpg"
+)
+p.posted_at = "2016-01-07"
+p.save
+
