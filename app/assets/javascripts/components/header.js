@@ -65,6 +65,7 @@ Header.openSearch = function(){
 	Header.clear();
 	Header._nav.addClass('none');
 	Header._search.removeClass('none');
+	Header._searchForm.addClass('anim_fade_in');
 
 	var searchField = Header._searchField;
 	searchField.focus();
