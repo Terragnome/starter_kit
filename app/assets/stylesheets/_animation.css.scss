@@ -2,6 +2,9 @@
 @import '_constants';
 @import '_fonts';
 
+$anim_fade_in_duration: 0.35s;
+$anim_fade_out_duration: 0.35s;
+
 @keyframes AnimRollDown {
 	from{
 		transform: translateY(-100%);
@@ -47,19 +50,18 @@
 }
 
 .anim_fade_in{
-	-webkit-animation: AnimFadeIn 0.55s;
+	-webkit-animation: AnimFadeIn #{$anim_fade_in_duration};
 	animation-name: AnimFadeIn;
-  animation-duration: 0.55s;
+  animation-duration: #{$anim_fade_in_duration};
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
   opacity: 0;
 }
 
-$anim_fade_out_duration: 0.55s;
 .anim_fade_out{
-  -webkit-animation: AnimFadeOut 0.55s;
+  -webkit-animation: AnimFadeOut #{$anim_fade_out_duration};
   animation-name: AnimFadeOut;
-  animation-duration: 0.55s;
+  animation-duration: #{$anim_fade_out_duration};
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   opacity: 1;
