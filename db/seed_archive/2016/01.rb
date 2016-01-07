@@ -206,3 +206,52 @@ p.photos.find_or_create_by(
 p.posted_at = "2016-01-07"
 p.save
 
+p = Post.find_or_initialize_by(
+  :title=>"RedWing Heritage Blacksmith Boot",
+)
+p.summary = '''
+Famous for its clean lines, simple construction and classic round toe styling, a Nitrile Cork outsole, triple stitched quality and Goodyear welt construction.
+
+For almost a century, Red Wing Shoes has been producing top-quality work boots and shoes. It started with a corner store in the quiet river town of Red Wing, Minn. Today, Red Wing Shoes produces thousands of handmade shoes every day, making their legendary quality available worldwide. A true American success story, Red Wing Shoes provided footwear for the U.S. Military in both World Wars. Norman Rockwell created artwork for the company during the 1960s. And in the new global economy, Red Wing Shoes continues to evolve to meet the needs of a new generation, with more than 150 styles perfect for work or play. Red Wing Shoes is legendary for producing tough, durable footwear that can handle any challenge. Their shoes and boots are created with four principles in mind: quality, durability, comfort, and craftsmanship. Each is given a hand inspection before being sent out the door, to ensure that it meets Red Wing Shoes\' exacting standards. And the quality of their footwear is guaranteed. So look to Red Wing Shoes first for footwear that lasts.
+'''
+p.body = '''
+American soldiers in WWI wore Red Wing boots, which are legendary for their solid leather construction.  While there\'s a premium for quality American construction, these are boots that will last a lifetime and can be resoled when they start to wear out.  I\'ve worn mine regularly for the last 5 years and they\'ve kept my feet warm and dry even on rainy days at the archery range.  With a bit of Obenauf\'s leather polish they\'ve only improved with age.
+'''
+p.asin = "B00BTPU98S"
+p.cost = 300
+p.tag_list.add(TagType::GEAR, TagType::OUTDOORS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"redwing_heritage_blacksmith_boot.jpg"
+)
+p.posted_at = "2016-01-07"
+p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"Blink: The Power of Thinking Without Thinking",
+)
+p.summary = '''
+In his landmark bestseller The Tipping Point, Malcolm Gladwell redefined how we understand the world around us. Now, in Blink, he revolutionizes the way we understand the world within. 
+
+Blink is a book about how we think without thinking, about choices that seem to be made in an instant-in the blink of an eye-that actually aren\'t as simple as they seem. Why are some people brilliant decision makers, while others are consistently inept? Why do some people follow their instincts and win, while others end up stumbling into error? How do our brains really work-in the office, in the classroom, in the kitchen, and in the bedroom? And why are the best decisions often those that are impossible to explain to others?
+'''
+p.body = '''
+I\'m a big fan of Malcom Glawell and his books do a great job of revealing the hidden complexity of everyday things.  Blink deals with split second decisions, and how the subconscious can allow experts to detect counterfeits that even laboratories can\'t and also expose our deepest prejudices.
+'''
+p.asin = "0316010669"
+p.cost = 10
+p.tag_list.add(TagType::BOOKS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"blink.jpg"
+)
+p.posted_at = "2016-01-07"
+p.save
+
+
+
+
