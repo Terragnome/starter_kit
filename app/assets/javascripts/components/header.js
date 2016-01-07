@@ -14,6 +14,15 @@ Header.init = function(){
 	Header._navIcon.click(Header.toggleMenu);
 	Header._searchIcon.click(Header.toggleSearch);
 
+	Header.initSearch();
+}
+
+Header.clear = function(){
+	Header.closeSearch();
+	Header.closeMenu();
+}
+
+Header.initSearch = function(){
 	Header._searchField.keypress(function(e) {
 	  if (e.which == 13) {
 	  	Header._searchForm.submit(function(e){
@@ -43,11 +52,6 @@ Header.init = function(){
 	  }
 	});
 	Header._searchField.blur(Header.closeSearch);
-}
-
-Header.clear = function(){
-	Header.closeSearch();
-	Header.closeMenu();
 }
 
 Header.isSearchOpen = function(){
@@ -110,19 +114,19 @@ Header.onResize = function(){
 	}
 }
 
-// Header.Update = function(scrollCutoff){
-// 	var scrollPosition = DOM._window.scrollTop();
-// 	var headerBar = Header._bar;
-// 	if(scrollPosition >= scrollCutoff){
-// 		if( !headerBar.hasClass("anim_roll_down") ){
-// 			headerBar.show();
-// 			headerBar.addClass("anim_roll_down");
-// 			headerBar.removeClass("anim_roll_up");
-// 		}
-// 	}else{
-// 		if( !headerBar.hasClass("anim_roll_up") ){
-// 			headerBar.addClass("anim_roll_up");
-// 			headerBar.removeClass("anim_roll_down");
-// 		}
-// 	}
-// }
+Header.onScroll = function(scrollCutoff){
+	var scrollPosition = DOM._window.scrollTop();
+	var headerBar = Header._bar;
+	if(scrollPosition >= scrollCutoff){
+		if( !headerBar.hasClass("anim_roll_down") ){
+			headerBar.show();
+			headerBar.addClass("anim_roll_down");
+			headerBar.removeClass("anim_roll_up");
+		}
+	}else{
+		if( !headerBar.hasClass("anim_roll_up") ){
+			headerBar.addClass("anim_roll_up");
+			headerBar.removeClass("anim_roll_down");
+		}
+	}
+}
