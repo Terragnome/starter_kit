@@ -114,19 +114,19 @@ Header.onResize = function(){
 	}
 }
 
-Header.onScroll = function(scrollCutoff){
-	var scrollPosition = DOM._window.scrollTop();
-	var headerBar = Header._bar;
-	if(scrollPosition >= scrollCutoff){
-		if( !headerBar.hasClass("anim_roll_down") ){
-			headerBar.show();
-			headerBar.addClass("anim_roll_down");
-			headerBar.removeClass("anim_roll_up");
-		}
-	}else{
-		if( !headerBar.hasClass("anim_roll_up") ){
-			headerBar.addClass("anim_roll_up");
-			headerBar.removeClass("anim_roll_down");
-		}
-	}
-}
+// Header.onScroll = function(scrollCutoff){
+// 	var scrollPosition = DOM._window.scrollTop();
+// 	var headerBar = Header._bar;
+// 	if(scrollPosition >= scrollCutoff){
+// 		if( !headerBar.hasClass("anim_roll_down") ){
+// 			headerBar.show();
+// 			headerBar.addClass("anim_roll_down");
+// 			headerBar.removeClass("anim_roll_up");
+// 		}
+// 	}else{
+// 		if( !headerBar.hasClass("anim_roll_up") ){
+// 			headerBar.addClass("anim_roll_up");
+// 			headerBar.removeClass("anim_roll_down");
+// 		}
+// 	}
+// }
