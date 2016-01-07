@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require wiselinks
 //= require lib/typeahead.bundle.min
+//= require_tree ./components
 //= require_tree .
 
 var Application = Application || {};
@@ -39,6 +40,8 @@ Application.init = function(){
 	Header.init();
 
 	Application.sceneTop = DOM._scene.css('top');
+
+	$.holdReady(false);
 }
 
 Application.updateDescription = function(m){

@@ -11,6 +11,9 @@
     %meta{ name: 'description', content: @meta_description }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
   %body
+    :javascript
+      $.holdReady(true);
+
     #popups
     #blocker
     =render partial: 'layouts/header/header'
