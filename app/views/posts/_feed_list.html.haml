@@ -1,4 +1,4 @@
--feed_list_id = "feed_list_#{feed_list.current_page}"
+-feed_list_id = "feed_list_#{feed_list.try(:current_page) ? feed_list.current_page : 1}"
 -next_url = nil
 -next_ajax = nil
 
