@@ -8,7 +8,9 @@
   -elsif is_feed
     =link_to(post.display_call_to_action, full_post_path(post), 'data-push'=>true, :class=>['button', 'buy_button'])
 
-  %a.button.icon_button.facebook_button{:id=>"share_facebook_#{post.id}", :share_url=>post_share_url(post.id, :key=>:facebook, :format=>:js), :external_url=>"http://www.facebook.com/share.php?u=#{share_url}"}
+  =share_url
+
+  %a.button.icon_button.facebook_button{:id=>"share_facebook_#{post.id}", :share_url=>post_share_url(post.id, :key=>:facebook, :format=>:js), :external_url=>"http://www.facebook.com/share.php?u=#{post_url}"}
     =format_for_counter(post.facebook_count)
 
   %a.button.icon_button.twitter_button{:id=>"share_twitter_#{post.id}", :share_url=>post_share_url(post.id, :key=>:twitter, :format=>:js), :external_url=>"http://twitter.com/home?status=#{share_url}"}
