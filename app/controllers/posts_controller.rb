@@ -112,9 +112,13 @@ private
       categories = entries.select{|x|x == :Gear or x == :Guides}.sort!{|a,b| b<=>a}
       entries -= categories
 
-      title = oxford_commas(categories)
-      title = "#{title} for #{oxford_commas(entries)}" if entries.length > 0
-      meta_title(title)
+      has_categories = categories.length > 0
+      has_entries = entries.length > 0
+      title_components = []
+      title_components.push( oxford_commas(categories) ) if has_categories
+      title_components.push("for") if has_categories and has_entries
+      title_components.push(oxford_commas(entries)) if has_entries
+      meta_title(title_components.join(" "))
     end
   end
 
