@@ -69,6 +69,7 @@ Application.hideLoader = function(){
 	DOM._sceneLoader.hide();
 	DOM._scene.css('top', Application.sceneTop);
 	DOM._sceneBody.show();
+	DOM._sceneBody.addClass("anim_fade_in");
 	DOM._header.show();
 }
 
