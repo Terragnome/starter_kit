@@ -45,7 +45,7 @@ class PostsController < ApplicationController
 
     meta_title(@post.title)
     meta_keywords(@post.tag_names)
-    meta_description(@post.summary)
+    meta_description(@post.body)
 
     respond_to do |format|
       format.html
