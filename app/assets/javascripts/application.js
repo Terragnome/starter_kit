@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require wiselinks
 //= require lib/typeahead.bundle.min
-//= require core/_dom
 //= require_tree ./core
 //= require_tree ./components
 //= require_tree .
@@ -24,6 +23,8 @@
 var Application = Application || {};
 
 Application.init = function(){
+	console.log("APPLICATION");
+
 	$.turbo.use('pjax:start', 'pjax:end');
 
   history.scrollRestoration = 'manual';
@@ -31,19 +32,19 @@ Application.init = function(){
 	window.wiselinks = new Wiselinks($('#scene_body'));
 
 	DOM.init();
-	DOM._document.off('page:loading').on('page:loading', Application.onPageLoading);
-	DOM._document.off('page:redirected').on('page:redirected', Application.onPageRedirected);
-	DOM._document.off('page:always').on('page:always', Application.onPageAlways);
-	DOM._document.off('page:done').on('page:done', Application.onPageDone);
-	DOM._document.off('page:fail').on('page:fail', Application.onPageFail);
-	DOM._window.resize(Header.onResize);
-
 	Input.init();
 	Scroll.init(250);
 	Blocker.init(DOM._blocker);
 	Header.init();
 
 	Application.sceneTop = DOM._scene.css('top');
+
+	DOM._document.off('page:loading').on('page:loading', Application.onPageLoading);
+	DOM._document.off('page:redirected').on('page:redirected', Application.onPageRedirected);
+	DOM._document.off('page:always').on('page:always', Application.onPageAlways);
+	DOM._document.off('page:done').on('page:done', Application.onPageDone);
+	DOM._document.off('page:fail').on('page:fail', Application.onPageFail);
+	DOM._window.resize(Header.onResize);
 
 	$.holdReady(false);
 }
