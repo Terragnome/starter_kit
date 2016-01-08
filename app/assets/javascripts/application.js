@@ -46,7 +46,6 @@ Application.init = function(){
 
 	$.holdReady(false);
 
-	Post.init();
 	PostFeed.init();
 }
 
@@ -64,7 +63,9 @@ Application.onPageDone = function(e, target, render, url){}
 Application.onPageFail = function(e, target, render, url){}
 Application.onPageAlways = function(e, target, render, url){
 	Application.hideLoader();
-	Scroll.scrollTo(DOM.getPageTop());	
+	Scroll.scrollTo(DOM.getPageTop());
+
+	PostFeed.init();
 }
 
 Application.showLoader = function(){

@@ -61,6 +61,7 @@ PostFeed.onScroll = function(){
 
 PostFeed.showLoader = function(){
   PostFeed._loader.show();
+  PostFeed._loader.removeClass('anim_fade_in');
   PostFeed._loader.addClass('anim_fade_in');  
 }
 
