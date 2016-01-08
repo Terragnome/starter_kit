@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def site_name()
-    @meta_title
+    @app_title
   end
 
   def site_url()

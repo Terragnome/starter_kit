@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     meta_keywords()
     meta_description()
 
+    @app_title = APP_CONFIG['app_title']
     @app_url = APP_CONFIG['app_url']
     @asset_root = StarterKit::Application.config.asset_root
   end
