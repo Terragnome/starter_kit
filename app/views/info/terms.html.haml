@@ -7,12 +7,11 @@
     %h1.title
       Terms
     %p
-      ="All of the items listed on the site are things that Michael would buy if he had the money.  He's actually bought a lot of them anyway, so feel free to contact him at "
-      =contact_email_link()
-      =" if you have any questions."
-
-    %p
       =site_name()
       =" is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to "
-      =site_url()
+      =link_to(site_url(), "/")
       ="."
+    %p
+      ="My strategy is essentially to put up a bunch of awesome/useful stuff that I already own or really want and hope that you want them too.  Please contact me at "
+      =contact_email_link()
+      =" if you have any questions.  Thanks!"
