@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require wiselinks
 //= require lib/typeahead.bundle.min
+//= require core/_dom
 //= require_tree ./core
 //= require_tree ./components
 //= require_tree .
