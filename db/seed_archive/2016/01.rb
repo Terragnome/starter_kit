@@ -273,6 +273,24 @@ p.photos.find_or_create_by(
 p.posted_at = "2016-01-07"
 p.save
 
-
-
+p = Post.find_or_initialize_by(
+  :title=>"Wusthof Classic 2 Piece 200 Anniversary Set",
+)
+p.summary = '''
+The Wusthof classic 2 Piece Anniversary Set features a 9" cook\'s knife and a 3.5" paring knife. This incredible set is made from precision forged high-carbon steel using traditional methods and a 50 plus step process. Each knife has Wusthof\'s signature bolster/finger guard at the base of the blade to give the knives heft and a solid, balanced feel. The 200th anniversary set is distinguished by dark purplish-brown rosewood handles with triple brass rivets. The set comes in a gift box with care instructions, additional information and special oil for maintaining the blades. Made in Germany. Hand-washing recommended.
+'''
+p.body = '''
+In all honesty other knives will probably cut just fine, but these knives are beautiful and I want them for no good reason.  Forged high carbon steel you\'d expect from a premium knife, with beautiful rosewood handles.  Comes with a 9 inch chef\'s and a 3.5", which is all you need for most tasks.
+'''
+p.asin = "B00ICSX5UO"
+p.cost = 200
+p.tag_list.add(TagType::GEAR, TagType::COOKING, TagType::FOOD)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"wusthof_200_anniversary.jpg"
+)
+p.posted_at = "2016-01-07"
+p.save
 
