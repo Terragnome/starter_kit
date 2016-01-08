@@ -40,3 +40,7 @@ DOM.setDisplay = function(obj, isOn){
     }
   }
 }
+
+DOM.getPageTop = function(){
+  return DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height()
+}

@@ -51,14 +51,14 @@ Application.updateDescription = function(m){
 Application.onPageLoading = function(e, target, render, url){
 	Application.showLoader();
 	Header.closeMenu();
-	Scroll.autoScrollTo(0);
+	Scroll.scrollTo(0);
 }
 Application.onPageRedirected = function(e, target, render, url){}
 Application.onPageDone = function(e, target, render, url){}
 Application.onPageFail = function(e, target, render, url){}
 Application.onPageAlways = function(e, target, render, url){
 	Application.hideLoader();
-	Scroll.autoScrollTo( DOM._header.offset().top+DOM._header.height()-DOM._headerBar.height() );
+	Scroll.scrollTo(DOM.getPageTop());	
 }
 
 Application.showLoader = function(){

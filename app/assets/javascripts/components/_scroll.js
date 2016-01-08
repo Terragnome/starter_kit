@@ -1,15 +1,14 @@
 var Scroll = Scroll || {};
 
-var scrollTimeout;
 Scroll.init = function(scrollTimeoutInterval){
-  // Scroll.autoScroll = null;
+  Scroll.scrollTimeout;
 
   $(document).scroll(function(){
-    if(scrollTimeout){
-        clearTimeout(scrollTimeout);
-        scrollTimeout = null;
+    if(Scroll.scrollTimeout){
+        clearTimeout(Scroll.scrollTimeout);
+        Scroll.scrollTimeout = null;
     }
-    scrollTimeout = setTimeout(Scroll.onScroll, scrollTimeoutInterval);
+    Scroll.scrollTimeout = setTimeout(Scroll.onScroll, scrollTimeoutInterval);
   });
 
   if(Scroll.onScroll.callbacks) Scroll.onScroll.callbacks.empty();
@@ -18,24 +17,25 @@ Scroll.init = function(scrollTimeoutInterval){
 
 Scroll.onScroll = function(){
   Scroll.onScroll.callbacks.fire();
-
 }
 
-Scroll.autoScrollTo = function(pos){
-  // if(Scroll.autoScroll) Scroll.autoScroll.stop();
+Scroll.scrollTo = function(pos, isAnimated){
+  if(Scroll.autoScroll) Scroll.autoScroll.stop();
 
-  // var curScroll = DOM._body.scrollTop();
-  // var distance = Math.abs(curScroll-pos);
-  // Scroll.autoScroll = DOM._body.animate(
-  //   { scrollTop: pos },
-  //   {
-  //     duration: distance/1.75,
-  //     start: Scroll.DisableManual,
-  //     always: Scroll.EnableManual
-  //   }
-  // );
-  DOM._body.scrollTop(pos);
-  //
+  if(isAnimated){
+    var curScroll = DOM._body.scrollTop();
+    var distance = Math.abs(curScroll-pos);
+    Scroll.autoScroll = DOM._body.animate(
+      { scrollTop: pos },
+      {
+        duration: distance/1.75,
+        start: Scroll.DisableManual,
+        always: Scroll.EnableManual
+      }
+    );    
+  }else{
+    DOM._body.scrollTop(pos);
+  }
 }
 
 Scroll.enableManual = function(){
