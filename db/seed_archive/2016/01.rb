@@ -294,3 +294,24 @@ p.photos.find_or_create_by(
 p.posted_at = "2016-01-07"
 p.save
 
+p = Post.find_or_initialize_by(
+  :title=>"Wusthof 10\" Honing Steel",
+)
+p.summary = '''
+When that time comes that you need to touch up the sharp edge of your Wusthof knife the 10" steel is a good option. The Wusthof 10" inch steel can realign your knife edge quickly and easily. Honing steels are often confused as sharpeners. Your honing steel will realaign your knife edge but will not put a new edge on it. In trying to explain what a honing steel does try to imaging your sharpening steel and your toothbrush. It is a maintaince tool that you use everyday. In the case of your knife this would be maintaining the knifes edge. Now eventually you would need to see your dentist. That would be a sharpener. This would be a more detailed and agressive action and they would actually remove metal from the edge of the knife. Much like a dentist would do to your teeth. Now to maintain healthy teeth you brush everyday. To maintain a sharp knife you should steel your knife everyday. And remember only go to the Dentist(sharpener) once or twice a year.
+'''
+p.body = '''
+Show your knives a little TLC.  While sharpening steels remove actual material from the blade, honing steels microscopically straighten and align the cutting edge of the blade to restore sharpness.  While Amazon calls this item a sharpening steel, this is really a honing steel and it\'s the one I use at home.  Quality knives should be honed everytime the are used, and a good strategy is to pretend you\'re trying to slicing a thing piece off of the steel with both sides of the knife.  I usually start with three swipes of the steel on each side, then two, then one.  The Wusthof honing steel has a nice big bolster to help protect your hands and is solidly constructed.  The bolster and handle are made from a dense composite material, so it won\'t damage your blade if you accidentally make contact.
+'''
+p.asin = "B00009WDT8"
+p.cost = 25
+p.tag_list.add(TagType::GEAR, TagType::COOKING, TagType::FOOD)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"wusthof_10_honing_steel.jpg"
+)
+p.posted_at = "2016-01-07"
+p.save
+

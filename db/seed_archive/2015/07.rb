@@ -55,7 +55,7 @@ Made from VG-10 stainless steel, Shun knives are specially constructed to be har
 p.body = """
 Although it is owned by Kershaw Knives in Tualatin, Oregon, Shun knives are high quality knives that are handmade in Japan. The Shun Classic 8-Inch Chef's Knife is made with a 32 layer VG-10 steel, full tang blade, and a resin impregnated PakkaWod handle that is both beautiful and functional.
 
-Knives are an essential tool for any chef, and dull knives can be a major cause of accidents in the kitchen. Having to push down harder in order to make cuts increases the force that's require and makes slips and accidental cuts possible. Shun Classics are made of high quality VG-10, whose hardness allows Shun knives to be ground to razor sharp 15 degree cutting angle.
+Knives are an essential tool for any chef, and dull knives can be a major cause of accidents in the kitchen. Having to push down harder in order to make cuts increases the force that's required and makes slips and accidental cuts possible. Shun Classics are made of high quality VG-10, whose hardness allows Shun knives to be ground to razor sharp 15 degree cutting angle.
 
 While stamped steel knife blocks can be more affordable for those on a budget, a chef's knife, paring knife, and bread knife are all you really need to get started in your home kitchen. With proper care, a Shun chef's knife is an investment that you'll be able to use for the rest of your life.
 """
