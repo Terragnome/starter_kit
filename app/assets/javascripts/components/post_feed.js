@@ -1,7 +1,6 @@
 var PostFeed = PostFeed || {};
 
 PostFeed.init = function(){
-  console.log("POST FEED");
   PostFeed._loader = $("#post_feed_loader");
   PostFeed.enableScroll();
 }

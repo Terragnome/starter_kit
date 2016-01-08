@@ -23,8 +23,6 @@
 var Application = Application || {};
 
 Application.init = function(){
-	console.log("APPLICATION");
-
 	$.turbo.use('pjax:start', 'pjax:end');
 
   history.scrollRestoration = 'manual';
@@ -47,6 +45,9 @@ Application.init = function(){
 	DOM._window.resize(Header.onResize);
 
 	$.holdReady(false);
+
+	Post.init();
+	PostFeed.init();
 }
 
 Application.updateDescription = function(m){

@@ -1,8 +1,6 @@
 var Scroll = Scroll || {};
 
 Scroll.init = function(scrollTimeoutInterval){
-  console.log("SCROLL");
-
   Scroll.scrollTimeout;
 
   $(document).scroll(function(){
