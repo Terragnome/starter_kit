@@ -81,14 +81,7 @@ PostFeed.loadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
 		dataType: "script"
 	})
   .done(function(data) {
-  	if(updateHistory){
-      var stateData = {
-        id: nextUrl,
-        path: window.location.href,
-        scrollTop: DOM.getPageTop()
-      }
-      history.pushState(stateData, '', nextUrl);
-    }
+  	if(updateHistory) history.pushState({id: nextUrl}, '', nextUrl);
 
     var elems = $(".feed_list");
     var lastElem = elems.last();
