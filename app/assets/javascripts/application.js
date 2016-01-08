@@ -24,6 +24,8 @@ var Application = Application || {};
 Application.init = function(){
 	$.turbo.use('pjax:start', 'pjax:end');
 
+  history.scrollRestoration = 'manual';
+
 	window.wiselinks = new Wiselinks($('#scene_body'));
 
 	DOM.init();

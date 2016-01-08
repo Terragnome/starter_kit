@@ -82,14 +82,12 @@ PostFeed.loadMore = function(nextUrl, nextUrlAjax, scroll, updateHistory){
 	})
   .done(function(data) {
   	if(updateHistory){
-      history.scrollRestoration = 'manual';
       var stateData = {
         id: nextUrl,
         path: window.location.href,
         scrollTop: DOM.getPageTop()
       }
       history.pushState(stateData, '', nextUrl);
-      history.scrollRestoration = 'auto';
     }
 
     var elems = $(".feed_list");
