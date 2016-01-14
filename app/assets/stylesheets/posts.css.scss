@@ -10,7 +10,7 @@ $related_post_min_width: 230px;
 $related_post_width: 24%;
 
 .post_tag_cloud{
-	padding: 20px 0 0px 0;
+	margin: 25px 0 0px 0;
 	text-align: center;
 
 	.tag{
@@ -36,13 +36,45 @@ $related_post_width: 24%;
 	}
 
 	.selected{
-		background-color: #{$medium_gray};
+		background-color: #{$selected_color};
 		margin: 0 5px 0 5px;
 
 		.close_button{
 			pointer-events: none;
 			display: inline-block;
 			margin: 0 -5px 0 8px;
+		}
+	}
+}
+
+.post_cost_selector{
+	text-align: center;
+	margin: 20px 0 0 0;
+
+	a{
+		display: inline-block;
+		background-color: #{$base_color};
+		color: white;
+		font-size: 18px;
+		width: 30%;
+		min-width: 100px;
+		height: 60px;
+		padding: 30px 5px 0 5px;
+		border: 0px;
+		margin: 5px 1px 0 1px;
+
+		&:hover{
+			background-color: #{$highlight_color};
+		}
+	}
+
+	a.selected{
+		background-color: #{$highlight_color};
+		.close_button{
+			float: right;
+			pointer-events: none;
+			display: inline-block;
+			margin: 20px 5px 0 0;
 		}
 	}
 }

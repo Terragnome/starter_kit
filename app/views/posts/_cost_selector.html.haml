@@ -1,0 +1,12 @@
+.post_cost_selector
+  -selected_tags = selected.join(",")
+  -[20,50,100].each do |x|
+    -if price != x
+      =link_to(seo_feed_path(selected_tags, :price=>x), "data-push"=>true, :class=>"selector") do
+        ="Under $#{x}"
+    -else
+      =link_to(seo_feed_path(selected_tags), "data-push"=>true, :class=>"selector selected") do
+        ="Under $#{x}"
+        .close_button
+          %span
+          %span

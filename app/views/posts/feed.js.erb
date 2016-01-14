@@ -1,1 +1,1 @@
-$('#post_feed_list').append("<%= escape_javascript(render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags} ) %>");
+$('#post_feed_list').append("<%= escape_javascript(render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags, :price=>@price} ) %>");

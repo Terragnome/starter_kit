@@ -21,6 +21,8 @@ module PostsHelper
   end
 
   def seo_feed_path(tags, **kwargs)
+    kwargs.delete(:price) if kwargs.fetch(:price, :all) == :all
+
     tags = seo_feed_params(tags)
     return latest_path(**kwargs) if tags == :all or tags.length == 0
     return feed_path(:tag=>tags.first, **kwargs) if tags.length == 1
@@ -29,6 +31,8 @@ module PostsHelper
   end
 
   def seo_feed_url(tags, **kwargs)
+    kwargs.delete(:price) if kwargs.fetch(:price, :all) == :all
+    
     tags = seo_feed_params(tags)
     return latest_url(**kwargs) if tags == :all or tags.length == 0
     return feed_url(:tag=>tags.first, **kwargs) if tags.length == 1

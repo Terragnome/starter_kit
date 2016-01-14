@@ -4,14 +4,14 @@
   -tag_cloud(tags, %w(css1)) do |tag, css_class|
     -if selected.include?(tag)
       -new_tags=(selected-[tag]).join(",")
-      =link_to seo_feed_path(new_tags), 'data-push'=>true, class: 'tag selected' do
+      =link_to seo_feed_path(new_tags, :price=>price), 'data-push'=>true, :class=>'tag selected' do
         ="##{tag.name}"
         .close_button
           %span
           %span
     -else
       -new_tags=(selected+[tag]).join(",")
-      =link_to(seo_feed_path(new_tags), 'data-push'=>true, class: 'tag') do
+      =link_to(seo_feed_path(new_tags, :price=>price), 'data-push'=>true, :class=>'tag') do
         ="##{tag.name}"
         -if tag.taggings_count > 1
           %span.counter

@@ -3,8 +3,8 @@
 -next_ajax = nil
 
 -if feed_list.try(:next_page)
-  -next_url = seo_feed_url(tags, :page=>feed_list.next_page)
-  -next_ajax = seo_feed_url(tags, :page=>feed_list.next_page, :format=>:js)
+  -next_url = seo_feed_url(tags, :page=>feed_list.next_page, :price=>price)
+  -next_ajax = seo_feed_url(tags, :page=>feed_list.next_page, :price=>price, :format=>:js)
 
 .feed_list{:id=>feed_list_id, :next_url=>next_url, :next_ajax=>next_ajax}
   -feed_list.each do |post|
@@ -13,7 +13,7 @@
     .feed_post_spacer
 
   -if next_url
-    -next_url = seo_feed_url(tags, :page=>feed_list.next_page)
+    -next_url = seo_feed_url(tags, :page=>feed_list.next_page, :price=>price)
     =link_to('More', next_url, 'data-push'=>true, :class=>['more_posts', 'button'])
 
 :javascript

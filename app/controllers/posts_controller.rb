@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html{render action: 'feed'}
       format.js{render action: 'feed'}
-    end    
+    end
   end
 
   def tag_feed
@@ -125,17 +125,20 @@ private
   def prepare_feed
     @tags ||= :all
     @page ||= params.has_key?(:page) ? params[:page].to_i : 1
+    @price ||= params.has_key?(:price) ? params[:price].to_i : :all
     scroll ||= params.has_key?(:scroll) ? params[:scroll] : :next
+    @all_tags = []
 
     @selected_tags = []
     if not @posts
       if @tags == :all
-        @posts=Post.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
-        @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC')
+        @posts = Post.active.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
+        @posts = @posts.where("cost < #{@price}") if @price != :all
       else
         @tags = @tags.collect{|x| x.to_sym}
-        @posts=Post.active.includes(:counters, :photos, :tags).tagged_with(@tags)
-        @all_tags=@posts.tag_counts_on(:tags).order('taggings_count DESC')
+        @posts = Post.active.includes(:counters, :photos, :tags).tagged_with(@tags)
+        @posts = @posts.where("cost < #{@price}") if @price != :all
+        @all_tags = @posts.tag_counts_on(:tags).order('taggings_count DESC')
 
         tag_counts = {}        
         @posts.each do |post|
@@ -151,7 +154,9 @@ private
       end
       @posts.reverse if scroll == :prev
     end
-    @all_tags ||= []
+
+    # Show all tags if there would other be none
+    @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC') if @all_tags.length == 0
 
     meta_title_feed()
   end
