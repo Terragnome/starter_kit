@@ -7,6 +7,8 @@
 
 -if @posts and @posts.count > 0
   #post_feed
+    #post_show
+      =render partial:'post', object:@posts[0]
     #post_feed_list
       =render :partial=>'feed_list', :locals=>{:feed_list=>@posts, :tags=>@tags, :price=>@price}
   #post_feed_loader

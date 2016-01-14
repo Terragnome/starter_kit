@@ -167,6 +167,10 @@ $related_post_width: 24%;
 	margin: 30px 0 0 0;
 	text-align: center;
 
+	#post_show{
+		margin: 50px 0 0 0;
+	}
+
 	.more_posts{
 		color: white;
 		background-color: #{$base_color};
@@ -318,6 +322,7 @@ $related_post_width: 24%;
 
 	.post{
 		background-color: white;
+		text-align: left;
 		padding: 30px 20px 60px 20px;
 
 		.header{
