@@ -10,7 +10,7 @@
   .body
     .photo_gallery
       -post.photos.each do |ph|
-        =image_tag(ph.asset_url, :class=>'photo', :title=>ph.name, :alt=>ph.name)
+        =image_tag(ph.asset_url, :class=>'photo', :title=>post.title, :alt=>post.title)
     -if post.summary
       %p.summary
         =post.summary.gsub(/\n/, '<br/>').html_safe
