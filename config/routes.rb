@@ -15,9 +15,9 @@ StarterKit::Application.routes.draw do
 
   get 'search' => 'posts#search', :as=>'post_search'
 
-  get 'latest/(:page)' => 'posts#latest', :as=>'latest'
+  get 'latest' => 'posts#latest', :as=>'latest'
   get 'hobby' => 'posts#tag_feed', :as=>'tag_feed'
-  get 'hobby/:tag(/:page)' => 'posts#feed', :as=>'feed'
+  get 'hobby/:tag' => 'posts#feed', :as=>'feed'
 
   put ':id/share/:key' => 'posts#share', :as=>'post_share'
   get ':id/explore' => 'posts#convert', :as=>'post_convert'
