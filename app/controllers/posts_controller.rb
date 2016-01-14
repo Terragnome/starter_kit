@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   @@feed_length = 12 # This should be a multiple of 6
 
+  def root
+    redirect_to latest_path
+  end
+
   def latest
     prepare_feed()
 
