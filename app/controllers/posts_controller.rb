@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  @@feed_length = 6 # This should be a multiple of 6
+  @@feed_length = 7 # This should be (6x)+1
 
   def root
     redirect_to latest_path
@@ -136,7 +136,7 @@ private
     @selected_tags = []
     if not @posts
       if @tags == :all
-        @posts = Post.active.includes(:counters, :photos, :tags).active.paginate(:page=>@page, :per_page=>@@feed_length)
+        @posts = Post.active.includes(:counters, :photos, :tags).active
         @posts = @posts.where("cost < #{@price}") if @price != :all
       else
         @tags = @tags.collect{|x| x.to_sym}
@@ -154,13 +154,16 @@ private
 
         @all_tags.each{|tag| tag.taggings_count = tag_counts[tag.id] if tag_counts.include?(tag.id) }
         @all_tags.each{|x| @selected_tags.push(x) if @tags.include?(x.name.to_sym) }
-        @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
+
       end
       @posts.reverse if scroll == :prev
     end
 
     # Show all tags if there would other be none
     @all_tags=Post.active.tag_counts_on(:tags).order('taggings_count DESC') if @all_tags.length == 0
+
+    @posts=@posts.paginate(:page=>@page, :per_page=>@@feed_length)
+    @main_post = @posts.first
 
     meta_title_feed()
   end

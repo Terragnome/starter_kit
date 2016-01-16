@@ -1,5 +1,5 @@
 -post_id = "post_#{post.id}"
--hide_related ||= false
+-show_related ||= false
 .post{:id=>post_id}
   .header
     %h1
@@ -19,7 +19,7 @@
       =post.body.gsub(/\n/, '<br/>').html_safe
     =render :partial=>'post_tags', :object=>post.tag_names
   =render :partial=>'post_actions', :object=>post, :as=>:post
-  -if !hide_related
+  -if show_related
     =render :partial=>'feed_related', :object=>post.related
 
 :javascript

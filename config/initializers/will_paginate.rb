@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 if defined?(WillPaginate)
    ActiveSupport.on_load :active_record do
      module WillPaginate

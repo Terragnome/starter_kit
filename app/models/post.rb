@@ -128,9 +128,10 @@ class Post < ActiveRecord::Base
   end
 
   def display_call_to_action
-    call_to_action = [nil, ""].include?(self.call_to_action) ? self.url != "" ? "Explore" : "Learn More" : self.call_to_action
-    call_to_action = "#{call_to_action} $#{cost}" if cost>0
-    call_to_action
+    # call_to_action = [nil, ""].include?(self.call_to_action) ? self.url != "" ? "Explore" : "Learn More" : self.call_to_action
+    # call_to_action = "#{call_to_action} $#{cost}" if cost>0
+    # call_to_action
+    "Learn More"
   end
 
   private
