@@ -315,3 +315,23 @@ p.photos.find_or_create_by(
 p.posted_at = "2016-01-07"
 p.save
 
+p = Post.find_or_initialize_by(
+  :title=>"Nixon Sentry SS Star Wars Watch",
+)
+p.summary = '''
+Nixon takes their classic Sentry SS SW Watch to the Dark Side and back to bring you this epic Star Wars collaboration. It features a stainless steel case, a superlum seconds hand, and a custom brass dial embrossed with the Imperial logo.
+'''
+p.body = '''
+Nixon\'s stylish Star Wars watches let you wear your nerdiness with pride.  The designs are subtle and benefit from Nixon\'s strong aesthetic and manufacturing standards.  Know the true power of the Dark Side.
+'''
+p.asin = "B013VNWAZU"
+p.cost = 275
+p.tag_list.add(TagType::GEAR, TagType::EDC)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"nixon_sentry_ss_star_wars.jpg"
+)
+p.posted_at = "2016-01-017"
+p.save
