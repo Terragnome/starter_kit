@@ -333,5 +333,5 @@ p.photos.find_or_create_by(
   :name=>"cover",
   :internal_url=>"nixon_sentry_ss_star_wars.jpg"
 )
-p.posted_at = "2016-01-017"
+p.posted_at = "2016-01-17"
 p.save
