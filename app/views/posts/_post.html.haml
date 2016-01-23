@@ -1,22 +1,27 @@
 -post_id = "post_#{post.id}"
+-include_links ||= false
 -show_related ||= false
 .post{:id=>post_id}
   .header
     %h1
-      =post.title
+      =link_to_if_with_block include_links, full_post_path(post) do
+        =post.title
     .info_section
       .info
         .text
           =post.display_byline
   .body
-    .photo_gallery
-      -post.photos.each do |ph|
-        =image_tag(ph.asset_url, :class=>'photo', :title=>post.title, :alt=>post.title)
-    -if post.summary
-      %p.summary
-        =post.summary.gsub(/\n/, '<br/>').html_safe
-    %p.description
-      =post.body.gsub(/\n/, '<br/>').html_safe
+    =link_to_if_with_block include_links, full_post_path(post) do
+      .photo_gallery
+        -post.photos.each do |ph|
+          =image_tag(ph.asset_url, :class=>'photo', :title=>post.title, :alt=>post.title)
+      -if post.summary
+        %p.summary
+          -post_summary = include_links ? strip_tags(post.summary) : post.summary
+          =post_summary.gsub(/\n/, '<br/>').html_safe
+      %p.description
+        -post_body = include_links ? strip_tags(post.body) : post.body
+        =post_body.gsub(/\n/, '<br/>').html_safe
     =render :partial=>'post_tags', :object=>post.tag_names
   =render :partial=>'post_actions', :object=>post, :as=>:post
   -if show_related

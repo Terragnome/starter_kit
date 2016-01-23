@@ -3,7 +3,7 @@
   -next_url = nil
   -next_ajax = nil
 
-  =render partial:'post', :locals=>{:post=>feed_list[0]}
+  =render partial:'post', :locals=>{:post=>feed_list[0], :include_links=>true}
 
   -if feed_list.try(:next_page)
     -next_url = seo_feed_url(tags, :page=>feed_list.next_page, :price=>price)

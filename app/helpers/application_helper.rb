@@ -31,4 +31,12 @@ module ApplicationHelper
   def contact_email_link
     site_email_link("contact")
   end
+
+  def link_to_if_with_block condition, options, html_options={}, &block
+     if condition
+       link_to options, html_options, &block
+     else
+       capture &block
+     end
+   end
 end
