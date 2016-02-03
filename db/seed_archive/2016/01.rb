@@ -356,3 +356,29 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2016-02-02"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"Sphero BB-8 App-Enabled Droid",
+)
+p.summary = '''
+Over the years, the magic of Star War has always lived on screen and in our imaginations. Thanks to our advancements in technology, we’ve made it possible to bring a new part of Star Wars: The Force Awaken into your home. 
+
+Meet BB-8 - the app-enabled Droid that\'s as authentic as it is advanced. BB-8 has something unlike any other robot - an adaptive personality that changes as you play. Based on your interactions, BB-8 will show a range of expressions and even perk up when you give voice commands. Set it to patrol and watch your Droid explore autonomously, make up your own adventure and guide BB-8 yourself, or create and view holographic recordings. 
+
+It’s now possible to explore the galaxy with your own trusty Astromech Droid by your side. BB-8 is more than a toy - it’s your companion.
+'''
+p.body = '''
+Own a BB-8 of your very own!  The Sphero BB-8 is not only adorable, but its bundled companion app and patrol make him feel more like a pet than just a toy.
+'''
+p.asin = "B0107H5FJ6"
+p.cost = 136
+p.tag_list.add(TagType::TOYS)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"sphero_bb8.jpg"
+)
+p.posted_at = "2016-02-02"
+p.save
+
