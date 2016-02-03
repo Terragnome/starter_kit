@@ -337,27 +337,6 @@ p.posted_at = "2016-01-17"
 p.save
 
 p = Post.find_or_initialize_by(
-  :title=>"LEGO Ideas WALL E 21303 Building Kit",
-)
-p.summary = '''
-Build, display and role play with WALL-E! Construct the LEGO Ideas version of WALL-E with posable neck, adjustable head and arms, gripping hands, opening trunk and rolling tracks. Build a beautifully detailed LEGO version of WALL-E -the last robot left on Earth! Created by Angus MacLane, an animator and director at Pixar Animation Studios, and selected by LEGO Ideas members, the development of this model began alongside the making of the lovable animated character for the classic Pixar feature film. It has taken almost a decade to perfect the LEGO version, which incorporates many authentic WALL-E characteristics, including a posable neck, adjustable head, arms that move up and down and side to side, plus gripping hands and rolling tracks. With a trunk that opens and closes, you can tidy up the planet one pile of garbage at a time! This set also includes a booklet about the designer and the animated Pixar movie.
-'''
-p.body = '''
-Lego Ideas is a great program where fans can have their projects turned into real sets, and Lego WALLE is an incredible model from creator Angus MacLane.  Lego WALL E reflects years of skillful design, with fully poseabable arms and head and a compartment on his body that opens just like the movie.  A great gift for any Lego or Pixar fan.
-'''
-p.asin = "B00ZSJMPLU"
-p.cost = 60
-p.tag_list.add(TagType::TOYS, TagType::LEGO)
-p.active = true
-p.save
-p.photos.find_or_create_by(
-  :name=>"cover",
-  :internal_url=>"lego_walle.jpg"
-)
-p.posted_at = "2016-02-02"
-p.save
-
-p = Post.find_or_initialize_by(
   :title=>"Sphero BB-8 App-Enabled Droid",
 )
 p.summary = '''
@@ -381,4 +360,27 @@ p.photos.find_or_create_by(
 )
 p.posted_at = "2016-02-02"
 p.save
+
+p = Post.find_or_initialize_by(
+  :title=>"LEGO Ideas WALL E 21303 Building Kit",
+)
+p.summary = '''
+Build, display and role play with WALL-E! Construct the LEGO Ideas version of WALL-E with posable neck, adjustable head and arms, gripping hands, opening trunk and rolling tracks. Build a beautifully detailed LEGO version of WALL-E -the last robot left on Earth! Created by Angus MacLane, an animator and director at Pixar Animation Studios, and selected by LEGO Ideas members, the development of this model began alongside the making of the lovable animated character for the classic Pixar feature film. It has taken almost a decade to perfect the LEGO version, which incorporates many authentic WALL-E characteristics, including a posable neck, adjustable head, arms that move up and down and side to side, plus gripping hands and rolling tracks. With a trunk that opens and closes, you can tidy up the planet one pile of garbage at a time! This set also includes a booklet about the designer and the animated Pixar movie.
+'''
+p.body = '''
+Lego Ideas is a great program where fans can have their projects turned into real sets, and Lego WALLE is an incredible model from creator Angus MacLane.  Lego WALL E reflects years of skillful design, with fully poseabable arms and head and a compartment on his body that opens just like the movie.  A great gift for any Lego or Pixar fan.
+'''
+p.asin = "B00ZSJMPLU"
+p.cost = 60
+p.tag_list.add(TagType::TOYS, TagType::LEGO)
+p.active = true
+p.save
+p.photos.find_or_create_by(
+  :name=>"cover",
+  :internal_url=>"lego_walle.jpg"
+)
+p.posted_at = "2016-02-02"
+p.save
+
+
 
