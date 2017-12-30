@@ -26,5 +26,4 @@ module StarterKit
     ActsAsTaggableOn.remove_unused_tags = true
   end
 
-  ASSET_ROOT = "https://googledrive.com/host/0BwCD42LpcEbxY2xDODlRLUEzbEE"
 end

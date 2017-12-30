@@ -84,5 +84,5 @@ StarterKit::Application.configure do
   config.assets.compile = true
   config.assets.digest = true
   
-  config.asset_root = 'https://s3-us-west-1.amazonaws.com/StarterKit'
+  config.asset_root = 'https://s3-us-west-2.amazonaws.com/pursuitofhobbiness'
 end

@@ -29,5 +29,5 @@ StarterKit::Application.configure do
 
   config.action_controller.perform_caching = false
 
-  config.asset_root = '/assets'
+  config.asset_root = 'https://s3-us-west-2.amazonaws.com/pursuitofhobbiness'
 end
