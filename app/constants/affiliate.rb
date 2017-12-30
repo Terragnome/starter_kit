@@ -1,3 +1,3 @@
 class Affiliate
-  AMAZON_ID = "pursuofhobbi-20"
+  AMAZON_ID = "poh00-20"
 end
