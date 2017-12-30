@@ -43,7 +43,7 @@ class Post < ActiveRecord::Base
   end
 
   def display_byline
-    "#{user.nickname} | #{ago.capitalize}"
+    #"#{user.nickname} | #{ago.capitalize}"
   end
 
   def display_summary
