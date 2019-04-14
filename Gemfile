@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem 'rails', '4.2.11.1'
 
 # Use mysql as the database for Active Record
 gem 'pg', '0.18.3'
@@ -31,7 +31,7 @@ gem 'heroku-deflater', '0.6.2', :group => :production
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '3.1.0'
+gem 'jquery-rails', '3.1.3'
 
 # Generate sitemaps
 gem 'sitemap_generator', '5.1.0'
@@ -46,7 +46,7 @@ gem 'wiselinks', '1.2.1'
 # Pagination
 gem 'will_paginate', '3.0.7'
 
-gem 'newrelic_rpm', '3.8.0.218'
+gem 'newrelic_rpm', '6.2.0.354'
 
 #For heroku
 gem 'rails_12factor', '0.0.2', group: :production
@@ -55,8 +55,8 @@ gem 'rails_12factor', '0.0.2', group: :production
 gem 'mobile-fu', '1.3.1'
 
 # Attachments
-gem 'paperclip', '4.3.1'
-gem 'aws-sdk'
+gem 'paperclip', '5.2.0'
+gem 'aws-sdk', '3.0.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -75,9 +75,9 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'rails_admin', '0.7.0'
+gem 'rails_admin', '1.3.0'
 gem 'rails_admin_tag_list', '0.1.5', :git => 'git://github.com/imouaddine/rails_admin_tag_list.git', :ref => 'a9a4e31af6fdd2124110d0dff81ab97950803e65'
-gem 'devise'
+gem 'devise', '4.6.2'
 
 # Use unicorn as the app server
 gem 'unicorn', '4.8.3'

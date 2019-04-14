@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160103233031) do
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
 
-  create_table "counters", force: true do |t|
+  create_table "counters", force: :cascade do |t|
     t.string   "countable_type"
     t.integer  "countable_id"
     t.string   "key"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160103233031) do
 
   add_index "counters", ["countable_type", "countable_id", "key"], name: "index_counters_on_countable_type_and_countable_id_and_key", unique: true, using: :btree
 
-  create_table "photos", force: true do |t|
+  create_table "photos", force: :cascade do |t|
     t.string "name",         null: false
     t.string "remote_url"
     t.string "internal_url"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160103233031) do
 
   add_index "photos", ["name"], name: "index_photos_on_name", using: :btree
 
-  create_table "post_photos", force: true do |t|
+  create_table "post_photos", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "photo_id"
     t.string   "caption"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20160103233031) do
   add_index "post_photos", ["photo_id"], name: "index_post_photos_on_photo_id", using: :btree
   add_index "post_photos", ["post_id"], name: "index_post_photos_on_post_id", using: :btree
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.integer  "user_id",                        null: false
     t.string   "title",                          null: false
     t.text     "body",                           null: false
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20160103233031) do
   add_index "posts", ["title"], name: "index_posts_on_title", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
-  create_table "taggings", force: true do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
@@ -81,14 +81,14 @@ ActiveRecord::Schema.define(version: 20160103233031) do
 
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name",                                null: false
     t.string   "email",                               null: false
     t.string   "nickname",                            null: false
