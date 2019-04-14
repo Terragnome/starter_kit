@@ -4,6 +4,8 @@ StarterKit::Application.routes.draw do
   devise_for :users, :path => '_comu', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   resources :users
 
+  get 'oauth2callback' => 'oauth2#callback'
+
   get "/404" => "errors#not_found"
   get "/422" => "errors#unprocessable_entity"
   get "/500" => "errors#internal_server_error"
